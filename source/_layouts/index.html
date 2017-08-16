@@ -1,0 +1,61 @@
+---
+layout: base
+---
+<div id="header">
+	<div class="section">
+		<div id="home-hero" class="hero">
+			<div id="top">
+				<div class="container">
+					<img src="/assets/images/logo.png" id="logo" width="20%" alt="Convincible." border="0" hspace="0" vspace="0" />
+				</div>
+			</div>
+			<div class="container">
+				<h1>{{ page.tagline }}</h1>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div id="body">
+
+	<div class="section">
+		<div class="container">
+		<h2>Services.</h2>
+			<div class="row justify-content-xs-center">
+			{% for service in page.services limit:3 %}
+				<div class="col-sm-4">
+				<h3>{{ site.services[service].name }}</h3>
+				{{ site.services[service].seo.description }}
+				<p><a href="/services/{{ site.services[service].slug }}.html">Get Started</a></p>
+				</div>
+			{% endfor %}
+			</div>
+		</div>
+	</div>
+
+	<div class="section">
+		<div class="container">
+			<h2>Showcase.</h2>
+			<div class="row justify-content-xs-center">
+			{% for client in page.showcase limit:3 %}
+				<div class="col-sm-4">
+				<h3>{{ site.showcase[client].name }}</h3>
+				{{ site.showcase[client].seo.description }}
+				<p><a href="/showcase/{{ site.showcase[client].slug }}.html">Read More</a></p>
+				</div>
+			{% endfor %}
+			</div>
+		</div>
+	</div>
+
+	<div class="section">
+		<div class="container">
+			<h2>Approach.</h2>
+			{% for point in page.approach %}
+				<h3>{{ point.name }}</h3>
+				{{ point.description }}
+			{% endfor %}
+		</div>
+	</div>
+
+</div>

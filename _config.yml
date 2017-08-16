@@ -6,21 +6,21 @@ baseurl: "" # the subpath of your site, e.g. /blog
 url: "http://www.convincible.media"
 twitter_username: "BeConvincible"
 github_username:  "Convincible"
-permalink: ":year/:month/:slug.html"
 
 # Build settings
-markdown: kramdown
-excerpt_separator: "\n\n"
-sass_dir: "styles"
+source: "source"
+destination: "public"
+sass_dir: "source/assets/styles"
+markdown: "kramdown"
 
-# include: .htaccess
-# exclude: 
-
-# Build options
 # show_drafts: null
 # future: false
 # unpublished: false
+excerpt_separator: "\n\n"
 strict_front_matter: true
+
+# include: .htaccess
+# exclude: 
 
 # Defaults
 defaults:
@@ -28,17 +28,19 @@ defaults:
     scope:
       path: "" # an empty string here means all files in the project
     values:
-      layout: "default"
+      layout: "_base"
+
+permalink: ":year/:month/:slug.html"
 
 # Collections
 collections:
   services:
-    title: Services
+    title: "Services"
     order: 1
     output: true
     permalink: ":collection/:slug.html"
   showcase:
-    title: Showcase
+    title: "Showcase"
     order: 2
     output: true
-    permalink: ":collection/:year/:month/:slug.html"
+    permalink: ":collection/:slug.html"

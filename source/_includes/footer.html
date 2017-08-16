@@ -1,0 +1,19 @@
+<div id="footer">
+	<div class="container">
+		<p><a href="/">Convincible</a></p>
+		<ul>
+		{% assign collections = site.collections | sort: 'order', 'last' %}
+		{% for collection in collections %}
+			{% if collection.output == true %}
+				<li>{{ collection.title | default: collection.label }}
+					<ul>
+						{% for doc in collection.docs %}
+							<li><a href="{{ doc.url }}">{{ doc.title }}</a></li>
+						{% endfor %}
+					</ul>
+				</li>
+			{% endif %}
+		{% endfor %}
+		</ul>
+	</div>
+</div>
