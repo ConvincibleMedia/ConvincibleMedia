@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en-GB">
+	<head>{%- include variables.liquid %}
+		<meta charset="utf-8" /><meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		
+		<title>{{ pagetitle }}</title>
+		
+		<meta name="description" content="{{ pagedescription }}" />
+		
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		
+		<link rel="stylesheet" href="/styles/normalize.css" />
+		<link rel="stylesheet" href="/styles/main.css" />
+		<link rel="stylesheet" href="/styles/grid.css" />
+		<!--<link rel="stylesheet" href="/styles/bootstrap.css" />-->
+		
+		<link rel="stylesheet" href="/styles/core.css" />
+		
+		<link href="https://fonts.googleapis.com/css?family=Montserrat:600,600i,900|Source+Sans+Pro:300,300i" rel="stylesheet">
+		
+		<script src="/scripts/vendor/modernizr-2.8.3.min.js"></script>
+		
+		<meta name="google-site-verification" content="" />
+		<link rel="apple-touch-icon" href="apple-touch-icon.png" />
+		
+		<style type="text/css">
+			{{ page.css }}
+		</style>
+	</head>
+	<body>
+		<!--[if lt IE 8]>
+            <p class="browserupgrade"><strong>You are using an outdated browser</strong>, so this site may not appear correctly. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+		
+		{{ content }}
+		
+		<div id="footer">
+			<div class="container">
+				<p><a href="/">Convincible</a></p>
+				<ul>
+				{% assign collections = site.collections | sort: 'order', 'last' %}
+				{% for collection in collections %}
+					{% if collection.output == true %}
+						<li>{{ collection.title | default: collection.label }}
+							<ul>
+								{% for doc in collection.docs %}
+									<li><a href="{{ doc.url }}">{{ doc.title }}</a></li>
+								{% endfor %}
+							</ul>
+						</li>
+					{% endif %}
+				{% endfor %}
+				</ul>
+			</div>
+		</div>
+			
+		<!--
+		{% include jquery.html %}{% include ga.js uid="UA-XXXXX-X" %}
+		-->
+	</body>
+</html>

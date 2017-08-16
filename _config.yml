@@ -1,0 +1,44 @@
+# Basic settings
+title: "Convincible"
+email: "contact@convincible.media"
+description: "We superpower your communications, making your brand image and ideas invincibly convincing."
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "http://www.convincible.media"
+twitter_username: "BeConvincible"
+github_username:  "Convincible"
+permalink: ":year/:month/:slug.html"
+
+# Build settings
+markdown: kramdown
+excerpt_separator: "\n\n"
+sass_dir: "styles"
+
+# include: .htaccess
+# exclude: 
+
+# Build options
+# show_drafts: null
+# future: false
+# unpublished: false
+strict_front_matter: true
+
+# Defaults
+defaults:
+  -
+    scope:
+      path: "" # an empty string here means all files in the project
+    values:
+      layout: "default"
+
+# Collections
+collections:
+  services:
+    title: Services
+    order: 1
+    output: true
+    permalink: ":collection/:slug.html"
+  showcase:
+    title: Showcase
+    order: 2
+    output: true
+    permalink: ":collection/:year/:month/:slug.html"
