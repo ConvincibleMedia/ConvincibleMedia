@@ -22,11 +22,11 @@ layout: base
 		<div class="container">
 		<h2>Services.</h2>
 			<div class="row justify-content-xs-center">
-			{% for service in page.services limit:3 %}
+			{% for item in page.services limit:3 %}
 				<div class="col-sm-4">
-				<h3>{{ site.services[service].name }}</h3>
-				{{ site.services[service].seo.description }}
-				<p><a href="/services/{{ site.services[service].slug }}.html">Get Started</a></p>
+				<h3>{{ item.name }}</h3>
+				{{ item.description.description }}
+				<p><a href="/services/{{ item.link }}.html">Get Started</a></p>
 				</div>
 			{% endfor %}
 			</div>
@@ -37,11 +37,11 @@ layout: base
 		<div class="container">
 			<h2>Showcase.</h2>
 			<div class="row justify-content-xs-center">
-			{% for client in page.showcase limit:3 %}
+			{% for item in page.showcase limit:3 %}
 				<div class="col-sm-4">
-				<h3>{{ site.showcase[client].name }}</h3>
-				{{ site.showcase[client].seo.description }}
-				<p><a href="/showcase/{{ site.showcase[client].slug }}.html">Read More</a></p>
+				<h3>{{ item.name }}</h3>
+				{{ item.description.description }}
+				<p><a href="/showcase/{{ item.link }}.html">Read More</a></p>
 				</div>
 			{% endfor %}
 			</div>

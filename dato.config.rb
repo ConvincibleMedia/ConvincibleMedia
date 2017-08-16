@@ -20,13 +20,21 @@ create_post "source/index.md" do
 		:yaml,
 		layout: 'index',
 		name: home.name,
-		seo: home.seo_meta_tags,
+		seo: home.seo,
 		tagline: home.tagline,
 		services: home.services.map do |item|
-			item.name
+		{
+			name: item.name,
+			description: item.seo,
+			link: item.slug
+		}
 		end,
 		showcase: home.showcase.map do |item|
-			item.name
+		{
+			name: item.name,
+			description: item.seo,
+			link: item.slug
+		}
 		end,
 		approach: home.approach.map do |item|
 		{
