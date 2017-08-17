@@ -8,7 +8,7 @@
 			<div class="block_body_gallery">
 				<ul>
 					{% for image in block.images %}
-						<li>{% include helpers/img.html src='{{ image.url }}' alt='{{ image.alt }}' %}</li>
+						<li>{% include helpers/img.html src=image.url alt=image.alt %}</li>
 					{% endfor %}
 				</ul>
 				{% if block.caption != '' %}<p class="caption">{{ block.caption }}</p>{% endif %}
