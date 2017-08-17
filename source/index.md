@@ -2,7 +2,7 @@
 layout: index
 name: Marketing and Communications · Cambridge, UK
 seo: 
-tagline: Superpowered Communications.
+tagline: Superpowered Communications!
 services:
 - name: Branding
   description: !ruby/object:Dato::Local::FieldType::Seo
