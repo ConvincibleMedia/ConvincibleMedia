@@ -1,6 +1,17 @@
 {% for block in include.blocks %}
 	{% case block.item_type $}
 		{% when "block_body_text" %}
-			
+			<div class="block_body_text">
+				{{ block.text }}
+			</div>
+		{% when "block_body_gallery" %}
+			<div class="block_body_gallery">
+				<ul>
+					{% for image in block.images %}
+						<li>{% include helpers/img.html src="{{ image.url }}" alt="{{ image.alt }}" %}</li>
+					{% endfor %}
+				</ul>
+				{% if block.caption != "" %}<p class="caption">{{ block.caption }}</p>{% endif %}
+			</div>
 	{% endcase %}
 {% endfor %}
