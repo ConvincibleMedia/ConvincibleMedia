@@ -56,6 +56,12 @@ directory "source/_services" do
 				seo: item.seo,
 				heading: item.heading.to_hash,
 				body: item.body.to_hash
+				image_formats:
+					gallery:
+						w: 200
+						h: 200
+						fit: crop
+						crop: edges
 			}
 		end
 	end

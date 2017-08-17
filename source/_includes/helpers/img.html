@@ -1,1 +1,28 @@
-<img src="{{ include.src }}" alt="{{ include.alt | xml_escape }}" width="{{ include.width | default='auto' }}" height="{{ include.height | default='auto' }}" border="0" vspace="0" hspace="0" />
+{%- capture w -%}
+	{%- if include.w != blank -%}
+		{{ include.w }}
+	{%- elsif include.format.w != blank -%}
+		{{ include.format.w }}
+	{%- else -%}
+		auto
+	{%- endif -%}
+{%- endcapture -%}
+{%- capture h -%}
+	{%- if include.h != blank -%}
+		{{ include.h }}
+	{%- elsif include.format.h != blank -%}
+		{{ include.format.h }}
+	{%- else -%}
+		auto
+	{%- endif -%}
+{%- endcapture -%}
+{%- capture src -%}
+	{{ include.src }}{{ include.format }}
+	{%- if include.format != blank -%}
+		?
+		{%- for param in include.format -%}
+			{{ param }}={{ include.format[param] }}{% if forloop.last == false %}&{%- endif -%}
+		{%- endfor -%}
+	{%- endif -%}
+{%- endcapture -%}
+<img src="{{ src }}" alt="{{ include.alt | xml_escape }}" width="{{ w }}" height="{{ h }}" border="0" vspace="0" hspace="0" />

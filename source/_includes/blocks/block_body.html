@@ -1,17 +1,18 @@
+{{ include.image_format }}
 {% for block in include.blocks %}
-	{% case block.item_type $}
+	{% case block.item_type %}
 		{% when "block_body_text" %}
 			<div class="block_body_text">
-				{{ block.text }}
+				{{ block.text | markdownify }}
 			</div>
 		{% when "block_body_gallery" %}
 			<div class="block_body_gallery">
 				<ul>
 					{% for image in block.images %}
-						<li>{% include helpers/img.html src=image.url alt=image.alt %}</li>
+						<li>{% include helpers/img.html src=image.url alt=image.alt format=include.image_format %}</li>
 					{% endfor %}
 				</ul>
-				{% if block.caption != '' %}<p class="caption">{{ block.caption }}</p>{% endif %}
+				{% if block.caption != blank %}<p class="caption">{{ block.caption }}</p>{% endif %}
 			</div>
 	{% endcase %}
 {% endfor %}

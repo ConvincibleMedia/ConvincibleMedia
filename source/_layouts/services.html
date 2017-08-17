@@ -12,7 +12,8 @@ layout: base
 <div id="body">
 	<div class="section">
 		<div class="container">
-			{% include blocks/block_body.html blocks=page.body %}
+			{% assign image_manip 
+			{% include blocks/block_body.html blocks=page.body image_format=page.image_formats.gallery %}
 		</div>
 	</div>
 </div>
