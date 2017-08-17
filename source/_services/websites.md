@@ -20,11 +20,5 @@ heading:
   updated_at: 2017-08-16 20:52:00.443000000 Z
   title_small: that's fast and effective
 body: []
-image_formats:
-  gallery:
-    w: 200
-    h: 200
-    fit: crop
-    crop: edges
 ---
 

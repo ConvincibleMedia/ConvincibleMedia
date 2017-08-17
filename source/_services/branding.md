@@ -53,11 +53,5 @@ body:
     alt: 
     title: 
   caption: Ellis Photographs
-image_formats:
-  gallery:
-    w: 200
-    h: 200
-    fit: crop
-    crop: edges
 ---
 

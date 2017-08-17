@@ -1,5 +1,5 @@
 body_gallery:
-    w: 200
-    h: 200
+    w: 300
+    h: 300
     fit: "crop"
     crop: "edges"
