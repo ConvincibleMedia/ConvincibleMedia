@@ -55,13 +55,17 @@ directory "source/_services" do
 				name: item.name,
 				seo: item.seo,
 				heading: item.heading.to_hash,
-				body: item.body.to_hash
+				body: item.body.to_hash,
 				image_formats:
+				{
 					gallery:
-						w: 200
-						h: 200
-						fit: crop
-						crop: edges
+					{
+						w: 200,
+						h: 200,
+						fit: 'crop',
+						crop: 'edges'
+					}
+				}
 			}
 		end
 	end

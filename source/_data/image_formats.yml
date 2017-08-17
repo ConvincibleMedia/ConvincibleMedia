@@ -1,0 +1,5 @@
+gallery:
+    w: 200
+    h: 200
+    fit: "crop"
+    crop: "edges"

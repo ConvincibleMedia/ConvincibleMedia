@@ -1,4 +1,3 @@
-{{ include.image_format }}
 {% for block in include.blocks %}
 	{% case block.item_type %}
 		{% when "block_body_text" %}
@@ -12,7 +11,7 @@
 						<li>{% include helpers/img.html src=image.url alt=image.alt format=include.image_format %}</li>
 					{% endfor %}
 				</ul>
-				{% if block.caption != blank %}<p class="caption">{{ block.caption }}</p>{% endif %}
+				{% if block.caption != nil %}<p class="caption">{{ block.caption }}</p>{% endif %}
 			</div>
 	{% endcase %}
 {% endfor %}

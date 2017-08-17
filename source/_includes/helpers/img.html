@@ -1,27 +1,28 @@
 {%- capture w -%}
-	{%- if include.w != blank -%}
+	{%- if include.w != nil -%}
 		{{ include.w }}
-	{%- elsif include.format.w != blank -%}
+	{%- elsif include.format.w != nil -%}
 		{{ include.format.w }}
 	{%- else -%}
 		auto
 	{%- endif -%}
 {%- endcapture -%}
 {%- capture h -%}
-	{%- if include.h != blank -%}
+	{%- if include.h != nil -%}
 		{{ include.h }}
-	{%- elsif include.format.h != blank -%}
+	{%- elsif include.format.h != nil -%}
 		{{ include.format.h }}
 	{%- else -%}
 		auto
 	{%- endif -%}
 {%- endcapture -%}
 {%- capture src -%}
-	{{ include.src }}{{ include.format }}
-	{%- if include.format != blank -%}
+	{{ include.src }}
+	{%- if include.format != nil -%}
 		?
 		{%- for param in include.format -%}
-			{{ param }}={{ include.format[param] }}{% if forloop.last == false %}&{%- endif -%}
+			{{ param | join: '=' }}
+			{%- if forloop.last == false -%}&{%- endif -%}
 		{%- endfor -%}
 	{%- endif -%}
 {%- endcapture -%}
