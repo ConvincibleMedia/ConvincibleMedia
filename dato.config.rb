@@ -55,7 +55,7 @@ directory "source/_services" do
 				name: item.name,
 				seo: item.seo,
 				heading: item.heading.to_hash,
-				body: item.body
+				body: item.body.to_hash
 			}
 		end
 	end
