@@ -1,4 +1,4 @@
-gallery:
+body_gallery:
     w: 200
     h: 200
     fit: "crop"
