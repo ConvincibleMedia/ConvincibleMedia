@@ -1,4 +1,2 @@
-git add -A && git commit -m "Regular deploy test"
-bundle exec dato dump
-jekyll serve
-rm Gemfile.lock
+./commit
+./run

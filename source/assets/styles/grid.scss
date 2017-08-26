@@ -1,5 +1,7 @@
 ---
 ---
+{% include helpers/breakpoints.scss %}
+
 * {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -14,24 +16,34 @@
 .container {
   margin-right: auto;
   margin-left: auto;
-  padding-left: 1em;
-  padding-right: 1em;
+  padding-left: 2em;
+  padding-right: 2em;
 }
-@media (min-width: 768px) {
+
+/**:hover { outline: 1px solid rgba(0, 0, 0, 0.1) } /*debug*/
+
+/* XS by default */
+
+/* Small SM */
+@media (min-width: 30em) {
   .container {
-    width: 722px;
+    width: 95%; /*outline: 1px solid yellow; outline-offset: -2px;*/
   }
 }
-@media (min-width: 992px) {
+/* Medium MD */
+@media (min-width: 50em) {
   .container {
-    width: 942px;
+    width: 80%; /*outline: 1px solid orange; outline-offset: -2px;*/
   }
 }
-@media (min-width: 1200px) {
+/* Large LG */
+@media (min-width: 80em) {
   .container {
-    width: 1142px;
+    width: 70em; /*outline: 1px solid red; outline-offset: -2px;*/
   }
 }
+
+
 .container-fluid {
   margin-right: auto;
   margin-left: auto;
@@ -48,6 +60,12 @@
   padding-left: 1em;
   padding-right: 1em;
 }
+
+
+
+/* Column Sizing */
+
+
 .col-xs-1, .col-xs-2, .col-xs-3, .col-xs-4, .col-xs-5, .col-xs-6, .col-xs-7, .col-xs-8, .col-xs-9, .col-xs-10, .col-xs-11, .col-xs-12 {
   float: left;
 }

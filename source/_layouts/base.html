@@ -2,6 +2,7 @@
 <html class="no-js" lang="en-GB">
 	<head>
 		<meta charset="utf-8" /><meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		{% if page.name == 'Index' %}{% assign home=true %}{% else %}{% assign home=false %}{% endif %}
 		
 		<title>{{ page.title }}</title>
 		
@@ -17,18 +18,28 @@
 		<link href="https://fonts.googleapis.com/css?family=Montserrat:600,600i,900|Source+Sans+Pro:300,300i" rel="stylesheet">
 		
 		<script src="/assets/scripts/vendor/modernizr-2.8.3.min.js"></script>
+		
+		{% if home %}
+			<meta name="p:domain_verify" content="d0219ccc18274430b1974dfc6b1b710e" />
+			
+		{% endif %}
 	</head>
 	<body>
 		<!--[if lt IE 8]>
             <p class="browserupgrade"><strong>You are using an outdated browser</strong>, so this site may not appear correctly. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
 		
-		{{ content }}
-		
-		{% include footer.html %}
+		<header>
+			{% include header.html home=home %}
+		</header>
+		<main>
+			{{ content }}
+		</main>
+		<footer>
+			{% include footer.html %}
+		</footer>
 		
 		{% include snippets/jquery.html %}
 		{% include snippets/analytics.html %}
-
 	</body>
 </html>
