@@ -1,5 +1,73 @@
 <section>
 	<div class="container">
-		Convincible.
+		<div class="row">
+			<div class="col-sm-4">
+				<h2 class="subtitle">Articles</h2>
+			</div>
+		</div>
+	</div>
+	<div class="container">
+		<div class="row">
+			<div class="col-md-4 col-sm-6">
+				<div class="card link">
+					<div class="card-image"><img src="/assets/images/home-hero.jpg" /></div>
+					<h3><a href="/">Changing minds at a time of change</a></h3>
+					<p>Some text uh isiof iseifseiofj sef jseijfs o ij ije ijoseif jsifioe .</p>
+				</div>
+			</div>
+			<div class="col-md-4 col-sm-6">
+				<div class="card link">
+					<div class="card-image"><img src="/assets/images/home-hero.jpg" /></div>
+					<h3><a href="/">Changing minds at a time of change</a></h3>
+					<p>Some text.</p>
+				</div>
+			</div>
+			<div class="clearfix visible-sm-block"></div>
+			<div class="col-md-4 col-sm-6 col-sm-offset-3 col-md-offset-0">
+				<div class="card link">
+					<div class="card-image"><img src="/assets/images/home-hero.jpg" /></div>
+					<h3><a href="/">Changing minds at a time of change</a></h3>
+					<p>Some textsefo isoef oise fios fois eifoseoif isfoiss iejisejfjisios iose iosj iosj sjfsefj sojfoisjsieoj soief jios oiijse joise oisf .</p>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-4 col-sm-offset-4">
+				<p><a href="/showcase.html" class="button">All Articles</a></p>
+			</div>
+		</div>	
+	</div>
+</section>
+
+<section id="bottom">
+	<div class="container">
+		<div id="logo">
+			<span><a href="/">{% include helpers/img.html src='/assets/images/logo-white.png' alt='Convincible.' title='Home' w='100%' %}</a></span>
+		</div>
+		<nav>
+			<ul>
+			{% assign collections = site.collections | sort: 'order', 'last' %}
+			{% for collection in collections %}
+				{% if collection.output == true and collection.label != 'posts' %}
+					<li><a href="/{{ collection.label }}.html">{{ collection.title | default: collection.label | camelcase }}</a>
+						<ul>
+							{% for doc in collection.docs %}
+								<li><a href="{{ doc.url }}">{{ doc.title }}</a></li>
+							{% endfor %}
+						</ul>
+					</li>
+				{% endif %}
+			{% endfor %}
+			</ul>
+		</nav>
+		<div class="clearfix"></div>
+		<div class="small">
+			<p>Convincible is a sole tradership owned and managed by Virgil Ierubino.</p>
+			<p>It is not a separate legal or financial entity from its owner.</p>
+			<p>All content © 2017.</p>
+			<p>Office: 68 Sleaford Street, Cambridge, CB1 2PU.</p>
+		</div>
 	</div>
 </section>

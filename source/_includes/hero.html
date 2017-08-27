@@ -1,0 +1,27 @@
+{%- capture src -%}
+	{{ include.image }}?
+	{%- for param in site.data.image_formats.hero -%}
+		{{ param | join: '=' }}
+		{%- if forloop.last == false -%}&{%- endif -%}
+	{%- endfor -%}
+{%- endcapture -%}
+<header id="hero" style="background-image: url('{{ src }}')">
+	<section class="header-{{ include.type }}">
+		<div id="hero-box">
+			<div class="container">
+				<div id="hero-text">
+					<h1>Website Under Construction</h1>
+				</div>
+				{% if include.type == 'home' %}
+					<div id="hero-action">
+						<div class="row">
+							<div class="col-md-4 col-sm-6">
+								<a href="/{{ include.action_url }}.html" class="button">{{ include.action_text }}</a>
+							</div>
+						</div>
+					</div>
+				{% endif %}
+			</div>
+		</div>
+	</section>
+</header>

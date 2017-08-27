@@ -3,3 +3,10 @@ body_gallery:
     h: 300
     fit: "crop"
     crop: "edges"
+    auto: "compress,format"
+    fm: "jpg"
+hero:
+    auto: "compress,format"
+    fm: "jpg"
+    q: 50
+    fit: "max"

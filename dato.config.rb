@@ -22,6 +22,7 @@ create_post "source/index.md" do
 		name: home.name,
 		seo: home.seo,
 		tagline: home.tagline,
+		hero_image_src: home.hero_image.url,
 		services: home.services.map do |item|
 		{
 			name: item.name,

@@ -1,5 +1,27 @@
-@mixin small() {
+/* X-Small XS */
+@mixin xs() {
 	@media (max-width: 30em) {
+		@content;
+	}
+}
+
+/* Small SM */
+@mixin sm() {
+	@media (min-width: 30em) {
+		@content;
+	}
+}
+
+/* Medium MD */
+@mixin md() {
+	@media (min-width: 50em) {
+		@content;
+	}
+}
+
+/* Large LG */
+@mixin lg() {
+	@media (min-width: 80em) {
 		@content;
 	}
 }
