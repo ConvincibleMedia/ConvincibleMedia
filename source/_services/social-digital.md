@@ -1,9 +1,13 @@
 ---
 layout: services
+collection: services
 order: 9
 name: Social/Digital
 seo: 
+hero_image_src: ''
 heading: []
-body: []
+intro: []
+elements: []
+subservices: []
 ---
 

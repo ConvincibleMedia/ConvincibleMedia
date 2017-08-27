@@ -2,7 +2,7 @@
 layout: index
 name: Index
 seo: 
-tagline: Website Under Construction
+tagline: We empower communications.
 hero_image_src: https://www.datocms-assets.com/3013/1503772474-nasa-sts130-s-043-2.png
 services:
 - name: Branding

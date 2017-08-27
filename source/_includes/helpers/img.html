@@ -26,4 +26,8 @@
 		{%- endfor -%}
 	{%- endif -%}
 {%- endcapture -%}
-<img src="{{ src }}" alt="{{ include.alt | xml_escape }}" {% if include.title != nil %}title="{{ include.title | xml_escape }}"{% endif %} width="{{ w }}" height="{{ h }}" border="0" vspace="0" hspace="0" />
+{%- if include.src_only -%}
+	{{ src }}
+{%- else -%}
+	<img src="{{ src }}" alt="{{ include.alt | xml_escape }}" {% if include.title != nil %}title="{{ include.title | xml_escape }}"{% endif %} width="{{ w }}" height="{{ h }}" border="0" vspace="0" hspace="0" />
+{%- endif -%}

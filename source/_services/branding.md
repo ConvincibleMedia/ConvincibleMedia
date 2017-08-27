@@ -1,16 +1,18 @@
 ---
 layout: services
+collection: services
 order: 1
 name: Branding
 seo: !ruby/object:Dato::Local::FieldType::Seo
   title: Branding
   description: We brand you, so you don't have to.
   image: 
+hero_image_src: ''
 heading:
-- id: '86949'
+- id: '91262'
   item_type: block_heading_small
-  updated_at: 2017-08-16 16:00:52.135000000 Z
-  title_small: We'll help you
+  updated_at: 2017-08-27 13:43:25.278000000 Z
+  text: We'll help you
 - id: '86950'
   item_type: block_heading_large
   updated_at: 2017-08-16 16:00:52.208000000 Z
@@ -19,6 +21,8 @@ heading:
   item_type: block_heading_medium
   updated_at: 2017-08-16 16:00:52.222000000 Z
   text: your most powerful asset
-body: []
+intro: []
+elements: []
+subservices: []
 ---
 

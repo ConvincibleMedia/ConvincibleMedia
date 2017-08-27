@@ -32,18 +32,44 @@ body {
     margin-bottom: 0.5em; }
 
 h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
-  font-family: "Montserrat SemiBold", "Montserrat", "Arial Black", "Tahoma", Sans-Serif;
-  margin: 0; }
+  font-family: "Montserrat", "Arial Black", "Tahoma", Sans-Serif;
+  font-weight: 600;
+  margin: 0;
+  display: block; }
   h1.subtitle, h2.subtitle, h3.subtitle, h4.subtitle, h5.subtitle, h6.subtitle, .h1.subtitle, .h2.subtitle, .h3.subtitle, .h4.subtitle, .h5.subtitle, .h6.subtitle {
-    font-family: "Montserrat ExtraLight", "Montserrat", "Arial", "Tahoma", Sans-Serif; }
-
-h1, .h1 {
-  font-family: "Montserrat Black", "Montserrat", "Arial Black", "Tahoma", Sans-Serif; }
+    font-family: "Montserrat", "Arial Black", "Tahoma", Sans-Serif;
+    font-weight: 200; }
 
 h1, h2, h3, .h1, .h2, .h3 {
   border-bottom: 0.1em solid #f63;
   padding-bottom: 0.4em; }
 
+h2, h3, h4, h5, h6, .h2, .h3, .h4, .h5, .h6 {
+  font-weight: 600; }
+
+h1, .h1 {
+  font-size: 200%;
+  border-bottom-width: 0.2em; }
+
+h1, .h1 {
+  font-size: 200%; }
+
+h2, .h2 {
+  font-size: 150%; }
+
+h3, .h3 {
+  font-size: 120%; }
+
+h4, .h4 {
+  font-size: 100%; }
+
+h5, .h5 {
+  font-size: 100%; }
+
+h6, .h6 {
+  font-size: 100%; }
+
+/* Text Structure */
 h2, h3, h4, h5, h6, .h2, .h3, .h4, .h5, .h6, p {
   margin: 0 0 1em 0; }
 
@@ -62,12 +88,17 @@ a:after {
   content: '\2192';
   display: inline;
   margin: 0 0.2em 0 0.2em;
+  font-family: inherit;
   color: #e87123;
   transition: 0.25s; }
 
 #top a:after, #bottom a:after {
   content: none; }
 
+main section, footer section {
+  padding: 1em 0; }
+
+/* Top */
 #logo {
   width: 15em;
   min-width: 150px; }
@@ -78,33 +109,36 @@ a:after {
     display: block;
     width: 100%; }
 
-header .header-inside {
+#top .header-inside {
   padding-top: 1em; }
 
-header .header-home {
+#top .header-home {
   padding-top: 1em; }
-  header .header-home #logo {
+  #top .header-home #logo {
     width: 30em;
     max-width: 50%; }
   @media (max-width: 30em) {
-    header .header-home #logo {
+    #top .header-home #logo {
       max-width: 90%; } }
 
 @media (min-width: 30em) {
-  header .header-inside {
+  #top .header-inside {
     padding: 1em 0; }
 
-  header .header-home {
+  #top .header-home {
     padding: 2em 0; } }
+/* Navigation */
 nav ul, nav li {
   display: block;
   list-style: none;
   margin: 0;
-  padding: 0;
-  float: left; }
+  padding: 0; }
 
 nav ul {
   margin: 0 -1em; }
+
+nav ul li {
+  float: left; }
 
 nav ul ul {
   display: none; }
@@ -117,17 +151,35 @@ nav li a {
   #logo {
     float: left; }
 
+  nav ul li {
+    float: left; }
+
   nav {
     float: right; } }
+nav li.button {
+  float: right;
+  margin: 0 1em; }
+
+/* Hero Headers */
 header#hero {
   background-repeat: no-repeat;
   background-position: center center;
   background-attachment: scroll;
   background-size: cover; }
-  header#hero #hero-text h1 {
+  header#hero #hero-text {
     color: #fff;
-    border-bottom-width: 0.2em;
     text-shadow: 0 0 1em rgba(0, 0, 0, 0.5); }
+    header#hero #hero-text h1 {
+      border-bottom-width: 0.2em; }
+    header#hero #hero-text .h2 {
+      margin-bottom: 0.8em; }
+    header#hero #hero-text ul, header#hero #hero-text li {
+      display: block;
+      list-style: none;
+      margin: 0;
+      padding: 0; }
+    header#hero #hero-text ul li a {
+      color: #ff9c26; }
   @media (min-width: 50em) {
     header#hero h1 {
       font-size: 300%; } }
@@ -136,6 +188,8 @@ header#hero {
   header#hero .header-home #hero-box {
     padding-top: 4em;
     padding-bottom: 5em; }
+  header#hero .header-home h1, header#hero .header-home .h1 {
+    font-weight: 900; }
   header#hero .header-home a.button {
     background-color: #f63;
     box-shadow: 0 0 1em rgba(255, 255, 255, 0.5); }
@@ -143,16 +197,24 @@ header#hero {
     background: rgba(0, 0, 0, 0.25);
     background: -webkit-linear-gradient(bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0));
     padding-top: 10em;
-    padding-bottom: 1em; }
+    padding-bottom: 2em; }
+  header#hero section {
+    padding: 0; }
 
-main section, footer section {
-  padding: 1em 0; }
+/* Headings */
+.heading-blocks .heading-small, .heading-blocks .heading-medium, .heading-blocks .heading-large {
+  display: block; }
+.heading-blocks .heading-small {
+  font-size: 80%; }
+.heading-blocks .heading-medium {
+  font-size: 90%; }
 
 /* BUTTONS */
 a.button {
   display: block;
   padding: 0.5em 1em;
-  font-family: "Montserrat SemiBold", "Montserrat", "Arial Black", "Tahoma", Sans-Serif;
+  font-family: "Montserrat", "Arial Black", "Tahoma", Sans-Serif;
+  font-weight: 600;
   text-align: center;
   color: #fff;
   background-color: #ee314a;
@@ -217,23 +279,24 @@ blockquote {
   position: relative;
   margin: 0 -4em 1em -4em;
   padding: 2em 4em; }
-  blockquote p:first-of-type:before, blockquote p:last-of-type:after {
+  blockquote.quote:before, blockquote.quote:after {
     display: block;
     position: absolute;
     font-size: 5em;
-    font-family: "Montserrat Black", "Montserrat", "Arial Black", "Tahoma", Sans-Serif;
+    font-family: "Montserrat", "Arial Black", "Tahoma", Sans-Serif;
+    font-weight: 900;
     color: #bbb;
     line-height: 0; }
-  blockquote p:last-of-type {
-    margin-bottom: 0; }
-  blockquote p:first-of-type:before {
+  blockquote.quote:before {
     content: '\201c';
     top: 0.383em;
     left: 0; }
-  blockquote p:last-of-type:after {
+  blockquote.quote:after {
     content: '\201d';
     bottom: -0.053em;
     right: 0; }
+  blockquote p:last-of-type {
+    margin-bottom: 0; }
   blockquote cite {
     display: block;
     text-align: right;
@@ -252,8 +315,6 @@ blockquote.feature p {
 
 #home-approach {
   background-color: #ffd9cc; }
-  #home-approach p:before, #home-approach p:after {
-    content: none; }
   #home-approach .row {
     margin-top: 1em; }
   @media (min-width: 30em) {
@@ -261,7 +322,8 @@ blockquote.feature p {
       margin-bottom: -3.8em; } }
   #home-approach .card {
     background-color: #f63;
-    font-family: "Montserrat Black", "Montserrat", "Arial Black", "Tahoma", Sans-Serif;
+    font-family: "Montserrat", "Arial Black", "Tahoma", Sans-Serif;
+    font-weight: 900;
     font-size: 150%;
     padding: 0.5em;
     color: #fff;
@@ -286,7 +348,8 @@ blockquote.feature p {
   #contact .card p strong {
     display: block;
     font-weight: normal;
-    font-family: "Montserrat Black", "Montserrat", "Arial Black", "Tahoma", Sans-Serif; }
+    font-family: "Montserrat", "Arial Black", "Tahoma", Sans-Serif;
+    font-weight: 900; }
 
 #footer {
   color: #fff; }
@@ -311,6 +374,15 @@ blockquote.feature p {
 
 .js .link {
   cursor: pointer; }
+
+.log {
+  position: absolute;
+  font-size: 60%;
+  opacity: 0.3; }
+  .log:hover {
+    opacity: 1;
+    z-index: 999;
+    background: #fff; }
 
 .debug:hover, .debug *:hover {
   outline: 1px solid rgba(0, 0, 0, 0.1);

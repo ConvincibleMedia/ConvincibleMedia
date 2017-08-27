@@ -1,9 +1,13 @@
 ---
 layout: services
+collection: services
 order: 6
 name: Print Material
 seo: 
+hero_image_src: ''
 heading: []
-body: []
+intro: []
+elements: []
+subservices: []
 ---
 

@@ -1,9 +1,13 @@
 ---
 layout: services
+collection: services
 order: 5
 name: Copywriting
 seo: 
+hero_image_src: ''
 heading: []
-body: []
+intro: []
+elements: []
+subservices: []
 ---
 

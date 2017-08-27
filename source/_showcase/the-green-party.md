@@ -1,5 +1,6 @@
 ---
 layout: showcase
+collection: showcase
 order: 2
 name: The Green Party
 seo: !ruby/object:Dato::Local::FieldType::Seo
@@ -7,6 +8,5 @@ seo: !ruby/object:Dato::Local::FieldType::Seo
   description: We did good things for them.
   image: 
 heading: []
-body: []
 ---
 

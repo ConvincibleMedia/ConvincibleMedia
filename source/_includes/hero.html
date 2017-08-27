@@ -1,16 +1,49 @@
 {%- capture src -%}
-	{{ include.image }}?
-	{%- for param in site.data.image_formats.hero -%}
-		{{ param | join: '=' }}
-		{%- if forloop.last == false -%}&{%- endif -%}
-	{%- endfor -%}
+	{%- include helpers/img.html
+		src=include.image
+		format=site.data.image_formats.hero
+		src_only=true
+	-%}
 {%- endcapture -%}
 <header id="hero" style="background-image: url('{{ src }}')">
 	<section class="header-{{ include.type }}">
 		<div id="hero-box">
 			<div class="container">
 				<div id="hero-text">
-					<h1>Website Under Construction</h1>
+					{% assign section = site.collections | where:'label',page.collection | first %}
+					{% if include.type == 'inside' and include.breadcrumb > 0 %}
+						<div class="row">
+							<div class="col-sm-6 col-md-4">
+								{% capture breadcrumb-inner %}
+									<ul>
+										<li>
+											<span class="h2 subtitle">
+												{% if include.breadcrumb >= 2 %}
+													{{ page.name }}
+												{% else %}
+													{{ section.title }}
+												{% endif %}
+											</span>
+										</li>
+									</ul>
+								{% endcapture %}
+								<ul>
+									{% if include.breadcrumb >= 2 %}
+										<li>
+											<a href="/{{ section.label }}.html">{{ section.title }}</a>
+											{{ breadcrumb-inner }}
+										</li>
+									{% else %}
+										<li>
+											<a href="/" class="hide">Home</a>
+											{{ breadcrumb-inner }}
+										</li>
+									{% endif %}
+								</ul>
+							</div>
+						</div>
+					{% endif %}
+					<h1>{% include blocks/block_heading.html blocks=include.heading %}</h1>
 				</div>
 				{% if include.type == 'home' %}
 					<div id="hero-action">

@@ -6,6 +6,7 @@ body_gallery:
     auto: "compress,format"
     fm: "jpg"
 hero:
+    w: 1280
     auto: "compress,format"
     fm: "jpg"
     q: 50

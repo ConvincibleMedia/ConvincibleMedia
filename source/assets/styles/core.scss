@@ -4,9 +4,8 @@
 {% include helpers/helpers.scss %}
 
 $font-body: 'Source Sans Pro', 'Segoe UI', 'Arial', 'Tahoma', Sans-Serif;
-$font-heading-1: 'Montserrat Black', 'Montserrat', 'Arial Black', 'Tahoma', Sans-Serif;
-$font-heading-2: 'Montserrat SemiBold', 'Montserrat', 'Arial Black', 'Tahoma', Sans-Serif;
-$font-heading-3: 'Montserrat ExtraLight', 'Montserrat', 'Arial', 'Tahoma', Sans-Serif;
+$font-heading: 'Montserrat', 'Arial Black', 'Tahoma', Sans-Serif;
+
 $color-1: #f63;
 $color-2: #ff9c26;
 $color-3: #ee314a;
@@ -36,21 +35,35 @@ body {
 }
 
 #{enumerate('h', 1, 6)}, #{enumerate('.h', 1, 6)} {
-	font-family: $font-heading-2;
+	font-family: $font-heading; font-weight: 600;
 	margin: 0;
+	display: block;
 
 	&.subtitle {
-		font-family: $font-heading-3;
+		font-family: $font-heading; font-weight: 200;
 	}
 }
-h1, .h1 { font-family: $font-heading-1; }
 #{enumerate('h', 1, 3)}, #{enumerate('.h', 1, 3)} {
 	border-bottom: 0.1em solid $color-1;
 	padding-bottom: 0.4em;
 }
+#{enumerate('h', 2, 6)}, #{enumerate('.h', 2, 6)} {
+	font-weight: 600;
+}
+h1, .h1 { font-size: 200%; border-bottom-width: 0.2em; }
+h1, .h1 { font-size: 200%; }
+h2, .h2 { font-size: 150%; }
+h3, .h3 { font-size: 120%; }
+h4, .h4 { font-size: 100%; }
+h5, .h5 { font-size: 100%; }
+h6, .h6 { font-size: 100%; }
+
+/* Text Structure */
+
 #{enumerate('h', 2, 6)}, #{enumerate('.h', 2, 6)}, p {
 	margin: 0 0 1em 0
 }
+
 
 a, a:link, a:hover, a:visited, a:active {
 	text-decoration: none;
@@ -69,6 +82,7 @@ a:after {
 	content: '\2192';
 	display: inline;
 	margin: 0 0.2em 0 0.2em;
+	font-family: inherit;
 	color: $color-5;
 	transition: 0.25s;
 }
@@ -78,7 +92,9 @@ a:after {
 	}
 }
 
+main section, footer section { padding: 1em 0; }
 
+/* Top */
 #logo {
 	width: 15em;
 	min-width: 150px;
@@ -93,10 +109,10 @@ a:after {
 		width: 100%;
 	}
 }
-header .header-inside {
+#top .header-inside {
 	padding-top: 1em;
 }
-header .header-home {
+#top .header-home {
 	padding-top: 1em;
 	
 	#logo {
@@ -108,16 +124,19 @@ header .header-home {
 	}
 }
 @include sm() {
-	header .header-inside {
+	#top .header-inside {
 		padding: 1em 0;
 	}
-	header .header-home {
+	#top .header-home {
 		padding: 2em 0;
 	}
 }
 
-nav { ul, li { display: block; list-style: none; margin: 0; padding: 0; float: left; } }
+/* Navigation */
+
+nav { ul, li { display: block; list-style: none; margin: 0; padding: 0; } }
 nav ul { margin: 0 -1em; }
+nav ul li { float: left; }
 nav ul ul { display: none }
 nav li a {
 	display: block;
@@ -128,10 +147,18 @@ nav li a {
 	#logo {
 		float: left;
 	}
+	nav ul li { float: left; }
 	nav {
 		float: right;
 	}
 }
+
+nav li.button {
+	float: right;
+	margin: 0 1em;
+}
+
+/* Hero Headers */
 
 header#hero {
 	background-repeat: no-repeat;
@@ -140,11 +167,18 @@ header#hero {
 	background-size: cover;
 	
 	#hero-text {
+		color: #fff;
+		text-shadow: 0 0 1em rgba(0, 0, 0, 0.5);
+		
 		h1 {
-			color: #fff;
 			border-bottom-width: 0.2em;
-			text-shadow: 0 0 1em rgba(0, 0, 0, 0.5);
 		}
+		.h2 { margin-bottom: 0.8em }
+		
+		ul, li { display: block; list-style: none; margin: 0; padding: 0; }
+		
+		ul li a { color: $color-2; }
+		
 	}
 	
 	@include md() {
@@ -163,6 +197,8 @@ header#hero {
 			padding-top: 4em; padding-bottom: 5em;
 		}
 		
+		h1, .h1 { font-weight: 900; }
+		
 		a.button {
 			background-color: $color-1;
 			box-shadow: 0 0 1em rgba(255, 255, 255, 0.5);
@@ -173,20 +209,33 @@ header#hero {
 		#hero-box {
 			background: rgba(0, 0, 0, 0.25);
 			background: -webkit-linear-gradient(bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0));
-			padding-top: 10em; padding-bottom: 1em;
+			padding-top: 10em; padding-bottom: 2em;
 		}
 	}
+	
+	section { padding: 0 }
 }
 
 
 
-main section, footer section { padding: 1em 0; }
+
+/* Headings */
+
+.heading-blocks {
+	.heading-small, .heading-medium, .heading-large {
+		display: block;
+	}
+	.heading-small { font-size: 80%; }
+	.heading-medium { font-size: 90%; }
+}
+
+
 
 /* BUTTONS */
 a.button {
 	display: block;
 	padding: 0.5em 1em;
-	font-family: $font-heading-2;
+	font-family: $font-heading; font-weight: 600;
 	text-align: center;
 	color: #fff;
 	background-color: $color-3;
@@ -272,19 +321,20 @@ blockquote {
 	margin: 0 -4em 1em -4em;
 	padding: 2em 4em;
 	
-	p:first-of-type:before, p:last-of-type:after {
-		display: block;
-		position: absolute;
-		font-size: 5em;
-		font-family: $font-heading-1;
-		color: #bbb;
-		line-height: 0;
+	&.quote {
+		&:before, &:after {
+			display: block;
+			position: absolute;
+			font-size: 5em;
+			font-family: $font-heading; font-weight: 900;
+			color: #bbb;
+			line-height: 0;
+		}
+		&:before { content: '\201c'; top: 0.383em; left: 0; }
+		&:after { content: '\201d'; bottom: -0.053em; right: 0; }
 	}
 	
 	p:last-of-type { margin-bottom: 0 }
-	
-	p:first-of-type:before { content: '\201c'; top: 0.383em; left: 0; }
-	p:last-of-type:after { content: '\201d'; bottom: -0.053em; right: 0; }
 	
 	cite {
 		display: block;
@@ -304,12 +354,6 @@ blockquote.feature p {
 #home-approach {
 	background-color: lighten($color-1, 30%);
 	
-	p {
-		&:before, &:after {
-			content: none;
-		}
-	}
-	
 	.row { margin-top: 1em }
 	@include sm() {
 		.row { 
@@ -318,7 +362,7 @@ blockquote.feature p {
 	}
 	.card {
 		background-color: $color-1;
-		font-family: $font-heading-1;
+		font-family: $font-heading; font-weight: 900;
 		font-size: 150%;
 		padding: 0.5em;
 		color: #fff;
@@ -353,7 +397,7 @@ blockquote.feature p {
 		strong {
 			display: block;
 			font-weight: normal;
-			font-family: $font-heading-1;
+			font-family: $font-heading; font-weight: 900;
 		}
 	}
 }
@@ -381,5 +425,5 @@ blockquote.feature p {
 
 
 
-
+.log { position: absolute; font-size: 60%; opacity: 0.3; &:hover { opacity: 1; z-index: 999; background: #fff } }
 .debug:hover, .debug *:hover { outline: 1px solid rgba(0, 0, 0, 0.1); outline-offset: -2px; }

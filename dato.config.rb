@@ -52,11 +52,15 @@ directory "source/_services" do
 		create_post "#{item.slug}.md" do
 			frontmatter :yaml, {
 				layout: 'services',
+				collection: 'services',
 				order: index + 1,
 				name: item.name,
 				seo: item.seo,
+				hero_image_src: defined?(item.hero_image.url) ? item.hero_image.url : '',
 				heading: item.heading.to_hash,
-				body: item.body.to_hash
+				intro: item.intro.to_hash,
+				elements: item.elements.to_hash,
+				subservices: item.sub_services.to_hash
 			}
 		end
 	end
@@ -68,11 +72,11 @@ directory "source/_showcase" do
 		create_post "#{item.slug}.md" do
 			frontmatter :yaml, {
 				layout: 'showcase',
+				collection: 'showcase',
 				order: index + 1,
 				name: item.name,
 				seo: item.seo,
-				heading: item.heading.to_hash,
-				body: item.body.to_hash
+				heading: item.heading.to_hash
 			}
 		end
 	end

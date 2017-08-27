@@ -1,10 +1,42 @@
 ---
 layout: base
 ---
-<div id="body">
-	<div class="section">
-		<div class="container">
-			{% include blocks/block_body.html blocks=page.body %}
+{% include hero.html
+	type='inside'
+	image=page.hero_image_src
+	breadcrumb=2
+	heading=page.heading
+%}
+
+<section>
+	<div class="container">
+		<blockquote>
+			<div class="row">
+				<div class="col-md-8 col-md-offset-2">
+					<p>jelo</p>
+				</div>
+			</div>
+		</blockquote>
+		<div class="row">
+				<div class="col-md-8 col-md-offset-2"><p>WE mads</p></div>
+			</div>
+		
+	</div>
+</section>
+
+<section id="elements">
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-8 col-sm-offset-2">
+				<h2>{{ page.elements.heading }}</h2>
+			</div>
+		</div>
+		{{ page.elements }}
+		{% include blocks/block_card.html blocks=page.elements %}
+		<div class="row">
+			<div class="col-sm-8 col-sm-offset-2">
+				<p>{{ page.elements.text }}</p>
+			</div>
 		</div>
 	</div>
-</div>
+</section>

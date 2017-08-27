@@ -1,7 +1,13 @@
 ---
 layout: base
 ---
-{% include hero.html type='home' image=page.hero_image_src action_url='contact' action_text='Contact Us' %}
+{% include hero.html
+	type='home'
+	heading=page.tagline
+	image=page.hero_image_src
+	action_url='contact'
+	action_text='Contact Us'
+%}
 
 <section>
 	<div class="container">
@@ -24,7 +30,7 @@ layout: base
 				<div class="row">
 			{% endif %}
 			<div class="col-sm-4">
-				<div data-tilt class="card link tilt {% if forloop.index <= 3 %}feature{% endif %}">
+				<div class="card link tilt {% if forloop.index <= 3 %}feature{% endif %}">
 					<h3><a href="/services/{{ item.link }}.html">{{ item.name }}</a></h3>
 					<p>{{ item.description.description }}</p>
 				</div>
@@ -38,7 +44,7 @@ layout: base
 
 <section>
 	<div class="container">
-		<blockquote class="feature">
+		<blockquote class="feature quote">
 			<p>Convincible go out of their way to understand and deliver what you need. Thank you.</p>
 			<cite>Virgil</cite>
 		</blockquote>

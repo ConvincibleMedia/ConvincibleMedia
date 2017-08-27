@@ -1,0 +1,88 @@
+{% assign cols = site.data.card_sizes %}
+{% assign max = cols['max'] %}
+
+{% assign row_sm = 0 %}
+{% assign row_md = 0 %}
+{% assign row_lg = 0 %}
+
+{% for block in include.blocks %}
+	
+	{% if block.item_type == "block_other_card" %}
+	<p class="log">foudn block: {{ block }}</p>
+	<p class="log">size: {{block.size}}</p>
+		{% case block.size %}
+			{% when "Solo" %}
+				{% assign card_size = "solo" %}
+			{% when "Large" %}
+				{% assign card_size = "large" %}
+			{% when "Medium" %}
+				{% assign card_size = "medium" %}
+			{% when "Small" %}
+				{% assign card_size = "small" %}
+			{% else %}
+				{% assign card_size = "small" %}
+		{% endcase %}
+		
+		{% assign card_xs = 12 %}
+		{% if cols[card_size].sm %}{% assign card_sm = cols[card_size].sm %}{% else %}{% assign card_sm = card_xs %}{% endif %}
+		{% if cols[card_size].md %}{% assign card_md = cols[card_size].md %}{% else %}{% assign card_md = card_sm %}{% endif %}
+		{% if cols[card_size].lg %}{% assign card_lg = cols[card_size].lg %}{% else %}{% assign card_lg = card_md %}{% endif %}
+		
+		<p class="log">Uses the following sizes: {{ card_xs }} /  {{ card_sm }} /  {{ card_md }} /  {{ card_lg }} </p>
+		<p class="log">Rows currently at: {{ row_sm }} /  {{ row_md }} /  {{ row_lg }} </p>
+		
+		
+		{% if row_sm == 0 and row_md == 0 and row_lg == 0 %}
+			<div class="row">
+		{% endif %}
+		
+		{% assign row_sm = row_sm | plus: card_sm %}
+		{% assign row_md = row_md | plus: card_md %}
+		{% assign row_lg = row_lg | plus: card_lg %}
+		
+		<p class="log">Rows now at:  {{ row_sm }} /  {{ row_md }} /  {{ row_lg }} </p>
+
+		
+		
+		{%- capture clearfix -%}
+			{%- if row_sm > max %} visible-sm-block{%- endif -%}
+			{%- if row_md > max %} visible-md-block{%- endif -%}
+			{%- if row_lg > max %} visible-lg-block{%- endif -%}
+		{%- endcapture -%}
+		
+		{% if clearfix.size > 0 %}
+			<p class="log">{{clearfix}}</p>
+			<div class="clearfix{{ clearfix }}"></div>
+		{% endif %}
+		
+		<div class="col-sm-{{card_sm}} col-md-{{card_md}} col-lg-{{card_lg}}">
+			<div class="card">
+				{% if block.subtitle %}<p class="h4 subtitle">{{ block.subtitle }}</p>{% endif %}
+				{% if block.name %}
+					<h3>
+						{% if block.link %}<a href="{{ block.link.url }}">{% endif %}
+						{{ block.name }}
+						{% if block.link %}</a>{% endif %}
+					</h3>
+				{% endif %}
+				{% if block.description %}<p>{{ block.description }}</p>{% endif %}
+			</div>
+		</div>
+		
+		{%- if row_sm > max %}{% assign row_sm = 0 %}{%- endif -%}
+		{%- if row_md > max %}{% assign row_md = 0 %}{%- endif -%}
+		{%- if row_lg > max %}{% assign row_lg = 0 %}{%- endif -%}
+		
+		{% if forloop.last %}
+			{% assign row_sm = 0 %}
+			{% assign row_md = 0 %}
+			{% assign row_lg = 0 %}
+		{% endif %}
+		
+		{% if row_sm == 0 and row_md == 0 and row_lg == 0 %}
+			</div>
+		{% endif %}
+		
+	{% endif %}
+	
+{% endfor %}
