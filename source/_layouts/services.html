@@ -26,17 +26,10 @@ layout: base
 
 <section id="elements">
 	<div class="container">
-		<div class="row">
-			<div class="col-sm-8 col-sm-offset-2">
-				<h2>{{ page.elements.heading }}</h2>
-			</div>
-		</div>
-		{{ page.elements }}
+
+		
 		{% include blocks/block_card.html blocks=page.elements %}
-		<div class="row">
-			<div class="col-sm-8 col-sm-offset-2">
-				<p>{{ page.elements.text }}</p>
-			</div>
-		</div>
+
+		
 	</div>
 </section>

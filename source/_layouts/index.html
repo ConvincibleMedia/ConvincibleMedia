@@ -5,7 +5,7 @@ layout: base
 	type='home'
 	heading=page.tagline
 	image=page.hero_image_src
-	action_url='contact'
+	action_url='#contact'
 	action_text='Contact Us'
 %}
 
@@ -31,8 +31,8 @@ layout: base
 			{% endif %}
 			<div class="col-sm-4">
 				<div class="card link tilt {% if forloop.index <= 3 %}feature{% endif %}">
-					<h3><a href="/services/{{ item.link }}.html">{{ item.name }}</a></h3>
-					<p>{{ item.description.description }}</p>
+					<h3><!--<a href="/services/{{ item.link }}.html">-->{{ item.name }}<!--</a>--></h3>
+					<p>{{ item.description }}</p>
 				</div>
 			</div>
 			{% if mod == 2 or forloop.last %}
@@ -45,17 +45,22 @@ layout: base
 <section>
 	<div class="container">
 		<blockquote class="feature quote">
-			<p>Convincible go out of their way to understand and deliver what you need. Thank you.</p>
-			<cite>Virgil</cite>
+			{% assign quotes = page.quotes | limit: 1 %}
+			{% for quote in page.quotes %}
+				{{ quote.paragraphs | markdownify }}
+				{% if quote.cite %}<cite>{{ quote.cite }}</cite>{% endif %}
+			{% endfor %}
 		</blockquote>
 	</div>
+	<!--
 	<div class="container">
 		<div class="row">
 			<div class="col-sm-4 col-sm-offset-4">
 				<p><a href="/contact.html" class="button">Why Choose Us</a></p>
 			</div>
-		</div>	
+		</div>
 	</div>
+	//-->
 </section>
 
 <section>
@@ -66,30 +71,22 @@ layout: base
 			</div>
 		</div>
 		<div class="row">
-			<div class="col-md-4 col-sm-6">
-				<div class="card link">
-					<div class="card-image"><img src="/assets/images/home-hero.jpg" /></div>
-					<h3><a href="/">Changing minds at a time of change</a></h3>
-					<p>Some text uh isiof iseifseiofj sef jseijfs o ij ije ijoseif jsifioe .</p>
+			{% for item in page.showcase %}
+				{% assign mod = forloop.index0 | modulo: 3 %}
+				<div class="col-md-4 col-sm-6">
+					<div class="card link">
+						<div class="card-image">{% include helpers/img.html src=item.image format=site.data.images.thumb h=200 %}</div>
+						<h3><!--<a href="/showcase/{{ item.link }}.html">-->{{ item.name }}<!--</a>--></h3>
+						{{ item.description | markdownify }}
+					</div>
 				</div>
-			</div>
-			<div class="col-md-4 col-sm-6">
-				<div class="card link">
-					<div class="card-image"><img src="/assets/images/home-hero.jpg" /></div>
-					<h3><a href="/">Changing minds at a time of change</a></h3>
-					<p>Some text.</p>
-				</div>
-			</div>
-			<div class="clearfix visible-sm-block"></div>
-			<div class="col-md-4 col-sm-6 col-sm-offset-3 col-md-offset-0">
-				<div class="card link">
-					<div class="card-image"><img src="/assets/images/home-hero.jpg" /></div>
-					<h3><a href="/">Changing minds at a time of change</a></h3>
-					<p>Some textsefo isoef oise fios fois eifoseoif isfoiss iejisejfjisios iose iosj iosj sjfsefj sojfoisjsieoj soief jios oiijse joise oisf .</p>
-				</div>
-			</div>
+				{% if mod == 2 %}
+					<div class="clearfix visible-sm-block"></div>
+				{% endif %}
+			{% endfor %}
 		</div>
 	</div>
+	<!--
 	<div class="container">
 		<div class="row">
 			<div class="col-sm-4 col-sm-offset-4">
@@ -97,6 +94,7 @@ layout: base
 			</div>
 		</div>	
 	</div>
+	//-->
 </section>
 
 <section>
@@ -109,23 +107,27 @@ layout: base
 	</div>
 	<div class="container">
 		<blockquote id="home-approach" class="feature">
-			<p>In today’s noisy and busy world, <strong>we get your message through</strong>, by making it –</p>
-			<div class="row">
-				<div class="col-sm-4"><div class="card">Clear</div></div>
-				<div class="col-sm-4"><div class="card">Creative</div></div>
-				<div class="col-sm-4"><div class="card">Compelling</div></div>
-			</div>
+			{{ page.approach |
+				markdownify |
+				replace: '<ul>','<div class="row">' |
+				replace: '</ul>','</div>' |
+				replace: '<li>','<div class="col-sm-4"><div class="card">' |
+				replace: '</li>','</div></div>'
+			}}
 		</blockquote>
 	</div>
+	<!--
 	<div class="wowlight">
 		<div class="container">
 			<div class="row">
 				<div class="col-sm-8 col-sm-offset-2">
-					<p><strong>Projects with us cost between &pound;500&ndash;&pound;5,000</strong> &mdash;<br />and pay you back happily ever after.</p>
+					<p></p>
 				</div>
 			</div>
 		</div>
 	</div>
+	//-->
+	<!--
 	<div class="container">
 		<div class="row">
 			<div class="col-sm-4 col-sm-offset-4">
@@ -133,6 +135,7 @@ layout: base
 			</div>
 		</div>	
 	</div>
+	-->
 </section>
 
 <section id="contact">
@@ -145,26 +148,26 @@ layout: base
 	</div>
 	<div class="container">
 		<div class="row">
-			<div class="col-xs-6">
+			<div class="col-sm-6 col-sm-offset-3">
 				<div class="card link tilt">
-					<p>Let's discuss a <strong>New Project</strong></p>
-					<div class="row">
-						<div class="col-md-8 col-md-offset-2 col-lg-6 col-lg-offset-3">
-							<p><a href="/approach.html" class="button tilt-z">Contact Us</a></p>
+					<p>Please send us an <strong>Email</strong></p>
+					<p><a href="mailto:contact@convincible.media" class="button tilt-z">Get In Touch</a></p>
+				</div>
+			</div>
+			<!--
+			{% for item in page.contact %}
+				<div class="col-xs-6">
+					<div class="card link tilt">
+						<p>{{ item.pre_title}} <strong>{{ item.title }}</strong></p>
+						<div class="row">
+							<div class="col-md-8 col-md-offset-2 col-lg-6 col-lg-offset-3">
+								<p><a href="/contact/{{ item.link }}.html" class="button tilt-z">{{ item.button }}</a></p>
+							</div>
 						</div>
 					</div>
 				</div>
-			</div>
-			<div class="col-xs-6">
-				<div class="card link tilt">
-					<p>We're already working on a <strong>Current Project</strong></p>
-					<div class="row">
-						<div class="col-md-8 col-md-offset-2 col-lg-6 col-lg-offset-3">
-							<p><a href="/approach.html" class="button tilt-z">Get In Touch</a></p>
-						</div>
-					</div>
-				</div>
-			</div>
+			{% endfor %}
+			-->
 		</div>
 	</div>
 </section>

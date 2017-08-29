@@ -1,0 +1,33 @@
+{%- assign href = include.href -%}
+{%- assign first = href | split: "" | first -%}
+{%- capture url -%}
+	{%- case first -%}
+		{%- when "h" -%}
+			{%- assign prot = href | split: "" | limit: 4 | join: "" -%}
+			{%- if prot == "http" -%}
+				{%- assign prot = href | split: "" | limit: 5 | join: "" -%}
+				{%- if prot == "https" -%}
+					{%- assign prot = href | split: "" | limit: 6 | join: "" -%}
+				{%- endif -%}
+			{%- endif -%}
+		{%- when "m" -%}
+			{%- assign prot = href | split: "" | limit: 7 | join: "" -%}
+	{%- endcase -%}
+	{%- if prot == "http:" or prot == "https:" or prot == "mailto:" -%}
+		{{ href }}
+	{%- else -%}
+		{%- case first -%}
+			{%- when "#" -%}
+				{{ href }}
+			{%- when "/" -%}
+				{{ href }}.html
+			{%- else -%}
+				/{{ href }}.html
+		{%- endcase -%}
+	{% endif %}
+{%- endcapture -%}
+{%- unless include.href_only -%}
+	<a href="{{ url }}">{{ include.text }}</a>
+{% else %}
+	{{ url }}
+{%- endunless -%}

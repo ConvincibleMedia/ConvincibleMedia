@@ -1,10 +1,11 @@
-body_gallery:
+thumb:
     w: 300
     h: 300
     fit: "crop"
     crop: "edges"
     auto: "compress,format"
     fm: "jpg"
+    q: 50
 hero:
     w: 1280
     auto: "compress,format"

@@ -1,11 +1,11 @@
 # Basic settings
 title: "Convincible"
 email: "contact@convincible.media"
-description: "We superpower your communications, making your brand image and ideas invincibly convincing."
+#description: "Marketing and Communications &middot; Cambridge, UK"
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "http://www.convincible.media"
-twitter_username: "BeConvincible"
-github_username:  "Convincible"
+#twitter_username: "BeConvincible"
+#github_username:  "Convincible"
 
 # Build settings
 source: "source"
@@ -42,5 +42,9 @@ collections:
   showcase:
     title: "Showcase"
     order: 2
+    output: true
+    permalink: ":collection/:slug.html"
+  contact:
+    title: "Contact"
     output: true
     permalink: ":collection/:slug.html"

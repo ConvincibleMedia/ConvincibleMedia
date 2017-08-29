@@ -8,8 +8,7 @@
 {% for block in include.blocks %}
 	
 	{% if block.item_type == "block_other_card" %}
-	<p class="log">foudn block: {{ block }}</p>
-	<p class="log">size: {{block.size}}</p>
+
 		{% case block.size %}
 			{% when "Solo" %}
 				{% assign card_size = "solo" %}
@@ -28,21 +27,28 @@
 		{% if cols[card_size].md %}{% assign card_md = cols[card_size].md %}{% else %}{% assign card_md = card_sm %}{% endif %}
 		{% if cols[card_size].lg %}{% assign card_lg = cols[card_size].lg %}{% else %}{% assign card_lg = card_md %}{% endif %}
 		
-		<p class="log">Uses the following sizes: {{ card_xs }} /  {{ card_sm }} /  {{ card_md }} /  {{ card_lg }} </p>
-		<p class="log">Rows currently at: {{ row_sm }} /  {{ row_md }} /  {{ row_lg }} </p>
-		
+		{% if card_size == "solo" %}
+			{% assign solo_offset = ' col-md-offset-2' %}
+			
+			{% if row_sm > 0 or row_sm > 0 or row_sm > 0 %}
+				</div>
+			{% endif %}
+			
+			{% assign row_sm = 0 %}
+			{% assign row_md = 0 %}
+			{% assign row_lg = 0 %}
+		{% else %}
+			{% assign solo_offset = '' %}
+		{% endif %}
 		
 		{% if row_sm == 0 and row_md == 0 and row_lg == 0 %}
 			<div class="row">
+			<p style="display:block">New row.</p>
 		{% endif %}
 		
 		{% assign row_sm = row_sm | plus: card_sm %}
 		{% assign row_md = row_md | plus: card_md %}
 		{% assign row_lg = row_lg | plus: card_lg %}
-		
-		<p class="log">Rows now at:  {{ row_sm }} /  {{ row_md }} /  {{ row_lg }} </p>
-
-		
 		
 		{%- capture clearfix -%}
 			{%- if row_sm > max %} visible-sm-block{%- endif -%}
@@ -51,11 +57,10 @@
 		{%- endcapture -%}
 		
 		{% if clearfix.size > 0 %}
-			<p class="log">{{clearfix}}</p>
 			<div class="clearfix{{ clearfix }}"></div>
 		{% endif %}
 		
-		<div class="col-sm-{{card_sm}} col-md-{{card_md}} col-lg-{{card_lg}}">
+		<div class="col-sm-{{card_sm}} col-md-{{card_md}} col-lg-{{card_lg}}{{ solo_offset }}">
 			<div class="card">
 				{% if block.subtitle %}<p class="h4 subtitle">{{ block.subtitle }}</p>{% endif %}
 				{% if block.name %}
@@ -65,15 +70,21 @@
 						{% if block.link %}</a>{% endif %}
 					</h3>
 				{% endif %}
-				{% if block.description %}<p>{{ block.description }}</p>{% endif %}
+				{% if block.description or true %}
+					<p>{{ block.description }}</p>
+					<p>CardSize: {{ card_size }}</p>
+					<p>RowSM: +{{card_sm}} = {{ row_sm }}</p>
+					<p>RowMD: +{{card_md}} = {{ row_md }}</p>
+					<p>RowLG: +{{card_lg}} = {{ row_lg }}</p>
+				{% endif %}
 			</div>
 		</div>
 		
-		{%- if row_sm > max %}{% assign row_sm = 0 %}{%- endif -%}
-		{%- if row_md > max %}{% assign row_md = 0 %}{%- endif -%}
-		{%- if row_lg > max %}{% assign row_lg = 0 %}{%- endif -%}
+		{%- if row_sm >= max %}{% assign row_sm = 0 %}{%- endif -%}
+		{%- if row_md >= max %}{% assign row_md = 0 %}{%- endif -%}
+		{%- if row_lg >= max %}{% assign row_lg = 0 %}{%- endif -%}
 		
-		{% if forloop.last %}
+		{% if forloop.last or card_size == "solo" %}
 			{% assign row_sm = 0 %}
 			{% assign row_md = 0 %}
 			{% assign row_lg = 0 %}

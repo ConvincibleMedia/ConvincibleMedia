@@ -3,10 +3,7 @@
 	<head>
 		<meta charset="utf-8" /><meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 		
-		
-		<title>Cambridge Assessment</title>
-		
-		<meta name="description" content="" />
+		<title>Convincible &middot; Showcase &middot; Cambridge Assessment &middot; Cambridge, UK</title><meta name="description" content="Marketing management at Cambridge Assessment, part of the University of Cambridge, for an innovative membership website." />
 		
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		
@@ -32,6 +29,7 @@
 		<div id="logo">
 			<span><a href="/"><img src="/assets/images/logo-black.png" alt="Convincible." title="Home" width="100%" height="auto" border="0" vspace="0" hspace="0" /></a></span>
 		</div>
+		<!--
 		<nav>
 			<ul>
 			
@@ -60,7 +58,6 @@
 							
 						</ul>
 					</li>
-					<li><a>dfg</a></li>
 				
 			
 				
@@ -73,7 +70,18 @@
 							
 						</ul>
 					</li>
-					<li><a>dfg</a></li>
+				
+			
+				
+					<li><a href="/contact.html">Contact</a>
+						<ul>
+							
+								<li><a href="/contact/current.html">Current Project</a></li>
+							
+								<li><a href="/contact/new.html">New Project</a></li>
+							
+						</ul>
+					</li>
 				
 			
 				
@@ -83,6 +91,7 @@
 			
 			</ul>
 		</nav>
+		//-->
 	</div>
 </section>
 		</header>
@@ -96,7 +105,8 @@
 </div>
 		</main>
 		<footer id="footer">
-			<section>
+			<!--
+<section>
 	<div class="container">
 		<div class="row">
 			<div class="col-sm-4">
@@ -138,12 +148,14 @@
 		</div>	
 	</div>
 </section>
+//-->
 
 <section id="bottom">
 	<div class="container">
 		<div id="logo">
 			<span><a href="/"><img src="/assets/images/logo-white.png" alt="Convincible." title="Home" width="100%" height="auto" border="0" vspace="0" hspace="0" /></a></span>
 		</div>
+		<!--
 		<nav>
 			<ul>
 			
@@ -187,9 +199,22 @@
 				
 			
 				
+					<li><a href="/contact.html">Contact</a>
+						<ul>
+							
+								<li><a href="/contact/current.html">Current Project</a></li>
+							
+								<li><a href="/contact/new.html">New Project</a></li>
+							
+						</ul>
+					</li>
+				
+			
+				
 			
 			</ul>
 		</nav>
+		-->
 		<div class="clearfix"></div>
 		<div class="small">
 			<p>Convincible is a sole tradership owned and managed by Virgil Ierubino.</p>
@@ -217,7 +242,10 @@
 			});
 			
 			$('.link').click(function() {
-				window.location = $(this).find('a').attr('href'); 
+				go = $(this).find('a').attr('href');
+				if (go != undefined) {
+					window.location = go;
+				}; 
 				return false;
 			});
 			

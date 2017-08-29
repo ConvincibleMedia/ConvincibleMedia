@@ -62,14 +62,14 @@ elements:
   size: 
 - id: '91275'
   item_type: block_other_card
-  updated_at: 2017-08-27 17:45:29.939000000 Z
+  updated_at: 2017-08-27 17:50:31.923000000 Z
   name: test4
   image: 
   video: 
   subtitle: 
   link: 
   description: 
-  size: 
+  size: Medium
 - id: '91277'
   item_type: block_other_card
   updated_at: 2017-08-27 17:45:30.874000000 Z

@@ -4,9 +4,35 @@
 		<meta charset="utf-8" /><meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 		{% if page.name == 'index.md' %}{% assign home = true %}{% else %}{% assign home = false %}{% endif %}
 		
-		<title>{{ page.title }}</title>
+		{%- if page.collection %}
+			{% assign section = site.collections | where:'label',page.collection | first %}
+		{% endif %}
+		{% assign sep = site.data.settings.seo.separator %}
+		{%- capture page_title -%}
+			{{ site.data.settings.name | default: site.title }}
+			{%- if section %} {{ sep }} {{ section.title }}{%- endif -%}
+			{%- if page.seo.title or site.data.settings.seo.title or page.title %} {{ sep }} {% if page.seo.title -%}
+					{{ page.seo.title }}
+				{%- elsif page.title -%}
+					{{ page.title }}
+				{%- elsif site.data.settings.seo.title -%}
+					{{ site.data.settings.seo.title }}
+				{%- endif -%}
+			{%- endif -%}
+			{%- if site.data.settings.seo.suffix.size > 0 %} {{ sep }} {{ site.data.settings.seo.suffix }}{%- endif -%}
+		{%- endcapture -%}
+		<title>{{ page_title | escape | replace: '·','&middot;'}}</title>
 		
-		<meta name="description" content="{{ page.description }}" />
+		{%- capture page_description -%}
+			{%- if page.seo.description -%}
+				{{ page.seo.description }}
+			{%- elsif page.excerpt -%}
+				{{ page.excerpt | markdownify | strip_html | truncatewords: 50 }}
+			{%- else -%}
+				{{ site.data.settings.seo.description | default: site.description }}
+			{%- endif -%}
+		{%- endcapture -%}
+		<meta name="description" content="{{ page_description | escape }}" />
 		
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		
@@ -52,7 +78,10 @@
 			});
 			
 			$('.link').click(function() {
-				window.location = $(this).find('a').attr('href'); 
+				go = $(this).find('a').attr('href');
+				if (go != undefined) {
+					window.location = go;
+				}; 
 				return false;
 			});
 			

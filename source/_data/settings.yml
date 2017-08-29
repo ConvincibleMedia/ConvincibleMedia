@@ -1,104 +1,15 @@
 name: Convincible
-globalseo:
-  site_name: Convincible
-  title_suffix: 
-  twitter_account: "@BeConvincible"
-  facebook_page_url: http://fb.me/Convincible
-  fallback_seo:
-    title: Convincible
-    description: We'll help you develop your brand, presentations and websites so
-      they're clear, cost-effective and compelling.
-    image: 
+seo:
+  title: Marketing and Communications
+  description: In this busy and noisy modern world, we get your message through, by
+    making it clear, creative and compelling.
+  image: 
+  separator: "·"
+  suffix: Cambridge, UK
 language: en
-copyright: Convincible is the brand name used by Virgil Ierubino as a sole trader.
-social_profiles: []
-favicon_meta_tags:
-- tag_name: link
-  attributes:
-    sizes: 16x16
-    type: image/png
-    rel: icon
-    href: https://www.datocms-assets.com/3013/1502915772-convincible-logo-square-reverse-orange.png?w=16&h=16
-- tag_name: link
-  attributes:
-    sizes: 32x32
-    type: image/png
-    rel: icon
-    href: https://www.datocms-assets.com/3013/1502915772-convincible-logo-square-reverse-orange.png?w=32&h=32
-- tag_name: link
-  attributes:
-    sizes: 96x96
-    type: image/png
-    rel: icon
-    href: https://www.datocms-assets.com/3013/1502915772-convincible-logo-square-reverse-orange.png?w=96&h=96
-- tag_name: link
-  attributes:
-    sizes: 192x192
-    type: image/png
-    rel: icon
-    href: https://www.datocms-assets.com/3013/1502915772-convincible-logo-square-reverse-orange.png?w=192&h=192
-- tag_name: link
-  attributes:
-    sizes: 57x57
-    rel: apple-touch-icon
-    href: https://www.datocms-assets.com/3013/1502915772-convincible-logo-square-reverse-orange.png?w=57&h=57
-- tag_name: link
-  attributes:
-    sizes: 60x60
-    rel: apple-touch-icon
-    href: https://www.datocms-assets.com/3013/1502915772-convincible-logo-square-reverse-orange.png?w=60&h=60
-- tag_name: link
-  attributes:
-    sizes: 72x72
-    rel: apple-touch-icon
-    href: https://www.datocms-assets.com/3013/1502915772-convincible-logo-square-reverse-orange.png?w=72&h=72
-- tag_name: link
-  attributes:
-    sizes: 76x76
-    rel: apple-touch-icon
-    href: https://www.datocms-assets.com/3013/1502915772-convincible-logo-square-reverse-orange.png?w=76&h=76
-- tag_name: link
-  attributes:
-    sizes: 114x114
-    rel: apple-touch-icon
-    href: https://www.datocms-assets.com/3013/1502915772-convincible-logo-square-reverse-orange.png?w=114&h=114
-- tag_name: link
-  attributes:
-    sizes: 120x120
-    rel: apple-touch-icon
-    href: https://www.datocms-assets.com/3013/1502915772-convincible-logo-square-reverse-orange.png?w=120&h=120
-- tag_name: link
-  attributes:
-    sizes: 144x144
-    rel: apple-touch-icon
-    href: https://www.datocms-assets.com/3013/1502915772-convincible-logo-square-reverse-orange.png?w=144&h=144
-- tag_name: link
-  attributes:
-    sizes: 152x152
-    rel: apple-touch-icon
-    href: https://www.datocms-assets.com/3013/1502915772-convincible-logo-square-reverse-orange.png?w=152&h=152
-- tag_name: link
-  attributes:
-    sizes: 180x180
-    rel: apple-touch-icon
-    href: https://www.datocms-assets.com/3013/1502915772-convincible-logo-square-reverse-orange.png?w=180&h=180
-- tag_name: meta
-  attributes:
-    name: msapplication-square70x70logo
-    content: https://www.datocms-assets.com/3013/1502915772-convincible-logo-square-reverse-orange.png?w=70&h=70
-- tag_name: meta
-  attributes:
-    name: msapplication-square150x150logo
-    content: https://www.datocms-assets.com/3013/1502915772-convincible-logo-square-reverse-orange.png?w=150&h=150
-- tag_name: meta
-  attributes:
-    name: msapplication-square310x310logo
-    content: https://www.datocms-assets.com/3013/1502915772-convincible-logo-square-reverse-orange.png?w=310&h=310
-- tag_name: meta
-  attributes:
-    name: msapplication-square310x150logo
-    content: https://www.datocms-assets.com/3013/1502915772-convincible-logo-square-reverse-orange.png?w=310&h=150
-- tag_name: meta
-  attributes:
-    name: application-name
-    content: Convincible
+copyright: Convincible is a Sole Tradership owned and managed by Virgil Ierubino.
+social_profiles:
+- type: twitter
+  link: http://twitter.com/BeConvincible
+- type: facebook
+  link: http://fb.me/Convincible

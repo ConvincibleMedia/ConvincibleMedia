@@ -1,0 +1,164 @@
+{% if include.blocks.first %}
+
+	last_type = ''
+	
+	{% for block in include.blocks %}
+	
+		{% assign this_type = block.item_type | replace: 'block_','' | split: '_' | first %}
+		{% assign this_type2 = block.item_type | replace: 'block_','' | split: '_' | last %}
+		
+		{% if this_type != last_type or forloop.last or forloop.first %}
+		
+			{% case this_type %}
+				{% when "heading" %}
+					<span class="heading-blocks">
+				{% when "other" %}
+					{% case this_type2 %}
+						{% when "card" %}
+							{% assign cols = site.data.card_sizes %}
+							{% assign max = cols['max'] %}
+
+							{% assign row_sm = 0 %}
+							{% assign row_md = 0 %}
+							{% assign row_lg = 0 %}
+					{% endcase %}
+			{% endcase %}
+			
+			{% case last_type %}
+				{% when "heading" %}
+					</span>
+			{% endcase %}
+			
+		{% endif %}
+		
+		{% case block.item_type %}
+		
+			{% comment %}
+				HEADINGS
+			{% endcomment %}
+			
+			{% when "block_heading_small" %}
+				<span class="heading-small">{{ block.text }}</span>
+			{% when "block_heading_medium" %}
+				<span class="heading-medium">{{ block.text }}</span>
+			{% when "block_heading_large" %}
+				<span class="heading-large">{{ block.text }}</span>
+
+			{% comment %}
+				BODY
+			{% endcomment %}
+				
+			{% when "block_body_text" %}
+				<div class="block_body_text">
+					{{ block.text | markdownify }}
+				</div>
+			{% when "block_body_gallery" %}
+				<div class="block_body_gallery">
+					<ul>
+						{% for image in block.images %}
+							<li>{% include helpers/img.html src=image.url alt=image.alt format=site.data.images.body_gallery %}</li>
+						{% endfor %}
+					</ul>
+					{% if block.caption != nil %}<p class="caption">{{ block.caption }}</p>{% endif %}
+				</div>
+
+			{% comment %}
+				CARDS
+			{% endcomment %}
+
+			{% when "block_other_card" %}
+			
+				{% case block.size %}
+					{% when "Solo" %}
+						{% assign card_size = "solo" %}
+					{% when "Large" %}
+						{% assign card_size = "large" %}
+					{% when "Medium" %}
+						{% assign card_size = "medium" %}
+					{% when "Small" %}
+						{% assign card_size = "small" %}
+					{% else %}
+						{% assign card_size = "small" %}
+				{% endcase %}
+				
+				{% assign card_xs = 12 %}
+				{% if cols[card_size].sm %}{% assign card_sm = cols[card_size].sm %}{% else %}{% assign card_sm = card_xs %}{% endif %}
+				{% if cols[card_size].md %}{% assign card_md = cols[card_size].md %}{% else %}{% assign card_md = card_sm %}{% endif %}
+				{% if cols[card_size].lg %}{% assign card_lg = cols[card_size].lg %}{% else %}{% assign card_lg = card_md %}{% endif %}
+				
+				{% if card_size == "solo" %}
+					{% assign solo_offset = ' col-md-offset-2' %}
+					
+					{% if row_sm > 0 or row_sm > 0 or row_sm > 0 %}
+						</div>
+					{% endif %}
+					
+					{% assign row_sm = 0 %}
+					{% assign row_md = 0 %}
+					{% assign row_lg = 0 %}
+				{% else %}
+					{% assign solo_offset = '' %}
+				{% endif %}
+				
+				{% if row_sm == 0 and row_md == 0 and row_lg == 0 %}
+					<div class="row">
+					<p style="display:block">New row.</p>
+				{% endif %}
+				
+				{% assign row_sm = row_sm | plus: card_sm %}
+				{% assign row_md = row_md | plus: card_md %}
+				{% assign row_lg = row_lg | plus: card_lg %}
+				
+				{%- capture clearfix -%}
+					{%- if row_sm > max %} visible-sm-block{%- endif -%}
+					{%- if row_md > max %} visible-md-block{%- endif -%}
+					{%- if row_lg > max %} visible-lg-block{%- endif -%}
+				{%- endcapture -%}
+				
+				{% if clearfix.size > 0 %}
+					<div class="clearfix{{ clearfix }}"></div>
+				{% endif %}
+				
+				<div class="col-sm-{{card_sm}} col-md-{{card_md}} col-lg-{{card_lg}}{{ solo_offset }}">
+					<div class="card">
+						{% if block.subtitle %}<p class="h4 subtitle">{{ block.subtitle }}</p>{% endif %}
+						{% if block.name %}
+							<h3>
+								{% if block.link %}<a href="{{ block.link.url }}">{% endif %}
+								{{ block.name }}
+								{% if block.link %}</a>{% endif %}
+							</h3>
+						{% endif %}
+						{% if block.description or true %}
+							<p>{{ block.description }}</p>
+							<p>CardSize: {{ card_size }}</p>
+							<p>RowSM: +{{card_sm}} = {{ row_sm }}</p>
+							<p>RowMD: +{{card_md}} = {{ row_md }}</p>
+							<p>RowLG: +{{card_lg}} = {{ row_lg }}</p>
+						{% endif %}
+					</div>
+				</div>
+				
+				{%- if row_sm >= max %}{% assign row_sm = 0 %}{%- endif -%}
+				{%- if row_md >= max %}{% assign row_md = 0 %}{%- endif -%}
+				{%- if row_lg >= max %}{% assign row_lg = 0 %}{%- endif -%}
+				
+				{% if forloop.last or card_size == "solo" %}
+					{% assign row_sm = 0 %}
+					{% assign row_md = 0 %}
+					{% assign row_lg = 0 %}
+				{% endif %}
+				
+				{% if row_sm == 0 and row_md == 0 and row_lg == 0 %}
+					</div>
+				{% endif %}
+				
+		{% endcase %}
+	
+		{% assign last_type = this_type %}
+	
+	{% endfor %}
+
+{% else %}
+	{{ include.blocks }}
+{% endif %}

@@ -1,7 +1,7 @@
 {%- capture src -%}
 	{%- include helpers/img.html
 		src=include.image
-		format=site.data.image_formats.hero
+		format=site.data.images.hero
 		src_only=true
 	-%}
 {%- endcapture -%}
@@ -49,7 +49,7 @@
 					<div id="hero-action">
 						<div class="row">
 							<div class="col-md-4 col-sm-6">
-								<a href="/{{ include.action_url }}.html" class="button">{{ include.action_text }}</a>
+								<a href="{% include helpers/link.html href=include.action_url href_only=true %}" class="button">{{ include.action_text }}</a>
 							</div>
 						</div>
 					</div>
