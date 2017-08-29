@@ -1,16 +1,16 @@
 ---
 layout: index
-tagline: We empower communications.
+tagline: Empowered Communications.
 hero_image_src: https://www.datocms-assets.com/3013/1503772474-nasa-sts130-s-043-2.png
 services:
 - name: Branding
-  description: We brand you, so you don't have to.
+  description: ''
   link: branding
 - name: Presentations
   description: ''
   link: presentations
 - name: Websites
-  description: We make websites.
+  description: ''
   link: websites
 - name: Experience
   description: ''

@@ -25,7 +25,7 @@
 			{%- assign param-value = param | last -%}
 			{%- if param-name == 'w' and w != 'auto' -%}{%- assign param-value = w -%}{%- endif -%}
 			{%- if param-name == 'h' and h != 'auto' -%}{%- assign param-value = h -%}{%- endif -%}
-			{{ param-name }}={{ paraam-value }}
+			{{ param-name }}={{ param-value }}
 			{%- if forloop.last == false -%}&{%- endif -%}
 		{%- endfor -%}
 	{%- endif -%}

@@ -3,10 +3,7 @@ layout: services
 collection: services
 order: 3
 name: Websites
-seo: !ruby/object:Dato::Local::FieldType::Seo
-  title: Websites
-  description: We make websites.
-  image: 
+seo: 
 hero_image_src: https://www.datocms-assets.com/3013/1503844505-website.jpg
 heading:
 - id: '87037'

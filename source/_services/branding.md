@@ -3,10 +3,7 @@ layout: services
 collection: services
 order: 1
 name: Branding
-seo: !ruby/object:Dato::Local::FieldType::Seo
-  title: Branding
-  description: We brand you, so you don't have to.
-  image: 
+seo: 
 hero_image_src: ''
 heading:
 - id: '91262'
