@@ -34,8 +34,8 @@ create_data_file "source/_data/settings.yml", :yaml,
 		suffix: suf
 	},
 	language: dato.site.locales.first,
-	copyright: dato.home.copyright,
-	social_profiles: social_profiles
+	social_profiles: social_profiles,
+	footer: dato.home.footer
 	
 create_data_file "source/_data/favicon.yml", :yaml,
 	dato.site.favicon_meta_tags
@@ -90,7 +90,10 @@ directory "source/_services" do
 				hero_image_src: defined?(item.hero_image.url) ? item.hero_image.url : '',
 				heading: item.heading.to_hash,
 				intro: item.intro.to_hash,
+				elements_heading: item.elements_heading,
 				elements: item.elements.to_hash,
+				elements_note: item.elements_note,
+				subservices_heading: item.sub_services_heading,
 				subservices: item.sub_services.to_hash
 			}
 		end
@@ -107,7 +110,23 @@ directory "source/_showcase" do
 				order: index + 1,
 				name: item.name,
 				seo: item.seo,
-				heading: item.heading.to_hash
+				hero_image_src: defined?(item.hero_image.url) ? item.hero_image.url : '',
+				client: item.client,
+				logo_image_src: defined?(item.logo.url) ? item.logo.url : '',
+				heading: item.heading.to_hash,
+				intro: item.intro.to_hash,
+				facets: item.facets.to_hash,
+				quote: {
+					paragraphs: item.quote,
+					cite: item.quote_source
+				},
+				services: item.services.map do |item|
+				{
+					name: item.name,
+					description: defined?(item.seo.description) ? item.seo.description : '',
+					link: item.slug
+				}
+				end
 			}
 		end
 	end

@@ -3,8 +3,7 @@
 	<head>
 		<meta charset="utf-8" /><meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 		
-		<title>Convincible &middot; Services &middot; Branding &middot; Cambridge, UK</title><meta name="description" content="
-" />
+		<title>Convincible &middot; Services &middot; Branding &middot; Cambridge, UK</title><meta name="description" content="We&#39;ll help you make your brand your most powerful asset." />
 		
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		
@@ -49,7 +48,7 @@
 							
 								<li><a href="/services/presentations.html">Presentations</a></li>
 							
-								<li><a href="/services/print-material.html">Print Material</a></li>
+								<li><a href="/services/print.html">Print</a></li>
 							
 								<li><a href="/services/social-digital.html">Social Digital</a></li>
 							
@@ -65,9 +64,9 @@
 					<li><a href="/showcase.html">Showcase</a>
 						<ul>
 							
-								<li><a href="/showcase/cambridge-assessment.html">Cambridge Assessment</a></li>
+								<li><a href="/showcase/cambridge-english-teacher.html">Cambridge English Teacher</a></li>
 							
-								<li><a href="/showcase/the-green-party.html">The Green Party</a></li>
+								<li><a href="/showcase/general-election-2017.html">General Election 2017</a></li>
 							
 						</ul>
 					</li>
@@ -96,8 +95,8 @@
 	</div>
 </section>
 		</header>
-		<main>
-			<header id="hero" style="background-image: url('?w=1280&auto=compress,format&fm=jpg&q=50&fit=max')">
+		<main id="main">
+			<header id="hero" style="background-image: url('?w=1280&amp;auto=compress,format&amp;fm=jpg&amp;q=50&amp;fit=max')">
 	<section class="header-inside">
 		<div id="hero-box">
 			<div class="container">
@@ -154,26 +153,22 @@
 
 <section>
 	<div class="container">
-		<blockquote>
-			<div class="row">
-				<div class="col-md-8 col-md-offset-2">
-					<p>jelo</p>
-				</div>
-			</div>
-		</blockquote>
-		<div class="row">
-				<div class="col-md-8 col-md-offset-2"><p>WE mads</p></div>
-			</div>
 		
 	</div>
 </section>
 
 <section id="elements">
+	<div class="wowlight">
+		<div class="container">
+			<div class="row">
+				<div class="col-sm-8 col-sm-offset-2">
+					<h2 class="subtitle pointdown"></h2>
+				</div>
+			</div>
+		</div>
+	</div>
 	<div class="container">
-
 		
-		
-
 
 
 
@@ -184,6 +179,38 @@
 		
 	</div>
 </section>
+
+<section id="subservices">
+	<div class="wowlight">
+		<div class="container">
+			<div class="row">
+				<div class="col-sm-8 col-sm-offset-2">
+					<h2 class="subtitle pointdown"></h2>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="container">
+		
+
+
+
+
+
+
+
+	</div>
+</section>
+
+<section id="contact">
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-6 col-sm-offset-3">
+				<div class="card link tilt">
+					<p>Sounds good? <strong>Let's get to work.</strong></p>
+					<p><a href="mailto:contact@convincible.media" class="button tilt-z">Contact Us</a></p>
+				</div>
+			</div>
 		</main>
 		<footer id="footer">
 			<!--
@@ -255,7 +282,7 @@
 							
 								<li><a href="/services/presentations.html">Presentations</a></li>
 							
-								<li><a href="/services/print-material.html">Print Material</a></li>
+								<li><a href="/services/print.html">Print</a></li>
 							
 								<li><a href="/services/social-digital.html">Social Digital</a></li>
 							
@@ -271,9 +298,9 @@
 					<li><a href="/showcase.html">Showcase</a>
 						<ul>
 							
-								<li><a href="/showcase/cambridge-assessment.html">Cambridge Assessment</a></li>
+								<li><a href="/showcase/cambridge-english-teacher.html">Cambridge English Teacher</a></li>
 							
-								<li><a href="/showcase/the-green-party.html">The Green Party</a></li>
+								<li><a href="/showcase/general-election-2017.html">General Election 2017</a></li>
 							
 						</ul>
 					</li>
@@ -298,10 +325,9 @@
 		-->
 		<div class="clearfix"></div>
 		<div class="small">
-			<p>Convincible is a sole tradership owned and managed by Virgil Ierubino.</p>
-			<p>It is not a separate legal or financial entity from its owner.</p>
-			<p>All content © 2017.</p>
-			<p>Office: 68 Sleaford Street, Cambridge, CB1 2PU.</p>
+			<p>Convincible is a Sole Tradership owned and managed by Virgil Ierubino.
+It is not a separate legal or financial entity from its owner.</p>
+
 		</div>
 	</div>
 </section>
@@ -334,6 +360,27 @@
 				$(this).find('a').toggleClass("hover");
 			});
 		</script>
+		<script type="text/javascript">
+	$('.video .player').click(function(ev){
+		ev.preventDefault();
+		
+		var $this = $(this);
+		
+		var params = '';
+		$.each($this.data(), function(i, e){
+			if (i != 'id') { params = params + i + '=' + e + '&'; }
+		});
+		var id = $this.data('id');
+		
+		var iframe = document.createElement("iframe");
+		var embed = "https://www.youtube.com/embed/" + id + "?" + params + "autoplay=1";
+		iframe.setAttribute("src", embed);
+		iframe.setAttribute("frameborder", "0");
+		iframe.setAttribute("allowfullscreen", "allowfullscreen");
+		
+		$this.replaceWith(iframe);
+	});
+</script>
 		<script type="text/javascript">
 	(function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
 	function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;

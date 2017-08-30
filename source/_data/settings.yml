@@ -7,9 +7,11 @@ seo:
   separator: "·"
   suffix: Cambridge, UK
 language: en
-copyright: Convincible is a Sole Tradership owned and managed by Virgil Ierubino.
 social_profiles:
 - type: twitter
   link: http://twitter.com/BeConvincible
 - type: facebook
   link: http://fb.me/Convincible
+footer: |-
+  Convincible is a Sole Tradership owned and managed by Virgil Ierubino.
+  It is not a separate legal or financial entity from its owner.

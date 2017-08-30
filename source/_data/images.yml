@@ -12,3 +12,9 @@ hero:
     fm: "jpg"
     q: 50
     fit: "max"
+small:
+    w: 300
+    fit: clip
+    auto: "compress,format"
+    fm: "jpg"
+    q: 50

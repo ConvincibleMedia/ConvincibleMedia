@@ -21,12 +21,12 @@
 	{%- if include.format != nil -%}
 		?
 		{%- for param in include.format -%}
-			{%- assign param-name = param | first -%}
-			{%- assign param-value = param | last -%}
+			{%- assign param-name = param | first | url_param_escape -%}
+			{%- assign param-value = param | last | url_param_escape -%}
 			{%- if param-name == 'w' and w != 'auto' -%}{%- assign param-value = w -%}{%- endif -%}
 			{%- if param-name == 'h' and h != 'auto' -%}{%- assign param-value = h -%}{%- endif -%}
 			{{ param-name }}={{ param-value }}
-			{%- if forloop.last == false -%}&{%- endif -%}
+			{%- if forloop.last == false -%}&amp;{%- endif -%}
 		{%- endfor -%}
 	{%- endif -%}
 {%- endcapture -%}

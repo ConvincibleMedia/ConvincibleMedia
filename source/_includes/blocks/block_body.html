@@ -2,7 +2,11 @@
 	{% case block.item_type %}
 		{% when "block_body_text" %}
 			<div class="block_body_text">
-				{{ block.text | markdownify }}
+				<div class="row">
+					<div class="col-md-8 col-md-offset-2">
+						{{ block.text | markdownify	}}
+					</div>
+				</div>
 			</div>
 		{% when "block_body_gallery" %}
 			<div class="block_body_gallery">
@@ -12,6 +16,17 @@
 					{% endfor %}
 				</ul>
 				{% if block.caption != nil %}<p class="caption">{{ block.caption }}</p>{% endif %}
+			</div>
+		{% when "block_body_pullquote" %}
+			<div class="block_body_pullquote">
+				<blockquote{% if block.cite %} class="quote"{% endif %}>
+					<div class="row">
+						<div class="col-md-8 col-md-offset-2">
+							{{ block.paragraphs | markdownify }}
+							{% if quote.cite %}<cite>{{ quote.cite }}</cite>{% endif %}
+						</div>
+					</div>
+				</blockquote>
 			</div>
 	{% endcase %}
 {% endfor %}

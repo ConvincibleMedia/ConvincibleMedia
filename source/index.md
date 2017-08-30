@@ -4,50 +4,52 @@ tagline: Empowered Communications.
 hero_image_src: https://www.datocms-assets.com/3013/1503772474-nasa-sts130-s-043-2.png
 services:
 - name: Branding
-  description: ''
+  description: We'll help you make your brand your most powerful asset.
   link: branding
 - name: Presentations
-  description: ''
+  description: We'll make your slides sing and your delivery electric.
   link: presentations
 - name: Websites
-  description: ''
+  description: Your website is your digital home. We'll make it inviting.
   link: websites
 - name: Experience
-  description: ''
+  description: We’ll review customer touchpoints to fix all the little things that
+    matter.
   link: experience
 - name: Copywriting
-  description: ''
+  description: We’ll understand your ideas, then find the words that communicate them.
   link: copywriting
 - name: Print Material
-  description: ''
-  link: print-material
+  description: We’ll create printed material that entices your audience to engage.
+  link: print
 - name: Strategy
-  description: ''
+  description: We’ll solve your marketing riddles, and help you streamline your operation.
   link: strategy
 - name: Documents
-  description: ''
+  description: We’ll bring the information in your documents and reports into focus.
   link: documents
 - name: Social/Digital
-  description: ''
+  description: We’ll set up your social media or digital channels and prepare their
+    content.
   link: social-digital
 quotes:
 - id: '92541'
-  item_type: block_body_pull_quote
-  updated_at: 2017-08-29 11:48:25.378000000 Z
-  paragraphs: Virgil has an excellent range of skills that are particularly relevant
-    in today's multi-platform marketing world.
+  item_type: block_body_pullquote
+  updated_at: 2017-08-29 14:13:33.489000000 Z
+  paragraphs: Virgil [Owner at Convincible] has an excellent range of skills that
+    are particularly relevant in today's multi-platform marketing world.
   cite: Head of Marketing, Cambridge University Press
 showcase:
 - image: https://www.datocms-assets.com/3013/1504013471-timeforchangeweb.jpg
-  name: The Green Party
+  name: General Election 2017
   description: Managing the General Election 2017 campaign in Cambridge for the Green
     Party of England and Wales.
-  link: the-green-party
+  link: general-election-2017
 - image: https://www.datocms-assets.com/3013/1504013537-careers-our-places-page-1.jpg
-  name: Cambridge Assessment
-  description: Marketing management at Cambridge Assessment, part of the University
-    of Cambridge, for an innovative membership website.
-  link: cambridge-assessment
+  name: Cambridge English Teacher
+  description: Marketing management at Cambridge Assessment (part of the University
+    of Cambridge) for online services.
+  link: cambridge-english-teacher
 approach: |-
   In today’s busy and noisy world, **we get your message through**, by making it –
 

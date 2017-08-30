@@ -58,7 +58,7 @@
 			{% if home %}{% assign header_type = 'home' %}{% else %}{% assign header_type = 'inside' %}{% endif %}
 			{% include header.html type=header_type %}
 		</header>
-		<main>
+		<main id="main">
 			{{ content }}
 		</main>
 		<footer id="footer">
@@ -89,6 +89,7 @@
 				$(this).find('a').toggleClass("hover");
 			});
 		</script>
+		{% if site.data.videos.method == 'reactive' %}{% include snippets/video-reactive.html %}{% endif %}
 		{% include snippets/analytics.html %}
 	</body>
 </html>

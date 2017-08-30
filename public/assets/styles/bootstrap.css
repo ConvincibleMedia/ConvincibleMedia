@@ -48,7 +48,7 @@
 							
 								<li><a href="/services/presentations.html">Presentations</a></li>
 							
-								<li><a href="/services/print-material.html">Print Material</a></li>
+								<li><a href="/services/print.html">Print</a></li>
 							
 								<li><a href="/services/social-digital.html">Social Digital</a></li>
 							
@@ -64,9 +64,9 @@
 					<li><a href="/showcase.html">Showcase</a>
 						<ul>
 							
-								<li><a href="/showcase/cambridge-assessment.html">Cambridge Assessment</a></li>
+								<li><a href="/showcase/cambridge-english-teacher.html">Cambridge English Teacher</a></li>
 							
-								<li><a href="/showcase/the-green-party.html">The Green Party</a></li>
+								<li><a href="/showcase/general-election-2017.html">General Election 2017</a></li>
 							
 						</ul>
 					</li>
@@ -95,7 +95,7 @@
 	</div>
 </section>
 		</header>
-		<main>
+		<main id="main">
 			/* X-Small XS */
 @mixin xs() {
 	@media (max-width: 30em) {
@@ -324,7 +324,6 @@ th {
   padding: 0;
 }
 html {
-  font-size: 10px;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 input,
@@ -386,6 +385,8 @@ img {
 @media (min-width: 80em) {
   .container {
     width: 70em;
+	padding-left: 4em;
+	padding-right: 4em;
   }
 }
 .container-fluid {
@@ -1368,7 +1369,7 @@ img {
 							
 								<li><a href="/services/presentations.html">Presentations</a></li>
 							
-								<li><a href="/services/print-material.html">Print Material</a></li>
+								<li><a href="/services/print.html">Print</a></li>
 							
 								<li><a href="/services/social-digital.html">Social Digital</a></li>
 							
@@ -1384,9 +1385,9 @@ img {
 					<li><a href="/showcase.html">Showcase</a>
 						<ul>
 							
-								<li><a href="/showcase/cambridge-assessment.html">Cambridge Assessment</a></li>
+								<li><a href="/showcase/cambridge-english-teacher.html">Cambridge English Teacher</a></li>
 							
-								<li><a href="/showcase/the-green-party.html">The Green Party</a></li>
+								<li><a href="/showcase/general-election-2017.html">General Election 2017</a></li>
 							
 						</ul>
 					</li>
@@ -1411,10 +1412,9 @@ img {
 		-->
 		<div class="clearfix"></div>
 		<div class="small">
-			<p>Convincible is a sole tradership owned and managed by Virgil Ierubino.</p>
-			<p>It is not a separate legal or financial entity from its owner.</p>
-			<p>All content © 2017.</p>
-			<p>Office: 68 Sleaford Street, Cambridge, CB1 2PU.</p>
+			<p>Convincible is a Sole Tradership owned and managed by Virgil Ierubino.
+It is not a separate legal or financial entity from its owner.</p>
+
 		</div>
 	</div>
 </section>
@@ -1447,6 +1447,27 @@ img {
 				$(this).find('a').toggleClass("hover");
 			});
 		</script>
+		<script type="text/javascript">
+	$('.video .player').click(function(ev){
+		ev.preventDefault();
+		
+		var $this = $(this);
+		
+		var params = '';
+		$.each($this.data(), function(i, e){
+			if (i != 'id') { params = params + i + '=' + e + '&'; }
+		});
+		var id = $this.data('id');
+		
+		var iframe = document.createElement("iframe");
+		var embed = "https://www.youtube.com/embed/" + id + "?" + params + "autoplay=1";
+		iframe.setAttribute("src", embed);
+		iframe.setAttribute("frameborder", "0");
+		iframe.setAttribute("allowfullscreen", "allowfullscreen");
+		
+		$this.replaceWith(iframe);
+	});
+</script>
 		<script type="text/javascript">
 	(function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
 	function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;

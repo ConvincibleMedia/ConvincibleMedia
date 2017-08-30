@@ -9,10 +9,10 @@ layout: base
 	action_text='Contact Us'
 %}
 
-<section>
+<section id="services">
 	<div class="container">
 	<h2 class="hide">Services</h2>
-		<div class="row hidden-xs">
+		<div id="service-areas" class="row hidden-xs">
 			<div class="col-sm-4">
 				<h3 class="subtitle">Marketing</h3>
 			</div>
@@ -42,7 +42,7 @@ layout: base
 	</div>
 </section>
 
-<section>
+<section id="home-quotes">
 	<div class="container">
 		<blockquote class="feature quote">
 			{% assign quotes = page.quotes | limit: 1 %}
@@ -63,7 +63,7 @@ layout: base
 	//-->
 </section>
 
-<section>
+<section id="showcase">
 	<div class="container">
 		<div class="row">
 			<div class="col-sm-4">
@@ -97,7 +97,7 @@ layout: base
 	//-->
 </section>
 
-<section>
+<section id="approach">
 	<div class="container">
 		<div class="row">
 			<div class="col-sm-4">

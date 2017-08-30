@@ -1,10 +1,47 @@
 ---
 layout: base
 ---
-<div id="body">
-	<div class="section">
-		<div class="container">
-			{{ page.body }}
+{% include hero.html
+	type='inside'
+	image=page.hero_image_src
+	breadcrumb=1
+	heading=page.heading
+%}
+
+<section id="titles">
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-7 col-lg-5">
+				<h2 id="project-title" class="hgroup">
+					<span class="subtitle">Project<span class="hide">:</span></span>
+					<span class="h2">{{ page.name }}</span>
+				</h2>
+			</div>
+			<div class="col-sm-4 col-sm-offset-1 col-lg-offset-3">
+				<div class="client-logo">{% include helpers/img.html src=page.logo_image_src format=site.data.images.small %}</div>
+			</div>
 		</div>
 	</div>
-</div>
+</section>
+
+<section>
+	<div class="container">
+		{% include blocks/block_body.html blocks=page.intro %}
+	</div>
+</section>
+
+<section id="facets">
+	<div class="container">
+		{% include blocks/block_card.html blocks=page.facets %}
+	</div>
+</section>
+
+<section id="contact">
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-6 col-sm-offset-3">
+				<div class="card link tilt">
+					<p>Sounds good? <strong>Let's get to work.</strong></p>
+					<p><a href="mailto:contact@convincible.media" class="button tilt-z">Contact Us</a></p>
+				</div>
+			</div>

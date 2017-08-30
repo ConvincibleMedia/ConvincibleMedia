@@ -202,7 +202,6 @@ th {
   padding: 0;
 }
 html {
-  font-size: 10px;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 input,
@@ -264,6 +263,8 @@ img {
 @media (min-width: 80em) {
   .container {
     width: 70em;
+	padding-left: 4em;
+	padding-right: 4em;
   }
 }
 .container-fluid {

@@ -10,26 +10,53 @@ layout: base
 
 <section>
 	<div class="container">
-		<blockquote>
-			<div class="row">
-				<div class="col-md-8 col-md-offset-2">
-					<p>jelo</p>
-				</div>
-			</div>
-		</blockquote>
-		<div class="row">
-				<div class="col-md-8 col-md-offset-2"><p>WE mads</p></div>
-			</div>
-		
+		{% include blocks/block_body.html blocks=page.intro %}
 	</div>
 </section>
 
 <section id="elements">
+	<div class="wowlight">
+		<div class="container">
+			<div class="row">
+				<div class="col-sm-8 col-sm-offset-2">
+					<h2 class="subtitle pointdown">{{ page.elements_heading }}</h2>
+				</div>
+			</div>
+		</div>
+	</div>
 	<div class="container">
-
-		
 		{% include blocks/block_card.html blocks=page.elements %}
-
-		
+		{% if page.elements_note %}
+			<div class="row center small highlight">
+				<div class="col-md-8 col-md-offset-2">
+					{{ page.elements_note | markdownify }}
+				</div>
+			</div>
+		{% endif %}
 	</div>
 </section>
+
+<section id="subservices">
+	<div class="wowlight">
+		<div class="container">
+			<div class="row">
+				<div class="col-sm-8 col-sm-offset-2">
+					<h2 class="subtitle pointdown">{{ page.subservices_heading }}</h2>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="container">
+		{% include blocks/block_card.html blocks=page.subservices %}
+	</div>
+</section>
+
+<section id="contact">
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-6 col-sm-offset-3">
+				<div class="card link tilt">
+					<p>Sounds good? <strong>Let's get to work.</strong></p>
+					<p><a href="mailto:contact@convincible.media" class="button tilt-z">Contact Us</a></p>
+				</div>
+			</div>
