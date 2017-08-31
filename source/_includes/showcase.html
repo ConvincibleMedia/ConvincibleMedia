@@ -4,7 +4,7 @@
 		<div class="col-md-4 col-sm-6">
 			<div class="card link">
 				<div class="card-image">{% include helpers/img.html src=item.image format=site.data.images.thumb h=200 %}</div>
-				<h3><a href="/showcase/{{ item.slug }}.html">{{ item.title }}</a></h3>
+				<h3>{% include helpers/link.html href=item.link text=item.title %}</h3>
 				{{ item.description | markdownify }}
 			</div>
 		</div>

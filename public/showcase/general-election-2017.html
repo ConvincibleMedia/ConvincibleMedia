@@ -4,24 +4,24 @@
 		<meta charset="utf-8" /><meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 		
 		<title>Convincible &middot; Showcase &middot; The Green Party &middot; Cambridge, UK</title><meta name="description" content="Managing the General Election 2017 campaign in Cambridge for the Green Party of England and Wales." />
-		
+
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		
+
 		<link rel="stylesheet" href="/assets/styles/bootstrap.css" />
 		<link rel="stylesheet" href="/assets/styles/boilerplate.css" />
 		<link rel="stylesheet" href="/assets/styles/core.css" />
-		
+
 		<link href="https://fonts.googleapis.com/css?family=Montserrat:200,600,900|Source+Sans+Pro:300,300i" rel="stylesheet">
-		
+
 		<script src="/assets/scripts/vendor/modernizr-2.8.3.min.js"></script>
-		
+
 		
 	</head>
 	<body>
 		<!--[if lt IE 8]>
             <p class="browserupgrade"><strong>You are using an outdated browser</strong>, so this site may not appear correctly. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
-		
+
 		<header id="top">
 			
 			<section class="header-inside">
@@ -182,10 +182,6 @@
 
 			<p class="h4 subtitle">Print Design</p>
 			
-				<h3>
-					
-				</h3>
-			
 			
 				<p>Leaflets are the core of a political campaign. With the Greens – who send an order of magnitude fewer than other parties – every item needs to have 10 times the impact. We had just a few weeks to design and deliver over 90,000 leaflets, but we gave each one the full treatment.</p>
 
@@ -255,10 +251,6 @@
 
 			<p class="h4 subtitle">Video Production</p>
 			
-				<h3>
-					
-				</h3>
-			
 			
 				<p>We produced, filmed and edited a ‘hero video’ featuring the MP candidate, which became the centrepiece of the digital campaign. Alongside this we produced a series of short, sharp animations designed solely for social media sharing.</p>
 
@@ -288,7 +280,7 @@
       <div class="col-sm-6 col-sm-offset-3">
          <div class="card link tilt">
             <p>Enough about us. <strong>Let's talk about you.</strong></p>
-            <p><a href="/contact/new.html" class="button tilt-z">Work With Us</a></p>
+            <p><a  class="button tilt-z" href="/contact/new.html">Work With Us</a></p>
          </div>
       </div>
    
@@ -337,6 +329,8 @@
 			
 				<h3>
 					
+						<a   href="/services/print.html">Print Material</a>
+					
 				</h3>
 			
 			
@@ -382,6 +376,8 @@
 			
 				<h3>
 					
+						<a   href="/services/copywriting.html">Copywriting</a>
+					
 				</h3>
 			
 			
@@ -426,6 +422,8 @@
 			
 			
 				<h3>
+					
+						<a   href="/services/social-digital.html">Social/Digital</a>
 					
 				</h3>
 			
@@ -539,7 +537,7 @@ United Kingdom</address>
 </section>
 
 		</footer>
-		
+
 		<script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
 <script type="text/javascript">
 	window.jQuery || document.write('<script src="js/vendor/jquery-1.12.0.min.js"><\/script>');
@@ -548,21 +546,25 @@ United Kingdom</address>
 		<!--<script src="/assets/scripts/textfill.jquery.js"></script>-->
 		<script type="text/javascript">
 			/*$('#hero-text h1').textfill();*/
-			
+
 			$('.tilt').tilt({
 				perspective: 1200,
 				speed: 500,
 				scale: 1.01
 			});
-			
-			$('.link').click(function() {
-				go = $(this).find('a').attr('href');
-				if (go != undefined) {
-					window.location = go;
-				}; 
-				return false;
+
+			$('.link').each(function() {
+				var go = $(this).find('a').attr('href');
+				if (go == undefined) {
+					$(this).toggleClass("link");
+				} else {
+					$(this).click(function() {
+						window.location = go;
+						return false;
+					});
+				};
 			});
-			
+
 			$(".link").hover(function() {
 				$(this).find('a').toggleClass("hover");
 			});

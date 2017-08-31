@@ -1,12 +1,13 @@
 ---
 layout: contact
 collection: contact
+link: '92962'
 order: 1
 seo: 
 options:
-- name: Email
+- icon: 
+  name: Email
   details: contact@convincible.media
-  icon: 
   explanation: We like putting some thought into our words – and we'll still respond
     quickly.
 ---

@@ -1,6 +1,8 @@
 ---
 layout: services
 collection: services
+live: true
+link: '87039'
 order: 3
 name: Websites
 title: Your website is your digital home. We'll make it inviting.

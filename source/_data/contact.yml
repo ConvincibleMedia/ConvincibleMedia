@@ -19,18 +19,18 @@ pages:
   - pre_title: Let's discuss a
     title: New Project
     button: Contact Us
-    link: new
+    link: '92962'
   - pre_title: We're already working on a
     title: Current Project
     button: Catch Up
-    link: current
+    link: '92963'
   services:
   - pre_title: Sounds good?
     title: Let's get to work.
     button: Contact Us
-    link: new
+    link: '92962'
   showcase:
   - pre_title: Enough about us.
     title: Let's talk about you.
     button: Work With Us
-    link: new
+    link: '92962'

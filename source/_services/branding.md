@@ -1,6 +1,8 @@
 ---
 layout: services
 collection: services
+live: true
+link: '86952'
 order: 1
 name: Branding
 title: We'll make your brand your most powerful asset.

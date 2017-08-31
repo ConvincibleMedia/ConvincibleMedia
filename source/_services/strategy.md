@@ -1,6 +1,8 @@
 ---
 layout: services
 collection: services
+live: 
+link: '91183'
 order: 7
 name: Strategy
 title: We’ll solve your marketing riddles, and help you streamline your operation.

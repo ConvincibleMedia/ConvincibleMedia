@@ -4,24 +4,24 @@
 		<meta charset="utf-8" /><meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 		
 		<title>Convincible &middot; Showcase &middot; Showcase &middot; Cambridge, UK</title><meta name="description" content="In this busy and noisy modern world, we get your message through, by making it clear, creative and compelling." />
-		
+
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		
+
 		<link rel="stylesheet" href="/assets/styles/bootstrap.css" />
 		<link rel="stylesheet" href="/assets/styles/boilerplate.css" />
 		<link rel="stylesheet" href="/assets/styles/core.css" />
-		
+
 		<link href="https://fonts.googleapis.com/css?family=Montserrat:200,600,900|Source+Sans+Pro:300,300i" rel="stylesheet">
-		
+
 		<script src="/assets/scripts/vendor/modernizr-2.8.3.min.js"></script>
-		
+
 		
 	</head>
 	<body>
 		<!--[if lt IE 8]>
             <p class="browserupgrade"><strong>You are using an outdated browser</strong>, so this site may not appear correctly. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
-		
+
 		<header id="top">
 			
 			<section class="header-inside">
@@ -60,7 +60,7 @@
 		<div class="col-md-4 col-sm-6">
 			<div class="card link">
 				<div class="card-image"><img src="https://www.datocms-assets.com/3013/1504013537-careers-our-places-page-1.jpg?w=300&amp;h=200&amp;fit=crop&amp;crop=edges&amp;auto=compress,format&amp;fm=jpg&amp;q=50" alt=""  width="300" height="200" border="0" vspace="0" hspace="0" /></div>
-				<h3><a href="/showcase/cambridge-english-teacher.html">Crafting a brand that inspires loyalty</a></h3>
+				<h3><a   href="/showcase/cambridge-english-teacher.html">Crafting a brand that inspires loyalty</a></h3>
 				<p>Marketing management at Cambridge Assessment (part of the University of Cambridge) for online services.</p>
 
 			</div>
@@ -71,7 +71,7 @@
 		<div class="col-md-4 col-sm-6">
 			<div class="card link">
 				<div class="card-image"><img src="https://www.datocms-assets.com/3013/1504013471-timeforchangeweb.jpg?w=300&amp;h=200&amp;fit=crop&amp;crop=edges&amp;auto=compress,format&amp;fm=jpg&amp;q=50" alt=""  width="300" height="200" border="0" vspace="0" hspace="0" /></div>
-				<h3><a href="/showcase/general-election-2017.html">Changing minds at a time of change</a></h3>
+				<h3><a   href="/showcase/general-election-2017.html">Changing minds at a time of change</a></h3>
 				<p>Managing the General Election 2017 campaign in Cambridge for the Green Party of England and Wales.</p>
 
 			</div>
@@ -216,7 +216,7 @@ United Kingdom</address>
 </section>
 
 		</footer>
-		
+
 		<script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
 <script type="text/javascript">
 	window.jQuery || document.write('<script src="js/vendor/jquery-1.12.0.min.js"><\/script>');
@@ -225,21 +225,25 @@ United Kingdom</address>
 		<!--<script src="/assets/scripts/textfill.jquery.js"></script>-->
 		<script type="text/javascript">
 			/*$('#hero-text h1').textfill();*/
-			
+
 			$('.tilt').tilt({
 				perspective: 1200,
 				speed: 500,
 				scale: 1.01
 			});
-			
-			$('.link').click(function() {
-				go = $(this).find('a').attr('href');
-				if (go != undefined) {
-					window.location = go;
-				}; 
-				return false;
+
+			$('.link').each(function() {
+				var go = $(this).find('a').attr('href');
+				if (go == undefined) {
+					$(this).toggleClass("link");
+				} else {
+					$(this).click(function() {
+						window.location = go;
+						return false;
+					});
+				};
 			});
-			
+
 			$(".link").hover(function() {
 				$(this).find('a').toggleClass("hover");
 			});

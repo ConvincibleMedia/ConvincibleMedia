@@ -5,24 +5,24 @@
 		
 		<title>Convincible &middot; Contact &middot; Current &middot; Cambridge, UK</title><meta name="description" content="Welcome back – here are all our contact details so you can get in touch however works for you.
 " />
-		
+
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		
+
 		<link rel="stylesheet" href="/assets/styles/bootstrap.css" />
 		<link rel="stylesheet" href="/assets/styles/boilerplate.css" />
 		<link rel="stylesheet" href="/assets/styles/core.css" />
-		
+
 		<link href="https://fonts.googleapis.com/css?family=Montserrat:200,600,900|Source+Sans+Pro:300,300i" rel="stylesheet">
-		
+
 		<script src="/assets/scripts/vendor/modernizr-2.8.3.min.js"></script>
-		
+
 		
 	</head>
 	<body>
 		<!--[if lt IE 8]>
             <p class="browserupgrade"><strong>You are using an outdated browser</strong>, so this site may not appear correctly. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
-		
+
 		<header id="top">
 			
 			<section class="header-inside">
@@ -65,7 +65,7 @@
 		<div class="row">
 			
 				<div class="col-sm-6 ">
-					<div class="card link">
+					<div class="card">
 						<h3 class="hgroup">
 							<span class="subtitle">Phone<span class="hide">:</span></span>
 							<span class="h3">
@@ -84,7 +84,7 @@
 				</div>
 			
 				<div class="col-sm-6 ">
-					<div class="card link">
+					<div class="card">
 						<h3 class="hgroup">
 							<span class="subtitle">Email<span class="hide">:</span></span>
 							<span class="h3">
@@ -216,7 +216,7 @@ United Kingdom</address>
 </section>
 
 		</footer>
-		
+
 		<script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
 <script type="text/javascript">
 	window.jQuery || document.write('<script src="js/vendor/jquery-1.12.0.min.js"><\/script>');
@@ -225,21 +225,25 @@ United Kingdom</address>
 		<!--<script src="/assets/scripts/textfill.jquery.js"></script>-->
 		<script type="text/javascript">
 			/*$('#hero-text h1').textfill();*/
-			
+
 			$('.tilt').tilt({
 				perspective: 1200,
 				speed: 500,
 				scale: 1.01
 			});
-			
-			$('.link').click(function() {
-				go = $(this).find('a').attr('href');
-				if (go != undefined) {
-					window.location = go;
-				}; 
-				return false;
+
+			$('.link').each(function() {
+				var go = $(this).find('a').attr('href');
+				if (go == undefined) {
+					$(this).toggleClass("link");
+				} else {
+					$(this).click(function() {
+						window.location = go;
+						return false;
+					});
+				};
 			});
-			
+
 			$(".link").hover(function() {
 				$(this).find('a').toggleClass("hover");
 			});

@@ -1,17 +1,18 @@
 ---
 layout: contact
 collection: contact
+link: '92963'
 order: 2
 seo: 
 options:
-- name: Phone
+- icon: 
+  name: Phone
   details: "+44 (0)1223 969601"
-  icon: 
   explanation: If for some reason we're not about, please leave a voicemail. We'll
     pick this up quickly and get back to you.
-- name: Email
+- icon: 
+  name: Email
   details: contact@convincible.media
-  icon: 
   explanation: We like putting some thought into our words – and we'll still respond
     quickly.
 ---

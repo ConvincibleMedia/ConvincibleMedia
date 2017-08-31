@@ -4,24 +4,24 @@
 		<meta charset="utf-8" /><meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 		
 		<title>Convincible &middot; Services &middot; Services &middot; Cambridge, UK</title><meta name="description" content="In this busy and noisy modern world, we get your message through, by making it clear, creative and compelling." />
-		
+
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		
+
 		<link rel="stylesheet" href="/assets/styles/bootstrap.css" />
 		<link rel="stylesheet" href="/assets/styles/boilerplate.css" />
 		<link rel="stylesheet" href="/assets/styles/core.css" />
-		
+
 		<link href="https://fonts.googleapis.com/css?family=Montserrat:200,600,900|Source+Sans+Pro:300,300i" rel="stylesheet">
-		
+
 		<script src="/assets/scripts/vendor/modernizr-2.8.3.min.js"></script>
-		
+
 		
 	</head>
 	<body>
 		<!--[if lt IE 8]>
             <p class="browserupgrade"><strong>You are using an outdated browser</strong>, so this site may not appear correctly. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
-		
+
 		<header id="top">
 			
 			<section class="header-inside">
@@ -75,7 +75,9 @@
 	<div class="col-sm-4">
 		<div class="card link tilt feature">
 			<h3>
-				<a href="/services/branding.html">Branding</a>
+				
+					<a   href="/services/branding.html">Branding</a>
+				
 			</h3>
 			<p>We'll make your brand your most powerful asset.</p>
 		</div>
@@ -87,7 +89,9 @@
 	<div class="col-sm-4">
 		<div class="card link tilt feature">
 			<h3>
-				<a href="/services/presentations.html">Presentations</a>
+				
+					<a   href="/services/presentations.html">Presentations</a>
+				
 			</h3>
 			<p>We'll make your slides sing and your delivery electric.</p>
 		</div>
@@ -99,7 +103,9 @@
 	<div class="col-sm-4">
 		<div class="card link tilt feature">
 			<h3>
-				<a href="/services/websites.html">Websites</a>
+				
+					<a   href="/services/websites.html">Websites</a>
+				
 			</h3>
 			<p>Your website is your digital home. We'll make it inviting.</p>
 		</div>
@@ -115,7 +121,9 @@
 	<div class="col-sm-4">
 		<div class="card link tilt ">
 			<h3>
-				<a href="/services/experience.html">Experience</a>
+				
+					Experience
+				
 			</h3>
 			<p>We’ll review customer touchpoints to fix all the little things that matter.</p>
 		</div>
@@ -127,7 +135,9 @@
 	<div class="col-sm-4">
 		<div class="card link tilt ">
 			<h3>
-				<a href="/services/copywriting.html">Copywriting</a>
+				
+					Copywriting
+				
 			</h3>
 			<p>We’ll understand your ideas, then find the words that communicate them.</p>
 		</div>
@@ -139,7 +149,9 @@
 	<div class="col-sm-4">
 		<div class="card link tilt ">
 			<h3>
-				<a href="/services/print.html">Print Material</a>
+				
+					Print Material
+				
 			</h3>
 			<p>We’ll create printed material that entices your audience to engage.</p>
 		</div>
@@ -155,7 +167,9 @@
 	<div class="col-sm-4">
 		<div class="card link tilt ">
 			<h3>
-				<a href="/services/strategy.html">Strategy</a>
+				
+					Strategy
+				
 			</h3>
 			<p>We’ll solve your marketing riddles, and help you streamline your operation.</p>
 		</div>
@@ -167,7 +181,9 @@
 	<div class="col-sm-4">
 		<div class="card link tilt ">
 			<h3>
-				<a href="/services/documents.html">Documents</a>
+				
+					Documents
+				
 			</h3>
 			<p>We’ll bring the information in your documents and reports into focus.</p>
 		</div>
@@ -179,7 +195,9 @@
 	<div class="col-sm-4">
 		<div class="card link tilt ">
 			<h3>
-				<a href="/services/social-digital.html">Social/Digital</a>
+				
+					Social/Digital
+				
 			</h3>
 			<p>We’ll set up your social media or digital channels and prepare their content.</p>
 		</div>
@@ -325,7 +343,7 @@ United Kingdom</address>
 </section>
 
 		</footer>
-		
+
 		<script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
 <script type="text/javascript">
 	window.jQuery || document.write('<script src="js/vendor/jquery-1.12.0.min.js"><\/script>');
@@ -334,21 +352,25 @@ United Kingdom</address>
 		<!--<script src="/assets/scripts/textfill.jquery.js"></script>-->
 		<script type="text/javascript">
 			/*$('#hero-text h1').textfill();*/
-			
+
 			$('.tilt').tilt({
 				perspective: 1200,
 				speed: 500,
 				scale: 1.01
 			});
-			
-			$('.link').click(function() {
-				go = $(this).find('a').attr('href');
-				if (go != undefined) {
-					window.location = go;
-				}; 
-				return false;
+
+			$('.link').each(function() {
+				var go = $(this).find('a').attr('href');
+				if (go == undefined) {
+					$(this).toggleClass("link");
+				} else {
+					$(this).click(function() {
+						window.location = go;
+						return false;
+					});
+				};
 			});
-			
+
 			$(".link").hover(function() {
 				$(this).find('a').toggleClass("hover");
 			});

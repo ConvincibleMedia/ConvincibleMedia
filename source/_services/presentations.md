@@ -1,6 +1,8 @@
 ---
 layout: services
 collection: services
+live: true
+link: '91179'
 order: 2
 name: Presentations
 title: We'll make your slides sing and your delivery electric.

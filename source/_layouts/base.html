@@ -3,7 +3,7 @@
 	<head>
 		<meta charset="utf-8" /><meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 		{% if page.name == 'index.md' %}{% assign home = true %}{% else %}{% assign home = false %}{% endif %}
-		
+
 		{%- if page.collection %}
 			{% assign section = site.collections | where:'label',page.collection | first %}
 		{% endif %}
@@ -22,7 +22,7 @@
 			{%- if site.data.settings.seo.suffix.size > 0 %} {{ sep }} {{ site.data.settings.seo.suffix }}{%- endif -%}
 		{%- endcapture -%}
 		<title>{{ page_title | escape | replace: '·','&middot;'}}</title>
-		
+
 		{%- capture page_description -%}
 			{%- if page.seo.description -%}
 				{{ page.seo.description }}
@@ -33,27 +33,27 @@
 			{%- endif -%}
 		{%- endcapture -%}
 		<meta name="description" content="{{ page_description | escape }}" />
-		
+
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		
+
 		<link rel="stylesheet" href="/assets/styles/bootstrap.css" />
 		<link rel="stylesheet" href="/assets/styles/boilerplate.css" />
 		<link rel="stylesheet" href="/assets/styles/core.css" />
-		
+
 		<link href="https://fonts.googleapis.com/css?family=Montserrat:200,600,900|Source+Sans+Pro:300,300i" rel="stylesheet">
-		
+
 		<script src="/assets/scripts/vendor/modernizr-2.8.3.min.js"></script>
-		
+
 		{% if home %}
 			<meta name="p:domain_verify" content="d0219ccc18274430b1974dfc6b1b710e" />
-			
+
 		{% endif %}
 	</head>
 	<body>
 		<!--[if lt IE 8]>
             <p class="browserupgrade"><strong>You are using an outdated browser</strong>, so this site may not appear correctly. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
-		
+
 		<header id="top">
 			{% if home %}{% assign header_type = 'home' %}{% else %}{% assign header_type = 'inside' %}{% endif %}
 			{% include header.html type=header_type %}
@@ -64,27 +64,31 @@
 		<footer id="footer">
 			{% include footer.html %}
 		</footer>
-		
+
 		{% include snippets/jquery.html %}
 		<script src="/assets/scripts/tilt.jquery.js"></script>
 		<!--<script src="/assets/scripts/textfill.jquery.js"></script>-->
 		<script type="text/javascript">
 			/*$('#hero-text h1').textfill();*/
-			
+
 			$('.tilt').tilt({
 				perspective: 1200,
 				speed: 500,
 				scale: 1.01
 			});
-			
-			$('.link').click(function() {
-				go = $(this).find('a').attr('href');
-				if (go != undefined) {
-					window.location = go;
-				}; 
-				return false;
+
+			$('.link').each(function() {
+				var go = $(this).find('a').attr('href');
+				if (go == undefined) {
+					$(this).toggleClass("link");
+				} else {
+					$(this).click(function() {
+						window.location = go;
+						return false;
+					});
+				};
 			});
-			
+
 			$(".link").hover(function() {
 				$(this).find('a').toggleClass("hover");
 			});

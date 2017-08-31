@@ -73,12 +73,12 @@
 			{% endcase %}
 
 			{% if block.subtitle %}<p class="h4 subtitle">{{ block.subtitle }}</p>{% endif %}
-			{% if block.name %}
+			{% if block.title %}
 				<h3>
 					{% if block.link %}
-						<a href="{{ site.data.sitemap.pages[block.link.id].fullpath }}">{{ block.name }}</a>
-					{% elsif block.url %}
-						<a href="{{ block.url }}">{{ block.name }}</a>
+						{% include helpers/link.html href=block.link text=block.title %}
+					{% else %}
+						{{ block.title }}
 					{% endif %}
 				</h3>
 			{% endif %}

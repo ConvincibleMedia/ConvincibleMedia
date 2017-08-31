@@ -1,6 +1,7 @@
 ---
 layout: showcase
 collection: showcase
+link: '87043'
 order: 2
 name: General Election 2017
 title: Changing minds at a time of change
@@ -60,15 +61,15 @@ quote:
   paragraphs: 
   cite: 
 services:
-- name: Print Material
+- title: Print Material
   description: We’ll create printed material that entices your audience to engage.
-  slug: print
-- name: Copywriting
+  link: '91182'
+- title: Copywriting
   description: We’ll understand your ideas, then find the words that communicate them.
-  slug: copywriting
-- name: Social/Digital
+  link: '91181'
+- title: Social/Digital
   description: We’ll set up your social media or digital channels and prepare their
     content.
-  slug: social-digital
+  link: '91185'
 ---
 

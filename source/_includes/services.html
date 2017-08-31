@@ -19,7 +19,11 @@
 	<div class="col-sm-4">
 		<div class="card link tilt {% if forloop.index <= 3 %}feature{% endif %}">
 			<h3>
-				<a href="/services/{{ item.slug }}.html">{{ item.name }}</a>
+				{% if item.live %}
+					{% include helpers/link.html href=item.link text=item.name %}
+				{% else %}
+					{{ item.name }}
+				{% endif %}
 			</h3>
 			<p>{{ item.description }}</p>
 		</div>

@@ -1,33 +1,67 @@
 {%- assign href = include.href -%}
-{%- assign first = href | split: "" | first -%}
-{%- capture url -%}
-	{%- case first -%}
-		{%- when "h" -%}
-			{%- assign prot = href | split: "" | limit: 4 | join: "" -%}
-			{%- if prot == "http" -%}
-				{%- assign prot = href | split: "" | limit: 5 | join: "" -%}
-				{%- if prot == "https" -%}
-					{%- assign prot = href | split: "" | limit: 6 | join: "" -%}
-				{%- endif -%}
-			{%- endif -%}
-		{%- when "m" -%}
-			{%- assign prot = href | split: "" | limit: 7 | join: "" -%}
-	{%- endcase -%}
-	{%- if prot == "http:" or prot == "https:" or prot == "mailto:" -%}
-		{{ href }}
+
+{%- if href.first -%}
+	{%- if href.id -%}
+		{%- assign href = href.id -%}
 	{%- else -%}
+		{%- assign href = '' -%}
+	{%- endif -%}
+{%- endif -%}
+
+{%- assign href = href | strip -%}
+{%- assign type = 'local' -%}
+
+{%- if href.size > 0 -%}
+	{%- if href contains '://' -%}
+		{%- comment -%}{%- assign protocol = href | split: '://' | first -%}{%- endcomment -%}
+
+		{%- assign type = 'url' -%}
+
+	{%- else -%}
+		{%- assign first = href | slice: 0 -%}
 		{%- case first -%}
-			{%- when "#" -%}
-				{{ href }}
-			{%- when "/" -%}
-				{{ href }}.html
+			{%- when '#' -%}
+
+				{%- assign type = 'anchor' -%}
+
+			{%- when '@' -%}
+
+				{%- assign type = 'id' -%}
+
 			{%- else -%}
-				/{{ href }}.html
+				{%- assign nums = href |
+					remove: '0' |
+					remove: '1' |
+					remove: '2' |
+					remove: '3' |
+					remove: '4' |
+					remove: '5' |
+					remove: '6' |
+					remove: '7' |
+					remove: '8' |
+					remove: '9'
+				%}
+				{%- assign nums = nums.size -%}
+				{%- if nums == 0 -%}
+
+					{%- assign type = 'id' -%}
+
+				{%- endif -%}
 		{%- endcase -%}
-	{% endif %}
+	{%- endif -%}
+{%- endif -%}
+
+{%- capture url -%}
+	{%- case type -%}
+		{%- when 'id' -%}
+			{{ site.data.sitemap.pages[href].fullpath }}
+		{%- else -%}
+			{{ href }}
+	{%- endcase -%}
 {%- endcapture -%}
+
 {%- unless include.href_only -%}
-	<a href="{{ url }}">{{ include.text }}</a>
-{% else %}
+	<a {% if include.target %}target="{{ include.target }}"{% endif %} {% if include.class %}class="{{ include.class }}"{% endif %} href="{{ url }}">{{ include.text }}</a>
+{%- else -%}
 	{{ url }}
 {%- endunless -%}

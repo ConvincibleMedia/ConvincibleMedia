@@ -17,27 +17,27 @@ pages:
     fullpath: "/"
     type: home
     order: 1
-  contact:
-    title: Contact
-    slug: contact
-    path: "/"
-    fullpath: "/contact.html"
-    type: ''
-    order: 1
-  services:
+  "@services":
     title: Services
     slug: services
     path: "/"
     fullpath: "/services.html"
     type: ''
-    order: 1
-  showcase:
+    order: 2
+  "@showcase":
     title: Showcase
     slug: showcase
     path: "/"
     fullpath: "/showcase.html"
     type: ''
-    order: 1
+    order: 3
+  "@contact":
+    title: Contact
+    slug: contact
+    path: "/"
+    fullpath: "/contact.html"
+    type: ''
+    order: 4
   '86952':
     title: Branding
     slug: branding

@@ -68,29 +68,20 @@ sitemap[:pages][home.id] = {
 	order: 1
 }
 #Manual
-sitemap[:pages]['contact'] = {
-	title: 'Contact',
-	slug: 'contact',
-	path: '/',
-	fullpath: '/contact.html',
-	type: '',
-	order: 1
+rootpages = {
+	services: 'Services',
+	showcase: 'Showcase',
+	contact: 'Contact'
 }
-sitemap[:pages]['services'] = {
-	title: 'Services',
-	slug: 'services',
-	path: '/',
-	fullpath: '/services.html',
-	type: '',
-	order: 1
-}
-sitemap[:pages]['showcase'] = {
-	title: 'Showcase',
-	slug: 'showcase',
-	path: '/',
-	fullpath: '/showcase.html',
-	type: '',
-	order: 1
+rootpages.each_with_index { |(slug, title), index|
+	sitemap[:pages][slug.to_s.prepend('@').to_sym] = {
+		title: title.to_s,
+		slug: slug.to_s,
+		path: '/',
+		fullpath: '/' + slug.to_s + '.html',
+		type: '',
+		order: index + 2
+	}
 }
 #Iterate
 models = [ services, showcases, contact ]
@@ -107,51 +98,40 @@ models.each { |model|
 		}
 	}
 }
-=begin
-services.each_with_index { |item, index|
-	path = sitemap[:models][item.item_type.api_key.to_sym][:path]
-	sitemap[:pages][item.id] = {
-		title: item.name,
-		slug: item.slug,
-		path: '/' + path,
-		fullpath: '/' + path + item.slug + '.html',
-		type: item.item_type.api_key,
-		order: index + 1
-	}
-}
-=end
 create_data_file "source/_data/sitemap.yml", :yaml,
 	sitemap
 
 
 #Home Page
-
 create_post "source/index.md" do
 	frontmatter(
 		:yaml,
 		layout: 'index',
+		link: home.id,
 		tagline: home.tagline,
-		hero_image_src: home.hero_image.url,
-		services: home.services.map do |item|
-		{
-			name: item.name,
-			description: item.description,
-			slug: item.slug
-		}
-		end,
+		image: home.hero_image.url,
+		services: home.services.to_hash.map { |item|
+			{
+				name: item[:name],
+				description: item[:description],
+				link: item[:id],
+				live: item[:live]
+			}
+		},
 		quotes: home.quote.to_hash.map{ |h| h.except!(:id, :updated_at) },
-		showcase: home.showcase.map do |item|
-		{
-			image: defined?(item.hero_image.url) ? item.hero_image.url : '',
-			logo: defined?(item.logo.url) ? item.logo.url : '',
-			title: item.heading.to_hash.map{ |h| h[:text] }.join(" "),
-			description: item.description,
-			slug: item.slug
-		}
-		end,
+		showcase: home.showcase.to_hash.map { |item|
+			{
+				image: defined?(item[:hero_image][:url]) ? item[:hero_image][:url] : '',
+				logo: defined?(item[:logo][:url]) ? item[:logo][:url] : '',
+				title: item[:heading].map{ |h| h[:text] }.join(" "),
+				description: item[:description],
+				link: item[:id]
+			}
+		},
 		approach: home.approach
 	)
 end
+
 
 #Services
 directory "source/_services" do
@@ -160,6 +140,8 @@ directory "source/_services" do
 			frontmatter :yaml, {
 				layout: 'services',
 				collection: 'services',
+				live: item.live,
+				link: item.id,
 				order: index + 1,
 				name: item.name,
 				title: item.heading.to_hash.map{ |h| h[:text] }.join(" "),
@@ -179,6 +161,7 @@ directory "source/_services" do
 	end
 end
 
+
 #Showcase
 directory "source/_showcase" do
 	showcases.each_with_index do |item, index|
@@ -186,6 +169,7 @@ directory "source/_showcase" do
 			frontmatter :yaml, {
 				layout: 'showcase',
 				collection: 'showcase',
+				link: item.id,
 				order: index + 1,
 				name: item.name,
 				title: item.heading.to_hash.map{ |h| h[:text] }.join(" "),
@@ -202,13 +186,13 @@ directory "source/_showcase" do
 					paragraphs: item.quote,
 					cite: item.quote_source
 				},
-				services: item.services.map do |item|
-				{
-					name: item.name,
-					description: defined?(item.seo.description) ? item.seo.description : '',
-					slug: item.slug
+				services: item.services.to_hash.map { |item|
+					{
+						title: item[:name],
+						description: item[:description],
+						link: item[:id]
+					}
 				}
-				end
 			}
 		end
 	end
@@ -241,7 +225,7 @@ dato.contact.to_hash.each { |index, item|
 				pre_title: card[:pre_title],
 				title: card[:title],
 				button: card[:button],
-				link: card[:link][:slug]
+				link: card[:link][:id]
 			})
 		end
 	end
@@ -256,13 +240,14 @@ directory "source/_contact" do
 			frontmatter :yaml, {
 				layout: 'contact',
 				collection: 'contact',
+				link: item.id,
 				order: index + 1,
 				seo: item.seo,
 				options: item.options.map do |item|
 				{
+					icon: item.icon,
 					name: item.name,
 					details: item.details,
-					icon: item.icon,
 					explanation: item.explanation
 				}
 			end
