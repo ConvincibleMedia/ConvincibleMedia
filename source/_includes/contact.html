@@ -1,0 +1,10 @@
+<div class="row contacts">
+   {% for card in include.blocks %}
+      <div class="col-sm-6{% if forloop.length == 1 %} col-sm-offset-3{% endif %}">
+         <div class="card link tilt">
+            <p>{{ card.pre_title }} <strong>{{ card.title }}</strong></p>
+            <p><a href="/contact/{{ card.link }}.html" class="button tilt-z">{{ card.button }}</a></p>
+         </div>
+      </div>
+   {% endfor %}
+</div>

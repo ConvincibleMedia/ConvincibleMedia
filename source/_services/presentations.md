@@ -3,15 +3,16 @@ layout: services
 collection: services
 order: 2
 name: Presentations
+title: We'll make your slides sing and your delivery electric.
+slug: presentations
 seo: !ruby/object:Dato::Local::FieldType::Seo
   title: Presentations, PowerPoint Slides and Public Speaking
   description: We'll make your slides sing and your delivery electric.
   image: 
-hero_image_src: ''
+description: We'll make your slides sing and your delivery electric.
+image: ''
 heading:
-- id: '92565'
-  item_type: block_heading_large
-  updated_at: 2017-08-29 14:17:47.676000000 Z
+- item_type: block_heading_large
   text: We'll make your slides sing and your delivery electric.
 intro: []
 elements_heading: 

@@ -5,40 +5,13 @@ layout: base
 	type='home'
 	heading=page.tagline
 	image=page.hero_image_src
-	action_url='#contact'
+	action_url='contact'
 	action_text='Contact Us'
 %}
 
 <section id="services">
 	<div class="container">
-	<h2 class="hide">Services</h2>
-		<div id="service-areas" class="row hidden-xs">
-			<div class="col-sm-4">
-				<h3 class="subtitle">Marketing</h3>
-			</div>
-			<div class="col-sm-4">
-				<h3 class="subtitle">Clarifying</h3>
-			</div>
-			<div class="col-sm-4">
-				<h3 class="subtitle">Creating</h3>
-			</div>
-		</div>
-		
-		{% for item in page.services %}
-			{% assign mod = forloop.index0 | modulo: 3 %}
-			{% if mod == 0 or forloop.first %}
-				<div class="row">
-			{% endif %}
-			<div class="col-sm-4">
-				<div class="card link tilt {% if forloop.index <= 3 %}feature{% endif %}">
-					<h3><!--<a href="/services/{{ item.link }}.html">-->{{ item.name }}<!--</a>--></h3>
-					<p>{{ item.description }}</p>
-				</div>
-			</div>
-			{% if mod == 2 or forloop.last %}
-				</div>
-			{% endif %}
-		{% endfor %}
+		{% include services.html services=page.services %}
 	</div>
 </section>
 
@@ -70,21 +43,7 @@ layout: base
 				<h2 class="subtitle">Showcase</h2>
 			</div>
 		</div>
-		<div class="row">
-			{% for item in page.showcase %}
-				{% assign mod = forloop.index0 | modulo: 3 %}
-				<div class="col-md-4 col-sm-6">
-					<div class="card link">
-						<div class="card-image">{% include helpers/img.html src=item.image format=site.data.images.thumb h=200 %}</div>
-						<h3><!--<a href="/showcase/{{ item.link }}.html">-->{{ item.name }}<!--</a>--></h3>
-						{{ item.description | markdownify }}
-					</div>
-				</div>
-				{% if mod == 2 %}
-					<div class="clearfix visible-sm-block"></div>
-				{% endif %}
-			{% endfor %}
-		</div>
+		{% include showcase.html showcase=page.showcase %}
 	</div>
 	<!--
 	<div class="container">
@@ -92,53 +51,14 @@ layout: base
 			<div class="col-sm-4 col-sm-offset-4">
 				<p><a href="/showcase.html" class="button">All Case Studies</a></p>
 			</div>
-		</div>	
+		</div>
 	</div>
 	//-->
 </section>
 
-<section id="approach">
-	<div class="container">
-		<div class="row">
-			<div class="col-sm-4">
-				<h2 class="subtitle">Approach</h2>
-			</div>
-		</div>
-	</div>
-	<div class="container">
-		<blockquote id="home-approach" class="feature">
-			{{ page.approach |
-				markdownify |
-				replace: '<ul>','<div class="row">' |
-				replace: '</ul>','</div>' |
-				replace: '<li>','<div class="col-sm-4"><div class="card">' |
-				replace: '</li>','</div></div>'
-			}}
-		</blockquote>
-	</div>
-	<!--
-	<div class="wowlight">
-		<div class="container">
-			<div class="row">
-				<div class="col-sm-8 col-sm-offset-2">
-					<p></p>
-				</div>
-			</div>
-		</div>
-	</div>
-	//-->
-	<!--
-	<div class="container">
-		<div class="row">
-			<div class="col-sm-4 col-sm-offset-4">
-				<p><a href="/approach.html" class="button">About Our Approach</a></p>
-			</div>
-		</div>	
-	</div>
-	-->
-</section>
+{% include approach.html %}
 
-<section id="contact">
+<section id="contact" class="spaced">
 	<div class="container">
 		<div class="row">
 			<div class="col-sm-4">
@@ -147,28 +67,6 @@ layout: base
 		</div>
 	</div>
 	<div class="container">
-		<div class="row">
-			<div class="col-sm-6 col-sm-offset-3">
-				<div class="card link tilt">
-					<p>Please send us an <strong>Email</strong></p>
-					<p><a href="mailto:contact@convincible.media" class="button tilt-z">Get In Touch</a></p>
-				</div>
-			</div>
-			<!--
-			{% for item in page.contact %}
-				<div class="col-xs-6">
-					<div class="card link tilt">
-						<p>{{ item.pre_title}} <strong>{{ item.title }}</strong></p>
-						<div class="row">
-							<div class="col-md-8 col-md-offset-2 col-lg-6 col-lg-offset-3">
-								<p><a href="/contact/{{ item.link }}.html" class="button tilt-z">{{ item.button }}</a></p>
-							</div>
-						</div>
-					</div>
-				</div>
-			{% endfor %}
-			-->
-		</div>
+		{% include contact.html blocks=site.data.contact.pages.home %}
 	</div>
 </section>
-					

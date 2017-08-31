@@ -1,0 +1,7 @@
+---
+layout: simple-work
+collection: showcase
+title: Showcase
+---
+{% assign showcases = site.showcase | sort: 'order' %}
+{% include showcase.html showcase=showcases %}

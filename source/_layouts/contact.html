@@ -1,0 +1,58 @@
+---
+layout: base
+---
+
+<section>
+	<div class="container">
+		<h1>Contact</h1>
+		{% include blocks/body/block_body_lead.html paragraphs=page.content %}
+	</div>
+</section>
+
+<section>
+	<div class="container">
+		<h2 class="hide">Contact Methods</h2>
+		<div class="row">
+			{% for option in page.options %}
+				<div class="col-sm-6 {% if forloop.length == 1%} col-sm-offset-3{% endif %}">
+					<div class="card link">
+						<h3 class="hgroup">
+							<span class="subtitle">{{ option.name }}<span class="hide">:</span></span>
+							<span class="h3">
+								{% case option.name %}
+									{% when 'Phone' %}
+										<a href="tel:{{ option.details }}">{{ option.details }}</a>
+									{% when 'Email' %}
+										<a href="mailto:{{ option.details }}">{{ option.details | replace: '@', ' @' | replace: '.', ' .'}}</a>
+									{% else %}
+										{{ option.details }}
+								{% endcase %}
+							</span>
+						</h3>
+						{% if option.explanation %}
+							<div class="small">
+								{{ option.explanation | markdownify }}
+							</div>
+						{% endif %}
+					</div>
+				</div>
+			{% endfor %}
+		</div>
+		<div class="row">
+			<div class="col-xs-12">
+				<div class="card">
+					<div class="row">
+						<div class="col-sm-4">
+							<h3>Address</h3>
+							<address><strong>Convincible</strong> Media<br />{{ site.data.contact.address.details | newline_to_br }}</address>
+						</div>
+						<div class="col-sm-8">
+							<div class="card-image card-image-right">
+								{% include helpers/map.html place='Convincible' x='0.1417764' y='52.2040836' w=640 h=360 %}
+							</div>
+						</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>

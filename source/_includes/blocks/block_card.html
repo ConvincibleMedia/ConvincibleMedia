@@ -19,48 +19,48 @@
 		{% else %}
 			{% assign card_size = "small" %}
 	{% endcase %}
-	
+
 	{% assign card_xs = 12 %}
 	{% if cols[card_size].sm %}{% assign card_sm = cols[card_size].sm %}{% else %}{% assign card_sm = card_xs %}{% endif %}
 	{% if cols[card_size].md %}{% assign card_md = cols[card_size].md %}{% else %}{% assign card_md = card_sm %}{% endif %}
 	{% if cols[card_size].lg %}{% assign card_lg = cols[card_size].lg %}{% else %}{% assign card_lg = card_md %}{% endif %}
-	
+
 	{% if card_size == "solo" %}
 		{% assign solo_offset = ' col-md-offset-2' %}
-		
+
 		{% if row_sm > 0 or row_sm > 0 or row_sm > 0 %}
 			</div>
 		{% endif %}
-		
+
 		{% assign row_sm = 0 %}
 		{% assign row_md = 0 %}
 		{% assign row_lg = 0 %}
 	{% else %}
 		{% assign solo_offset = '' %}
 	{% endif %}
-	
+
 	{% if row_sm == 0 and row_md == 0 and row_lg == 0 %}
 		<div class="row">
 		<!--<p style="display:block">New row.</p>-->
 	{% endif %}
-	
+
 	{% assign row_sm = row_sm | plus: card_sm %}
 	{% assign row_md = row_md | plus: card_md %}
 	{% assign row_lg = row_lg | plus: card_lg %}
-	
+
 	{%- capture clearfix -%}
 		{%- if row_sm > max %} visible-sm-block{%- endif -%}
 		{%- if row_md > max %} visible-md-block{%- endif -%}
 		{%- if row_lg > max %} visible-lg-block{%- endif -%}
 	{%- endcapture -%}
-	
+
 	{% if clearfix.size > 0 %}
 		<div class="clearfix{{ clearfix }}"></div>
 	{% endif %}
-	
+
 	<div class="col-sm-{{card_sm}} col-md-{{card_md}} col-lg-{{card_lg}}{{ solo_offset }}">
 		<div class="card">
-		
+
 			{% case block.item_type %}
 				{% when "block_card_video"%}
 					<div class="card-image">
@@ -71,13 +71,15 @@
 						{% include helpers/img.html src=block.image.url alt=block.image.alt format=site.data.images.thumb h=200 %}
 					</div>
 			{% endcase %}
-		
+
 			{% if block.subtitle %}<p class="h4 subtitle">{{ block.subtitle }}</p>{% endif %}
 			{% if block.name %}
 				<h3>
-					{% if block.link %}<a href="{{ block.link.url }}">{% endif %}
-					{{ block.name }}
-					{% if block.link %}</a>{% endif %}
+					{% if block.link %}
+						<a href="{{ site.data.sitemap.pages[block.link.id].fullpath }}">{{ block.name }}</a>
+					{% elsif block.url %}
+						<a href="{{ block.url }}">{{ block.name }}</a>
+					{% endif %}
 				</h3>
 			{% endif %}
 			{% if block.description or true %}
@@ -91,19 +93,19 @@
 			{% endif %}
 		</div>
 	</div>
-	
+
 	{%- if row_sm >= max %}{% assign row_sm = 0 %}{%- endif -%}
 	{%- if row_md >= max %}{% assign row_md = 0 %}{%- endif -%}
 	{%- if row_lg >= max %}{% assign row_lg = 0 %}{%- endif -%}
-	
+
 	{% if forloop.last or card_size == "solo" %}
 		{% assign row_sm = 0 %}
 		{% assign row_md = 0 %}
 		{% assign row_lg = 0 %}
 	{% endif %}
-	
+
 	{% if row_sm == 0 and row_md == 0 and row_lg == 0 %}
 		</div>
 	{% endif %}
-	
+
 {% endfor %}

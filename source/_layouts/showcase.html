@@ -3,7 +3,7 @@ layout: base
 ---
 {% include hero.html
 	type='inside'
-	image=page.hero_image_src
+	image=page.image
 	breadcrumb=1
 	heading=page.heading
 %}
@@ -36,12 +36,14 @@ layout: base
 	</div>
 </section>
 
-<section id="contact">
+<section id="contact" class="spaced">
 	<div class="container">
-		<div class="row">
-			<div class="col-sm-6 col-sm-offset-3">
-				<div class="card link tilt">
-					<p>Sounds good? <strong>Let's get to work.</strong></p>
-					<p><a href="mailto:contact@convincible.media" class="button tilt-z">Contact Us</a></p>
-				</div>
-			</div>
+		{% include contact.html blocks=site.data.contact.pages.showcase %}
+	</div>
+</section>
+
+<section id="services">
+	<div class="container">
+		{% include blocks/block_card.html blocks=page.services %}
+	</div>
+</section>

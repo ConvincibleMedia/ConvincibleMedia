@@ -1,0 +1,133 @@
+models:
+  home:
+    path: ''
+  service:
+    path: services/
+  showcase:
+    path: showcase/
+  contact_page:
+    path: contact/
+  '':
+    path: ''
+pages:
+  '86954':
+    title: Home
+    slug: ''
+    path: "/"
+    fullpath: "/"
+    type: home
+    order: 1
+  contact:
+    title: Contact
+    slug: contact
+    path: "/"
+    fullpath: "/contact.html"
+    type: ''
+    order: 1
+  services:
+    title: Services
+    slug: services
+    path: "/"
+    fullpath: "/services.html"
+    type: ''
+    order: 1
+  showcase:
+    title: Showcase
+    slug: showcase
+    path: "/"
+    fullpath: "/showcase.html"
+    type: ''
+    order: 1
+  '86952':
+    title: Branding
+    slug: branding
+    path: "/services/"
+    fullpath: "/services/branding.html"
+    type: service
+    order: 1
+  '91179':
+    title: Presentations
+    slug: presentations
+    path: "/services/"
+    fullpath: "/services/presentations.html"
+    type: service
+    order: 2
+  '87039':
+    title: Websites
+    slug: websites
+    path: "/services/"
+    fullpath: "/services/websites.html"
+    type: service
+    order: 3
+  '91180':
+    title: Experience
+    slug: experience
+    path: "/services/"
+    fullpath: "/services/experience.html"
+    type: service
+    order: 4
+  '91181':
+    title: Copywriting
+    slug: copywriting
+    path: "/services/"
+    fullpath: "/services/copywriting.html"
+    type: service
+    order: 5
+  '91182':
+    title: Print Material
+    slug: print
+    path: "/services/"
+    fullpath: "/services/print.html"
+    type: service
+    order: 6
+  '91183':
+    title: Strategy
+    slug: strategy
+    path: "/services/"
+    fullpath: "/services/strategy.html"
+    type: service
+    order: 7
+  '91184':
+    title: Documents
+    slug: documents
+    path: "/services/"
+    fullpath: "/services/documents.html"
+    type: service
+    order: 8
+  '91185':
+    title: Social/Digital
+    slug: social-digital
+    path: "/services/"
+    fullpath: "/services/social-digital.html"
+    type: service
+    order: 9
+  '86953':
+    title: Cambridge English Teacher
+    slug: cambridge-english-teacher
+    path: "/showcase/"
+    fullpath: "/showcase/cambridge-english-teacher.html"
+    type: showcase
+    order: 1
+  '87043':
+    title: General Election 2017
+    slug: general-election-2017
+    path: "/showcase/"
+    fullpath: "/showcase/general-election-2017.html"
+    type: showcase
+    order: 2
+  '92962':
+    title: New Project
+    slug: new
+    path: "/contact/"
+    fullpath: "/contact/new.html"
+    type: contact_page
+    order: 1
+  '92963':
+    title: Current Project
+    slug: current
+    path: "/contact/"
+    fullpath: "/contact/current.html"
+    type: contact_page
+    order: 2
+types: {}
+map: {}

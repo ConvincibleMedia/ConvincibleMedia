@@ -3,15 +3,16 @@ layout: services
 collection: services
 order: 8
 name: Documents
+title: We’ll bring the information in your documents and reports into focus.
+slug: documents
 seo: !ruby/object:Dato::Local::FieldType::Seo
   title: Typesetting, Templates and Document Formatting
   description: We’ll bring the information in your documents and reports into focus.
   image: 
-hero_image_src: ''
+description: We’ll bring the information in your documents and reports into focus.
+image: ''
 heading:
-- id: '92571'
-  item_type: block_heading_large
-  updated_at: 2017-08-29 14:23:41.583000000 Z
+- item_type: block_heading_large
   text: We’ll bring the information in your documents and reports into focus.
 intro: []
 elements_heading: 

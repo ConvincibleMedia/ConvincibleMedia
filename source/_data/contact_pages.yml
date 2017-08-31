@@ -1,0 +1,32 @@
+home:
+- hello: Let's discuss a
+  title: New Project
+  button: Contact Us
+  link: new
+- hello: We're already working on a
+  title: Current Project
+  button: Catch Up
+  link: current
+services:
+- hello: Sounds good?
+  title: Let's get to work.
+  button: Contact Us
+  link: new
+showcase:
+- hello: Enough about us.
+  title: Let's talk about you.
+  button: Contact Us
+  link: new
+Phone:
+  details: "+44 (0)1223 969601"
+  icon: 
+Email:
+  details: contact@convincible.media
+  icon: 
+Address:
+  details: |-
+    68 Sleaford Street
+    Cambridge
+    CB1 2PU
+    United Kingdom
+  icon: 

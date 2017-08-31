@@ -3,26 +3,16 @@
 		<div id="logo">
 			<span><a href="/">{% include helpers/img.html src='/assets/images/logo-black.png' alt='Convincible.' title='Home' w='100%' %}</a></span>
 		</div>
-		<!--
+
 		<nav>
 			<ul>
-			{% assign collections = site.collections | sort: 'order', 'last' %}
-			{% for collection in collections %}
-				{% if collection.output == true and collection.label != 'posts' %}
-					<li><a href="/{{ collection.label }}.html">{{ collection.title | default: collection.label | camelcase }}</a>
-						<ul>
-							{% for doc in collection.docs %}
-								<li><a href="{{ doc.url }}">{{ doc.title }}</a></li>
-							{% endfor %}
-						</ul>
-					</li>
+				<li><a href="/services.html">Services</a></li>
+				<li><a href="/showcase.html">Showcase</a></li>
+				{% if include.type == 'inside' and page.collection != 'contact' %}
+					<li class="button"><a href="/contact.html" class="button">Contact</a></li>
 				{% endif %}
-			{% endfor %}
-			{% if include.type == 'inside' %}
-				<li class="button"><a href="/contact.html" class="button">Contact</a></li>
-			{% endif %}
 			</ul>
 		</nav>
-		//-->
+
 	</div>
 </section>

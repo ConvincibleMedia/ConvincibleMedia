@@ -1,0 +1,7 @@
+---
+layout: simple-work
+collection: services
+title: Services
+---
+{% assign services = site.services | sort: 'order' %}
+{% include services.html services=services %}

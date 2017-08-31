@@ -3,19 +3,18 @@ layout: services
 collection: services
 order: 5
 name: Copywriting
+title: We’ll understand your ideas. Then find the words that communicate them.
+slug: copywriting
 seo: !ruby/object:Dato::Local::FieldType::Seo
   title: Copywriting and Editing
   description: We’ll understand your ideas, then find the words that communicate them.
   image: 
-hero_image_src: ''
+description: We’ll understand your ideas, then find the words that communicate them.
+image: ''
 heading:
-- id: '92567'
-  item_type: block_heading_large
-  updated_at: 2017-08-29 14:20:50.009000000 Z
+- item_type: block_heading_large
   text: We’ll understand your ideas.
-- id: '92568'
-  item_type: block_heading_large
-  updated_at: 2017-08-29 14:20:50.012000000 Z
+- item_type: block_heading_large
   text: Then find the words that communicate them.
 intro: []
 elements_heading: 

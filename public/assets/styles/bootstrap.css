@@ -29,71 +29,20 @@
 		<div id="logo">
 			<span><a href="/"><img src="/assets/images/logo-black.png" alt="Convincible." title="Home" width="100%" height="auto" border="0" vspace="0" hspace="0" /></a></span>
 		</div>
-		<!--
+
 		<nav>
 			<ul>
-			
-			
+				<li><a href="/services.html">Services</a></li>
+				<li><a href="/showcase.html">Showcase</a></li>
 				
-					<li><a href="/services.html">Services</a>
-						<ul>
-							
-								<li><a href="/services/branding.html">Branding</a></li>
-							
-								<li><a href="/services/copywriting.html">Copywriting</a></li>
-							
-								<li><a href="/services/documents.html">Documents</a></li>
-							
-								<li><a href="/services/experience.html">Experience</a></li>
-							
-								<li><a href="/services/presentations.html">Presentations</a></li>
-							
-								<li><a href="/services/print.html">Print</a></li>
-							
-								<li><a href="/services/social-digital.html">Social Digital</a></li>
-							
-								<li><a href="/services/strategy.html">Strategy</a></li>
-							
-								<li><a href="/services/websites.html">Websites</a></li>
-							
-						</ul>
-					</li>
+					<li class="button"><a href="/contact.html" class="button">Contact</a></li>
 				
-			
-				
-					<li><a href="/showcase.html">Showcase</a>
-						<ul>
-							
-								<li><a href="/showcase/cambridge-english-teacher.html">Cambridge English Teacher</a></li>
-							
-								<li><a href="/showcase/general-election-2017.html">General Election 2017</a></li>
-							
-						</ul>
-					</li>
-				
-			
-				
-					<li><a href="/contact.html">Contact</a>
-						<ul>
-							
-								<li><a href="/contact/current.html">Current Project</a></li>
-							
-								<li><a href="/contact/new.html">New Project</a></li>
-							
-						</ul>
-					</li>
-				
-			
-				
-			
-			
-				<li class="button"><a href="/contact.html" class="button">Contact</a></li>
-			
 			</ul>
 		</nav>
-		//-->
+
 	</div>
 </section>
+
 		</header>
 		<main id="main">
 			/* X-Small XS */
@@ -1340,7 +1289,7 @@ img {
 			<div class="col-sm-4 col-sm-offset-4">
 				<p><a href="/showcase.html" class="button">All Articles</a></p>
 			</div>
-		</div>	
+		</div>
 	</div>
 </section>
 //-->
@@ -1350,74 +1299,41 @@ img {
 		<div id="logo">
 			<span><a href="/"><img src="/assets/images/logo-white.png" alt="Convincible." title="Home" width="100%" height="auto" border="0" vspace="0" hspace="0" /></a></span>
 		</div>
-		<!--
+
 		<nav>
 			<ul>
 			
 			
 				
-					<li><a href="/services.html">Services</a>
-						<ul>
-							
-								<li><a href="/services/branding.html">Branding</a></li>
-							
-								<li><a href="/services/copywriting.html">Copywriting</a></li>
-							
-								<li><a href="/services/documents.html">Documents</a></li>
-							
-								<li><a href="/services/experience.html">Experience</a></li>
-							
-								<li><a href="/services/presentations.html">Presentations</a></li>
-							
-								<li><a href="/services/print.html">Print</a></li>
-							
-								<li><a href="/services/social-digital.html">Social Digital</a></li>
-							
-								<li><a href="/services/strategy.html">Strategy</a></li>
-							
-								<li><a href="/services/websites.html">Websites</a></li>
-							
-						</ul>
-					</li>
+					<li><a href="/services.html">Services</a></li>
 				
 			
 				
-					<li><a href="/showcase.html">Showcase</a>
-						<ul>
-							
-								<li><a href="/showcase/cambridge-english-teacher.html">Cambridge English Teacher</a></li>
-							
-								<li><a href="/showcase/general-election-2017.html">General Election 2017</a></li>
-							
-						</ul>
-					</li>
+					<li><a href="/showcase.html">Showcase</a></li>
 				
 			
 				
-					<li><a href="/contact.html">Contact</a>
-						<ul>
-							
-								<li><a href="/contact/current.html">Current Project</a></li>
-							
-								<li><a href="/contact/new.html">New Project</a></li>
-							
-						</ul>
-					</li>
+					<li><a href="/contact.html">Contact</a></li>
 				
 			
 				
 			
 			</ul>
 		</nav>
-		-->
+
 		<div class="clearfix"></div>
 		<div class="small">
 			<p>Convincible is a Sole Tradership owned and managed by Virgil Ierubino.
 It is not a separate legal or financial entity from its owner.</p>
 
+			<address>68 Sleaford Street
+Cambridge
+CB1 2PU
+United Kingdom</address>
 		</div>
 	</div>
 </section>
+
 		</footer>
 		
 		<script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>

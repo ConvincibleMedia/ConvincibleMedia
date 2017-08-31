@@ -1,13 +1,9 @@
 {% for block in include.blocks %}
 	{% case block.item_type %}
+		{% when "block_body_lead" %}
+			{% include blocks/body/block_body_lead.html paragraphs=block.paragraphs %}
 		{% when "block_body_text" %}
-			<div class="block_body_text">
-				<div class="row">
-					<div class="col-md-8 col-md-offset-2">
-						{{ block.text | markdownify	}}
-					</div>
-				</div>
-			</div>
+			{% include blocks/body/block_body_text.html text=block.text %}
 		{% when "block_body_gallery" %}
 			<div class="block_body_gallery">
 				<ul>
@@ -18,15 +14,6 @@
 				{% if block.caption != nil %}<p class="caption">{{ block.caption }}</p>{% endif %}
 			</div>
 		{% when "block_body_pullquote" %}
-			<div class="block_body_pullquote">
-				<blockquote{% if block.cite %} class="quote"{% endif %}>
-					<div class="row">
-						<div class="col-md-8 col-md-offset-2">
-							{{ block.paragraphs | markdownify }}
-							{% if quote.cite %}<cite>{{ quote.cite }}</cite>{% endif %}
-						</div>
-					</div>
-				</blockquote>
-			</div>
+			{% include blocks/body/block_body_pullquote.html paragraphs=block.paragraphs cite=block.cite %}
 	{% endcase %}
 {% endfor %}
