@@ -31,7 +31,7 @@
 		{{ src }}?
 		{%- for param in include.format -%}
 			{%- assign param-name = param | first | url_param_escape -%}
-			{%- assign param-value = param | last | url_param_escape -%}
+			{%- assign param-value = param | last | url_param_escape | replace: ',','%2C' -%}
 			{%- comment -%}
 				{%- if param-name == 'w' and w != 'auto' -%}{%- assign param-value = w -%}{%- endif -%}
 				{%- if param-name == 'h' and h != 'auto' -%}{%- assign param-value = h -%}{%- endif -%}
