@@ -199,9 +199,9 @@ nav li a {
 		padding: 0.5em 0;
 		margin: 0 0 0 1em;
 
-		&:after, &:before { content: none; ;}
+		&:after, &:before { content: none; }
 	}
-	nav ul { font-weight: bold; color: $color-1 }
+	nav ul { font-weight: bold; color: $color-1; }
 }
 
 /* Hero Headers */
