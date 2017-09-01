@@ -37,7 +37,7 @@
 				{%- if param-name == 'h' and h != 'auto' -%}{%- assign param-value = h -%}{%- endif -%}
 			{%- endcomment -%}
 			{{ param-name }}={{ param-value }}
-			{%- if forloop.last == false -%}&{%- endif -%}
+			{%- if forloop.last == false -%}&amp;{%- endif -%}
 		{%- endfor -%}
 	{%- endcapture -%}
 {%- endif -%}
