@@ -54,8 +54,7 @@ sitemap[:models] = {
 	home: { path: ''},
 	service: { path: 'services/'},
 	showcase: { path: 'showcase/'},
-	contact_page: { path: 'contact/'},
-	'': { path: '' }
+	contact_page: { path: 'contact/'}
 }
 
 #IDs
