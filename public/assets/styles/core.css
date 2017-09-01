@@ -20,7 +20,8 @@ body {
   @include sm() { font-size: 0.8em }
   @include md() { font-size: 0.9em }
   @include lg() { font-size: 0.95em }
-  */ }
+  */
+  font-size: 0.95em; }
 
 .small {
   font-size: 85%; }
@@ -480,9 +481,42 @@ blockquote, .block_body_lead {
   padding: 1em 0;
   margin-top: 0.5em; }
 
-.client-logo {
-  width: 100%;
-  height: auto; }
+/*
+.aspect {
+	height: 0;
+	position: relative;
+	overflow: hidden;
+
+	&.aspect-16-9 { padding-bottom: 56.25%; }
+
+	.aspect-box, img {
+		background: black;
+		width: 100%; height: 100%;
+		position: absolute;
+		top: 0; right: 0
+	}
+}*/
+/* Logos */
+.logo img {
+  height: auto;
+  width: auto;
+  max-width: 100%; }
+
+.logo-small img {
+  max-height: 2em; }
+
+.logo-medium img {
+  max-height: 3.5em; }
+
+.card .logo {
+  margin-bottom: 0.5em; }
+
+#client {
+  margin-bottom: 1em; }
+  @media (min-width: 30em) {
+    #client {
+      text-align: right;
+      margin-top: 3em; } }
 
 #footer {
   color: #fff; }

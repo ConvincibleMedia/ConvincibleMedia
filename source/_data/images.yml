@@ -1,20 +1,44 @@
 thumb:
-    w: 300
-    h: 300
+    w: 320
+    h: 180
     fit: "crop"
     crop: "edges"
     auto: "compress,format"
-    fm: "jpg"
+    fm: "pjpg"
+    q: 50
+thumb-medium:
+    w: 640
+    h: 360
+    fit: "crop"
+    crop: "edges"
+    auto: "compress,format"
+    fm: "pjpg"
     q: 50
 hero:
     w: 1280
-    auto: "compress,format"
-    fm: "jpg"
-    q: 50
+    h: 720
     fit: "max"
-small:
-    w: 300
-    fit: clip
     auto: "compress,format"
-    fm: "jpg"
+    fm: "pjpg"
     q: 50
+small:
+    w: 320
+    h: 180
+    fit: "clip"
+    auto: "compress,format"
+    fm: "pjpg"
+    q: 50
+medium:
+    w: 640
+    h: 360
+    fit: "clip"
+    auto: "compress,format"
+    fm: "pjpg"
+    q: 50
+logo:
+   w: 320
+   h: 180
+   fit: "clip"
+   auto: "compress,format"
+   fm: "png"
+   q: 50

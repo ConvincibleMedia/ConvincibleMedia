@@ -17,8 +17,8 @@ layout: base
 					<span class="h2">{{ page.name }}</span>
 				</h2>
 			</div>
-			<div class="col-sm-4 col-sm-offset-1 col-lg-offset-3">
-				<div class="client-logo">{% include helpers/img.html src=page.logo_image_src format=site.data.images.small %}</div>
+			<div class="col-sm-5 col-lg-offset-2 col-xs-6">
+				<div id="client" class="logo logo-medium">{% include helpers/img.html image=page.logo format=site.data.images.logo %}</div>
 			</div>
 		</div>
 	</div>
@@ -36,6 +36,14 @@ layout: base
 	</div>
 </section>
 
+{% if page.quote %}
+<section id="facets">
+	<div class="container">
+		{% include blocks/body/block_body_pullquote.html paragraphs=page.quote.paragraphs cite=page.quote.cite class='feature' %}
+	</div>
+</section>
+{% endif %}
+
 <section id="contact" class="spaced">
 	<div class="container">
 		{% include contact.html blocks=site.data.contact.pages.showcase %}
@@ -43,7 +51,13 @@ layout: base
 </section>
 
 <section id="services">
+	<h2 class="hide">Key Services</h2>
 	<div class="container">
 		{% include blocks/block_card.html blocks=page.services %}
+		<div class="row">
+			<div class="col-sm-4 col-sm-offset-4">
+				<p><a href="/services.html" class="button">All Services</a></p>
+			</div>
+		</div>
 	</div>
 </section>

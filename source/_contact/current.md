@@ -1,6 +1,7 @@
 ---
 layout: contact
 collection: contact
+live: true
 link: '92963'
 order: 2
 seo: 

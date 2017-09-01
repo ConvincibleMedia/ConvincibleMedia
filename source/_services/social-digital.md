@@ -1,11 +1,11 @@
 ---
 layout: services
 collection: services
-live: 
+live: false
 link: '91185'
 order: 9
 name: Social/Digital
-title: We’ll set up your social media or digital channels and prepare their content.
+title: We’ll set up your social media or digital channels and prepare their content
 slug: social-digital
 seo: !ruby/object:Dato::Local::FieldType::Seo
   title: Social Media and Digital Marketing

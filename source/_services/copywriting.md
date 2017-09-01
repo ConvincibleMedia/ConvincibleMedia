@@ -1,11 +1,11 @@
 ---
 layout: services
 collection: services
-live: 
+live: false
 link: '91181'
 order: 5
 name: Copywriting
-title: We’ll understand your ideas. Then find the words that communicate them.
+title: We’ll understand your ideas. Then find the words that communicate them
 slug: copywriting
 seo: !ruby/object:Dato::Local::FieldType::Seo
   title: Copywriting and Editing

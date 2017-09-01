@@ -34,7 +34,7 @@
 /* Medium MD and up */
 @media (min-width: 50em) {
   .container {
-    width: 80%;
+    width: 85%;
     /*outline: 1px solid orange; outline-offset: -2px;*/ }
 
   .md-hide {

@@ -54,14 +54,20 @@
 {%- capture url -%}
 	{%- case type -%}
 		{%- when 'id' -%}
-			{{ site.data.sitemap.pages[href].fullpath }}
+			{%- if site.data.sitemap.pages[href].live != false -%}
+				{{ site.data.sitemap.pages[href].fullpath }}
+			{%- endif -%}
 		{%- else -%}
 			{{ href }}
 	{%- endcase -%}
 {%- endcapture -%}
 
 {%- unless include.href_only -%}
-	<a {% if include.target %}target="{{ include.target }}"{% endif %} {% if include.class %}class="{{ include.class }}"{% endif %} href="{{ url }}">{{ include.text }}</a>
+	{% if url.size > 0 -%}
+		<a {% if include.target %}target="{{ include.target }}"{% endif %} {% if include.class %}class="{{ include.class }}"{% endif %} href="{{ url }}">{{ include.text }}</a>
+	{%- else -%}
+		{{ include.text }}
+	{%- endif -%}
 {%- else -%}
 	{{ url }}
 {%- endunless -%}

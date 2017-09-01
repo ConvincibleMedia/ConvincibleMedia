@@ -65,7 +65,8 @@ sitemap[:pages][home.id] = {
 	path: '/',
 	fullpath: '/',
 	type: 'home',
-	order: 1
+	order: 1,
+	live: true
 }
 #Manual
 rootpages = {
@@ -80,7 +81,8 @@ rootpages.each_with_index { |(slug, title), index|
 		path: '/',
 		fullpath: '/' + slug.to_s + '.html',
 		type: '',
-		order: index + 2
+		order: index + 2,
+		live: true
 	}
 }
 #Iterate
@@ -94,7 +96,8 @@ models.each { |model|
 			path: '/' + path,
 			fullpath: '/' + path + item.slug + '.html',
 			type: item.item_type.api_key,
-			order: index + 1
+			order: index + 1,
+			live: defined?(item.live) ? (item.live == true ? true : false) : true
 		}
 	}
 }
@@ -107,9 +110,10 @@ create_post "source/index.md" do
 	frontmatter(
 		:yaml,
 		layout: 'index',
+		live: true,
 		link: home.id,
 		tagline: home.tagline,
-		image: home.hero_image.url,
+		image: home.hero_image.to_hash.slice(:url, :alt, :title),
 		services: home.services.to_hash.map { |item|
 			{
 				name: item[:name],
@@ -121,11 +125,12 @@ create_post "source/index.md" do
 		quotes: home.quote.to_hash.map{ |h| h.except!(:id, :updated_at) },
 		showcase: home.showcase.to_hash.map { |item|
 			{
-				image: defined?(item[:hero_image][:url]) ? item[:hero_image][:url] : '',
-				logo: defined?(item[:logo][:url]) ? item[:logo][:url] : '',
-				title: item[:heading].map{ |h| h[:text] }.join(" "),
+				image: defined?(item[:hero_image][:url]) ? item[:hero_image].to_hash.slice(:url, :alt, :title) : '',
+				logo: defined?(item[:logo][:url]) ? item[:logo].to_hash.slice(:url, :alt, :title) : '',
+				title: item[:heading].map{ |h| h[:text] }.join(" ").sub(/\.$/,''),
 				description: item[:description],
-				link: item[:id]
+				link: item[:id],
+				live: item[:live]
 			}
 		},
 		approach: home.approach
@@ -140,15 +145,15 @@ directory "source/_services" do
 			frontmatter :yaml, {
 				layout: 'services',
 				collection: 'services',
-				live: item.live,
+				live: defined?(item.live) ? (item.live == true ? true : false) : true,
 				link: item.id,
 				order: index + 1,
 				name: item.name,
-				title: item.heading.to_hash.map{ |h| h[:text] }.join(" "),
+				title: item.heading.to_hash.map{ |h| h[:text] }.join(" ").sub(/\.$/,''),
 				slug: item.slug,
 				seo: item.seo,
 				description: item.description,
-				image: defined?(item.hero_image.url) ? item.hero_image.url : '',
+				image: defined?(item.hero_image.url) ? item.hero_image.to_hash.slice(:url, :alt, :title) : '',
 				heading: item.heading.to_hash.map{ |h| h.except!(:id, :updated_at) },
 				intro: item.intro.to_hash.map{ |h| h.except!(:id, :updated_at) },
 				elements_heading: item.elements_heading,
@@ -169,16 +174,17 @@ directory "source/_showcase" do
 			frontmatter :yaml, {
 				layout: 'showcase',
 				collection: 'showcase',
+				live: defined?(item.live) ? (item.live == true ? true : false) : true,
 				link: item.id,
 				order: index + 1,
 				name: item.name,
-				title: item.heading.to_hash.map{ |h| h[:text] }.join(" "),
+				title: item.heading.to_hash.map{ |h| h[:text] }.join(" ").sub(/\.$/,''),
 				slug: item.slug,
 				seo: item.seo,
 				description: item.description,
-				image: defined?(item.hero_image.url) ? item.hero_image.url : '',
+				image: defined?(item.hero_image.url) ? item.hero_image.to_hash.slice(:url, :alt, :title) : '',
 				client: item.client,
-				logo: defined?(item.logo.url) ? item.logo.url : '',
+				logo: defined?(item.logo.url) ? item.logo.to_hash.slice(:url, :alt, :title) : '',
 				heading: item.heading.to_hash.map{ |h| h.except!(:id, :updated_at) },
 				intro: item.intro.to_hash.map{ |h| h.except!(:id, :updated_at) },
 				facets: item.facets.to_hash.map{ |h| h.except!(:id, :updated_at) },
@@ -240,6 +246,7 @@ directory "source/_contact" do
 			frontmatter :yaml, {
 				layout: 'contact',
 				collection: 'contact',
+				live: defined?(item.live) ? (item.live == true ? true : false) : true,
 				link: item.id,
 				order: index + 1,
 				seo: item.seo,

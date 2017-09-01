@@ -1,15 +1,19 @@
 ---
 layout: index
+live: true
 link: '86954'
 tagline: We empower communications.
-image: https://www.datocms-assets.com/3013/1503772474-nasa-sts130-s-043-2.png
+image:
+  url: https://www.datocms-assets.com/3013/1504224432-homeherospark.jpg
+  alt: 
+  title: 
 services:
 - name: Branding
-  description: We'll make your brand your most powerful asset.
+  description: Your brand is the centre of our marketing universe.
   link: '86952'
   live: true
 - name: Presentations
-  description: We'll make your slides sing and your delivery electric.
+  description: We'll help make your presentations clear and powerful.
   link: '91179'
   live: true
 - name: Websites
@@ -48,18 +52,32 @@ quotes:
     are particularly relevant in today's multi-platform marketing world.
   cite: Head of Marketing, Cambridge University Press
 showcase:
-- image: https://www.datocms-assets.com/3013/1504013471-timeforchangeweb.jpg
-  logo: https://www.datocms-assets.com/3013/1504089113-greenlogoweb.png
+- image:
+    url: https://www.datocms-assets.com/3013/1504013471-timeforchangeweb.jpg
+    alt: 
+    title: 
+  logo:
+    url: https://www.datocms-assets.com/3013/1504089113-greenlogoweb.png
+    alt: 
+    title: 
   title: Changing minds at a time of change
   description: Managing the General Election 2017 campaign in Cambridge for the Green
     Party of England and Wales.
   link: '87043'
-- image: https://www.datocms-assets.com/3013/1504013537-careers-our-places-page-1.jpg
-  logo: https://www.datocms-assets.com/3013/1504089090-calogoweb.png
+  live: true
+- image:
+    url: https://www.datocms-assets.com/3013/1504013537-careers-our-places-page-1.jpg
+    alt: 
+    title: 
+  logo:
+    url: https://www.datocms-assets.com/3013/1504089090-calogoweb.png
+    alt: 
+    title: 
   title: Crafting a brand that inspires loyalty
   description: Marketing management at Cambridge Assessment (part of the University
     of Cambridge) for online services.
   link: '86953'
+  live: true
 approach: |-
   In today’s busy and noisy world, **we get your message through**, by making it –
 

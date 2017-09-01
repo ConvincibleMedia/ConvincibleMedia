@@ -17,6 +17,7 @@ pages:
     fullpath: "/"
     type: home
     order: 1
+    live: true
   "@services":
     title: Services
     slug: services
@@ -24,6 +25,7 @@ pages:
     fullpath: "/services.html"
     type: ''
     order: 2
+    live: true
   "@showcase":
     title: Showcase
     slug: showcase
@@ -31,6 +33,7 @@ pages:
     fullpath: "/showcase.html"
     type: ''
     order: 3
+    live: true
   "@contact":
     title: Contact
     slug: contact
@@ -38,6 +41,7 @@ pages:
     fullpath: "/contact.html"
     type: ''
     order: 4
+    live: true
   '86952':
     title: Branding
     slug: branding
@@ -45,6 +49,7 @@ pages:
     fullpath: "/services/branding.html"
     type: service
     order: 1
+    live: true
   '91179':
     title: Presentations
     slug: presentations
@@ -52,6 +57,7 @@ pages:
     fullpath: "/services/presentations.html"
     type: service
     order: 2
+    live: true
   '87039':
     title: Websites
     slug: websites
@@ -59,6 +65,7 @@ pages:
     fullpath: "/services/websites.html"
     type: service
     order: 3
+    live: true
   '91180':
     title: Experience
     slug: experience
@@ -66,6 +73,7 @@ pages:
     fullpath: "/services/experience.html"
     type: service
     order: 4
+    live: false
   '91181':
     title: Copywriting
     slug: copywriting
@@ -73,6 +81,7 @@ pages:
     fullpath: "/services/copywriting.html"
     type: service
     order: 5
+    live: false
   '91182':
     title: Print Material
     slug: print
@@ -80,6 +89,7 @@ pages:
     fullpath: "/services/print.html"
     type: service
     order: 6
+    live: false
   '91183':
     title: Strategy
     slug: strategy
@@ -87,6 +97,7 @@ pages:
     fullpath: "/services/strategy.html"
     type: service
     order: 7
+    live: false
   '91184':
     title: Documents
     slug: documents
@@ -94,6 +105,7 @@ pages:
     fullpath: "/services/documents.html"
     type: service
     order: 8
+    live: false
   '91185':
     title: Social/Digital
     slug: social-digital
@@ -101,20 +113,23 @@ pages:
     fullpath: "/services/social-digital.html"
     type: service
     order: 9
-  '86953':
-    title: Cambridge English Teacher
-    slug: cambridge-english-teacher
-    path: "/showcase/"
-    fullpath: "/showcase/cambridge-english-teacher.html"
-    type: showcase
-    order: 1
+    live: false
   '87043':
     title: General Election 2017
     slug: general-election-2017
     path: "/showcase/"
     fullpath: "/showcase/general-election-2017.html"
     type: showcase
+    order: 1
+    live: true
+  '86953':
+    title: Cambridge English Teacher
+    slug: cambridge-english-teacher
+    path: "/showcase/"
+    fullpath: "/showcase/cambridge-english-teacher.html"
+    type: showcase
     order: 2
+    live: true
   '92962':
     title: New Project
     slug: new
@@ -122,6 +137,7 @@ pages:
     fullpath: "/contact/new.html"
     type: contact_page
     order: 1
+    live: true
   '92963':
     title: Current Project
     slug: current
@@ -129,5 +145,6 @@ pages:
     fullpath: "/contact/current.html"
     type: contact_page
     order: 2
+    live: true
 types: {}
 map: {}

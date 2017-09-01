@@ -1,11 +1,11 @@
 ---
 layout: services
 collection: services
-live: 
+live: false
 link: '91180'
 order: 4
 name: Experience
-title: We’ll review customer touchpoints to fix all the little things that matter.
+title: We’ll review customer touchpoints to fix all the little things that matter
 slug: experience
 seo: !ruby/object:Dato::Local::FieldType::Seo
   title: Customer Experience (CX)

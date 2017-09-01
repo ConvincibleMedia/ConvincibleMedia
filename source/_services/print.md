@@ -1,11 +1,11 @@
 ---
 layout: services
 collection: services
-live: 
+live: false
 link: '91182'
 order: 6
 name: Print Material
-title: We’ll create printed material that entices your audience to engage.
+title: We’ll create printed material that entices your audience to engage
 slug: print
 seo: !ruby/object:Dato::Local::FieldType::Seo
   title: 'Print Design: Leaflets, Brochures and More'

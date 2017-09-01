@@ -1,4 +1,4 @@
-{% assign cols = site.data.card_sizes %}
+{% assign cols = site.data.cards %}
 {% assign max = cols['max'] %}
 
 {% assign row_sm = 0 %}
@@ -41,25 +41,30 @@
 
 	{% if row_sm == 0 and row_md == 0 and row_lg == 0 %}
 		<div class="row">
-		<!--<p style="display:block">New row.</p>-->
 	{% endif %}
 
 	{% assign row_sm = row_sm | plus: card_sm %}
 	{% assign row_md = row_md | plus: card_md %}
 	{% assign row_lg = row_lg | plus: card_lg %}
 
-	{%- capture clearfix -%}
+	{% capture clearfix -%}
 		{%- if row_sm > max %} visible-sm-block{%- endif -%}
 		{%- if row_md > max %} visible-md-block{%- endif -%}
 		{%- if row_lg > max %} visible-lg-block{%- endif -%}
-	{%- endcapture -%}
+	{%- endcapture %}
 
 	{% if clearfix.size > 0 %}
 		<div class="clearfix{{ clearfix }}"></div>
 	{% endif %}
 
+	{% if site.data.sitemap.pages[block.link].live != false and include.links != false and block.link %}
+		{% assign live = true %}
+	{% else %}
+		{% assign live = false %}
+	{% endif %}
+
 	<div class="col-sm-{{card_sm}} col-md-{{card_md}} col-lg-{{card_lg}}{{ solo_offset }}">
-		<div class="card">
+		<div class="card{% if live %} link{% endif %}">
 
 			{% case block.item_type %}
 				{% when "block_card_video"%}
@@ -68,35 +73,33 @@
 					</div>
 				{% when "block_card_image"%}
 					<div class="card-image">
-						{% include helpers/img.html src=block.image.url alt=block.image.alt format=site.data.images.thumb h=200 %}
+						{% include helpers/img.html src=block.image.url alt=block.image.alt format=site.data.images.thumb %}
 					</div>
 			{% endcase %}
 
-			{% if block.subtitle %}<p class="h4 subtitle">{{ block.subtitle }}</p>{% endif %}
-			{% if block.title %}
-				<h3>
-					{% if block.link %}
-						{% include helpers/link.html href=block.link text=block.title %}
-					{% else %}
-						{{ block.title }}
+			{% if block.title or block.subtitle %}
+				<h3 class="hgroup">
+					{% if block.subtitle %}<span class="h4 subtitle">{{ block.subtitle }}<span class="hide">: </span></span>{% endif %}
+					{% if block.title %}
+						<span class="h3">
+							{% if live %}
+								{% include helpers/link.html href=block.link text=block.title %}
+							{% else %}
+								{{ block.title }}
+							{% endif %}
+						</span>
 					{% endif %}
 				</h3>
 			{% endif %}
 			{% if block.description or true %}
 				{{ block.description | markdownify }}
-				<!--
-				<p>CardSize: {{ card_size }}</p>
-				<p>RowSM: +{{card_sm}} = {{ row_sm }}</p>
-				<p>RowMD: +{{card_md}} = {{ row_md }}</p>
-				<p>RowLG: +{{card_lg}} = {{ row_lg }}</p>
-				//-->
 			{% endif %}
 		</div>
 	</div>
 
-	{%- if row_sm >= max %}{% assign row_sm = 0 %}{%- endif -%}
-	{%- if row_md >= max %}{% assign row_md = 0 %}{%- endif -%}
-	{%- if row_lg >= max %}{% assign row_lg = 0 %}{%- endif -%}
+	{% if row_sm > max %}{% assign row_sm = card_sm %}{% endif %}
+	{% if row_md > max %}{% assign row_md = card_md %}{% endif %}
+	{% if row_lg > max %}{% assign row_lg = card_lg %}{% endif %}
 
 	{% if forloop.last or card_size == "solo" %}
 		{% assign row_sm = 0 %}

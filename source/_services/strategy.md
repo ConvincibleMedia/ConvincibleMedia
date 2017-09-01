@@ -1,11 +1,11 @@
 ---
 layout: services
 collection: services
-live: 
+live: false
 link: '91183'
 order: 7
 name: Strategy
-title: We’ll solve your marketing riddles, and help you streamline your operation.
+title: We’ll solve your marketing riddles, and help you streamline your operation
 slug: strategy
 seo: !ruby/object:Dato::Local::FieldType::Seo
   title: Marketing Strategy, Planning and Optimisation

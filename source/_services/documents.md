@@ -1,11 +1,11 @@
 ---
 layout: services
 collection: services
-live: 
+live: false
 link: '91184'
 order: 8
 name: Documents
-title: We’ll bring the information in your documents and reports into focus.
+title: We’ll bring the information in your documents and reports into focus
 slug: documents
 seo: !ruby/object:Dato::Local::FieldType::Seo
   title: Typesetting, Templates and Document Formatting
