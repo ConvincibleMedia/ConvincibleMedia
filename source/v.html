@@ -1,34 +1,35 @@
 ---
 layout: simple
 collection: contact
-title: Virgil Ierubino
+title: Keep in touch
 robots: noindex
 cards:
-- item_type: block_card_text
-  subtitle:
-  title: Add to Contacts
-  link: /Virgil_Ierubino.vcf
-  description: Download vCard with all my contact information to add me quickly to your Address Book.
-  size: Solo
 - item_type: block_card_image
-  image: /assets/images/virgil.jpg
+  image:
+    url: /assets/images/virgil.jpg
   subtitle: Owner at Convincible
   title: Virgil Ierubino
   link:
   description:
   size: Small
 - item_type: block_card_text
+  subtitle:
+  title: Add to Contacts
+  link: /Virgil_Ierubino.vcf
+  description: Download vCard with all my contact information to add me quickly to your Address Book.
+  size: Large
+- item_type: block_card_text
   subtitle: Direct Email
   title: virgil @convincible .media
   link: mailto:virgil@convincible.media
   description:
-  size: Small
+  size: Medium
 - item_type: block_card_text
   subtitle: Direct Phone
   title: +44 (0)7905 429563
   link: tel:+44 (0)7905 429563
   description:
-  size: Small
+  size: Medium
 ---
 
 {% include blocks/block_card.html blocks=page.cards %}
