@@ -1,3 +1,6 @@
 .env
 Gemfile.lock
 todo.txt
+/public
+*.db
+*.ini
