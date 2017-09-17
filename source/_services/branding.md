@@ -62,9 +62,8 @@ elements:
   subtitle: 
   title: Website and Print
   link: 
-  description: Your [website](/services/websites) and print materials must be the
-    best reflections you have of your brand – because people will judge you by these
-    covers.
+  description: Your [website](/websites) and print materials must be the best reflections
+    you have of your brand – because people will judge you by these covers.
   size: 
 - item_type: block_card_text
   subtitle: 

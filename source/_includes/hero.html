@@ -48,8 +48,10 @@
 				{% if include.type == 'home' %}
 					<div id="hero-action">
 						<div class="row">
-							<div class="col-md-4 col-sm-6 tilt">
-								<a href="{% include helpers/link.html href=include.action_link href_only=true %}" class="button tilt-z">{{ include.action_text }}</a>
+							<div class="col-md-4 col-sm-6">
+								<div class="tilt">
+									<a href="{% include helpers/link.html href=include.action_link href_only=true %}" class="button tilt-z">{{ include.action_text }}</a>
+								</div>
 							</div>
 						</div>
 					</div>
