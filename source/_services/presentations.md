@@ -27,7 +27,8 @@ intro:
     expertise in both slide design and public speaking.
 - item_type: block_body_text
   text: If you've got ideas to communicate, an important presentation to give, or
-    you just tired of battling with PowerPoint, we've got a passion for helping you.
+    you're just tired of battling with PowerPoint, we've got a passion for helping
+    you.
 elements_heading: What makes a great presentation?
 elements:
 - item_type: block_card_text
@@ -36,7 +37,7 @@ elements:
   link:
     id: '91181'
     item_type: service
-    updated_at: 2017-08-30 17:29:22.991000000 Z
+    updated_at: 2017-09-08 19:42:33.224000000 Z
     position: 5
     name: Copywriting
     area: Clarifying
@@ -48,7 +49,14 @@ elements:
       image: 
     description: We’ll understand your ideas, then find the words that communicate
       them.
-    hero_image: 
+    hero_image:
+      format: jpg
+      size: 1049137
+      url: https://www.datocms-assets.com/3013/1504898871-feather.jpg
+      width: 2000
+      height: 1322
+      alt: 
+      title: 
     heading:
     - id: '92567'
       item_type: block_heading_large
@@ -56,15 +64,19 @@ elements:
       text: We’ll understand your ideas.
     - id: '92568'
       item_type: block_heading_large
-      updated_at: 2017-08-29 14:20:50.012000000 Z
-      text: Then find the words that communicate them.
-    intro: []
+      updated_at: 2017-09-08 19:42:32.482000000 Z
+      text: Then make them really, really clear.
+    intro:
+    - id: '97082'
+      item_type: block_body_lead
+      updated_at: 2017-09-08 19:51:32.611000000 Z
+      paragraphs: ''
     elements_heading: 
     elements: []
     elements_note: 
     sub_services_heading: 
     sub_services: []
-    live: 
+    live: false
   description: We'll work with you to understand your ideas. Then we'll find the best
     way to structure them and the best way of saying them. Not only to communicate
     clearly, but to make your ideas excite, have an impact, and stick.
@@ -105,6 +117,22 @@ subservices:
   description: 'Believe us when we say: "We know PowerPoint." We''ll make it work
     magic for you. We use other tools too (e.g. Prezi) – but PowerPoint gets our strongest
     recommendation... when we''re using it.'
+  size: Medium
+- item_type: block_card_image
+  image: 
+  subtitle: 
+  title: Slide Templates
+  link: 
+  description: We'll set you up with a series of easy-to-use, flexible templates so
+    you can make great decks every time.
+  size: Medium
+- item_type: block_card_image
+  image: 
+  subtitle: 
+  title: Slide Formatting
+  link: 
+  description: 'We can take slides you already have, and transform then into stunning
+    visual aids '
   size: Medium
 ---
 

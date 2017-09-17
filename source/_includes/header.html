@@ -6,11 +6,21 @@
 
 		<nav>
 			<ul>
-				<li><a href="/services.html">Services</a></li>
-				<li><a href="/showcase.html">Showcase</a></li>
-				{% if include.type == 'inside' and page.collection != 'contact' %}
-					<li class="button"><a href="/contact.html" class="button">Contact</a></li>
-				{% endif %}
+
+				{% assign tree = site.data.sitemap.tree.root.below %}
+				{% for item in tree %}
+					{% assign id = site.data.sitemap.tree[item].index %}
+					{% assign pagedata = site.data.sitemap.pages[id] %}
+
+					{% if pagedata.title == 'Contact' %}
+						{% if include.type == 'inside' and page.collection != 'contact' %}
+							<li class="button">{% include helpers/link.html href=pagedata.fullpath text=pagedata.title class='button' %}</li>
+						{% endif %}
+					{% else %}
+						<li>{% include helpers/link.html href=pagedata.fullpath text=pagedata.title %}</li>
+					{% endif %}
+				{% endfor %}
+
 			</ul>
 		</nav>
 

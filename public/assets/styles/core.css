@@ -105,7 +105,10 @@ a:after {
   color: #e87123;
   transition: 0.25s; }
 
-#top a:after, #bottom a:after {
+#top a:after, #top a:before, #bottom a:after, #bottom a:before {
+  content: none; }
+
+.block-link a:after, .block-link a:before {
   content: none; }
 
 /* Top */
@@ -542,6 +545,18 @@ blockquote, .block_body_lead {
 
 .js .link {
   cursor: pointer; }
+
+/* Gallery */
+.gallery {
+  text-align: center;
+  margin: 0 -1em; }
+  .gallery a:after, .gallery a:before {
+    content: none; }
+
+.gallery-item {
+  display: inline-block;
+  padding: 0 1em;
+  margin-bottom: 1em; }
 
 .log {
   position: absolute;

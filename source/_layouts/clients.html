@@ -1,0 +1,43 @@
+---
+layout: base
+---
+
+<section>
+	<div class="container">
+		<h1 class="hgroup">
+			<span class="subtitle">Our work with</span>
+			<span class="h1">{{ page.title }}</span>
+		</h1>
+	</div>
+</section>
+
+<section>
+	<div class="container">
+		<div class="row">
+			<div class="col-md-3 col-md-push-9">
+				<div class="logo logo-medium">{% include helpers/img.html image=page.logo format=site.data.images.logo %}</div>
+				{% assign client_url_pretty = page.client_url | split:'://' | last %}
+				<p class="small">{% include helpers/link.html href=page.client_url text=client_url_pretty %}</p>
+			</div>
+			<div class="col-md-8 col-md-pull-3">
+				{{ content | markdownify }}
+			</div>
+		</div>
+		{% if page.projects.size == 1 %}
+			{% assign card_size = 'Solo' %}
+		{% else %}
+			{% assign card_size = 'Medium' %}
+		{% endif %}
+		{% include blocks/block_card.html blocks=page.projects size=card_size %}
+	</div>
+</section>
+
+<section>
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-4 col-sm-offset-4">
+				<p><a href="/showcase.html" class="button">All Case Studies</a></p>
+			</div>
+		</div>
+	</div>
+</section>

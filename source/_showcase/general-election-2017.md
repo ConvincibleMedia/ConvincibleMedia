@@ -9,8 +9,8 @@ title: Changing minds at a time of change
 slug: general-election-2017
 seo: !ruby/object:Dato::Local::FieldType::Seo
   title: The Green Party
-  description: Managing the General Election 2017 campaign in Cambridge for the Green
-    Party of England and Wales.
+  description: We managed the General Election 2017 campaign in Cambridge for the
+    Green Party of England and Wales.
   image: 
 description: Managing the General Election 2017 campaign in Cambridge for the Green
   Party of England and Wales.
@@ -18,11 +18,13 @@ image:
   url: https://www.datocms-assets.com/3013/1504013471-timeforchangeweb.jpg
   alt: 
   title: 
-client: The Green Party
-logo:
-  url: https://www.datocms-assets.com/3013/1504089113-greenlogoweb.png
-  alt: 
-  title: 
+client:
+  name: The Green Party
+  logo:
+    url: https://www.datocms-assets.com/3013/1505644532-greenlogoweb.png
+    alt: 
+    title: 
+  link: '98628'
 heading:
 - item_type: block_heading_large
   text: Changing minds at a time of change
@@ -106,8 +108,8 @@ quote:
     down to Virgil's fantastic drive and organisation.
   cite: Convenor for Cambridge, Green Party of England and Wales
 services:
-- title: Print Material
-  description: We’ll create printed material that entices your audience to engage.
+- title: Print Design
+  description: We’ll create printed materials that entice your audience to engage.
   link: '91182'
 - title: Copywriting
   description: We’ll understand your ideas, then find the words that communicate them.

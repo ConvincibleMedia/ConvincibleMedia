@@ -36,28 +36,44 @@ create_data_file "source/_data/favicon.yml", :yaml,
 	dato.site.favicon_meta_tags
 
 
+################################################################################
+
 #Sitemap
 sitemap = {
 	models: Hash.new,
 	pages: Hash.new,
-	types: Hash.new,
-	map: Hash.new
+	tree: Hash.new,
+	types: Hash.new
 }
 
+#Shorthands
 home = dato.home #Single
 services = dato.services #Multiple
 showcases = dato.showcases #Multiple
 contact = dato.contact_pages #Multiple
+clients = dato.clients #Multiple
+models = [ services, showcases, contact, clients ]
 
-#Models
+#Root pages
+rootpages = { #List root pages
+	services: 'Services',
+	showcase: 'Showcase',
+	contact: 'Contact'
+}
+
+#MODELS = API Keys
+#------------------------
 sitemap[:models] = {
 	home: { path: ''},
-	service: { path: 'services/'},
+	service: { path: ''},
 	showcase: { path: 'showcase/'},
-	contact_page: { path: 'contact/'}
+	contact_page: { path: 'contact/'},
+	client: { path: 'client/' }
 }
 
 #IDs
+#------------------------
+#Root
 sitemap[:pages][home.id] = {
 	title: 'Home',
 	slug: '',
@@ -66,12 +82,6 @@ sitemap[:pages][home.id] = {
 	type: 'home',
 	order: 1,
 	live: true
-}
-#Manual
-rootpages = {
-	services: 'Services',
-	showcase: 'Showcase',
-	contact: 'Contact'
 }
 rootpages.each_with_index { |(slug, title), index|
 	sitemap[:pages][slug.to_s.prepend('@').to_sym] = {
@@ -84,8 +94,7 @@ rootpages.each_with_index { |(slug, title), index|
 		live: true
 	}
 }
-#Iterate
-models = [ services, showcases, contact ]
+#Inside pages - Iterate
 models.each { |model|
 	model.each_with_index {|item, index|
 		path = sitemap[:models][item.item_type.api_key.to_sym][:path]
@@ -100,9 +109,77 @@ models.each { |model|
 		}
 	}
 }
+
+#Map
+#------------------------
+#Root
+=begin
+sitemap[:tree][:root] = {
+	pages: [ home.id ].push(rootpages.map{|k,v| k.to_s.prepend('@')}),
+	paths: sitemap[:models].map{ |h| h.except!(:home) }.map{ |k,v| k[:path] },
+	parent: 'root'
+}
+=end
+
+sitemap[:tree] = {
+	root: {
+		index: home.id,
+		pages: [],
+		below: [ 'services', 'showcase', 'contact' ],
+		above: 'root'
+	},
+	services: {
+		index: '@services',
+		pages: [ 'id', 'id' ],
+		below: [],
+		above: 'root'
+	},
+	showcase: {
+		index: '@showcase',
+		pages: [ 'id', 'id' ],
+		below: [],
+		above: 'root'
+	},
+	contact: {
+		index: '@contact',
+		pages: [ 'id', 'id' ],
+		below: [],
+		above: 'root'
+	}
+}
+
+=begin
+path_root:
+  pages:
+  - id
+  - id
+  - id
+  children:
+  - services
+  - showcase
+  - contact
+  parent: root
+path_services:
+  pages:
+  - branding
+  - presentations
+  - websites
+  children:
+  - websites
+  parent: root
+path_services_websites:
+  pages:
+  - id
+  subpaths: []
+  parent: services
+=end
+
+
 create_data_file "source/_data/sitemap.yml", :yaml,
 	sitemap
 
+
+################################################################################
 
 #Home Page
 create_post "source/index.md" do
@@ -124,12 +201,18 @@ create_post "source/index.md" do
 		quotes: home.quote.to_hash.map{ |h| h.except!(:id, :updated_at) },
 		showcase: home.showcase.to_hash.map { |item|
 			{
-				image: defined?(item[:hero_image][:url]) ? item[:hero_image].to_hash.slice(:url, :alt, :title) : '',
-				logo: defined?(item[:logo][:url]) ? item[:logo].to_hash.slice(:url, :alt, :title) : '',
 				title: item[:heading].map{ |h| h[:text] }.join(" ").sub(/\.$/,''),
+				image: defined?(item[:hero_image][:url]) ? item[:hero_image].to_hash.slice(:url, :alt, :title) : '',
+				logo: defined?(item[:client][:logo][:url]) ? item[:client][:logo].to_hash.slice(:url, :alt, :title) : '',
 				description: item[:description],
-				link: item[:id],
-				live: item[:live]
+				link: item[:id]
+			}
+		},
+		clients: home.clients.to_hash.map { |item|
+			{
+				name: item[:name],
+				logo: defined?(item[:logo][:url]) ? item[:logo].to_hash.slice(:url, :alt, :title) : '',
+				link: item[:id]
 			}
 		},
 		approach: home.approach
@@ -182,8 +265,11 @@ directory "source/_showcase" do
 				seo: item.seo,
 				description: item.description,
 				image: defined?(item.hero_image.url) ? item.hero_image.to_hash.slice(:url, :alt, :title) : '',
-				client: item.client,
-				logo: defined?(item.logo.url) ? item.logo.to_hash.slice(:url, :alt, :title) : '',
+				client: {
+					name: item.client.name,
+					logo: defined?(item.client.logo.url) ? item.client.logo.to_hash.slice(:url, :alt, :title) : '',
+					link: item.client.id
+				},
 				heading: item.heading.to_hash.map{ |h| h.except!(:id, :updated_at) },
 				intro: item.intro.to_hash.map{ |h| h.except!(:id, :updated_at) },
 				facets: item.facets.to_hash.map{ |h| h.except!(:id, :updated_at) },
@@ -199,6 +285,38 @@ directory "source/_showcase" do
 					}
 				}
 			}
+		end
+	end
+end
+
+
+#Clients
+directory "source/_clients" do
+	clients.each_with_index do |item, index|
+		create_post "#{item.slug}.md" do
+			frontmatter :yaml, {
+				layout: 'clients',
+				collection: 'clients',
+				live: defined?(item.live) ? (item.live == true ? true : false) : true,
+				link: item.id,
+				order: index + 1,
+				name: item.name,
+				title: item.name,
+				slug: item.slug,
+				seo: defined?(item.seo) ? item.seo : '',
+				logo: defined?(item.logo.url) ? item.logo.to_hash.slice(:url, :alt, :title) : '',
+				client_url: item.url,
+				projects: showcases.select{ |showcase| showcase.client.name == item.name }.map { |project|
+					{
+						title: project.heading.to_hash.map{ |h| h[:text] }.join(" ").sub(/\.$/,''),
+						subtitle: project.name,
+						description: project.description,
+						image: defined?(project.hero_image.url) ? project.hero_image.to_hash.slice(:url, :alt, :title) : '',
+						link: project.id
+					}
+				}
+			}
+			content(item.description)
 		end
 	end
 end

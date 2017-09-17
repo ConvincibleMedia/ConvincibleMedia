@@ -18,7 +18,10 @@ layout: base
 				</h2>
 			</div>
 			<div class="col-sm-5 col-lg-offset-2 col-xs-6">
-				<div id="client" class="logo logo-medium">{% include helpers/img.html image=page.logo format=site.data.images.logo %}</div>
+				<div id="client" class="logo logo-medium block-link">
+					{% capture logo %}{% include helpers/img.html image=page.client.logo format=site.data.images.logo %}{% endcapture %}
+					{% include helpers/link.html href=page.client.link text=logo %}
+				</div>
 			</div>
 		</div>
 	</div>

@@ -4,7 +4,7 @@
 		<meta charset="utf-8" /><meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 		
 		
-		<title>Convincible &middot; Contact &middot; New &middot; Cambridge, UK</title><meta name="description" content="Please send us an email to get things going. We’ll give the details of your project our proper consideration and get back to you quickly.
+		<title>Convincible / Contact / New / Cambridge, UK</title><meta name="description" content="Please send us an email to get things going. We’ll give the details of your project our proper consideration and get back to you quickly.
 " />
 
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -15,7 +15,7 @@
 
 		<link href="https://fonts.googleapis.com/css?family=Montserrat:200,600,900|Source+Sans+Pro:300,300i" rel="stylesheet">
 
-		<script src="/assets/scripts/vendor/modernizr-2.8.3.min.js"></script>
+		<script src="/assets/scripts/libraries/modernizr-2.8.3.min.js"></script>
 
 		
 	</head>
@@ -34,9 +34,31 @@
 
 		<nav>
 			<ul>
-				<li><a href="/services.html">Services</a></li>
-				<li><a href="/showcase.html">Showcase</a></li>
+
 				
+				
+					
+					
+
+					
+						<li><a   href="/services.html">Services</a></li>
+					
+				
+					
+					
+
+					
+						<li><a   href="/showcase.html">Showcase</a></li>
+					
+				
+					
+					
+
+					
+						
+					
+				
+
 			</ul>
 		</nav>
 
@@ -168,18 +190,16 @@ United Kingdom</address>
 			
 			
 				
-					<li><a href="/services.html">Services</a></li>
 				
+				<li><a   href="/services.html">Services</a></li>
 			
 				
-					<li><a href="/showcase.html">Showcase</a></li>
 				
+				<li><a   href="/showcase.html">Showcase</a></li>
 			
 				
-					<li><a href="/contact.html">Contact</a></li>
 				
-			
-				
+				<li><a   href="/contact.html">Contact</a></li>
 			
 			</ul>
 		</nav>
@@ -199,37 +219,19 @@ United Kingdom</address>
 
 		</footer>
 
+		<!-- Load JS Libraries -->
 		<script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
 <script type="text/javascript">
-	window.jQuery || document.write('<script src="js/vendor/jquery-1.12.0.min.js"><\/script>');
+	window.jQuery || document.write('<script src="/assets/scripts/libraries/jquery-1.12.0.min.js"><\/script>');
 </script>
-		<script src="/assets/scripts/tilt.jquery.js"></script>
-		<!--<script src="/assets/scripts/textfill.jquery.js"></script>-->
-		<script type="text/javascript">
-			/*$('#hero-text h1').textfill();*/
 
-			$('.tilt').tilt({
-				perspective: 1200,
-				speed: 500,
-				scale: 1.01
-			});
+		<script src="/assets/scripts/libraries/jquery-plugins.js"></script>
+		<script src="/assets/scripts/libraries/tilt.jquery.js"></script>
+		<!--<script src="/assets/scripts/libraries/textfill.jquery.js"></script>-->
+		
 
-			$('.link').each(function() {
-				var go = $(this).find('a').attr('href');
-				if (go == undefined) {
-					$(this).toggleClass("link");
-				} else {
-					$(this).click(function() {
-						window.location = go;
-						return false;
-					});
-				};
-			});
-
-			$(".link").hover(function() {
-				$(this).find('a').toggleClass("hover");
-			});
-		</script>
+		<!-- Finally, run JS -->
+		<script type="text/javascript" src="/assets/scripts/main.js"></script>
 		<script type="text/javascript">
 	$('.video .player').click(function(ev){
 		ev.preventDefault();
@@ -251,6 +253,9 @@ United Kingdom</address>
 		$this.replaceWith(iframe);
 	});
 </script>
+		
+
+		<!-- Finally finally, log page visit. -->
 		<script type="text/javascript">
 	(function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
 	function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;

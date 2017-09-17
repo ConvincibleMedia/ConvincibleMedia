@@ -22,7 +22,7 @@
 			{%- endif -%}
 			{%- if site.data.settings.seo.suffix.size > 0 %} {{ sep }} {{ site.data.settings.seo.suffix }}{%- endif -%}
 		{%- endcapture -%}
-		<title>{{ page_title | escape | replace: '·','&middot;'}}</title>
+		<title>{{ page_title | escape | replace: '·','&middot;' }}</title>
 
 		{%- capture page_description -%}
 			{%- if page.seo.description -%}
@@ -43,7 +43,7 @@
 
 		<link href="https://fonts.googleapis.com/css?family=Montserrat:200,600,900|Source+Sans+Pro:300,300i" rel="stylesheet">
 
-		<script src="/assets/scripts/vendor/modernizr-2.8.3.min.js"></script>
+		<script src="/assets/scripts/libraries/modernizr-2.8.3.min.js"></script>
 
 		{% if home %}
 			<meta name="p:domain_verify" content="d0219ccc18274430b1974dfc6b1b710e" />
@@ -66,35 +66,19 @@
 			{% include footer.html %}
 		</footer>
 
+		<!-- Load JS Libraries -->
 		{% include snippets/jquery.html %}
-		<script src="/assets/scripts/tilt.jquery.js"></script>
-		<!--<script src="/assets/scripts/textfill.jquery.js"></script>-->
-		<script type="text/javascript">
-			/*$('#hero-text h1').textfill();*/
+		<script src="/assets/scripts/libraries/jquery-plugins.js"></script>
+		<script src="/assets/scripts/libraries/tilt.jquery.js"></script>
+		<!--<script src="/assets/scripts/libraries/textfill.jquery.js"></script>-->
+		{% if home %}<script type="text/javascript" src="/assets/scripts/libraries/particles.js"></script>{% endif %}
 
-			$('.tilt').tilt({
-				perspective: 1200,
-				speed: 500,
-				scale: 1.01
-			});
-
-			$('.link').each(function() {
-				var go = $(this).find('a').attr('href');
-				if (go == undefined) {
-					$(this).toggleClass("link");
-				} else {
-					$(this).click(function() {
-						window.location = go;
-						return false;
-					});
-				};
-			});
-
-			$(".link").hover(function() {
-				$(this).find('a').toggleClass("hover");
-			});
-		</script>
+		<!-- Finally, run JS -->
+		<script type="text/javascript" src="/assets/scripts/main.js"></script>
 		{% if site.data.videos.method == 'reactive' %}{% include snippets/video-reactive.html %}{% endif %}
+		{% if home %}<script type="text/javascript" src="/assets/scripts/particles.js"></script>{% endif %}
+
+		<!-- Finally finally, log page visit. -->
 		{% include snippets/analytics.html %}
 	</body>
 </html>

@@ -13,7 +13,7 @@ seo: !ruby/object:Dato::Local::FieldType::Seo
   image: 
 description: Your website is your digital home. We'll make it inviting.
 image:
-  url: https://www.datocms-assets.com/3013/1503844505-website.jpg
+  url: https://www.datocms-assets.com/3013/1504899760-home.jpg
   alt: 
   title: 
 heading:

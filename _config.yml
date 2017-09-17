@@ -38,13 +38,18 @@ collections:
     title: "Services"
     order: 1
     output: true
-    permalink: ":collection/:slug.html"
+    permalink: ":slug.html"
   showcase:
     title: "Showcase"
     order: 2
     output: true
-    permalink: ":collection/:slug.html"
+    permalink: "showcase/:slug.html"
+  clients:
+    title: "Clients"
+    order: 3
+    output: true
+    permalink: "client/:slug.html"
   contact:
     title: "Contact"
     output: true
-    permalink: ":collection/:slug.html"
+    permalink: "contact/:slug.html"
