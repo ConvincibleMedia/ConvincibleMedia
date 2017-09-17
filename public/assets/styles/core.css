@@ -4,6 +4,7 @@
 /* Large LG */
 /* Definitions */
 /* Primary Setup */
+@import url(particle.css);
 html, body {
   background-color: #666; }
 
@@ -225,7 +226,10 @@ header#hero {
     padding-top: 4em;
     padding-bottom: 5em; }
   header#hero .header-home h1, header#hero .header-home .h1 {
-    font-weight: 900; }
+    font-weight: 900;
+    margin-bottom: 0;
+    background-color: #f63;
+    box-shadow: 0 0 3em #f63; }
   header#hero .header-home a.button {
     background-color: #f63;
     box-shadow: 0 0 1em rgba(255, 255, 255, 0.5); }

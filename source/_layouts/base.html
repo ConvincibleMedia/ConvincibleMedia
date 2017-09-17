@@ -22,7 +22,7 @@
 			{%- endif -%}
 			{%- if site.data.settings.seo.suffix.size > 0 %} {{ sep }} {{ site.data.settings.seo.suffix }}{%- endif -%}
 		{%- endcapture -%}
-		<title>{{ page_title | escape | replace: '·','&middot;'}}</title>
+		<title>{{ page_title | escape | replace: '·','&middot;' }}</title>
 
 		{%- capture page_description -%}
 			{%- if page.seo.description -%}
@@ -43,7 +43,7 @@
 
 		<link href="https://fonts.googleapis.com/css?family=Montserrat:200,600,900|Source+Sans+Pro:300,300i" rel="stylesheet">
 
-		<script src="/assets/scripts/vendor/modernizr-2.8.3.min.js"></script>
+		<script src="/assets/scripts/libraries/modernizr-2.8.3.min.js"></script>
 
 		{% if home %}
 			<meta name="p:domain_verify" content="d0219ccc18274430b1974dfc6b1b710e" />
@@ -67,8 +67,11 @@
 		</footer>
 
 		{% include snippets/jquery.html %}
-		<script src="/assets/scripts/tilt.jquery.js"></script>
-		<!--<script src="/assets/scripts/textfill.jquery.js"></script>-->
+		<script src="/assets/scripts/libraries/tilt.jquery.js"></script>
+		<!--<script src="/assets/scripts/libraries/textfill.jquery.js"></script>-->
+		{% if site.data.videos.method == 'reactive' %}{% include snippets/video-reactive.html %}{% endif %}
+		<script type="text/javascript" src="/assets/scripts/libraries/particles.min.js"></script>
+
 		<script type="text/javascript">
 			/*$('#hero-text h1').textfill();*/
 
@@ -93,8 +96,13 @@
 			$(".link").hover(function() {
 				$(this).find('a').toggleClass("hover");
 			});
+
+			/* particlesJS.load(@dom-id, @path-json, @callback (optional)); */
+			particlesJS.load('particles-js', 'assets/scripts/libraries/particlesjs-config.json', function() {
+			  console.log('callback - particles.js config loaded');
+			});
 		</script>
-		{% if site.data.videos.method == 'reactive' %}{% include snippets/video-reactive.html %}{% endif %}
+
 		{% include snippets/analytics.html %}
 	</body>
 </html>
