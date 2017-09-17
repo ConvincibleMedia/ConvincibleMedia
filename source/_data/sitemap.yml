@@ -2,13 +2,13 @@ models:
   home:
     path: ''
   service:
-    path: services/
+    path: ''
   showcase:
     path: showcase/
   contact_page:
     path: contact/
-  '':
-    path: ''
+  client:
+    path: client/
 pages:
   '86954':
     title: Home
@@ -45,72 +45,72 @@ pages:
   '86952':
     title: Branding
     slug: branding
-    path: "/services/"
-    fullpath: "/services/branding.html"
+    path: "/"
+    fullpath: "/branding.html"
     type: service
     order: 1
     live: true
   '91179':
     title: Presentations
     slug: presentations
-    path: "/services/"
-    fullpath: "/services/presentations.html"
+    path: "/"
+    fullpath: "/presentations.html"
     type: service
     order: 2
     live: true
   '87039':
     title: Websites
     slug: websites
-    path: "/services/"
-    fullpath: "/services/websites.html"
+    path: "/"
+    fullpath: "/websites.html"
     type: service
     order: 3
     live: true
   '91180':
     title: Experience
     slug: experience
-    path: "/services/"
-    fullpath: "/services/experience.html"
+    path: "/"
+    fullpath: "/experience.html"
     type: service
     order: 4
     live: false
   '91181':
     title: Copywriting
     slug: copywriting
-    path: "/services/"
-    fullpath: "/services/copywriting.html"
+    path: "/"
+    fullpath: "/copywriting.html"
     type: service
     order: 5
     live: false
   '91182':
-    title: Print Material
+    title: Print Design
     slug: print
-    path: "/services/"
-    fullpath: "/services/print.html"
+    path: "/"
+    fullpath: "/print.html"
     type: service
     order: 6
     live: false
   '91183':
     title: Strategy
     slug: strategy
-    path: "/services/"
-    fullpath: "/services/strategy.html"
+    path: "/"
+    fullpath: "/strategy.html"
     type: service
     order: 7
     live: false
   '91184':
     title: Documents
     slug: documents
-    path: "/services/"
-    fullpath: "/services/documents.html"
+    path: "/"
+    fullpath: "/documents.html"
     type: service
     order: 8
     live: false
   '91185':
     title: Social/Digital
     slug: social-digital
-    path: "/services/"
-    fullpath: "/services/social-digital.html"
+    path: "/"
+    fullpath: "/social-digital.html"
     type: service
     order: 9
     live: false
@@ -130,6 +130,14 @@ pages:
     type: showcase
     order: 2
     live: true
+  '98622':
+    title: Portrait Exhibition
+    slug: portrait-exhibition
+    path: "/showcase/"
+    fullpath: "/showcase/portrait-exhibition.html"
+    type: showcase
+    order: 3
+    live: true
   '92962':
     title: New Project
     slug: new
@@ -146,5 +154,53 @@ pages:
     type: contact_page
     order: 2
     live: true
+  '98627':
+    title: Cambridge Assessment
+    slug: cambridge-assessment
+    path: "/client/"
+    fullpath: "/client/cambridge-assessment.html"
+    type: client
+    order: 1
+    live: true
+  '98628':
+    title: The Green Party
+    slug: green-party
+    path: "/client/"
+    fullpath: "/client/green-party.html"
+    type: client
+    order: 2
+    live: true
+  '98716':
+    title: Wisbech & Fenland Museum
+    slug: wisbech-fenland-museum
+    path: "/client/"
+    fullpath: "/client/wisbech-fenland-museum.html"
+    type: client
+    order: 3
+    live: false
+  '98717':
+    title: Cambridge University Press
+    slug: cambridge-university-press
+    path: "/client/"
+    fullpath: "/client/cambridge-university-press.html"
+    type: client
+    order: 4
+    live: false
+  '98718':
+    title: Fitzwilliam College
+    slug: fitzwilliam-college
+    path: "/client/"
+    fullpath: "/client/fitzwilliam-college.html"
+    type: client
+    order: 5
+    live: false
+  '98719':
+    title: Scene Systems
+    slug: scene-systems
+    path: "/client/"
+    fullpath: "/client/scene-systems.html"
+    type: client
+    order: 6
+    live: false
 types: {}
 map: {}

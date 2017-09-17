@@ -28,11 +28,11 @@ services:
 - name: Copywriting
   description: We’ll understand your ideas, then find the words that communicate them.
   link: '91181'
-  live: 
-- name: Print Material
-  description: We’ll create printed material that entices your audience to engage.
+  live: false
+- name: Print Design
+  description: We’ll create printed materials that entice your audience to engage.
   link: '91182'
-  live: 
+  live: false
 - name: Strategy
   description: We’ll solve your marketing riddles, and help you streamline your operation.
   link: '91183'
@@ -52,32 +52,61 @@ quotes:
     are particularly relevant in today's multi-platform marketing world.
   cite: Head of Marketing, Cambridge University Press
 showcase:
-- image:
+- title: Changing minds at a time of change
+  image:
     url: https://www.datocms-assets.com/3013/1504013471-timeforchangeweb.jpg
     alt: 
     title: 
   logo:
-    url: https://www.datocms-assets.com/3013/1504089113-greenlogoweb.png
+    url: https://www.datocms-assets.com/3013/1505644532-greenlogoweb.png
     alt: 
     title: 
-  title: Changing minds at a time of change
   description: Managing the General Election 2017 campaign in Cambridge for the Green
     Party of England and Wales.
   link: '87043'
-  live: true
-- image:
+- title: Crafting a brand that inspires loyalty
+  image:
     url: https://www.datocms-assets.com/3013/1504013537-careers-our-places-page-1.jpg
     alt: 
     title: 
   logo:
-    url: https://www.datocms-assets.com/3013/1504089090-calogoweb.png
+    url: https://www.datocms-assets.com/3013/1505644554-calogoweb.png
     alt: 
     title: 
-  title: Crafting a brand that inspires loyalty
   description: Marketing management at Cambridge Assessment (part of the University
-    of Cambridge) for online services.
+    of Cambridge) for a groundbreaking website.
   link: '86953'
-  live: true
+- title: Creating an experience with a lasting impression
+  image:
+    url: https://www.datocms-assets.com/3013/1505566466-img_1045.JPG
+    alt: 
+    title: 
+  logo:
+    url: https://www.datocms-assets.com/3013/1505645265-wfm-logo.png
+    alt: 
+    title: 
+  description: We provided design services to bring the Wisbech & Fenland Museum's
+    new exhibition to life.
+  link: '98622'
+clients:
+- name: Cambridge University Press
+  logo:
+    url: https://www.datocms-assets.com/3013/1505645485-cambridge-university-press.png
+    alt: 
+    title: 
+  link: '98717'
+- name: Fitzwilliam College
+  logo:
+    url: https://www.datocms-assets.com/3013/1505658461-fitz-logo.png
+    alt: 
+    title: 
+  link: '98718'
+- name: Scene Systems
+  logo:
+    url: https://www.datocms-assets.com/3013/1505646167-ss-logo.png
+    alt: 
+    title: 
+  link: '98719'
 approach: |-
   In today’s busy and noisy world, **we get your message through**, by making it –
 

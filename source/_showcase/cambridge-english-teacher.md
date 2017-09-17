@@ -10,19 +10,21 @@ slug: cambridge-english-teacher
 seo: !ruby/object:Dato::Local::FieldType::Seo
   title: Cambridge Assessment
   description: Marketing management at Cambridge Assessment (part of the University
-    of Cambridge) for online services.
+    of Cambridge) for a breakthrough website.
   image: 
 description: Marketing management at Cambridge Assessment (part of the University
-  of Cambridge) for online services.
+  of Cambridge) for a groundbreaking website.
 image:
   url: https://www.datocms-assets.com/3013/1504013537-careers-our-places-page-1.jpg
   alt: 
   title: 
-client: Cambridge Assessment
-logo:
-  url: https://www.datocms-assets.com/3013/1504089090-calogoweb.png
-  alt: 
-  title: 
+client:
+  name: Cambridge Assessment
+  logo:
+    url: https://www.datocms-assets.com/3013/1505644554-calogoweb.png
+    alt: 
+    title: 
+  link: '98627'
 heading:
 - item_type: block_heading_large
   text: Crafting a brand that inspires loyalty.

@@ -6,8 +6,13 @@
 {% assign row_lg = 0 %}
 
 {% for block in include.blocks %}
+	{% if include['size'] %}
+		{% assign size_to_use = include['size'] %}
+	{% else %}
+		{% assign size_to_use = block.size %}
+	{% endif %}
 
-	{% case block.size %}
+	{% case size_to_use %}
 		{% when "Solo" %}
 			{% assign card_size = "solo" %}
 		{% when "Large" %}
@@ -20,6 +25,12 @@
 			{% assign card_size = "small" %}
 	{% endcase %}
 
+	{% if card_size == "small" %}
+		{% assign image_format = site.data.images.thumb %}
+	{% else %}
+		{% assign image_format = site.data.images.thumb-medium %}
+	{% endif %}
+	
 	{% assign card_xs = 12 %}
 	{% if cols[card_size].sm %}{% assign card_sm = cols[card_size].sm %}{% else %}{% assign card_sm = card_xs %}{% endif %}
 	{% if cols[card_size].md %}{% assign card_md = cols[card_size].md %}{% else %}{% assign card_md = card_sm %}{% endif %}
@@ -66,16 +77,15 @@
 	<div class="col-sm-{{card_sm}} col-md-{{card_md}} col-lg-{{card_lg}}{{ solo_offset }}">
 		<div class="card{% if live %} link{% endif %}">
 
-			{% case block.item_type %}
-				{% when "block_card_video"%}
-					<div class="card-image">
-						{% include helpers/video.html id=block.video.url on=block.video.provider title=block.video.title format='plain' %}
-					</div>
-				{% when "block_card_image"%}
-					<div class="card-image">
-						{% include helpers/img.html src=block.image.url alt=block.image.alt format=site.data.images.thumb %}
-					</div>
-			{% endcase %}
+			{% if block.image.url %}
+				<div class="card-image">
+					{% include helpers/img.html src=block.image.url alt=block.image.alt format=image_format %}
+				</div>
+			{% elsif block.video.url %}
+				<div class="card-image">
+					{% include helpers/video.html id=block.video.url on=block.video.provider title=block.video.title format='plain' %}
+				</div>
+			{% endif %}
 
 			{% if block.title or block.subtitle %}
 				<h3 class="hgroup">
