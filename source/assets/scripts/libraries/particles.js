@@ -930,7 +930,9 @@ var pJS = function(tag_id, params){
           dist_mouse = Math.sqrt(dx_mouse*dx_mouse + dy_mouse*dy_mouse);
 
 
-
+/* LOOP OVER REPULSE objects
+FOR each
+Is this particle near it? - then repulse this particle*/
 
 
       var dx_bouncer = p.x - pJS.interactivity.mouse.pos_x,
@@ -1077,9 +1079,9 @@ var pJS = function(tag_id, params){
     /* events target element */
     if(pJS.interactivity.detect_on == 'window'){
       pJS.interactivity.el = window;
-    }else{
+   } else {
       pJS.interactivity.el = pJS.canvas.el;
-    }
+   }
 
 
     /* detect mouse pos - on hover / click event */
@@ -1089,8 +1091,8 @@ var pJS = function(tag_id, params){
       pJS.interactivity.el.addEventListener('mousemove', function(e){
 
         if(pJS.interactivity.el == window){
-          var pos_x = e.clientX,
-              pos_y = e.clientY;
+          var pos_x = e.clientX - canvas_el.getBoundingClientRect().left,
+              pos_y = e.clientY - canvas_el.getBoundingClientRect().top;
         }
         else{
           var pos_x = e.offsetX || e.clientX,
