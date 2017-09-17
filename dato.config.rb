@@ -52,6 +52,7 @@ services = dato.services #Multiple
 showcases = dato.showcases #Multiple
 contact = dato.contact_pages #Multiple
 clients = dato.clients #Multiple
+models = [ services, showcases, contact, clients ]
 
 #Models
 sitemap[:models] = {
@@ -92,7 +93,6 @@ rootpages.each_with_index { |(slug, title), index|
 	}
 }
 #Inside pages - Iterate
-models = [ services, showcases, contact, clients ]
 models.each { |model|
 	model.each_with_index {|item, index|
 		path = sitemap[:models][item.item_type.api_key.to_sym][:path]
