@@ -9,8 +9,8 @@ title: Changing minds at a time of change
 slug: general-election-2017
 seo: !ruby/object:Dato::Local::FieldType::Seo
   title: The Green Party
-  description: Managing the General Election 2017 campaign in Cambridge for the Green
-    Party of England and Wales.
+  description: We managed the General Election 2017 campaign in Cambridge for the
+    Green Party of England and Wales.
   image: 
 description: Managing the General Election 2017 campaign in Cambridge for the Green
   Party of England and Wales.

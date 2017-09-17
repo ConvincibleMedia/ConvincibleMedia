@@ -116,6 +116,11 @@ a:after {
 		content: none;
 	}
 }
+.block-link {
+	a:after, a:before {
+		content: none;
+	}
+}
 
 /* Top */
 #logo {

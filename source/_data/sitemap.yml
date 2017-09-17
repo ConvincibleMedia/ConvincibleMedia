@@ -202,5 +202,34 @@ pages:
     type: client
     order: 6
     live: false
+tree:
+  root:
+    index: '86954'
+    pages: []
+    below:
+    - services
+    - showcase
+    - contact
+    above: root
+  services:
+    index: "@services"
+    pages:
+    - id
+    - id
+    below: []
+    above: root
+  showcase:
+    index: "@showcase"
+    pages:
+    - id
+    - id
+    below: []
+    above: root
+  contact:
+    index: "@contact"
+    pages:
+    - id
+    - id
+    below: []
+    above: root
 types: {}
-map: {}

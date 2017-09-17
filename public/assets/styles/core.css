@@ -108,6 +108,9 @@ a:after {
 #top a:after, #top a:before, #bottom a:after, #bottom a:before {
   content: none; }
 
+.block-link a:after, .block-link a:before {
+  content: none; }
+
 /* Top */
 #logo {
   width: 15em;

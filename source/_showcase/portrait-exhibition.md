@@ -91,8 +91,9 @@ facets:
     the town to attract new visitors to the museum.
   size: Small
 quote:
-  paragraphs: Amazing
-  cite: Visitor
+  paragraphs: The high standard of design, presentation and interactivity offered
+    our visitors a rewarding and thought-provoking experience.
+  cite: Exhibition Curator, Wisbech & Fenland Museum
 services:
 - title: Print Design
   description: We’ll create printed materials that entice your audience to engage.

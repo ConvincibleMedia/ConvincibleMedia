@@ -51,11 +51,11 @@
 
 		<nav>
 			<ul>
-			{% assign collections = site.collections | sort: 'order', 'last' %}
-			{% for collection in collections %}
-				{% if collection.output == true and collection.label != 'posts' %}
-					<li><a href="/{{ collection.label }}.html">{{ collection.title | default: collection.label | camelcase }}</a></li>
-				{% endif %}
+			{% assign tree = site.data.sitemap.tree.root.below %}
+			{% for item in tree %}
+				{% assign id = site.data.sitemap.tree[item].index %}
+				{% assign page = site.data.sitemap.pages[id] %}
+				<li>{% include helpers/link.html href=page.fullpath text=page.title %}</li>
 			{% endfor %}
 			</ul>
 		</nav>

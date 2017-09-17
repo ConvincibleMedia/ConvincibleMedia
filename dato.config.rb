@@ -42,8 +42,8 @@ create_data_file "source/_data/favicon.yml", :yaml,
 sitemap = {
 	models: Hash.new,
 	pages: Hash.new,
-	types: Hash.new,
-	map: Hash.new
+	tree: Hash.new,
+	types: Hash.new
 }
 
 #Shorthands
@@ -54,7 +54,15 @@ contact = dato.contact_pages #Multiple
 clients = dato.clients #Multiple
 models = [ services, showcases, contact, clients ]
 
-#Models
+#Root pages
+rootpages = { #List root pages
+	services: 'Services',
+	showcase: 'Showcase',
+	contact: 'Contact'
+}
+
+#MODELS = API Keys
+#------------------------
 sitemap[:models] = {
 	home: { path: ''},
 	service: { path: ''},
@@ -65,7 +73,7 @@ sitemap[:models] = {
 
 #IDs
 #------------------------
-#Home
+#Root
 sitemap[:pages][home.id] = {
 	title: 'Home',
 	slug: '',
@@ -74,12 +82,6 @@ sitemap[:pages][home.id] = {
 	type: 'home',
 	order: 1,
 	live: true
-}
-#Root pages
-rootpages = { #List root pages
-	services: 'Services',
-	showcase: 'Showcase',
-	contact: 'Contact'
 }
 rootpages.each_with_index { |(slug, title), index|
 	sitemap[:pages][slug.to_s.prepend('@').to_sym] = {
@@ -110,8 +112,67 @@ models.each { |model|
 
 #Map
 #------------------------
+#Root
+=begin
+sitemap[:tree][:root] = {
+	pages: [ home.id ].push(rootpages.map{|k,v| k.to_s.prepend('@')}),
+	paths: sitemap[:models].map{ |h| h.except!(:home) }.map{ |k,v| k[:path] },
+	parent: 'root'
+}
+=end
 
+sitemap[:tree] = {
+	root: {
+		index: home.id,
+		pages: [],
+		below: [ 'services', 'showcase', 'contact' ],
+		above: 'root'
+	},
+	services: {
+		index: '@services',
+		pages: [ 'id', 'id' ],
+		below: [],
+		above: 'root'
+	},
+	showcase: {
+		index: '@showcase',
+		pages: [ 'id', 'id' ],
+		below: [],
+		above: 'root'
+	},
+	contact: {
+		index: '@contact',
+		pages: [ 'id', 'id' ],
+		below: [],
+		above: 'root'
+	}
+}
 
+=begin
+path_root:
+  pages:
+  - id
+  - id
+  - id
+  children:
+  - services
+  - showcase
+  - contact
+  parent: root
+path_services:
+  pages:
+  - branding
+  - presentations
+  - websites
+  children:
+  - websites
+  parent: root
+path_services_websites:
+  pages:
+  - id
+  subpaths: []
+  parent: services
+=end
 
 
 create_data_file "source/_data/sitemap.yml", :yaml,
