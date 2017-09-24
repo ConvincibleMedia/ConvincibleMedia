@@ -4,9 +4,9 @@ collection: services
 live: true
 link: '91185'
 order: 4
-name: Social/Digital
+name: Digital/Social
 title: In the digital world, there's a better route to your audience. We'll navigate
-slug: social-digital
+slug: digital-social
 seo: !ruby/object:Dato::Local::FieldType::Seo
   title: Social Media and Digital Marketing
   description: The digital world offers a better route to your audience. We'll navigate.

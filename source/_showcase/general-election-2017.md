@@ -114,7 +114,7 @@ services:
 - title: Copywriting
   description: We get your ideas clear. Then get them across clearly.
   link: '91181'
-- title: Social/Digital
+- title: Digital/Social
   description: In the digital world, there's a better route to your audience. We'll
     navigate.
   link: '91185'

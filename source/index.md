@@ -2,7 +2,7 @@
 layout: index
 live: true
 link: '86954'
-tagline: We empower communications.
+tagline: We cut through the noise.
 image:
   url: https://www.datocms-assets.com/3013/1504224432-homeherospark.jpg
   alt: 
@@ -20,9 +20,10 @@ services:
   description: Your website is your digital home. We'll make it inviting.
   link: '87039'
   live: true
-- name: Experience
-  description: How do you want your audience to feel? Leave the details to us.
-  link: '91180'
+- name: Digital/Social
+  description: In the digital world, there's a better route to your audience. We'll
+    navigate.
+  link: '91185'
   live: true
 - name: Copywriting
   description: We get your ideas clear. Then get them across clearly.
@@ -40,10 +41,9 @@ services:
   description: We’ll bring the information in your documents and reports into focus.
   link: '91184'
   live: true
-- name: Social/Digital
-  description: In the digital world, there's a better route to your audience. We'll
-    navigate.
-  link: '91185'
+- name: Experience
+  description: How do you want your audience to feel? Leave the details to us.
+  link: '91180'
   live: true
 quotes:
 - item_type: block_body_pullquote

@@ -139,7 +139,7 @@ services:
 - title: Strategy
   description: We’ll solve your marketing riddles, to reveal the right path.
   link: '91183'
-- title: Social/Digital
+- title: Digital/Social
   description: In the digital world, there's a better route to your audience. We'll
     navigate.
   link: '91185'

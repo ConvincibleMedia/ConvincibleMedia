@@ -67,10 +67,10 @@ pages:
     order: 3
     live: true
   '91185':
-    title: Social/Digital
-    slug: social-digital
+    title: Digital/Social
+    slug: digital-social
     path: "/"
-    fullpath: "/social-digital.html"
+    fullpath: "/digital-social.html"
     type: service
     order: 4
     live: true
@@ -209,7 +209,7 @@ pages:
     fullpath: "/client/scene-systems.html"
     type: client
     order: 6
-    live: false
+    live: true
   '101654':
     title: AgeCurve
     slug: age-curve
