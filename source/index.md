@@ -4,7 +4,7 @@ live: true
 link: '86954'
 tagline: We cut through the noise.
 image:
-  url: https://www.datocms-assets.com/3013/1504224432-homeherospark.jpg
+  url: https://www.datocms-assets.com/3013/1506271966-noise.jpg
   alt: 
   title: 
 services:
