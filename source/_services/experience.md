@@ -9,8 +9,7 @@ title: How do you want your audience to feel? Leave the details to us
 slug: experience
 seo: !ruby/object:Dato::Local::FieldType::Seo
   title: Customer Experience (CX), Space and Event Design
-  description: We’ll review customer touchpoints to fix all the little things that
-    matter.
+  description: How do you want your audience to feel? Leave the details to us.
   image: 
 description: How do you want your audience to feel? Leave the details to us.
 image:
@@ -47,7 +46,7 @@ elements:
   title: Human Interactions
   link: 
   description: We naturally remember person-to-person interactions more vividly than
-    anything else. It's essential to make these as great as possible.
+    anything else. It's essential to make these personal and authentic.
   size: 
 elements_note: ''
 subservices_heading: What experience do you want to create?

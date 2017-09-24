@@ -28,7 +28,7 @@ services:
   description: We’ll solve your marketing riddles, to reveal the right path.
   link: '91183'
 - title: Copywriting
-  description: We get your ideas clear. Then get them across clearly.
+  description: We'll get your ideas clear. Then get them across clearly.
   link: '91181'
 ---
 

@@ -9,7 +9,7 @@ title: We’ll solve your marketing riddles, to reveal the right path
 slug: strategy
 seo: !ruby/object:Dato::Local::FieldType::Seo
   title: Marketing Strategy, Planning and Optimisation
-  description: We’ll solve your marketing riddles, and help you streamline your operation.
+  description: We’ll solve your marketing riddles, to reveal the right path.
   image: 
 description: We’ll solve your marketing riddles, to reveal the right path.
 image:
@@ -23,7 +23,7 @@ intro:
 - item_type: block_body_lead
   paragraphs: Your strategy is the map you're following. The wrong one could lead
     you nowhere. We use proven marketing frameworks to help you explore your strategic
-    options – and make the right choices.
+    options – then make the right choices.
 - item_type: block_body_text
   text: 'Strategy is a big word that can mean many things. We define it as the *decisions
     that shape your decisions*: what you determine in advance to guide your approach
@@ -81,7 +81,7 @@ elements:
 elements_note: Our Marketing Strategy work is directly informed by the methodology
   of the **Chartered Institute of Marketing (CIM)**, as well as leading marketing
   thinkers, the latest trends, and our own years of marketing experience.
-subservices_heading: How we help
+subservices_heading: Let's dig into this together.
 subservices:
 - item_type: block_card_image
   image: 

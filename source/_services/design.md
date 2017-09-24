@@ -9,7 +9,7 @@ title: Graphics and text are just ink. We use design to print ideas and emotions
 slug: design
 seo: !ruby/object:Dato::Local::FieldType::Seo
   title: 'Print Design: Leaflets, Brochures and Graphics'
-  description: We’ll create printed material that entices your audience to engage.
+  description: Graphics and text are just ink. We use design to print ideas and emotions.
   image: 
 description: Graphics and text are just ink. We use design to print ideas and emotions.
 image:
@@ -30,7 +30,7 @@ intro:
   text: With us, you're not printing a leaflet. You're not printing a brochure or
     a poster. You're printing a powerful tool – every part of which has been carefully
     designed to achieve your goals.
-elements_heading: Printed materials a cut above the rest.
+elements_heading: Printed materials, a cut above the rest.
 elements:
 - item_type: block_card_text
   subtitle: 

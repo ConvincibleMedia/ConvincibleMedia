@@ -9,7 +9,7 @@ title: We'll make your presentation convincing. So you'll feel invincible
 slug: presentations
 seo: !ruby/object:Dato::Local::FieldType::Seo
   title: Presentations, PowerPoint Slides and Public Speaking
-  description: We'll make your slides sing and your delivery electric.
+  description: We'll make your presentation convincing. So you'll feel invincible.
   image: 
 description: We'll make your presentation convincing. So you'll feel invincible.
 image:
@@ -54,7 +54,7 @@ elements:
     way you can.
   size: 
 elements_note: 
-subservices_heading: We'll make your presentation electric.
+subservices_heading: A new standard for your presentations.
 subservices:
 - item_type: block_card_image
   image: 

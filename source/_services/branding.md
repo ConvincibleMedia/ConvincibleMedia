@@ -9,7 +9,7 @@ title: Your brand is the centre of our marketing universe
 slug: branding
 seo: !ruby/object:Dato::Local::FieldType::Seo
   title: Branding, Logos and Visual Identity
-  description: We'll help you make your brand your most powerful asset.
+  description: Your brand is the centre of our marketing universe.
   image: 
 description: Your brand is the centre of our marketing universe.
 image:
@@ -71,15 +71,14 @@ elements:
   link:
     id: '91180'
     item_type: service
-    updated_at: 2017-09-24 16:29:36.776000000 Z
+    updated_at: 2017-09-24 20:15:29.628000000 Z
     position: 9
     name: Experience
     area: Creating
     slug: experience
     seo:
       title: Customer Experience (CX), Space and Event Design
-      description: We’ll review customer touchpoints to fix all the little things
-        that matter.
+      description: How do you want your audience to feel? Leave the details to us.
       image: 
     description: How do you want your audience to feel? Leave the details to us.
     hero_image:
@@ -125,12 +124,12 @@ elements:
       size: 
     - id: '102576'
       item_type: block_card_text
-      updated_at: 2017-09-24 14:46:46.083000000 Z
+      updated_at: 2017-09-24 18:03:05.871000000 Z
       subtitle: 
       title: Human Interactions
       link: 
       description: We naturally remember person-to-person interactions more vividly
-        than anything else. It's essential to make these as great as possible.
+        than anything else. It's essential to make these personal and authentic.
       size: 
     elements_note: ''
     sub_services_heading: What experience do you want to create?

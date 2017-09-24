@@ -5,22 +5,29 @@ live: true
 link: '91184'
 order: 8
 name: Documents
-title: We’ll bring the information in your documents and reports into focus
+title: We give ideas room to breathe. We bring information into focus
 slug: documents
 seo: !ruby/object:Dato::Local::FieldType::Seo
-  title: Typesetting, Templates and Document Formatting
-  description: We’ll bring the information in your documents and reports into focus.
+  title: Document Typesetting and Templates
+  description: We give ideas room to breathe. We bring information into focus.
   image: 
-description: We’ll bring the information in your documents and reports into focus.
+description: We give ideas room to breathe. We bring information into focus.
 image:
   url: https://www.datocms-assets.com/3013/1505946776-infographics.jpg
   alt: 
   title: 
 heading:
 - item_type: block_heading_large
-  text: We’ll bring the information in your documents and reports into focus.
-intro: []
-elements_heading: What sets a document apart?
+  text: We give ideas room to breathe. We bring information into focus.
+intro:
+- item_type: block_body_lead
+  paragraphs: Complex ideas or information can get lost if they're presented as a
+    dense block of text or numbers. We create documents that truly communicate.
+- item_type: block_body_text
+  text: Whether it's a report, a guide or an article, professional typesetting and
+    document design is the difference between the ideas staying on the page – or being
+    understood.
+elements_heading: Applying design to words and numbers.
 elements:
 - item_type: block_card_text
   subtitle: 
@@ -47,7 +54,7 @@ elements:
     enhances how easy a document is to read.
   size: 
 elements_note: ''
-subservices_heading: What we do
+subservices_heading: A new standard for your documents and reports.
 subservices:
 - item_type: block_card_image
   image: 

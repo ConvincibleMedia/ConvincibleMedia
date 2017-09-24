@@ -112,7 +112,7 @@ services:
   description: Graphics and text are just ink. We use design to print ideas and emotions.
   link: '91182'
 - title: Copywriting
-  description: We get your ideas clear. Then get them across clearly.
+  description: We'll get your ideas clear. Then get them across clearly.
   link: '91181'
 - title: Digital/Social
   description: In the digital world, there's a better route to your audience. We'll

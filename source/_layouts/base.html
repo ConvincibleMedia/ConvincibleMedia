@@ -11,7 +11,7 @@
 		{% assign sep = site.data.settings.seo.separator %}
 		{%- capture page_title -%}
 			{{ site.data.settings.name | default: site.title }}
-			{%- if section %} {{ sep }} {{ section.title }}{%- endif -%}
+			{%- if section and section.title != 'Services' %} {{ sep }} {{ section.title }}{%- endif -%}
 			{%- if page.seo.title or site.data.settings.seo.title or page.title %} {{ sep }} {% if page.seo.title -%}
 					{{ page.seo.title }}
 				{%- elsif page.title -%}
@@ -29,9 +29,7 @@
 				{{ page.seo.description }}
 			{%- elsif page.excerpt -%}
 				{{ page.excerpt | markdownify | strip_html | truncatewords: 50 }}
-			{%- else -%}
-				{{ site.data.settings.seo.description | default: site.description }}
-			{%- endif -%}
+			{%- endif %} {{ site.data.settings.seo.description }}
 		{%- endcapture -%}
 		<meta name="description" content="{{ page_description | escape }}" />
 

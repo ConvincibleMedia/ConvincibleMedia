@@ -4,7 +4,7 @@ live: true
 link: '86954'
 tagline: We cut through the noise.
 image:
-  url: https://www.datocms-assets.com/3013/1506271966-noise.jpg
+  url: https://www.datocms-assets.com/3013/1506283529-noise.jpg
   alt: 
   title: 
 services:
@@ -26,7 +26,7 @@ services:
   link: '91185'
   live: true
 - name: Copywriting
-  description: We get your ideas clear. Then get them across clearly.
+  description: We'll get your ideas clear. Then get them across clearly.
   link: '91181'
   live: true
 - name: Print Design
@@ -38,7 +38,7 @@ services:
   link: '91183'
   live: true
 - name: Documents
-  description: We’ll bring the information in your documents and reports into focus.
+  description: We give ideas room to breathe. We bring information into focus.
   link: '91184'
   live: true
 - name: Experience
@@ -47,8 +47,8 @@ services:
   live: true
 quotes:
 - item_type: block_body_pullquote
-  paragraphs: Virgil [Owner at Convincible] has an excellent range of skills that
-    are particularly relevant in today's multi-platform marketing world.
+  paragraphs: Virgil <i class="small">[MD at Convincible]</i> has an excellent range
+    of skills that are particularly relevant in today's multi-platform marketing world.
   cite: Head of Marketing, Cambridge University Press
 showcase:
 - title: Changing minds at a time of change

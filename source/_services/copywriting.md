@@ -5,34 +5,39 @@ live: true
 link: '91181'
 order: 5
 name: Copywriting
-title: We get your ideas clear. Then get them across clearly
+title: We'll get your ideas clear. Then get them across clearly
 slug: copywriting
 seo: !ruby/object:Dato::Local::FieldType::Seo
   title: Copywriting and Editing
-  description: We’ll understand your ideas, then find the words that communicate them.
+  description: We'll get your ideas clear. Then get them across clearly.
   image: 
-description: We get your ideas clear. Then get them across clearly.
+description: We'll get your ideas clear. Then get them across clearly.
 image:
   url: https://www.datocms-assets.com/3013/1506258576-typewriter.jpg
   alt: 
   title: 
 heading:
 - item_type: block_heading_large
-  text: We get your ideas clear.
+  text: We'll get your ideas clear.
 - item_type: block_heading_large
   text: Then get them across clearly.
 intro:
 - item_type: block_body_lead
-  paragraphs: 'Great copy is, first and foremost, clear. '
+  paragraphs: When text will be used more than once – maybe being reproduced thousands
+    of times – it's crucial to write it to a higher standard. That's why it's called
+    'copy'-writing.
+- item_type: block_body_text
+  text: Writing great copy (i.e. the text that will be copied) is a skill that takes
+    years to learn. Luckily, those years are already behind us.
 elements_heading: What makes great copy?
 elements:
 - item_type: block_card_text
   subtitle: 
   title: Succinct
   link: 
-  description: Less is ~~so much~~ more. It's far~~, far~~ easier to write something
-    long than write something short. We ~~find it's usually possible that we~~ can
-    cut word-counts in half without losing any ~~of the~~ meaning.
+  description: Less is ~~so much~~ more. It's ~~by~~ far easier to write something
+    long than ~~write~~ something short. We ~~find it's usually possible that we~~
+    can cut word-counts in half without losing any ~~of the~~ meaning.
   size: 
 - item_type: block_card_text
   subtitle: 
@@ -50,7 +55,7 @@ elements:
     we know long words, saying things simply and in plain English is clearer for everyone."
   size: 
 elements_note: 
-subservices_heading: ''
+subservices_heading: Let us find the words for you.
 subservices:
 - item_type: block_card_image
   image: 

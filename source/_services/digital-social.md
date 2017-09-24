@@ -9,7 +9,8 @@ title: In the digital world, there's a better route to your audience. We'll navi
 slug: digital-social
 seo: !ruby/object:Dato::Local::FieldType::Seo
   title: Social Media and Digital Marketing
-  description: The digital world offers a better route to your audience. We'll navigate.
+  description: In the digital world, there's a better route to your audience. We'll
+    navigate.
   image: 
 description: In the digital world, there's a better route to your audience. We'll
   navigate.
@@ -20,7 +21,10 @@ image:
 heading:
 - item_type: block_heading_large
   text: In the digital world, there's a better route to your audience. We'll navigate.
-intro: []
+intro:
+- item_type: block_body_lead
+  paragraphs: Digital marketing lets you pinpoint your perfect audience, then reach
+    them instantly. Are you taking full advantage of this superweapon?
 elements_heading: We know Digital Marketing.
 elements:
 - item_type: block_card_text
@@ -53,7 +57,9 @@ elements:
   description: Engaging with smart digital tools can end up taking more time than
     it's worth. We'll set up even smarter tools to do the work for you.
   size: Medium
-elements_note: 
+elements_note: We've been pioneering Digital Marketing since the term first entered
+  widespread use. We know the difference between a short-lived fad and the techniques
+  that really get results.
 subservices_heading: Start your journey here.
 subservices:
 - item_type: block_card_image
