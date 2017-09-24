@@ -128,21 +128,20 @@ services:
   description: Your brand is the centre of our marketing universe.
   link: '86952'
 - title: Presentations
-  description: We'll help make your presentations clear and powerful.
+  description: We'll make your presentation convincing. So you'll feel invincible.
   link: '91179'
 - title: Experience
-  description: We’ll review customer touchpoints to fix all the little things that
-    matter.
+  description: How do you want your audience to feel? Leave the details to us.
   link: '91180'
 - title: Copywriting
-  description: We’ll understand your ideas, then find the words that communicate them.
+  description: We get your ideas clear. Then get them across clearly.
   link: '91181'
 - title: Strategy
-  description: We’ll solve your marketing riddles, and help you streamline your operation.
+  description: We’ll solve your marketing riddles, to reveal the right path.
   link: '91183'
 - title: Social/Digital
-  description: We’ll set up your social media or digital channels and prepare their
-    content.
+  description: In the digital world, there's a better route to your audience. We'll
+    navigate.
   link: '91185'
 ---
 

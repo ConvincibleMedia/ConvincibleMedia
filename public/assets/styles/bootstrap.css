@@ -1344,8 +1344,7 @@ img {
 
 		<div class="clearfix"></div>
 		<div class="small">
-			<p>Convincible is a Sole Tradership owned and managed by Virgil Ierubino.
-It is not a separate legal or financial entity from its owner.</p>
+			<p>Convincible is a Sole Tradership owned and managed by Virgil Ierubino.</p>
 
 			<address>68 Sleaford Street
 Cambridge
@@ -1365,6 +1364,7 @@ United Kingdom</address>
 
 		<script src="/assets/scripts/libraries/jquery-plugins.js"></script>
 		<script src="/assets/scripts/libraries/tilt.jquery.js"></script>
+		<script src="/assets/scripts/libraries/matchHeight.jquery.js"></script>
 		<!--<script src="/assets/scripts/libraries/textfill.jquery.js"></script>-->
 		
 

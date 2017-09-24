@@ -96,14 +96,13 @@ quote:
   cite: Exhibition Curator, Wisbech & Fenland Museum
 services:
 - title: Print Design
-  description: We’ll create printed materials that entice your audience to engage.
+  description: Graphics and text are just ink. We use design to print ideas and emotions.
   link: '91182'
 - title: Experience
-  description: We’ll review customer touchpoints to fix all the little things that
-    matter.
+  description: How do you want your audience to feel? Leave the details to us.
   link: '91180'
 - title: Copywriting
-  description: We’ll understand your ideas, then find the words that communicate them.
+  description: We get your ideas clear. Then get them across clearly.
   link: '91181'
 ---
 

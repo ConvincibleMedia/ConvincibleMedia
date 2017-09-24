@@ -1,17 +1,17 @@
 ---
 layout: services
 collection: services
-live: false
+live: true
 link: '91182'
 order: 6
 name: Print Design
-title: Graphics and text are just ink. We use design to print ideas
-slug: print
+title: Graphics and text are just ink. We use design to print ideas and emotions
+slug: design
 seo: !ruby/object:Dato::Local::FieldType::Seo
   title: 'Print Design: Leaflets, Brochures and Graphics'
   description: We’ll create printed material that entices your audience to engage.
   image: 
-description: We’ll create printed materials that entice your audience to engage.
+description: Graphics and text are just ink. We use design to print ideas and emotions.
 image:
   url: https://www.datocms-assets.com/3013/1504895101-print.jpg
   alt: 
@@ -20,10 +20,10 @@ heading:
 - item_type: block_heading_large
   text: Graphics and text are just ink.
 - item_type: block_heading_large
-  text: We use design to print ideas.
+  text: We use design to print ideas and emotions.
 intro:
 - item_type: block_body_lead
-  paragraphs: 'Once you print it, you can''t change it. So we don''t waste any paper.
+  paragraphs: 'Once you print it, you can''t change it. So we don''t waste your paper.
     Our design work is focused on just one thing: getting across the concepts, messages
     and emotions that you intend.'
 - item_type: block_body_text

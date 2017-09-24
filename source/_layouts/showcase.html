@@ -34,13 +34,13 @@ layout: base
 </section>
 
 <section id="facets">
-	<div class="container">
+	<div class="container grid-cards">
 		{% include blocks/block_card.html blocks=page.facets %}
 	</div>
 </section>
 
 {% if page.quote %}
-<section id="facets">
+<section id="quote">
 	<div class="container">
 		{% include blocks/body/block_body_pullquote.html paragraphs=page.quote.paragraphs cite=page.quote.cite class='feature' %}
 	</div>
@@ -55,7 +55,7 @@ layout: base
 
 <section id="services">
 	<h2 class="hide">Key Services</h2>
-	<div class="container">
+	<div class="container grid-cards">
 		{% include blocks/block_card.html blocks=page.services %}
 		<div class="row">
 			<div class="col-sm-4 col-sm-offset-4">

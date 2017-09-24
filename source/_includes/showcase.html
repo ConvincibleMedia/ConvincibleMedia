@@ -2,7 +2,7 @@
 	{% for item in include.showcase %}
 		{% assign mod = forloop.index0 | modulo: 3 %}
 		<div class="{% if forloop.length > 2 %}col-md-4{% endif %} col-sm-6">
-			<div class="card link">
+			<div class="card link grid">
 				<div class="card-image">{% include helpers/img.html image=item.image format=site.data.images.thumb %}</div>
 				<div class="logo logo-small">{% include helpers/img.html image=item.logo format=site.data.images.logo %}</div>
 				<h3>{% include helpers/link.html href=item.link text=item.title %}</h3>

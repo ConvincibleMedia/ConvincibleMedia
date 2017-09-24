@@ -17,7 +17,7 @@
 		<div class="row">
 	{% endif %}
 	<div class="col-sm-4">
-		<div class="card link tilt {% if forloop.index <= 3 %}feature{% endif %}">
+		<div class="card link tilt grid {% if forloop.index <= 3 %}feature{% endif %}">
 			<h3>
 				{% if item.live %}
 					{% include helpers/link.html href=item.link text=item.name %}

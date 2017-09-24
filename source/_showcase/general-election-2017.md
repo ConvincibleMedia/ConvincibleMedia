@@ -109,14 +109,14 @@ quote:
   cite: Convenor for Cambridge, Green Party of England and Wales
 services:
 - title: Print Design
-  description: We’ll create printed materials that entice your audience to engage.
+  description: Graphics and text are just ink. We use design to print ideas and emotions.
   link: '91182'
 - title: Copywriting
-  description: We’ll understand your ideas, then find the words that communicate them.
+  description: We get your ideas clear. Then get them across clearly.
   link: '91181'
 - title: Social/Digital
-  description: We’ll set up your social media or digital channels and prepare their
-    content.
+  description: In the digital world, there's a better route to your audience. We'll
+    navigate.
   link: '91185'
 ---
 
