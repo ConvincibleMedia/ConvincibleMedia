@@ -1,23 +1,10 @@
-<h2 class="hide">Service Areas</h2>
-<div id="service-areas" class="row hidden-xs">
-	<div class="col-sm-4">
-		<h3 class="subtitle">Marketing</h3>
-	</div>
-	<div class="col-sm-4">
-		<h3 class="subtitle">Clarifying</h3>
-	</div>
-	<div class="col-sm-4">
-		<h3 class="subtitle">Creating</h3>
-	</div>
-</div>
-
 {% for item in include.services %}
 	{% assign mod = forloop.index0 | modulo: 3 %}
 	{% if mod == 0 or forloop.first %}
 		<div class="row">
 	{% endif %}
 	<div class="col-sm-4">
-		<div class="card link tilt grid {% if forloop.index <= 3 %}feature{% endif %}">
+		<div class="card link tilt grid">
 			<h3>
 				{% if item.live %}
 					{% include helpers/link.html href=item.link text=item.name %}
