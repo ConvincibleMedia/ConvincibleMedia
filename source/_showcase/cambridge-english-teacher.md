@@ -30,8 +30,8 @@ heading:
   text: Crafting a brand that inspires loyalty.
 intro:
 - item_type: block_body_lead
-  paragraphs: Virgil Ierubino (Owner at Convincible) was the marketing brain behind
-    the world’s most prestigious membership for teachers of English.
+  paragraphs: Virgil Ierubino <i class="small">[MD at Convincible]</i> was the marketing
+    brain behind the world’s most prestigious membership for teachers of English.
 - item_type: block_body_text
   text: Teachers of English as a foreign language (TEFL) need new ideas, peer support
     and career guidance to excel at their work – and enjoy it even more. No professional

@@ -92,7 +92,7 @@ facets:
   size: Small
 quote:
   paragraphs: The high standard of design, presentation and interactivity offered
-    our visitors a rewarding and thought-provoking experience.
+    our visitors a truly rewarding and thought-provoking experience.
   cite: Exhibition Curator, Wisbech & Fenland Museum
 services:
 - title: Print Design
