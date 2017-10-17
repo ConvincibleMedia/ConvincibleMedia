@@ -2,9 +2,9 @@
 layout: index
 live: true
 link: '86954'
-tagline: We empower communications.
+tagline: We cut through the noise.
 image:
-  url: https://www.datocms-assets.com/3013/1504224432-homeherospark.jpg
+  url: https://www.datocms-assets.com/3013/1506283529-noise.jpg
   alt: 
   title: 
 services:
@@ -13,43 +13,42 @@ services:
   link: '86952'
   live: true
 - name: Presentations
-  description: We'll help make your presentations clear and powerful.
+  description: We'll make your presentation convincing. So you'll feel invincible.
   link: '91179'
   live: true
 - name: Websites
   description: Your website is your digital home. We'll make it inviting.
   link: '87039'
   live: true
-- name: Experience
-  description: We’ll review customer touchpoints to fix all the little things that
-    matter.
-  link: '91180'
-  live: 
-- name: Copywriting
-  description: We’ll understand your ideas, then find the words that communicate them.
-  link: '91181'
-  live: false
-- name: Print Design
-  description: We’ll create printed materials that entice your audience to engage.
-  link: '91182'
-  live: false
-- name: Strategy
-  description: We’ll solve your marketing riddles, and help you streamline your operation.
-  link: '91183'
-  live: 
-- name: Documents
-  description: We’ll bring the information in your documents and reports into focus.
-  link: '91184'
-  live: 
-- name: Social/Digital
-  description: We’ll set up your social media or digital channels and prepare their
-    content.
+- name: Digital/Social
+  description: In the digital world, there's a better route to your audience. We'll
+    navigate.
   link: '91185'
-  live: 
+  live: true
+- name: Copywriting
+  description: We'll get your ideas clear. Then get them across clearly.
+  link: '91181'
+  live: true
+- name: Print Design
+  description: Graphics and text are just ink. We use design to print ideas and emotions.
+  link: '91182'
+  live: true
+- name: Strategy
+  description: We’ll solve your marketing riddles, to reveal the right path.
+  link: '91183'
+  live: true
+- name: Documents
+  description: We give ideas room to breathe. We bring information into focus.
+  link: '91184'
+  live: true
+- name: Experience
+  description: How do you want your audience to feel? Leave the details to us.
+  link: '91180'
+  live: true
 quotes:
 - item_type: block_body_pullquote
-  paragraphs: Virgil [Owner at Convincible] has an excellent range of skills that
-    are particularly relevant in today's multi-platform marketing world.
+  paragraphs: Virgil <i class="small">[MD at Convincible]</i> has an excellent range
+    of skills that are particularly relevant in today's multi-platform marketing world.
   cite: Head of Marketing, Cambridge University Press
 showcase:
 - title: Changing minds at a time of change

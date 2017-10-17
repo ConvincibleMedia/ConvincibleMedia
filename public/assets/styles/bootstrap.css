@@ -3,8 +3,19 @@
 	<head>
 		<meta charset="utf-8" /><meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 		
+
 		
-		<title>Convincible / Marketing and Communications / Cambridge, UK</title><meta name="description" content="In this busy and noisy modern world, we get your message through, by making it clear, creative and compelling." />
+			<!-- Google Tag Manager -->
+			<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+			new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+			j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+			'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+			})(window,document,'script','dataLayer','GTM-PFZVB6R');</script>
+			<!-- End Google Tag Manager -->
+		
+
+		
+		<title>Convincible / Marketing and Communications / Cambridge, UK</title><meta name="description" content=" Convincible is a marketing agency focused on clear, creative, compelling communications." />
 
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 
@@ -19,6 +30,12 @@
 		
 	</head>
 	<body>
+		
+			<!-- Google Tag Manager (noscript) -->
+			<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PFZVB6R" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+			<!-- End Google Tag Manager (noscript) -->
+		
+
 		<!--[if lt IE 8]>
             <p class="browserupgrade"><strong>You are using an outdated browser</strong>, so this site may not appear correctly. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
@@ -1344,8 +1361,7 @@ img {
 
 		<div class="clearfix"></div>
 		<div class="small">
-			<p>Convincible is a Sole Tradership owned and managed by Virgil Ierubino.
-It is not a separate legal or financial entity from its owner.</p>
+			<p>Convincible is a Sole Tradership owned and managed by Virgil Ierubino.</p>
 
 			<address>68 Sleaford Street
 Cambridge
@@ -1365,6 +1381,7 @@ United Kingdom</address>
 
 		<script src="/assets/scripts/libraries/jquery-plugins.js"></script>
 		<script src="/assets/scripts/libraries/tilt.jquery.js"></script>
+		<script src="/assets/scripts/libraries/matchHeight.jquery.js"></script>
 		<!--<script src="/assets/scripts/libraries/textfill.jquery.js"></script>-->
 		
 
@@ -1392,15 +1409,5 @@ United Kingdom</address>
 	});
 </script>
 		
-
-		<!-- Finally finally, log page visit. -->
-		<script type="text/javascript">
-	(function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
-	function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
-	e=o.createElement(i);r=o.getElementsByTagName(i)[0];
-	e.src='https://www.google-analytics.com/analytics.js';
-	r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
-	ga('create','','auto');ga('send','pageview');
-</script>
 	</body>
 </html>

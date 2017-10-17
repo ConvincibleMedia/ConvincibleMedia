@@ -87,16 +87,16 @@ h2, h3, h4, h5, h6, .h2, .h3, .h4, .h5, .h6, p {
 
 a, a:link, a:hover, a:visited, a:active {
   text-decoration: none;
-  color: #f63;
+  color: #cc3300;
   transition: 0.25s; }
 
 a:hover, a.hover {
-  color: #e87123; }
+  color: #f63; }
   a:hover:after, a.hover:after {
     margin: 0 0.1em 0 0.3em;
     transition: 0.25s; }
 
-a:after {
+h3 a:after {
   content: '\1f872';
   font-size: 70%;
   display: inline;
@@ -228,12 +228,14 @@ header#hero {
     padding-top: 4em;
     padding-bottom: 5em; }
   header#hero .header-home h1, header#hero .header-home .h1 {
-    font-weight: 900; }
+    font-weight: 900;
+    border-bottom-color: #f63; }
   header#hero .header-home a.button {
-    background-color: #f63;
+    background-color: #fff;
+    color: #f63;
     box-shadow: 0 0 1em rgba(255, 255, 255, 0.5); }
     header#hero .header-home a.button:after, header#hero .header-home a.button:before {
-      color: #e83723; }
+      color: #f63; }
   header#hero .header-inside #hero-box {
     background: rgba(0, 0, 0, 0.25);
     background: -webkit-linear-gradient(bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0));
@@ -289,7 +291,7 @@ a.button {
   font-weight: 600;
   text-align: center;
   color: #fff;
-  background-color: #ee314a;
+  background-color: #f63;
   box-shadow: 0.1em 0.1em 0.2em rgba(0, 0, 0, 0.5); }
   a.button:active {
     position: relative;
@@ -308,8 +310,10 @@ a.button {
     visibility: visible; }
   a.button:before, a.button:after {
     content: '\1f872';
+    font-size: 70%;
     display: inline;
-    color: #ff9c26;
+    vertical-align: middle;
+    color: #e83723;
     transition: 0.3s; }
   a.button:before {
     margin-right: 0.3em;
@@ -326,9 +330,12 @@ a.button {
   color: #000;
   padding: 1em;
   margin-bottom: 2em; }
+  .card p:last-child {
+    margin-bottom: 0; }
   .card h1, .card h2, .card h3, .card h4, .card h5, .card h6, .card .h1, .card .h2, .card .h3, .card .h4, .card .h5, .card .h6 {
     padding: 0;
-    border: 0; }
+    border: 0;
+    margin-bottom: 0.5em; }
     .card h1 a, .card h2 a, .card h3 a, .card h4 a, .card h5 a, .card h6 a, .card .h1 a, .card .h2 a, .card .h3 a, .card .h4 a, .card .h5 a, .card .h6 a {
       color: #000; }
       .card h1 a:hover, .card h1 a.hover, .card h2 a:hover, .card h2 a.hover, .card h3 a:hover, .card h3 a.hover, .card h4 a:hover, .card h4 a.hover, .card h5 a:hover, .card h5 a.hover, .card h6 a:hover, .card h6 a.hover, .card .h1 a:hover, .card .h1 a.hover, .card .h2 a:hover, .card .h2 a.hover, .card .h3 a:hover, .card .h3 a.hover, .card .h4 a:hover, .card .h4 a.hover, .card .h5 a:hover, .card .h5 a.hover, .card .h6 a:hover, .card .h6 a.hover {
@@ -449,12 +456,12 @@ blockquote, .block_body_lead {
     margin-top: 1em;
     margin-bottom: -4.5em; }
   #approach blockquote .card {
-    background-color: #f63;
+    background-color: #fff;
     font-family: "Montserrat", "Arial Black", "Tahoma", Sans-Serif;
     font-weight: 900;
     font-size: 150%;
     padding: 0.5em 0.2em;
-    color: #fff;
+    color: #f63;
     text-align: center;
     margin: 0 0 0.5em 0; }
   #approach blockquote strong {
@@ -471,13 +478,16 @@ blockquote, .block_body_lead {
 
 /* Contact */
 .contacts .card p {
-  text-align: center;
-  font-size: 125%; }
+  text-align: center; }
   .contacts .card p strong {
+    font-size: 137.5%;
     display: block;
     font-weight: normal;
     font-family: "Montserrat", "Arial Black", "Tahoma", Sans-Serif;
     font-weight: 900; }
+@media (min-width: 50em) {
+  .contacts {
+    font-size: 125%; } }
 
 /* Showcase */
 #project-title .h2 {

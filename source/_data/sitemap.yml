@@ -66,14 +66,14 @@ pages:
     type: service
     order: 3
     live: true
-  '91180':
-    title: Experience
-    slug: experience
+  '91185':
+    title: Digital/Social
+    slug: digital-social
     path: "/"
-    fullpath: "/experience.html"
+    fullpath: "/digital-social.html"
     type: service
     order: 4
-    live: false
+    live: true
   '91181':
     title: Copywriting
     slug: copywriting
@@ -81,15 +81,15 @@ pages:
     fullpath: "/copywriting.html"
     type: service
     order: 5
-    live: false
+    live: true
   '91182':
     title: Print Design
-    slug: print
+    slug: design
     path: "/"
-    fullpath: "/print.html"
+    fullpath: "/design.html"
     type: service
     order: 6
-    live: false
+    live: true
   '91183':
     title: Strategy
     slug: strategy
@@ -97,7 +97,7 @@ pages:
     fullpath: "/strategy.html"
     type: service
     order: 7
-    live: false
+    live: true
   '91184':
     title: Documents
     slug: documents
@@ -105,15 +105,15 @@ pages:
     fullpath: "/documents.html"
     type: service
     order: 8
-    live: false
-  '91185':
-    title: Social/Digital
-    slug: social-digital
+    live: true
+  '91180':
+    title: Experience
+    slug: experience
     path: "/"
-    fullpath: "/social-digital.html"
+    fullpath: "/experience.html"
     type: service
     order: 9
-    live: false
+    live: true
   '87043':
     title: General Election 2017
     slug: general-election-2017
@@ -138,6 +138,14 @@ pages:
     type: showcase
     order: 3
     live: true
+  '101655':
+    title: AgeCurve
+    slug: age-curve
+    path: "/showcase/"
+    fullpath: "/showcase/age-curve.html"
+    type: showcase
+    order: 4
+    live: false
   '92962':
     title: New Project
     slug: new
@@ -170,30 +178,30 @@ pages:
     type: client
     order: 2
     live: true
-  '98716':
-    title: Wisbech & Fenland Museum
-    slug: wisbech-fenland-museum
-    path: "/client/"
-    fullpath: "/client/wisbech-fenland-museum.html"
-    type: client
-    order: 3
-    live: false
   '98717':
     title: Cambridge University Press
     slug: cambridge-university-press
     path: "/client/"
     fullpath: "/client/cambridge-university-press.html"
     type: client
-    order: 4
-    live: false
+    order: 3
+    live: true
   '98718':
     title: Fitzwilliam College
     slug: fitzwilliam-college
     path: "/client/"
     fullpath: "/client/fitzwilliam-college.html"
     type: client
+    order: 4
+    live: true
+  '98716':
+    title: Wisbech & Fenland Museum
+    slug: wisbech-fenland-museum
+    path: "/client/"
+    fullpath: "/client/wisbech-fenland-museum.html"
+    type: client
     order: 5
-    live: false
+    live: true
   '98719':
     title: Scene Systems
     slug: scene-systems
@@ -201,6 +209,14 @@ pages:
     fullpath: "/client/scene-systems.html"
     type: client
     order: 6
+    live: true
+  '101654':
+    title: AgeCurve
+    slug: age-curve
+    path: "/client/"
+    fullpath: "/client/age-curve.html"
+    type: client
+    order: 7
     live: false
 tree:
   root:

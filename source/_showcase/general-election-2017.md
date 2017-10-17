@@ -30,14 +30,14 @@ heading:
   text: Changing minds at a time of change
 intro:
 - item_type: block_body_lead
-  paragraphs: Virgil Ierubino (Owner at Convincible) ran the Green Party’s General
-    Election campaign in Cambridge in 2017, catapulting the party’s mindshare among
-    the electorate.
+  paragraphs: Virgil Ierubino <i class="small">(MD at Convincible)</i> ran the Green
+    Party’s General Election campaign in Cambridge in 2017, hitting new milestones
+    for the party’s reach and mindshare among the electorate.
 - item_type: block_body_text
-  text: Even with a miracle, winning was off the cards for a small party in 2017.
+  text: Even with a miracle, winning was an impossible goal for a small party in 2017.
     Being realistic about this allowed us to focus the goal toward communication,
-    and so to direct our energy appropriately. Ensuring every voter knew the Greens
-    were a serious option was an enormous milestone.
+    and so to direct the party's energies appropriately. We achieved a new level of
+    engagement and broke new ground for the party in Cambridge.
 facets:
 - item_type: block_card_image
   image: 
@@ -105,18 +105,19 @@ facets:
   size: 
 quote:
   paragraphs: The quality of this election campaign, in such a short timeframe, was
-    down to Virgil's fantastic drive and organisation.
+    down to Virgil's <i class="small">[MD at Convincible]</i> fantastic drive and
+    organisation.
   cite: Convenor for Cambridge, Green Party of England and Wales
 services:
 - title: Print Design
-  description: We’ll create printed materials that entice your audience to engage.
+  description: Graphics and text are just ink. We use design to print ideas and emotions.
   link: '91182'
 - title: Copywriting
-  description: We’ll understand your ideas, then find the words that communicate them.
+  description: We'll get your ideas clear. Then get them across clearly.
   link: '91181'
-- title: Social/Digital
-  description: We’ll set up your social media or digital channels and prepare their
-    content.
+- title: Digital/Social
+  description: In the digital world, there's a better route to your audience. We'll
+    navigate.
   link: '91185'
 ---
 

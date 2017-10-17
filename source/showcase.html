@@ -3,7 +3,7 @@ layout: simple-work
 collection: showcase
 title: Showcase
 ---
-{% assign showcases = site.showcase | sort: 'order' %}
+{% assign showcases = site.showcase | sort: 'order' | where: 'live','true' %}
 {% include showcase.html showcase=showcases %}
 
 <div class="row">

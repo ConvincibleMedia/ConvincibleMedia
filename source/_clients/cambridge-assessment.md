@@ -26,3 +26,5 @@ projects:
 ---
 
 Cambridge Assessment – part of the University of Cambridge – provides world-class qualifications and education programmes that give learners the confidence to demonstrate and fulfil their potential. It comprises the three exam boards Cambridge English, International Education, and OCR.
+
+Virgil Ierubino (Managing Director at Convincible) worked with Cambridge Assessment from 2012–2017, managing marketing strategy and campaigns on numerous large-scale, international projects.

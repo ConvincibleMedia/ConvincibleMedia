@@ -2,7 +2,7 @@
    {% for item in include.blocks %}
       <div class="col-sm-6{% if forloop.length == 1 %} col-sm-offset-3{% endif %}">
          <div class="card link tilt">
-            <p>{{ item.pre_title }} <strong>{{ item.title }}</strong></p>
+            <p class="grid">{{ item.pre_title }} <strong>{{ item.title }}</strong></p>
             <p>{% include helpers/link.html href=item.link text=item.button class="button tilt-z" %}</p>
          </div>
       </div>

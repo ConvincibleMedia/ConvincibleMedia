@@ -72,7 +72,7 @@ elements:
   size: 
 elements_note: "(...and quite a bit more besides. If you're so inclined, we'd be happy
   to talk you through our full Technical Advantage.)"
-subservices_heading: This is all just part of our process
+subservices_heading: This is all just part of our process.
 subservices:
 - item_type: block_card_image
   image: 

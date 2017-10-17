@@ -9,7 +9,7 @@ title: Your brand is the centre of our marketing universe
 slug: branding
 seo: !ruby/object:Dato::Local::FieldType::Seo
   title: Branding, Logos and Visual Identity
-  description: We'll help you make your brand your most powerful asset.
+  description: Your brand is the centre of our marketing universe.
   image: 
 description: Your brand is the centre of our marketing universe.
 image:
@@ -21,7 +21,7 @@ heading:
   text: Your brand is the centre of our marketing universe.
 intro:
 - item_type: block_body_lead
-  paragraphs: You brand is the grand unifying theory behind everything you do. Done
+  paragraphs: Your brand is the grand unifying theory behind everything you do. Done
     right, it’s like nuclear fusion.
 - item_type: block_body_text
   text: Far more than just your logo, your brand is who you are and what you stand
@@ -68,36 +68,9 @@ elements:
 - item_type: block_card_text
   subtitle: 
   title: Customer Experience
-  link:
-    id: '91180'
-    item_type: service
-    updated_at: 2017-08-30 17:29:14.898000000 Z
-    position: 4
-    name: Experience
-    area: Marketing
-    slug: experience
-    seo:
-      title: Customer Experience (CX)
-      description: We’ll review customer touchpoints to fix all the little things
-        that matter.
-      image: 
-    description: We’ll review customer touchpoints to fix all the little things that
-      matter.
-    hero_image: 
-    heading:
-    - id: '92566'
-      item_type: block_heading_large
-      updated_at: 2017-08-29 14:19:58.790000000 Z
-      text: We’ll review customer touchpoints to fix all the little things that matter.
-    intro: []
-    elements_heading: 
-    elements: []
-    elements_note: 
-    sub_services_heading: ''
-    sub_services: []
-    live: 
+  link: 
   description: A great brand seeps down and influences every little aspect of the
-    customer experience, ensuring it's not only excellent but distinctive.
+    [customer experience](/experience), ensuring it's not only excellent but distinctive.
   size: 
 elements_note: 
 subservices_heading: These elements are most powerful when combined.

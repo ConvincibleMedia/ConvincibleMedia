@@ -1,9 +1,9 @@
 ---
 layout: clients
 collection: clients
-live: false
+live: true
 link: '98716'
-order: 3
+order: 5
 name: Wisbech & Fenland Museum
 title: Wisbech & Fenland Museum
 slug: wisbech-fenland-museum
