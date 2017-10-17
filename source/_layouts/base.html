@@ -90,9 +90,11 @@
 		<script src="/assets/scripts/libraries/jquery-plugins.js"></script>
 		<script src="/assets/scripts/libraries/tilt.jquery.js"></script>
 		<script src="/assets/scripts/libraries/matchHeight.jquery.js"></script>
+		{% if home %}<script type="text/javascript" src="/assets/scripts/libraries/particles.js"></script>{% endif %}
 
 		<!-- Finally, run JS -->
 		<script type="text/javascript" src="/assets/scripts/main.js"></script>
 		{% if site.data.videos.method == 'reactive' %}{% include snippets/video-reactive.html %}{% endif %}
+		{% if home %}<script type="text/javascript" src="/assets/scripts/particles.js"></script>{% endif %}
 	</body>
 </html>
