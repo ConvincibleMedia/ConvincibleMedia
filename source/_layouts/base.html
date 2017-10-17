@@ -3,6 +3,17 @@
 	<head>
 		<meta charset="utf-8" /><meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 		{% if page.robots %}<meta name="robots" content="{{ page.robots }}" />{% endif %}
+
+		{% if jekyll.environment == 'production' %}
+			<!-- Google Tag Manager -->
+			<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+			new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+			j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+			'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+			})(window,document,'script','dataLayer','GTM-PFZVB6R');</script>
+			<!-- End Google Tag Manager -->
+		{% endif %}
+
 		{% if page.name == 'index.md' %}{% assign home = true %}{% else %}{% assign home = false %}{% endif %}
 
 		{%- if page.collection %}
@@ -49,6 +60,12 @@
 		{% endif %}
 	</head>
 	<body>
+		{% if jekyll.environment == 'production' %}
+			<!-- Google Tag Manager (noscript) -->
+			<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PFZVB6R" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+			<!-- End Google Tag Manager (noscript) -->
+		{% endif %}
+
 		<!--[if lt IE 8]>
             <p class="browserupgrade"><strong>You are using an outdated browser</strong>, so this site may not appear correctly. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
@@ -76,8 +93,5 @@
 		<script type="text/javascript" src="/assets/scripts/main.js"></script>
 		{% if site.data.videos.method == 'reactive' %}{% include snippets/video-reactive.html %}{% endif %}
 		{% if home %}<script type="text/javascript" src="/assets/scripts/particles.js"></script>{% endif %}
-
-		<!-- Finally finally, log page visit. -->
-		{% include snippets/analytics.html %}
 	</body>
 </html>
