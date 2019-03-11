@@ -103,12 +103,15 @@ a:hover, a.hover {
 	}
 }
 h3 a:after {
-	content: '\1f872';
-	font-size: 70%;
-	display: inline;
+	content: '';
+	display: inline-block;
+	background-repeat: no-repeat;
+	background-position: center top;
+	background-attachment: scroll;
+	background-size: 0.6em;
+	width: 0.6em; height: 0.6em;
+	background-image: url('/assets/images/arrow.svg');
 	margin: 0 0.2em 0 0.2em;
-	font-family: inherit;
-	color: $color-5;
 	transition: 0.25s;
 }
 #top, #bottom {
@@ -145,7 +148,7 @@ h3 a:after {
 	padding-top: 1em;
 
 	#logo {
-		width: 30em;
+		width: 20em;
 	}
 }
 @include md() {
@@ -249,13 +252,15 @@ header#hero {
 			padding-top: 4em; padding-bottom: 5em;
 		}
 
-		h1, .h1 { font-weight: 900; border-bottom-color: $color-1 }
+		h1, .h1 { border-bottom-color: $color-1 }
 
 		a.button {
 			background-color: #fff; color: $color-1;
 			box-shadow: 0 0 1em rgba(255, 255, 255, 0.5);
 
-		&:after, &:before { color: $color-1; }
+			&:before, &:after {
+				background-image: url('/assets/images/arrow.svg');
+			}
 		}
 	}
 
@@ -295,16 +300,20 @@ h2.pointdown {
 	position: relative;
 
 	&:after {
-		content: '\1f873';
-		color: $color-1;
+		content: '';
 		display: block;
-		line-height: 0;
-		font-size: 70%;
-		font-weight: 600;
 		position: absolute;
 		bottom: -0.6em;
 		left: 50%;
-		margin-left: -0.5em;
+		margin-left: -0.3em;
+		width: 0.6em;
+		height: 0.6em;
+		background-repeat: no-repeat;
+		background-position: center top;
+		background-attachment: scroll;
+		background-size: 0.6em;
+		background-image: url('/assets/images/arrow.svg');
+		transform: rotate(90deg)
 	}
 }
 
@@ -338,11 +347,14 @@ a.button {
 	}
 
 	&:before, &:after {
-		content: '\1f872';
-		font-size: 70%;
-		display: inline;
-		vertical-align: middle;
-		color: $color-4;
+		content: '';
+		display: inline-block;
+		background-repeat: no-repeat;
+		background-position: center top;
+		background-attachment: scroll;
+		background-size: 0.6em;
+		width: 0.6em; height: 0.6em;
+		background-image: url('/assets/images/arrow-white.svg');
 		transition: 0.3s;
 	}
 
@@ -373,7 +385,7 @@ a.button {
 
 		a {
 			color: #000;
-			&:hover, &.hover { color: $color-5; }
+			&:hover, &.hover { color: darken($color-1,20%); }
 		}
 	}
 
@@ -444,6 +456,25 @@ a.button {
 
 }
 
+.card.tilt {
+	h3 {
+		transition: 0.5s;
+	}
+	p {
+		transition: 0.5s;
+	}
+}
+.card.tilt:hover {
+	h3 {
+		transform: translateZ(0.8em);
+		transition: 0.5s;
+	}
+	p {
+		transform: translateZ(0.5em);
+		transition: 0.5s;
+	}
+}
+
 #elements {
 	padding: 0;
 
@@ -481,7 +512,7 @@ blockquote, .block_body_lead {
 			line-height: 0;
 		}
 		&:before { content: '\201c'; top: 0.383em; left: 0; }
-		&:after { content: '\201d'; bottom: -0.053em; right: 0; }
+		&:after { content: '\201d'; bottom: 0.01em; right: 0; }
 	}
 
 	p:last-of-type { margin-bottom: 0 }
