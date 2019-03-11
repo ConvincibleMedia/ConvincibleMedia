@@ -3,7 +3,7 @@
 		<div class="gallery">
 		{% for client in include.clients %}
 			<div class="gallery-item">
-				{% capture logo %}{% include helpers/img.html image=client.logo format=site.data.images.logo %}{% endcapture %}
+				{% capture logo %}{% include helpers/img.html image=client.logo format=site.data.images.client %}{% endcapture %}
 				<div class="logo logo-small">{% include helpers/link.html href=client.link text=logo %}</div>
 			</div>
 		{% endfor %}

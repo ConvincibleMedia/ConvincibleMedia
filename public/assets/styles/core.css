@@ -97,12 +97,16 @@ a:hover, a.hover {
     transition: 0.25s; }
 
 h3 a:after {
-  content: '\1f872';
-  font-size: 70%;
-  display: inline;
+  content: '';
+  display: inline-block;
+  background-repeat: no-repeat;
+  background-position: center top;
+  background-attachment: scroll;
+  background-size: 0.6em;
+  width: 0.6em;
+  height: 0.6em;
+  background-image: url("/assets/images/arrow.svg");
   margin: 0 0.2em 0 0.2em;
-  font-family: inherit;
-  color: #e87123;
   transition: 0.25s; }
 
 #top a:after, #top a:before, #bottom a:after, #bottom a:before {
@@ -129,7 +133,7 @@ h3 a:after {
 #top .header-home {
   padding-top: 1em; }
   #top .header-home #logo {
-    width: 30em; }
+    width: 20em; }
 
 @media (min-width: 50em) {
   #top .header-inside {
@@ -228,14 +232,13 @@ header#hero {
     padding-top: 4em;
     padding-bottom: 5em; }
   header#hero .header-home h1, header#hero .header-home .h1 {
-    font-weight: 900;
     border-bottom-color: #f63; }
   header#hero .header-home a.button {
     background-color: #fff;
     color: #f63;
     box-shadow: 0 0 1em rgba(255, 255, 255, 0.5); }
-    header#hero .header-home a.button:after, header#hero .header-home a.button:before {
-      color: #f63; }
+    header#hero .header-home a.button:before, header#hero .header-home a.button:after {
+      background-image: url("/assets/images/arrow.svg"); }
   header#hero .header-inside #hero-box {
     background: rgba(0, 0, 0, 0.25);
     background: -webkit-linear-gradient(bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0));
@@ -272,16 +275,20 @@ h2.pointdown {
   text-align: center;
   position: relative; }
   h2.pointdown:after {
-    content: '\1f873';
-    color: #f63;
+    content: '';
     display: block;
-    line-height: 0;
-    font-size: 70%;
-    font-weight: 600;
     position: absolute;
     bottom: -0.6em;
     left: 50%;
-    margin-left: -0.5em; }
+    margin-left: -0.3em;
+    width: 0.6em;
+    height: 0.6em;
+    background-repeat: no-repeat;
+    background-position: center top;
+    background-attachment: scroll;
+    background-size: 0.6em;
+    background-image: url("/assets/images/arrow.svg");
+    transform: rotate(90deg); }
 
 /* BUTTONS */
 a.button {
@@ -309,11 +316,15 @@ a.button {
     opacity: 1;
     visibility: visible; }
   a.button:before, a.button:after {
-    content: '\1f872';
-    font-size: 70%;
-    display: inline;
-    vertical-align: middle;
-    color: #e83723;
+    content: '';
+    display: inline-block;
+    background-repeat: no-repeat;
+    background-position: center top;
+    background-attachment: scroll;
+    background-size: 0.6em;
+    width: 0.6em;
+    height: 0.6em;
+    background-image: url("/assets/images/arrow-white.svg");
     transition: 0.3s; }
   a.button:before {
     margin-right: 0.3em;
@@ -339,7 +350,7 @@ a.button {
     .card h1 a, .card h2 a, .card h3 a, .card h4 a, .card h5 a, .card h6 a, .card .h1 a, .card .h2 a, .card .h3 a, .card .h4 a, .card .h5 a, .card .h6 a {
       color: #000; }
       .card h1 a:hover, .card h1 a.hover, .card h2 a:hover, .card h2 a.hover, .card h3 a:hover, .card h3 a.hover, .card h4 a:hover, .card h4 a.hover, .card h5 a:hover, .card h5 a.hover, .card h6 a:hover, .card h6 a.hover, .card .h1 a:hover, .card .h1 a.hover, .card .h2 a:hover, .card .h2 a.hover, .card .h3 a:hover, .card .h3 a.hover, .card .h4 a:hover, .card .h4 a.hover, .card .h5 a:hover, .card .h5 a.hover, .card .h6 a:hover, .card .h6 a.hover {
-        color: #e87123; }
+        color: #cc3300; }
   .card .subtitle {
     margin-bottom: 0;
     color: #f63; }
@@ -394,6 +405,18 @@ a.button {
   .card .card-image-right {
     margin-bottom: -1em; }
 
+.card.tilt h3 {
+  transition: 0.5s; }
+.card.tilt p {
+  transition: 0.5s; }
+
+.card.tilt:hover h3 {
+  transform: translateZ(0.8em);
+  transition: 0.5s; }
+.card.tilt:hover p {
+  transform: translateZ(0.5em);
+  transition: 0.5s; }
+
 #elements {
   padding: 0; }
   #elements .card {
@@ -428,7 +451,7 @@ blockquote, .block_body_lead {
       left: 0; }
     blockquote.quote:after, .block_body_lead.quote:after {
       content: '\201d';
-      bottom: -0.053em;
+      bottom: 0.01em;
       right: 0; }
   blockquote p:last-of-type, .block_body_lead p:last-of-type {
     margin-bottom: 0; }

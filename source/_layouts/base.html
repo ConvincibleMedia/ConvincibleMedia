@@ -53,16 +53,16 @@
 		<link href="https://fonts.googleapis.com/css?family=Montserrat:200,600,900|Source+Sans+Pro:300,300i" rel="stylesheet" />
 
 		<!-- SCRIPTS -->
-		<!--<script src="/assets/scripts/libraries/modernizr-2.8.3.min.js"></script>-->
 		<!-- Remove No-JS class if JavaScript enabled (instead of Modernizr) -->
 		<script type="text/javascript">(function(d){d.className=d.className.replace(/(^|\s)no-js(\s|$)/, ' ') + ' js'}(document.documentElement));</script>
 		<!--[if lt IE 9]>
-			<script src="/assets/scripts/libraries/html5shiv.min.js"></script>
+			<script type="text/javascript" src="/assets/scripts/libraries/html5shiv.min.js"></script>
 		<![endif]-->
 
 		<!-- DATA -->
 		{% if home %}
 			<meta name="p:domain_verify" content="d0219ccc18274430b1974dfc6b1b710e" />
+			<meta name="wot-verification" content="3381c60046d9b3f0de4b" />
 		{% endif %}
 	</head>
 	<body>
@@ -89,9 +89,9 @@
 
 		<!-- Load JS Libraries -->
 		{% include snippets/jquery.html %}
-		<script src="/assets/scripts/libraries/jquery-plugins.js"></script>
-		<script src="/assets/scripts/libraries/tilt.jquery.js"></script>
-		<script src="/assets/scripts/libraries/matchHeight.jquery.js"></script>
+		<script type="text/javascript" src="/assets/scripts/libraries/jquery-plugins.js"></script>
+		<script type="text/javascript" src="/assets/scripts/libraries/tilt.jquery.js"></script>
+		<script type="text/javascript" src="/assets/scripts/libraries/matchHeight.jquery.js"></script>
 
 		<!-- Finally, run JS -->
 		<script type="text/javascript" src="/assets/scripts/main.js"></script>
