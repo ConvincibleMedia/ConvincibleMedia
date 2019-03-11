@@ -15,7 +15,7 @@
    {%- endcapture -%}
 {%- endfor -%}
 {%- capture src -%}
-   https://maps.googleapis.com/maps/api/staticmap?key=AIzaSyDkb1bkmLKtlkmmY83xlqR_zXuiXV0LMjA{{ params_all }}
+   https://maps.googleapis.com/maps/api/staticmap?key=AIzaSyBm4_N7avZaEkTLUqvP0l41nC7c3qUr48Q {{ params_all }}
 {%- endcapture -%}
 <a target="_new" href="https://www.google.com/maps/{% if include.place %}place/{{ include.place | url_encode }}/{% endif %}@{{ include.y }},{{ include.x }},14z">
    {% include helpers/img.html
