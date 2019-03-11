@@ -41,3 +41,10 @@ logo:
    fit: "clip"
    auto: "compress"
    fm: "png"
+client:
+   w: 320
+   h: 180
+   fit: "clip"
+   auto: "compress"
+   fm: "png"
+   sat: -100
