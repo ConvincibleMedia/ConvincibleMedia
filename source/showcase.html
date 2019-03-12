@@ -3,9 +3,9 @@ layout: simple-work
 collection: showcase
 title: Showcase
 ---
-{% assign showcases = site.showcase | sort: 'order' | where: 'live','true' %}
-{% include showcase.html showcase=showcases %}
-
 
 {% assign clients = site.clients | sort: 'order' %}
 {% include clients.html clients=clients %}
+
+{% assign showcases = site.showcase | sort: 'order' | where: 'live','true' %}
+{% include showcase.html showcase=showcases %}
