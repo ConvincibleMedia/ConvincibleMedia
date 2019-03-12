@@ -16,10 +16,7 @@ projects:
   subtitle: Cambridge English Teacher
   description: Marketing management at Cambridge Assessment (part of the University
     of Cambridge) for a groundbreaking website.
-  image:
-    url: https://www.datocms-assets.com/3013/1504013537-careers-our-places-page-1.jpg
-    alt: 
-    title: 
+  image: ''
   link: '86953'
 ---
 

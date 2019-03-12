@@ -18,6 +18,10 @@
   margin-left: auto;
   padding-left: 2em;
   padding-right: 2em; }
+  @media (min-width: 30em) {
+    .container {
+      padding-left: 1em;
+      padding-right: 1em; } }
 
 /* XS by default */
 @media (max-width: 30em) {
