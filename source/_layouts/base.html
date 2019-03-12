@@ -13,6 +13,8 @@
 			'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
 			})(window,document,'script','dataLayer','GTM-PFZVB6R');</script>
 			<!-- End Google Tag Manager -->
+		{% else %}
+			<meta name="robots" content="noindex" />
 		{% endif %}
 
 		<!-- SEO -->
@@ -60,7 +62,7 @@
 		<![endif]-->
 
 		<!-- DATA -->
-		{% if home %}
+		{% if home and jekyll.environment == 'production' %}
 			<meta name="p:domain_verify" content="d0219ccc18274430b1974dfc6b1b710e" />
 			<meta name="wot-verification" content="3381c60046d9b3f0de4b" />
 		{% endif %}
