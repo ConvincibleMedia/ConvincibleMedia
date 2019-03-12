@@ -42,7 +42,7 @@ body {
 }
 
 .small {
-	font-size: 85%;
+	font-size: 75%;
 
 	p {
 		margin-bottom: 0.5em;
@@ -129,7 +129,7 @@ h3 a:after {
 #logo {
 	width: 15em;
 	min-width: 150px;
-	max-width: 90%;
+	max-width: 66.66%;
 
 	span {
 		display: block;
@@ -160,10 +160,10 @@ h3 a:after {
 	}
 }
 @include sm() {
-	#logo { max-width: 60% }
+	#logo { max-width: 50% }
 }
 @include md() {
-	#logo { max-width: 50% }
+	#logo { max-width: 40% }
 }
 
 /* Navigation */
@@ -327,6 +327,7 @@ a.button {
 	color: #fff;
 	background-color: $color-1;
 	box-shadow: 0.1em 0.1em 0.2em rgba(0, 0, 0, 0.5);
+	white-space: nowrap;
 
 	&:active {
 		position: relative;
@@ -382,6 +383,7 @@ a.button {
 
 	#{enumerate('h',1,6)}, #{enumerate('.h',1,6)}, {
 		padding: 0; border: 0; margin-bottom: 0.5em;
+		word-wrap: break-word;
 
 		a {
 			color: #000;
@@ -489,8 +491,8 @@ a.button {
 /* Outsets */
 blockquote, .block_body_lead {
 	background-color: #ddd;
-	margin: 0 -2em 1em -2em;
-	padding: 2em;
+	margin: 0 -1.5em 1em -1.5em;
+	padding: 1.5em;
 
 	@include lg() {
 		margin-left: -4em;
@@ -507,12 +509,12 @@ blockquote, .block_body_lead {
 			display: block;
 			position: absolute;
 			font-size: 5em;
-			font-family: $font-heading; font-weight: 900;
+			font-family: $font-heading; font-weight: 600;
 			color: #bbb;
 			line-height: 0;
 		}
 		&:before { content: '\201c'; top: 0.383em; left: 0; }
-		&:after { content: '\201d'; bottom: 0.01em; right: 0; }
+		&:after { content: '\201d'; bottom: -0.08em; right: 0; }
 	}
 
 	p:last-of-type { margin-bottom: 0 }
@@ -540,7 +542,7 @@ blockquote, .block_body_lead {
 
 	.card {
 		background-color: #fff;
-		font-family: $font-heading; font-weight: 900;
+		font-family: $font-heading; font-weight: 600;
 		font-size: 150%;
 		padding: 0.5em 0.2em;
 		color: $color-1;
@@ -575,7 +577,7 @@ blockquote, .block_body_lead {
 			font-size: 137.5%;
 			display: block;
 			font-weight: normal;
-			font-family: $font-heading; font-weight: 900;
+			font-family: $font-heading; font-weight: 600;
 		}
 	}
 

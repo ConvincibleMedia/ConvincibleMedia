@@ -6,11 +6,6 @@ title: Showcase
 {% assign showcases = site.showcase | sort: 'order' | where: 'live','true' %}
 {% include showcase.html showcase=showcases %}
 
-<div class="row">
-   <div class="col-sm-4">
-      <h2 class="subtitle">We've worked with</h2>
-   </div>
-</div>
 
 {% assign clients = site.clients | sort: 'order' %}
 {% include clients.html clients=clients %}

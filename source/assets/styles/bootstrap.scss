@@ -250,17 +250,20 @@ img {
   padding-left: 2em;
   padding-right: 2em;
 }
-@media (min-width: 30em) {
+@include sm() {
   .container {
     width: 95%;
+    padding-left: 1em;
+	padding-right: 1em;
   }
 }
-@media (min-width: 50em) {
+@include md() {
   .container {
     width: 80%;
+    min-width: 45em;
   }
 }
-@media (min-width: 80em) {
+@include lg() {
   .container {
     width: 70em;
 	padding-left: 4em;

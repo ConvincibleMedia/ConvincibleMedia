@@ -13,6 +13,8 @@
 			'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
 			})(window,document,'script','dataLayer','GTM-PFZVB6R');</script>
 			<!-- End Google Tag Manager -->
+		{% else %}
+			<meta name="robots" content="noindex" />
 		{% endif %}
 
 		<!-- SEO -->
@@ -50,7 +52,7 @@
 		<link rel="stylesheet" href="/assets/styles/core.css" />
 
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		<link href="https://fonts.googleapis.com/css?family=Montserrat:200,600,900|Source+Sans+Pro:300,300i" rel="stylesheet" />
+		<link href="https://fonts.googleapis.com/css?family=Montserrat:200,600|Source+Sans+Pro:300,300i" rel="stylesheet" />
 
 		<!-- SCRIPTS -->
 		<!-- Remove No-JS class if JavaScript enabled (instead of Modernizr) -->
@@ -60,7 +62,7 @@
 		<![endif]-->
 
 		<!-- DATA -->
-		{% if home %}
+		{% if home and jekyll.environment == 'production' %}
 			<meta name="p:domain_verify" content="d0219ccc18274430b1974dfc6b1b710e" />
 			<meta name="wot-verification" content="3381c60046d9b3f0de4b" />
 		{% endif %}
