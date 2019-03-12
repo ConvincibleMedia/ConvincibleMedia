@@ -12,10 +12,8 @@
 
 # Production context: All deploys to the main
 # repository branch will inherit these settings.
-[context.production]
-  command = "make production"
-  [context.production.environment]
-    JEKYLL_ENV = "production"
+[context.production.environment]
+  JEKYLL_ENV = "production"
 
 # Deploy Preview context: All Deploy Previews
 # will inherit these settings.
