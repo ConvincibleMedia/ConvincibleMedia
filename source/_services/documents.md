@@ -5,13 +5,13 @@ live: true
 link: '91184'
 order: 8
 name: Documents
-title: We give ideas room to breathe. We bring information into focus
+title: We bring information into focus, and give ideas room to breathe
 slug: documents
 seo:
   title: Document Typesetting and Templates
   description: We give ideas room to breathe. We bring information into focus.
   image: 
-description: We give ideas room to breathe. We bring information into focus.
+description: We bring information into focus, and give ideas room to breathe.
 image:
   url: https://www.datocms-assets.com/3013/1505946776-infographics.jpg
   alt: 
@@ -19,7 +19,7 @@ image:
 heading:
 - item_type: block_heading_large
   created_at: 2017-08-29 14:23:41.583000000 Z
-  text: We give ideas room to breathe. We bring information into focus.
+  text: We bring information into focus, and give ideas room to breathe.
 intro:
 - item_type: block_body_lead
   created_at: 2017-09-24 17:59:54.329000000 Z

@@ -4,7 +4,7 @@ collection: clients
 live: true
 published: true
 link: '98719'
-order: 3
+order: 7
 name: Scene Systems
 title: Scene Systems
 slug: scene-systems

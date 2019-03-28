@@ -124,7 +124,7 @@ quote:
   cite: Convenor for Cambridge, Green Party of England and Wales
 services:
 - title: Print Design
-  description: Graphics and text are just ink. We use design to print ideas and emotions.
+  description: It's not just paper and ink. We use design to print ideas and emotions.
   link: '91182'
 - title: Copywriting
   description: We'll get your ideas clear. Then get them across clearly.

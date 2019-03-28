@@ -4,7 +4,7 @@ collection: clients
 live: true
 published: true
 link: '98628'
-order: 1
+order: 4
 name: The Green Party
 title: The Green Party
 slug: green-party

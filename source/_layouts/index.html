@@ -20,6 +20,7 @@ layout: base
 	</div>
 </section>
 
+{% if page.quotes and page.quotes.size > 0 %}
 <section id="home-quotes">
 	<div class="container">
 		<blockquote class="feature quote">
@@ -40,6 +41,7 @@ layout: base
 	</div>
 	//-->
 </section>
+{% endif %}
 
 <section id="showcase">
 	<div class="container">
@@ -48,7 +50,7 @@ layout: base
 				<h2 class="subtitle">Showcase</h2>
 			</div>
 		</div>
-		{% include showcase.html showcase=page.showcase %}
+		{% include showcase.html showcase=page.showcase size=big %}
 		<h3 class="hidden">We've also worked with</h3>
 		{% include clients.html clients=page.clients %}
 	</div>

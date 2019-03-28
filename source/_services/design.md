@@ -5,13 +5,13 @@ live: true
 link: '91182'
 order: 6
 name: Print Design
-title: Graphics and text are just ink. We use design to print ideas and emotions
+title: It's not just paper and ink. We use design to print ideas and emotions
 slug: design
 seo:
   title: 'Print Design: Leaflets, Brochures and Graphics'
   description: Graphics and text are just ink. We use design to print ideas and emotions.
   image: 
-description: Graphics and text are just ink. We use design to print ideas and emotions.
+description: It's not just paper and ink. We use design to print ideas and emotions.
 image:
   url: https://www.datocms-assets.com/3013/1504895101-print.jpg
   alt: 
@@ -19,21 +19,16 @@ image:
 heading:
 - item_type: block_heading_large
   created_at: 2017-08-29 14:22:16.048000000 Z
-  text: Graphics and text are just ink.
-- item_type: block_heading_large
-  created_at: 2017-09-08 18:19:32.806000000 Z
-  text: We use design to print ideas and emotions.
+  text: It's not just paper and ink. We use design to print ideas and emotions.
 intro:
 - item_type: block_body_lead
   created_at: 2017-09-08 18:19:32.826000000 Z
-  paragraphs: 'Once you print it, you can''t change it. So we don''t waste your paper.
-    Our design work is focused on just one thing: getting across the concepts, messages
-    and emotions that you intend.'
+  paragraphs: A printed item should be a powerful tool – every part of which has been
+    carefully designed to achieve a goal.
 - item_type: block_body_text
   created_at: 2017-09-08 18:19:32.837000000 Z
-  text: With us, you're not printing a leaflet. You're not printing a brochure or
-    a poster. You're printing a powerful tool – every part of which has been carefully
-    designed to achieve your goals.
+  text: Once you print it, you can't change it. So we won't waste your paper. We create
+    designs that look great, enhance your brand and communicate effectively.
 elements_heading: Printed materials, a cut above the rest.
 elements:
 - item_type: block_card_text
@@ -42,8 +37,8 @@ elements:
   title: Leaflets. Brochures. Anything.
   link: 
   description: We've designed everything from business cards to books. We pay special
-    attention to how the final object will be viewed, handled and used. So it looks
-    great in theory, and even better in practice.
+    attention to how the final object will be viewed and used. So it looks great in
+    theory, and even better in your hands.
   size: ''
 - item_type: block_card_text
   created_at: 2017-09-08 18:24:17.215000000 Z

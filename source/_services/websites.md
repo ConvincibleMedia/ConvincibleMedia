@@ -19,16 +19,13 @@ image:
 heading:
 - item_type: block_heading_large
   created_at: 2017-08-16 20:52:00.361000000 Z
-  text: Your website is your digital home.
-- item_type: block_heading_large
-  created_at: 2017-08-27 14:35:27.658000000 Z
-  text: We'll make it inviting.
+  text: Your website is your digital home. We'll make it inviting.
 intro:
 - item_type: block_body_lead
   created_at: 2017-08-30 20:29:07.814000000 Z
   paragraphs: |-
     Your website is often the first place customers will go to learn about
-    you. Having a good website is mission-critical.
+    you. We'll ensure it creates the right impression, and encourages visitors to engage with your business.
 elements_heading: What makes a great website?
 elements:
 - item_type: block_card_text

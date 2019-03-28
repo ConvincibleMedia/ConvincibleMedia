@@ -15,12 +15,12 @@ thumb-medium:
     fm: "pjpg"
     q: 50
 hero:
-    w: 1280
-    h: 720
+    w: 1600
+    h: 900
     fit: "max"
     auto: "compress"
     fm: "pjpg"
-    q: 60
+    q: 65
 small:
     w: 320
     h: 180

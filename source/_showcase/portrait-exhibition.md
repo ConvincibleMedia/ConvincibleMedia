@@ -4,7 +4,7 @@ collection: showcase
 live: true
 published: true
 link: '98622'
-order: 3
+order: 2
 name: Portrait Exhibition
 title: Creating an experience with a lasting impression
 slug: portrait-exhibition
@@ -108,7 +108,7 @@ quote:
   cite: Exhibition Curator, Wisbech & Fenland Museum
 services:
 - title: Print Design
-  description: Graphics and text are just ink. We use design to print ideas and emotions.
+  description: It's not just paper and ink. We use design to print ideas and emotions.
   link: '91182'
 - title: Experience
   description: How do you want your audience to feel? Leave the details to us.
