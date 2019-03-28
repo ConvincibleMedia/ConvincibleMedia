@@ -24,12 +24,12 @@ intro:
 - item_type: block_body_lead
   created_at: 2017-08-31 21:47:20.310000000 Z
   paragraphs: We'll make your presentations clear and powerful, by applying our expertise
-    in both slide design and public speaking.
+    in both slide design and how to communicate ideas effectively.
 - item_type: block_body_text
   created_at: 2017-09-01 00:18:09.884000000 Z
-  text: If you've got ideas to communicate, an important presentation to give, or
-    you're just tired of battling with PowerPoint, we've got a passion for helping
-    you. With just a little help, we believe anyone can present like the very best.
+  text: If you need to persuade an audience, have an important presentation to give,
+    or you're just tired of battling with PowerPoint, we've got a passion for helping
+    you.
 elements_heading: What makes a great presentation?
 elements:
 - item_type: block_card_text

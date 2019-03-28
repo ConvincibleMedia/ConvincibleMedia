@@ -50,7 +50,7 @@ services:
     alt: 
     title: 
 - name: Print Design
-  description: Graphics and text are just ink. We use design to print ideas and emotions.
+  description: It's not just paper and ink. We use design to print ideas and emotions.
   link: '91182'
   live: true
   image:
@@ -66,7 +66,7 @@ services:
     alt: 
     title: 
 - name: Documents
-  description: We give ideas room to breathe. We bring information into focus.
+  description: We bring information into focus, and give ideas room to breathe.
   link: '91184'
   live: true
   image:
@@ -81,13 +81,7 @@ services:
     url: https://www.datocms-assets.com/3013/1506259878-hall.jpg
     alt: 
     title: 
-quotes:
-- item_type: block_body_pullquote
-  created_at: 2017-08-29 11:48:25.378000000 Z
-  paragraphs: Convincible have provided our organisation with the digital marketing
-    knowledge and practical expertise to help complex projects get off the ground,
-    and deliver real, measurable value to our business. Highly recommended.
-  cite: Head of Adult Publishing, Cambridge University Press
+quotes: []
 showcase:
 - title: Changing minds at a time of change
   image:

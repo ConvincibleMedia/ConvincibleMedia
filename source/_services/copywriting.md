@@ -31,8 +31,9 @@ intro:
     'copy'-writing.
 - item_type: block_body_text
   created_at: 2017-09-24 17:48:00.588000000 Z
-  text: Writing great copy (i.e. the text that will be copied) is a skill that takes
-    years to learn. Luckily, those years are already behind us.
+  text: Writing great copy (i.e. the text that will be copied) requires hours of agonising
+    over the words to use and the phrases that sound best. The outcome may be three
+    short sentences, but they'll be the three sentences that work.
 elements_heading: What makes great copy?
 elements:
 - item_type: block_card_text

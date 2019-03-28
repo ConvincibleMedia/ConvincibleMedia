@@ -23,13 +23,8 @@ heading:
 intro:
 - item_type: block_body_lead
   created_at: 2017-08-31 21:31:58.445000000 Z
-  paragraphs: Your brand is the grand unifying theory behind everything you do. Done
-    right, it’s like nuclear fusion.
-- item_type: block_body_text
-  created_at: 2017-08-31 21:31:58.430000000 Z
-  text: Far more than just your logo, your brand is who you are and what you stand
-    for; it's the promise you make and the experience you deliver. We use design to
-    express these values, making your brand your most powerful asset.
+  paragraphs: Your brand is the grand unifying theory behind everything you do. We'll
+    help you make it your most powerful asset.
 elements_heading: What makes a great brand?
 elements:
 - item_type: block_card_text

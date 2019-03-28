@@ -122,21 +122,13 @@ pages:
     type: showcase
     order: 1
     live: true
-  '86953':
-    title: Cambridge English Teacher
-    slug: cambridge-english-teacher
-    path: "/showcase/"
-    fullpath: "/showcase/cambridge-english-teacher.html"
-    type: showcase
-    order: 2
-    live: false
   '98622':
     title: Portrait Exhibition
     slug: portrait-exhibition
     path: "/showcase/"
     fullpath: "/showcase/portrait-exhibition.html"
     type: showcase
-    order: 3
+    order: 2
     live: true
   '92962':
     title: New Project
@@ -154,13 +146,37 @@ pages:
     type: contact_page
     order: 2
     live: true
+  '754337':
+    title: Cambridge University Press
+    slug: cambridge-university-press
+    path: "/client/"
+    fullpath: "/client/cambridge-university-press.html"
+    type: client
+    order: 1
+    live: true
+  '754339':
+    title: English Language iTutoring
+    slug: elit
+    path: "/client/"
+    fullpath: "/client/elit.html"
+    type: client
+    order: 2
+    live: true
+  '754335':
+    title: The Oak Bistro
+    slug: the-oak-bistro
+    path: "/client/"
+    fullpath: "/client/the-oak-bistro.html"
+    type: client
+    order: 3
+    live: true
   '98628':
     title: The Green Party
     slug: green-party
     path: "/client/"
     fullpath: "/client/green-party.html"
     type: client
-    order: 1
+    order: 4
     live: true
   '98716':
     title: Wisbech & Fenland Museum
@@ -168,7 +184,15 @@ pages:
     path: "/client/"
     fullpath: "/client/wisbech-fenland-museum.html"
     type: client
-    order: 2
+    order: 5
+    live: true
+  '754341':
+    title: AgeCurve
+    slug: agecurve
+    path: "/client/"
+    fullpath: "/client/agecurve.html"
+    type: client
+    order: 6
     live: true
   '98719':
     title: Scene Systems
@@ -176,16 +200,8 @@ pages:
     path: "/client/"
     fullpath: "/client/scene-systems.html"
     type: client
-    order: 3
+    order: 7
     live: true
-  '749722':
-    title: Cambridge Assessment
-    slug: cambridge-assessment
-    path: "/client/"
-    fullpath: "/client/cambridge-assessment.html"
-    type: client
-    order: 4
-    live: false
 tree:
   root:
     index: '86954'
