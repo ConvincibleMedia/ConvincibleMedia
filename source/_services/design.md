@@ -5,7 +5,7 @@ live: true
 link: '91182'
 order: 6
 name: Print Design
-title: It's not just paper and ink. We use design to print ideas and emotions
+title: We use design to print ideas and emotions
 slug: design
 seo:
   title: 'Print Design: Leaflets, Brochures and Graphics'
@@ -19,7 +19,7 @@ image:
 heading:
 - item_type: block_heading_large
   created_at: 2017-08-29 14:22:16.048000000 Z
-  text: It's not just paper and ink. We use design to print ideas and emotions.
+  text: We use design to print ideas and emotions.
 intro:
 - item_type: block_body_lead
   created_at: 2017-09-08 18:19:32.826000000 Z

@@ -4,7 +4,7 @@ collection: showcase
 live: true
 published: true
 link: '98622'
-order: 2
+order: 4
 name: Portrait Exhibition
 title: Creating an experience with a lasting impression
 slug: portrait-exhibition

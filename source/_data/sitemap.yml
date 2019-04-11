@@ -114,13 +114,29 @@ pages:
     type: service
     order: 9
     live: true
+  '754342':
+    title: Instagram Photography
+    slug: instagram-photography
+    path: "/showcase/"
+    fullpath: "/showcase/instagram-photography.html"
+    type: showcase
+    order: 1
+    live: true
+  '756703':
+    title: Social Media Management
+    slug: social-media-management
+    path: "/showcase/"
+    fullpath: "/showcase/social-media-management.html"
+    type: showcase
+    order: 2
+    live: true
   '87043':
     title: General Election 2017
     slug: general-election-2017
     path: "/showcase/"
     fullpath: "/showcase/general-election-2017.html"
     type: showcase
-    order: 1
+    order: 3
     live: true
   '98622':
     title: Portrait Exhibition
@@ -128,8 +144,16 @@ pages:
     path: "/showcase/"
     fullpath: "/showcase/portrait-exhibition.html"
     type: showcase
-    order: 2
+    order: 4
     live: true
+  '86953':
+    title: Cambridge English Teacher
+    slug: cambridge-english-teacher
+    path: "/showcase/"
+    fullpath: "/showcase/cambridge-english-teacher.html"
+    type: showcase
+    order: 5
+    live: false
   '92962':
     title: New Project
     slug: new
@@ -202,6 +226,14 @@ pages:
     type: client
     order: 7
     live: true
+  '749722':
+    title: Cambridge Assessment
+    slug: cambridge-assessment
+    path: "/client/"
+    fullpath: "/client/cambridge-assessment.html"
+    type: client
+    order: 8
+    live: false
 tree:
   root:
     index: '86954'

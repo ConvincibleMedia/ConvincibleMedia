@@ -14,7 +14,16 @@ logo:
   alt: 
   title: 
 client_url: http://www.theoakbistro.co.uk
-projects: []
+projects:
+- title: Tantalising taste-buds through targeted social media
+  subtitle: Social Media Management
+  description: We manage all aspects of The Oak Bistro's social media, from content
+    to ads to customer interaction.
+  image:
+    url: https://www.datocms-assets.com/3013/1552492883-cover.jpg
+    alt: 
+    title: 
+  link: '756703'
 ---
 
 The Oak Bistro is one of Cambridge's top-rated restaurants, offering exquisite British and European cuisine, in an elegant environment in the heart of the city.
