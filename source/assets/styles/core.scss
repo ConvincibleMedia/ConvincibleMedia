@@ -214,66 +214,83 @@ nav li a {
 
 /* Hero Headers */
 
-header#hero {
+#hero {
+
 	background-repeat: no-repeat;
 	background-position: center center;
 	background-attachment: scroll;
 	background-size: cover;
 
-	#hero-text {
-		color: #fff;
-		text-shadow: 0 0 1em rgba(0, 0, 0, 0.5);
+	section { padding: 0 }
+}
 
-		h1 {
-			border-bottom-width: 0.2em;
-		}
-		.h2 { margin-bottom: 0.8em }
+#hero-text {
+	color: #fff;
+	text-shadow: 0 0 1em rgba(0, 0, 0, 0.5);
 
-		ul, li { display: block; list-style: none; margin: 0; padding: 0; }
-
-		ul li a { color: $color-2; }
-
+	h1 {
+		border-bottom-width: 0.2em;
 	}
+	.h2 { margin-bottom: 0.8em }
+
+	ul, li { display: block; list-style: none; margin: 0; padding: 0; }
+
+	ul li a { color: $color-2; }
 
 	@include md() {
 		h1 {
 			font-size: 300%;
 		}
 	}
-
-	#hero-action {
-		margin-top: 2em;
-		font-size: 120%;
-	}
-
-	.header-home {
-
-		#hero-box {
-			padding-top: 4em; padding-bottom: 5em;
-		}
-
-		h1, .h1 { border-bottom-color: $color-1 }
-
-		a.button {
-			background-color: #fff; color: $color-1;
-			box-shadow: 0 0 1em rgba(255, 255, 255, 0.5);
-
-			&:before, &:after {
-				background-image: url('/assets/images/arrow.svg');
-			}
-		}
-	}
-
-	.header-inside {
-		#hero-box {
-			background: rgba(0, 0, 0, 0.25);
-			background: -webkit-linear-gradient(bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0));
-			padding-top: 10em; padding-bottom: 2em;
-		}
-	}
-
-	section { padding: 0 }
 }
+
+#hero-action {
+	margin-top: 2em;
+	font-size: 120%;
+}
+
+#hero.header-home {
+
+	#hero-box {
+		padding-top: 4em; padding-bottom: 5em;
+	}
+
+	h1, .h1 { border-bottom-color: $color-1 }
+
+	a.button {
+		background-color: #fff; color: $color-1;
+		box-shadow: 0 0 1em rgba(255, 255, 255, 0.5);
+
+		&:before, &:after {
+			background-image: url('/assets/images/arrow.svg');
+		}
+	}
+}
+
+#hero.header-inside, #hero.header-full {
+	#hero-box {
+		background: rgba(0, 0, 0, 0.25);
+		padding-bottom: 2em;
+	}
+}
+
+#hero.header-inside {
+	#hero-box {
+		background: -webkit-linear-gradient(bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0));
+		padding-top: 10em;
+	}
+}
+
+#hero.header-full {
+	background-attachment: fixed;
+
+	#hero-box {
+		padding-top: 20em;
+		padding-top: 65vh;
+		background: -webkit-linear-gradient(bottom, rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.1) 50%, rgba(0, 0, 0, 0) 60%);
+	}
+}
+
 
 main { padding-bottom: 2em; }
 main section { padding-top: 1em; }
