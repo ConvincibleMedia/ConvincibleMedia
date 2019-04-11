@@ -15,6 +15,7 @@
 {%- endcapture -%}
 <header id="hero" class="header-{{ include.type }} hero-image-bg-muted" style="background-image: url('{{ src }}')">
 	<section>
+		{% if home %}<div id="particles-js"></div>{% endif %}
 		<div id="hero-box">
 			<div class="container">
 				<div id="hero-text">
