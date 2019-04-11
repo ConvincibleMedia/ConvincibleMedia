@@ -550,7 +550,7 @@ blockquote, .block_body_lead {
 		text-align: center;
 	}
 }
-.block_body_lead { font-size: 150%; }
+.block_body_lead p { font-size: 150%; }
 
 #approach blockquote {
 	background-color: lighten($color-1, 30%);

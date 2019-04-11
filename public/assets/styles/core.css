@@ -485,7 +485,7 @@ blockquote, .block_body_lead {
     color: #e87123;
     text-align: center; }
 
-.block_body_lead {
+.block_body_lead p {
   font-size: 150%; }
 
 #approach blockquote {
