@@ -469,6 +469,12 @@ a.button {
 		}
 	}
 
+	.card-icon {
+		margin-bottom: 0.5em;
+
+		img { width: 3.5em; height: auto }
+	}
+
 	.card-image-right {
 		margin-bottom: -1em
 	}
@@ -511,6 +517,12 @@ a.button {
 		}
 		a { color: lighten($color-1, 25%) }
 	}
+
+	.row div:nth-of-type(4n+1) .card { transform: rotateZ(-0.75deg); }
+	.row div:nth-of-type(4n+2) .card { transform: rotateZ(-0.35deg); }
+	.row div:nth-of-type(4n+3) .card { transform: rotateZ(0.75deg); }
+	.row div:nth-of-type(4n+4) .card { transform: rotateZ(0.35deg); }
+
 }
 
 

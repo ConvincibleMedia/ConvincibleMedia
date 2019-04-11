@@ -417,6 +417,11 @@ a.button {
           border-radius: 50%;
           font-size: 200%;
           color: #fff; }
+  .card .card-icon {
+    margin-bottom: 0.5em; }
+    .card .card-icon img {
+      width: 3.5em;
+      height: auto; }
   .card .card-image-right {
     margin-bottom: -1em; }
 
@@ -444,6 +449,14 @@ a.button {
       color: #fff; }
     #elements .card a {
       color: #ffc6b3; }
+  #elements .row div:nth-of-type(4n+1) .card {
+    transform: rotateZ(-0.75deg); }
+  #elements .row div:nth-of-type(4n+2) .card {
+    transform: rotateZ(-0.35deg); }
+  #elements .row div:nth-of-type(4n+3) .card {
+    transform: rotateZ(0.75deg); }
+  #elements .row div:nth-of-type(4n+4) .card {
+    transform: rotateZ(0.35deg); }
 
 /* Outsets */
 blockquote, .block_body_lead {
