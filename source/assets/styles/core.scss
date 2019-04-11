@@ -505,17 +505,13 @@ a.button {
 
 	.card {
 		background-color: #444;
-		background: url('/assets/images/blackboard.jpg');
-		border-radius: 0.5em;
-		box-shadow: 0 0 1em rgba(0, 0, 0, 0.3);
-		text-shadow:
-			0px 0.05em 0.05em rgba(255,255,255,0.3),
-			0px -0.05em 0.05em rgba(0,0,0,1);
+		background: url('/assets/images/postit.jpg');
+		background-repeat: no-repeat;
+		background-position: center top;
+		background-attachment: scroll;
+		background-size: cover;
+		box-shadow: 0 0.4em 0.7em rgba(0, 0, 0, 0.15);
 
-		p, .h3 {
-			color: #fff
-		}
-		a { color: lighten($color-1, 25%) }
 	}
 
 	.row div:nth-of-type(4n+1) .card { transform: rotateZ(-0.75deg); }
