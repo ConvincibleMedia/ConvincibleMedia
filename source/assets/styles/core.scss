@@ -246,13 +246,20 @@ nav li a {
 
 #hero-action {
 	margin-top: 2em;
-	font-size: 120%;
+
+	.button { font-size: 120%; }
+
+	.card {
+		background-color: rgba(0,0,0,0.4);
+		color: #fff;
+		font-size: 90%;
+	}
 }
 
 #hero.header-home {
 
 	#hero-box {
-		padding-top: 4em; padding-bottom: 5em;
+		padding: 4em 0;
 	}
 
 	h1, .h1 { border-bottom-color: $color-1 }

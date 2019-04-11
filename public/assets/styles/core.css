@@ -230,12 +230,16 @@ nav li a {
       font-size: 300%; } }
 
 #hero-action {
-  margin-top: 2em;
-  font-size: 120%; }
+  margin-top: 2em; }
+  #hero-action .button {
+    font-size: 120%; }
+  #hero-action .card {
+    background-color: rgba(0, 0, 0, 0.4);
+    color: #fff;
+    font-size: 90%; }
 
 #hero.header-home #hero-box {
-  padding-top: 4em;
-  padding-bottom: 5em; }
+  padding: 4em 0; }
 #hero.header-home h1, #hero.header-home .h1 {
   border-bottom-color: #f63; }
 #hero.header-home a.button {

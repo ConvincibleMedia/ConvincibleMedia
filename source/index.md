@@ -7,6 +7,8 @@ image:
   url: https://www.datocms-assets.com/3013/1506283529-noise.jpg
   alt: 
   title: 
+blurb: We're a creative agency based in Cambridge, UK. We concoct words and images
+  that communicate and compel.
 services:
 - name: Branding
   description: Your brand is the centre of our marketing universe.
