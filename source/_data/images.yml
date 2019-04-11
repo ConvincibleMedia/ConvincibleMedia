@@ -20,7 +20,14 @@ hero:
     fit: "max"
     auto: "compress"
     fm: "pjpg"
-    q: 65
+    q: 60
+hero-full:
+    w: 1600
+    h: 1600
+    fit: "max"
+    auto: "compress"
+    fm: "pjpg"
+    q: 70
 small:
     w: 320
     h: 180
