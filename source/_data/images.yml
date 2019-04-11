@@ -55,3 +55,9 @@ client:
    auto: "compress"
    fm: "png"
    sat: -100
+icon:
+   w: 120
+   h: 120
+   fit: "max"
+   auto: "compress"
+   fm: "png"
