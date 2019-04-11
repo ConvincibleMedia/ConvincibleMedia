@@ -435,8 +435,15 @@ a.button {
 #elements {
   padding: 0; }
   #elements .card {
-    background-color: #f4f4f4;
-    border: 0.125em dashed #afafaf; }
+    background-color: #444;
+    background: url("/assets/images/blackboard.jpg");
+    border-radius: 0.5em;
+    box-shadow: 0 0 1em rgba(0, 0, 0, 0.3);
+    text-shadow: 0px 0.05em 0.05em rgba(255, 255, 255, 0.3), 0px -0.05em 0.05em black; }
+    #elements .card p, #elements .card .h3 {
+      color: #fff; }
+    #elements .card a {
+      color: #ffc6b3; }
 
 /* Outsets */
 blockquote, .block_body_lead {
