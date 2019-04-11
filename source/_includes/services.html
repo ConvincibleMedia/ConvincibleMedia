@@ -5,6 +5,7 @@
 	{% endif %}
 	<div class="col-sm-4">
 		<div class="card link tilt grid">
+			<div class="card-image">{% include helpers/img.html image=item.image format=site.data.images.thumb %}</div>
 			<h3>
 				{% if item.live %}
 					{% include helpers/link.html href=item.link text=item.name %}

@@ -21,6 +21,13 @@ hero:
     auto: "compress"
     fm: "pjpg"
     q: 60
+hero-full:
+    w: 1600
+    h: 1600
+    fit: "max"
+    auto: "compress"
+    fm: "pjpg"
+    q: 70
 small:
     w: 320
     h: 180
@@ -39,5 +46,18 @@ logo:
    w: 320
    h: 180
    fit: "clip"
+   auto: "compress"
+   fm: "png"
+client:
+   w: 320
+   h: 180
+   fit: "clip"
+   auto: "compress"
+   fm: "png"
+   sat: -100
+icon:
+   w: 120
+   h: 120
+   fit: "max"
    auto: "compress"
    fm: "png"

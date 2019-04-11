@@ -2,12 +2,13 @@
 layout: showcase
 collection: showcase
 live: true
+published: true
 link: '98622'
-order: 3
+order: 2
 name: Portrait Exhibition
 title: Creating an experience with a lasting impression
 slug: portrait-exhibition
-seo: !ruby/object:Dato::Local::FieldType::Seo
+seo:
   title: Wisbech Museum
   description: We provided design services to bring the Wisbech & Fenland Museum's
     new exhibition to life.
@@ -25,29 +26,37 @@ client:
     alt: 
     title: 
   link: '98716'
+logo:
+  url: https://www.datocms-assets.com/3013/1505645265-wfm-logo.png
+  alt: 
+  title: 
 heading:
 - item_type: block_heading_large
+  created_at: 2017-09-17 11:50:19.254000000 Z
   text: Creating an experience with a lasting impression.
 intro:
 - item_type: block_body_lead
+  created_at: 2017-09-15 17:01:52.561000000 Z
   paragraphs: We were the designers behind the Museum’s first major exhibition as
     part of its reinvigoration programme. We used visual style and narrative to elevate
     the museum’s professionalism, status and image.
 - item_type: block_body_text
+  created_at: 2017-09-15 17:01:52.584000000 Z
   text: The exhibition, entitled *Self-Reflection \ The Portrait & Its Uses*, explored
     portraiture as an artform over time, and showcased original artefacts of both
     national and local significance, including a larger-than-life painting of Napoleon
     I, and poignant photos from the 1870s of prisoners from the local gaol.
 facets:
 - item_type: block_card_image
+  created_at: 2017-09-15 17:05:09.297000000 Z
   image:
     format: jpg
     size: 4137794
-    url: https://www.datocms-assets.com/3013/1505566549-img_1009.JPG
     width: 3264
     height: 2448
     alt: 
     title: 
+    url: https://www.datocms-assets.com/3013/1505566549-img_1009.JPG
   subtitle: Customer Experience Design
   title: Reimagining visitor flow to create a story
   link: 
@@ -57,14 +66,15 @@ facets:
     a simple and moving narrative flow across the space.
   size: Medium
 - item_type: block_card_image
+  created_at: 2017-09-15 17:05:09.271000000 Z
   image:
     format: jpg
     size: 5089915
-    url: https://www.datocms-assets.com/3013/1505566563-img_1054.JPG
     width: 3264
     height: 1952
     alt: 
     title: 
+    url: https://www.datocms-assets.com/3013/1505566563-img_1054.JPG
   subtitle: Large Print Design
   title: Visuals to make a big impact
   link: 
@@ -73,6 +83,7 @@ facets:
     from the 1870s.
   size: Medium
 - item_type: block_card_image
+  created_at: 2017-09-15 17:05:09.431000000 Z
   image: 
   subtitle: Brochure Design
   title: A place to put the details
@@ -83,6 +94,7 @@ facets:
     easy to understand.
   size: Large
 - item_type: block_card_image
+  created_at: 2017-09-15 17:05:09.402000000 Z
   image: 
   subtitle: Advertising
   title: Bringing in new visitors
@@ -96,7 +108,7 @@ quote:
   cite: Exhibition Curator, Wisbech & Fenland Museum
 services:
 - title: Print Design
-  description: Graphics and text are just ink. We use design to print ideas and emotions.
+  description: It's not just paper and ink. We use design to print ideas and emotions.
   link: '91182'
 - title: Experience
   description: How do you want your audience to feel? Leave the details to us.

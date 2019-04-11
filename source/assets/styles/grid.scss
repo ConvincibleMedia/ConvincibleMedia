@@ -18,6 +18,11 @@
 	margin-left: auto;
 	padding-left: 2em;
 	padding-right: 2em;
+
+	@include sm() {
+		padding-left: 1em;
+		padding-right: 1em;
+	}
 }
 
 /* XS by default */

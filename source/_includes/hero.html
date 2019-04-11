@@ -1,17 +1,25 @@
 {%- capture src -%}
-	{%- include helpers/img.html
-		image=include.image
-		format=site.data.images.hero
-		src_only=true
-	-%}
+	{%- if include.type == 'full' -%}
+		{%- include helpers/img.html
+			image=include.image
+			format=site.data.images.hero-full
+			src_only=true
+		-%}
+	{%- else -%}
+		{%- include helpers/img.html
+			image=include.image
+			format=site.data.images.hero
+			src_only=true
+		-%}
+	{%- endif -%}
 {%- endcapture -%}
-<header id="hero" style="background-image: url('{{ src }}')">
-	<section class="header-{{ include.type }}">
+<header id="hero" class="header-{{ include.type }} hero-image-bg-muted" style="background-image: url('{{ src }}')">
+	<section>
 		<div id="hero-box">
 			<div class="container">
 				<div id="hero-text">
 					{% assign section = site.collections | where:'label',page.collection | first %}
-					{% if include.type == 'inside' and include.breadcrumb > 0 %}
+					{% if include.breadcrumb > 0 %}
 						<div class="row">
 							<div class="col-sm-6 col-md-4">
 								{% capture breadcrumb-inner %}
@@ -48,7 +56,14 @@
 				{% if include.type == 'home' %}
 					<div id="hero-action">
 						<div class="row">
-							<div class="col-lg-4 col-sm-6">
+							<div class="col-md-4 col-md-push-8 col-sm-6 col-sm-push-6">
+								{% if include.action_blurb %}
+									<div class="card">
+										<p>{{ include.action_blurb }}</p>
+									</div>
+								{% endif %}
+							</div>
+							<div class="col-lg-4 col-lg-pull-4 col-md-pull-4 col-sm-6 col-sm-pull-6">
 								<div class="tilt">
 									<a href="{% include helpers/link.html href=include.action_link href_only=true %}" class="button tilt-z">{{ include.action_text }}</a>
 								</div>

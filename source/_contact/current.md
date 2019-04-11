@@ -4,7 +4,7 @@ collection: contact
 live: true
 link: '92963'
 order: 2
-seo: 
+seo: ''
 options:
 - icon: 
   name: Phone
@@ -14,7 +14,7 @@ options:
 - icon: 
   name: Email
   details: contact@convincible.media
-  explanation: We like putting some thought into our words – and we'll still respond
+  explanation: We like putting some thought into our words – but we'll still respond
     quickly.
 ---
 

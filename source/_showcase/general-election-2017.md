@@ -2,12 +2,13 @@
 layout: showcase
 collection: showcase
 live: true
+published: true
 link: '87043'
 order: 1
 name: General Election 2017
 title: Changing minds at a time of change
 slug: general-election-2017
-seo: !ruby/object:Dato::Local::FieldType::Seo
+seo:
   title: The Green Party
   description: We managed the General Election 2017 campaign in Cambridge for the
     Green Party of England and Wales.
@@ -25,21 +26,29 @@ client:
     alt: 
     title: 
   link: '98628'
+logo:
+  url: https://www.datocms-assets.com/3013/1505644532-greenlogoweb.png
+  alt: 
+  title: 
 heading:
 - item_type: block_heading_large
+  created_at: 2017-08-29 13:33:36.297000000 Z
   text: Changing minds at a time of change
 intro:
 - item_type: block_body_lead
+  created_at: 2017-08-30 20:24:55.316000000 Z
   paragraphs: Virgil Ierubino <i class="small">(MD at Convincible)</i> ran the Green
     Party’s General Election campaign in Cambridge in 2017, hitting new milestones
     for the party’s reach and mindshare among the electorate.
 - item_type: block_body_text
+  created_at: 2017-08-29 21:13:06.349000000 Z
   text: Even with a miracle, winning was an impossible goal for a small party in 2017.
     Being realistic about this allowed us to focus the goal toward communication,
     and so to direct the party's energies appropriately. We achieved a new level of
     engagement and broke new ground for the party in Cambridge.
 facets:
 - item_type: block_card_image
+  created_at: 2017-08-30 21:01:40.150000000 Z
   image: 
   subtitle: Print Design
   title: Making every leaflet worth ten
@@ -50,6 +59,7 @@ facets:
     leaflets, but we gave each one the full treatment.
   size: Large
 - item_type: block_card_text
+  created_at: 2017-08-31 15:52:13.870000000 Z
   subtitle: Project Management
   title: 8 weeks where every second counted
   link: 
@@ -59,6 +69,7 @@ facets:
     and getting maximum value from PR opportunities in the local and national news.
   size: Small
 - item_type: block_card_video
+  created_at: 2017-08-29 22:20:47.536000000 Z
   video:
     url: https://youtu.be/4uj_7Z93OBw
     thumbnail_url: https://i.ytimg.com/vi/4uj_7Z93OBw/hqdefault.jpg
@@ -67,7 +78,7 @@ facets:
     height: 344
     provider: youtube
     provider_url: 
-    provider_uid: undefined
+    provider_uid: 4uj_7Z93OBw
   subtitle: Video Production
   title: Engaging emotions with narrative
   link: 
@@ -76,6 +87,7 @@ facets:
     a series of short, sharp animations designed solely for social media sharing.
   size: Solo
 - item_type: block_card_text
+  created_at: 2017-08-31 22:20:16.350000000 Z
   subtitle: Messaging
   title: One concept to rule the campaign
   link: 
@@ -83,8 +95,9 @@ facets:
     a simple, central concept to reinforce with every touchpoint. “It’s time for action”
     was emphasised with the visual metaphor of Big Ben striking ‘Green’, reinforcing
     the party’s serious contention for Parliament.
-  size: 
+  size: ''
 - item_type: block_card_text
+  created_at: 2017-08-31 22:20:16.435000000 Z
   subtitle: Copywriting
   title: Getting across ideas in just a glance
   link: 
@@ -93,8 +106,9 @@ facets:
     piling up on every voters’ doorstep. We did this through striking visuals, bold
     and simple headlines, and succinct wording that gets the point across even if
     you only glance.
-  size: 
+  size: ''
 - item_type: block_card_text
+  created_at: 2017-08-31 22:20:16.386000000 Z
   subtitle: Social Media
   title: Spreading the word virally
   link: 
@@ -102,7 +116,7 @@ facets:
     the campaign. We garnered thousands of likes, comments and shares, which served
     to spread the message – at zero cost. This was bolstered with a hyper-targeted
     advertising campaign that made optimal use of donated funds.
-  size: 
+  size: ''
 quote:
   paragraphs: The quality of this election campaign, in such a short timeframe, was
     down to Virgil's <i class="small">[MD at Convincible]</i> fantastic drive and
@@ -110,7 +124,7 @@ quote:
   cite: Convenor for Cambridge, Green Party of England and Wales
 services:
 - title: Print Design
-  description: Graphics and text are just ink. We use design to print ideas and emotions.
+  description: It's not just paper and ink. We use design to print ideas and emotions.
   link: '91182'
 - title: Copywriting
   description: We'll get your ideas clear. Then get them across clearly.

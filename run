@@ -1,3 +1,0 @@
-bundle exec dato dump
-jekyll serve
-rm Gemfile.lock

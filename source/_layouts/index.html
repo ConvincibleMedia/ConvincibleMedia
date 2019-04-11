@@ -4,21 +4,23 @@ layout: base
 {% include home.html
 	heading=page.tagline
 	image=page.image
-	action_link='@contact'
-	action_text='Contact Us'
+	action_link='/contact/new'
+	action_blurb=page.blurb
+	action_text='Work With Us'
 %}
 
 <section id="services">
 	<div class="container">
 		<div class="row">
 			<div class="col-md-8">
-				<h2 class="subtitle">What can we clarify for you?</h2>
+				<h2 class="subtitle">How can we help?</h2>
 			</div>
 		</div>
 		{% include services.html services=page.services %}
 	</div>
 </section>
 
+{% if page.quotes and page.quotes.size > 0 %}
 <section id="home-quotes">
 	<div class="container">
 		<blockquote class="feature quote">
@@ -39,6 +41,7 @@ layout: base
 	</div>
 	//-->
 </section>
+{% endif %}
 
 <section id="showcase">
 	<div class="container">
@@ -51,18 +54,17 @@ layout: base
 		<h3 class="hidden">We've also worked with</h3>
 		{% include clients.html clients=page.clients %}
 	</div>
-	<!--
-	<div class="container">
-		<div class="row">
-			<div class="col-sm-4 col-sm-offset-4">
-				<p><a href="/showcase.html" class="button">All Case Studies</a></p>
+	{% if site.showcase.size > 2 %}
+		<div class="container">
+			<div class="row">
+				<div class="col-sm-4 col-sm-offset-4">
+					<p><a href="/showcase.html" class="button">All Case Studies</a></p>
+				</div>
 			</div>
 		</div>
-	</div>
-	//-->
+	{% endif %}
 </section>
 
-{% include approach.html %}
 
 <section id="contact" class="spaced">
 	<div class="container">
