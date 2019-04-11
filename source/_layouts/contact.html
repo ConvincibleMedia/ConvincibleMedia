@@ -14,7 +14,7 @@ layout: base
 		<h2 class="hide">Contact Methods</h2>
 		<div class="row">
 			{% for option in page.options %}
-				<div class="col-sm-6 {% if forloop.length == 1%} col-sm-offset-3{% endif %}">
+				<div class="col-lg-6 {% if forloop.length == 1%}col-lg-offset-3 col-sm-8 col-sm-offset-2{% else %}col-md-6{% endif %}">
 					<div class="card">
 						<h3 class="hgroup">
 							<span class="subtitle">{{ option.name }}<span class="hide">:</span></span>
@@ -23,7 +23,7 @@ layout: base
 									{% when 'Phone' %}
 										<a href="tel:{{ option.details }}">{{ option.details }}</a>
 									{% when 'Email' %}
-										<a href="mailto:{{ option.details }}">{{ option.details | replace: '@', ' @' | replace: '.', ' .'}}</a>
+										<a class="email" href="mailto:{{ option.details }}"><span>{{ option.details | replace: '@', '@</span><span>' | replace: '.', '</span><span>.'}}</span></a>
 									{% else %}
 										{{ option.details }}
 								{% endcase %}

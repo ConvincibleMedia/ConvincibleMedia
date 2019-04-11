@@ -472,7 +472,11 @@ a.button {
 }
 
 .card-image-right {
-	margin-bottom: -1em
+	margin-bottom: -1em;
+
+	@include xs() {
+		margin-top: 1em
+	}
 }
 
 .card-icon {
@@ -493,6 +497,8 @@ a.button {
 		}
 	}
 }
+
+.email span { display: inline-block; }
 
 .card.tilt {
 	h3 {

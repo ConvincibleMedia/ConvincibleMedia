@@ -421,6 +421,9 @@ a.button {
 
 .card-image-right {
   margin-bottom: -1em; }
+  @media (max-width: 30em) {
+    .card-image-right {
+      margin-top: 1em; } }
 
 .card-icon .card-image {
   margin: 0 0 0.5em 0; }
@@ -434,6 +437,9 @@ a.button {
 @media (min-width: 50em) {
   .card-icon .card-content {
     margin: 0 0 0 4.5em; } }
+
+.email span {
+  display: inline-block; }
 
 .card.tilt h3 {
   transition: 0.5s; }
