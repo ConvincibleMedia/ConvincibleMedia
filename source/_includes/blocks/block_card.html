@@ -75,43 +75,41 @@
 	{% endif %}
 
 	<div class="col-sm-{{card_sm}} col-md-{{card_md}} col-lg-{{card_lg}}{{ solo_offset }}">
-		<div class="card{% if live %} link{% endif %}">
+		<div class="card{% if live %} link{% endif %}{% if include.style == 'icons' and block.image.url %} card-icon{% endif %}">
 
-			{% unless include.style == 'icons' %}
-				{% if block.image.url %}
-					<div class="card-image">
+			{% if block.image.url %}
+				<div class="card-image">
+					{% unless include.style == 'icons' %}
 						{% include helpers/img.html src=block.image.url alt=block.image.alt format=image_format %}
-					</div>
-				{% elsif block.video.url %}
-					<div class="card-image">
-						{% include helpers/video.html id=block.video.url on=block.video.provider title=block.video.title format='plain' %}
-					</div>
-				{% endif %}
-			{% else %}
-				{% if block.image.url %}
-					<div class="card-icon">
+					{% else %}
 						{% include helpers/img.html src=block.image.url alt=block.image.alt format=site.data.images.icon %}
-					</div>
-				{% endif %}
-			{% endunless %}
+					{% endunless %}
+				</div>
+			{% elsif block.video.url %}
+				<div class="card-image">
+					{% include helpers/video.html id=block.video.url on=block.video.provider title=block.video.title format='plain' %}
+				</div>
+			{% endif %}
 
-			{% if block.title or block.subtitle %}
-				<h3 class="hgroup">
-					{% if block.subtitle %}<span class="h4 subtitle">{{ block.subtitle }}<span class="hide">: </span></span>{% endif %}
-					{% if block.title %}
-						<span class="h3">
-							{% if live %}
-								{% include helpers/link.html href=block.link text=block.title %}
-							{% else %}
-								{{ block.title }}
-							{% endif %}
-						</span>
-					{% endif %}
-				</h3>
-			{% endif %}
-			{% if block.description or true %}
-				{{ block.description | markdownify }}
-			{% endif %}
+			<div class="card-content">
+				{% if block.title or block.subtitle %}
+					<h3 class="hgroup">
+						{% if block.subtitle %}<span class="h4 subtitle">{{ block.subtitle }}<span class="hide">: </span></span>{% endif %}
+						{% if block.title %}
+							<span class="h3">
+								{% if live %}
+									{% include helpers/link.html href=block.link text=block.title %}
+								{% else %}
+									{{ block.title }}
+								{% endif %}
+							</span>
+						{% endif %}
+					</h3>
+				{% endif %}
+				{% if block.description %}
+					{{ block.description | markdownify }}
+				{% endif %}
+			</div>
 		</div>
 	</div>
 
