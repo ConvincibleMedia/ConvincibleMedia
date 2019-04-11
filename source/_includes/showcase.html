@@ -1,21 +1,12 @@
 <div class="row">
 	{% for item in include.showcase %}
-		{% assign mod = forloop.index0 | modulo: 3 %}
-		{% if include.size == big %}
-			{% assign imageformat = site.data.images.thumb-medium %}
-		{% else %}
-			{% assign imageformat = site.data.images.thumb %}
-		{% endif %}
-		<div class="{% if forloop.length > 2 and include.size != big %}col-md-4{% endif %} col-sm-6">
+		<div class="col-sm-6">
 			<div class="card link grid">
-				<div class="card-image">{% include helpers/img.html image=item.image format=imageformat %}</div>
+				<div class="card-image">{% include helpers/img.html image=item.image format=site.data.images.thumb-medium %}</div>
 				<div class="logo logo-small">{% include helpers/img.html image=item.logo format=site.data.images.logo %}</div>
 				<h3>{% include helpers/link.html href=item.link text=item.title %}</h3>
 				{{ item.description | markdownify }}
 			</div>
 		</div>
-		{% if mod == 2 and include.size != big %}
-			<div class="clearfix visible-sm-block"></div>
-		{% endif %}
 	{% endfor %}
 </div>

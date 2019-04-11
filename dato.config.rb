@@ -202,6 +202,7 @@ create_post "source/index.md" do
 		link: home.id,
 		tagline: home.tagline,
 		image: home.hero_image.to_hash.slice(:url, :alt, :title),
+		blurb: home.blurb,
 		services: home.services.to_hash.map { |item|
 			{
 				name: item[:name],
