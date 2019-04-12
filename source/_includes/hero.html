@@ -15,7 +15,7 @@
 {%- endcapture -%}
 <header id="hero" class="header-{{ include.type }} hero-image-bg-muted" style="background-image: url('{{ src }}')">
 	<section>
-		{% if home %}<div id="particles-js"></div>{% endif %}
+		{% if include.type == 'home' %}<div id="particles-js"></div>{% endif %}
 		<div id="hero-box">
 			<div class="container">
 				<div id="hero-text">
@@ -59,13 +59,13 @@
 						<div class="row">
 							<div class="col-md-4 col-md-push-8 col-sm-6 col-sm-push-6">
 								{% if include.action_blurb %}
-									<div class="card">
+									<div class="action-item card">
 										<p>{{ include.action_blurb }}</p>
 									</div>
 								{% endif %}
 							</div>
 							<div class="col-lg-4 col-lg-pull-4 col-md-pull-4 col-sm-6 col-sm-pull-6">
-								<div class="tilt">
+								<div class="action-item tilt">
 									<a href="{% include helpers/link.html href=include.action_link href_only=true %}" class="button tilt-z">{{ include.action_text }}</a>
 								</div>
 							</div>

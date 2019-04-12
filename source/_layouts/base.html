@@ -50,6 +50,9 @@
 		<link rel="stylesheet" href="/assets/styles/bootstrap.css" />
 		<link rel="stylesheet" href="/assets/styles/boilerplate.css" />
 		<link rel="stylesheet" href="/assets/styles/core.css" />
+		{% if home %}
+			<link rel="stylesheet" href="/assets/styles/particles.css" />
+		{% endif %}
 		{% if page.image.url %}
 			<link rel="stylesheet" href="{{page.image.url}}?palette=css&colors=1&class=hero-image" />
 		{% endif %}
