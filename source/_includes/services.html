@@ -1,22 +1,25 @@
-{% for item in include.services %}
-	{% assign mod = forloop.index0 | modulo: 3 %}
-	{% if mod == 0 or forloop.first %}
-		<div class="row">
-	{% endif %}
-	<div class="col-sm-4">
-		<div class="card link tilt grid">
-			<div class="card-image">{% include helpers/img.html image=item.image format=site.data.images.thumb %}</div>
-			<h3>
-				{% if item.live %}
-					{% include helpers/link.html href=item.link text=item.name %}
-				{% else %}
-					{{ item.name }}
-				{% endif %}
-			</h3>
-			<p>{{ item.description }}</p>
+<div class="row">
+	{% for item in include.services %}
+		{% assign mod2 = forloop.index | modulo: 2 %}
+		{% assign mod3 = forloop.index | modulo: 3 %}
+		<div class="col-md-4 col-sm-6">
+			<div class="card link tilt grid">
+				<div class="card-image">{% include helpers/img.html image=item.image format=site.data.images.thumb %}</div>
+				<h3>
+					{% if item.live %}
+						{% include helpers/link.html href=item.link text=item.name %}
+					{% else %}
+						{{ item.name }}
+					{% endif %}
+				</h3>
+				<p>{{ item.description }}</p>
+			</div>
 		</div>
-	</div>
-	{% if mod == 2 or forloop.last %}
-		</div>
-	{% endif %}
-{% endfor %}
+		{% if mod3 == 0 %}
+			<div class="clearfix visible-md-block visible-lg-block"></div>
+		{% endif %}
+		{% if mod2 == 0 %}
+			<div class="clearfix visible-sm-block"></div>
+		{% endif %}
+	{% endfor %}
+</div>

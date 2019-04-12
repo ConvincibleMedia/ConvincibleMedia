@@ -7,7 +7,7 @@ layout: base
 	image=page.image
 	action_link='/contact/new'
 	action_blurb=page.blurb
-	action_text='Work With Us'
+	action_text="Let's Talk"
 %}
 
 <section id="services">
@@ -51,9 +51,11 @@ layout: base
 				<h2 class="subtitle">Showcase</h2>
 			</div>
 		</div>
-		{% include showcase.html showcase=page.showcase size=big %}
-		<h3 class="hidden">We've also worked with</h3>
-		{% include clients.html clients=page.clients %}
+		{% include showcase.html showcase=page.showcase %}
+		{% if page.clients and page.clients.size > 0 %}
+			<h3 class="hidden">We've also worked with</h3>
+			{% include clients.html clients=page.clients %}
+		{% endif %}
 	</div>
 	{% if site.showcase.size > 2 %}
 		<div class="container">

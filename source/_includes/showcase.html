@@ -1,5 +1,6 @@
 <div class="row">
 	{% for item in include.showcase %}
+		{% assign mod = forloop.index | modulo: 2 %}
 		<div class="col-sm-6">
 			<div class="card link grid">
 				<div class="card-image">{% include helpers/img.html image=item.image format=site.data.images.thumb-medium %}</div>
@@ -8,5 +9,8 @@
 				{{ item.description | markdownify }}
 			</div>
 		</div>
+		{% if mod == 0 %}
+			<div class="clearfix"></div>
+		{% endif %}
 	{% endfor %}
 </div>

@@ -289,13 +289,21 @@ nav li a {
 }
 
 #hero.header-full {
-	background-attachment: fixed;
 
+	@include md() {
+		background-attachment: fixed;
+	}
+	
 	#hero-box {
 		padding-top: 20em;
-		padding-top: 65vh;
+		padding-top: 60vh;
 		background: -webkit-linear-gradient(bottom, rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.1) 50%, rgba(0, 0, 0, 0) 60%);
+
+		@include xs() {
+			padding-top: 45vh;
+		}
 	}
+
 }
 
 
@@ -681,8 +689,8 @@ blockquote, .block_body_lead {
 		max-width: 100%;
 	}
 }
-.logo-small img { max-height: 2em; }
-.logo-medium img { max-height: 3.5em; }
+.logo-small img { max-height: 2em !important; width: auto !important; }
+.logo-medium img { max-height: 3.5em !important; width: auto !important; }
 .card .logo { margin-bottom: 0.5em; }
 #client {
 	margin-bottom: 1em;
@@ -720,16 +728,39 @@ blockquote, .block_body_lead {
 
 .gallery {
 	text-align: center;
-	margin: 0 -1em;
 
 	a:after, a:before {
 		content: none;
+	}
+
+	.card {
+		padding: 2em 1em 0em 1em;
+		margin: 0em -1.5em 2em -1.5em;
+
+		@include lg() {
+			padding: 3em 2em 1em 2em;
+			margin: 1em -4em 3em -4em;
+		}
+
+		img {
+			box-shadow: 0 0 0.5em rgba(0,0,0,0.1)
+		}
 	}
 }
 .gallery-item {
 	display: inline-block;
 	padding: 0 1em;
-	margin-bottom: 1em
+	margin-bottom: 2em;
+
+	img {
+		width: 100%;
+		vertical-align: middle;
+
+		@include sm() {
+			width: auto;
+			max-height: 20em;
+		}
+	}
 }
 
 .log { position: absolute; font-size: 60%; opacity: 0.3; &:hover { opacity: 1; z-index: 999; background: #fff } }

@@ -18,7 +18,7 @@
 		360
 	{%- endif -%}
 {%- endcapture -%}
-{%- assign id = include.id | split: '/' | last -%}
+{%- assign id = include.id | split: '/' | last | split: '=' | last -%}
 {%- capture params -%}
 	{%- if format != nil -%}
 		{%- case method -%}
