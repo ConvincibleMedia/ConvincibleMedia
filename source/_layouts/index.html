@@ -52,8 +52,10 @@ layout: base
 			</div>
 		</div>
 		{% include showcase.html showcase=page.showcase %}
-		<h3 class="hidden">We've also worked with</h3>
-		{% include clients.html clients=page.clients %}
+		{% if page.clients and page.clients.size > 0 %}
+			<h3 class="hidden">We've also worked with</h3>
+			{% include clients.html clients=page.clients %}
+		{% endif %}
 	</div>
 	{% if site.showcase.size > 2 %}
 		<div class="container">
