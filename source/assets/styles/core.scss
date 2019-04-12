@@ -221,6 +221,10 @@ nav li a {
 	background-attachment: scroll;
 	background-size: cover;
 
+	@include md() {
+		background-attachment: fixed;
+	}
+
 	section { padding: 0 }
 }
 
