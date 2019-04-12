@@ -289,13 +289,16 @@ nav li a {
 }
 
 #hero.header-full {
-	background-attachment: fixed;
-
 	#hero-box {
 		padding-top: 20em;
-		padding-top: 65vh;
+		padding-top: 60vh;
 		background: -webkit-linear-gradient(bottom, rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.1) 50%, rgba(0, 0, 0, 0) 60%);
+
+		@include xs() {
+			padding-top: 45vh;
+		}
 	}
+
 }
 
 
