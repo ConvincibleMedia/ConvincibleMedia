@@ -61,3 +61,10 @@ icon:
    fit: "max"
    auto: "compress"
    fm: "png"
+gallery:
+   w: 640
+   h: 640
+   fit: "max"
+   auto: "compress"
+   fm: "pjpg"
+   q: 60

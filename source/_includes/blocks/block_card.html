@@ -8,25 +8,33 @@
 {% for block in include.blocks %}
 	{% if include['size'] %}
 		{% assign size_to_use = include['size'] %}
-	{% else %}
+	{% elsif block.size %}
 		{% assign size_to_use = block.size %}
+	{% else %}
+		{% assign size_to_use = "Small" %}
 	{% endif %}
 
-	{% case size_to_use %}
-		{% when "Solo" %}
-			{% assign card_size = "solo" %}
-		{% when "Large" %}
-			{% assign card_size = "large" %}
-		{% when "Medium" %}
-			{% assign card_size = "medium" %}
-		{% when "Small" %}
-			{% assign card_size = "small" %}
-		{% else %}
-			{% assign card_size = "small" %}
-	{% endcase %}
+	{% if block.item_type == "block_gallery" %}
+		{% assign card_size = "gallery" %}
+	{% else %}
+		{% case size_to_use %}
+			{% when "Solo" %}
+				{% assign card_size = "solo" %}
+			{% when "Large" %}
+				{% assign card_size = "large" %}
+			{% when "Medium" %}
+				{% assign card_size = "medium" %}
+			{% when "Small" %}
+				{% assign card_size = "small" %}
+			{% else %}
+				{% assign card_size = "small" %}
+		{% endcase %}
+	{% endif %}
 
 	{% if card_size == "small" %}
 		{% assign image_format = site.data.images.thumb %}
+	{% elsif card_size == "gallery" %}
+		{% assign image_format = site.data.images.gallery %}
 	{% else %}
 		{% assign image_format = site.data.images.thumb-medium %}
 	{% endif %}
@@ -36,8 +44,10 @@
 	{% if cols[card_size].md %}{% assign card_md = cols[card_size].md %}{% else %}{% assign card_md = card_sm %}{% endif %}
 	{% if cols[card_size].lg %}{% assign card_lg = cols[card_size].lg %}{% else %}{% assign card_lg = card_md %}{% endif %}
 
-	{% if card_size == "solo" %}
-		{% assign solo_offset = ' col-md-offset-2' %}
+	{% if card_size == "solo" or card_size == "gallery" %}
+		{% if card_size == "solo" %}
+			{% assign solo_offset = ' col-md-offset-2' %}
+		{% endif %}
 
 		{% if row_sm > 0 or row_sm > 0 or row_sm > 0 %}
 			</div>
@@ -74,6 +84,22 @@
 		{% assign live = false %}
 	{% endif %}
 
+	{% if card_size == "gallery" %}
+
+		{% if block.gallery and block.gallery.size > 0 %}
+			<div class="col-xs-12 gallery">
+				<div class="card">
+				{% for image in block.gallery %}
+					<div class="gallery-item">
+						{% include helpers/img.html src=image.url alt=image.alt format=image_format %}
+					</div>
+				{% endfor %}
+				</div>
+			</div>
+		{% endif %}
+
+	{% else %}
+
 	<div class="col-sm-{{card_sm}} col-md-{{card_md}} col-lg-{{card_lg}}{{ solo_offset }}">
 		<div class="card{% if live %} link{% endif %}{% if include.style == 'icons' and block.image.url %} card-icon{% endif %}">
 
@@ -91,33 +117,38 @@
 				</div>
 			{% endif %}
 
-			<div class="card-content">
-				{% if block.title or block.subtitle %}
-					<h3 class="hgroup">
-						{% if block.subtitle %}<span class="h4 subtitle">{{ block.subtitle }}<span class="hide">: </span></span>{% endif %}
-						{% if block.title %}
-							<span class="h3">
-								{% if live %}
-									{% include helpers/link.html href=block.link text=block.title %}
-								{% else %}
-									{{ block.title }}
-								{% endif %}
-							</span>
-						{% endif %}
-					</h3>
-				{% endif %}
-				{% if block.description %}
-					{{ block.description | markdownify }}
-				{% endif %}
-			</div>
+			{% if block.title or block.subtitle or block.description %}
+				<div class="card-content">
+					{% if block.title or block.subtitle %}
+						<h3 class="hgroup">
+							{% if block.subtitle %}<span class="h4 subtitle">{{ block.subtitle }}<span class="hide">: </span></span>{% endif %}
+							{% if block.title %}
+								<span class="h3">
+									{% if live %}
+										{% include helpers/link.html href=block.link text=block.title %}
+									{% else %}
+										{{ block.title }}
+									{% endif %}
+								</span>
+							{% endif %}
+						</h3>
+					{% endif %}
+					{% if block.description %}
+						{{ block.description | markdownify }}
+					{% endif %}
+				</div>
+			{% endif %}
+
 		</div>
 	</div>
+
+	{% endif %}
 
 	{% if row_sm > max %}{% assign row_sm = card_sm %}{% endif %}
 	{% if row_md > max %}{% assign row_md = card_md %}{% endif %}
 	{% if row_lg > max %}{% assign row_lg = card_lg %}{% endif %}
 
-	{% if forloop.last or card_size == "solo" %}
+	{% if forloop.last or card_size == "solo" or card_size == "gallery" %}
 		{% assign row_sm = 0 %}
 		{% assign row_md = 0 %}
 		{% assign row_lg = 0 %}
