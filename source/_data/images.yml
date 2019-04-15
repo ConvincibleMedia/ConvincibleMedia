@@ -2,6 +2,7 @@ thumb:
     w: 320
     h: 180
     fit: "crop"
+    crop: "edges"
     auto: "compress"
     fm: "pjpg"
     q: 50
@@ -9,6 +10,7 @@ thumb-medium:
     w: 640
     h: 360
     fit: "crop"
+    crop: "edges"
     auto: "compress"
     fm: "pjpg"
     q: 50
