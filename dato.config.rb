@@ -268,7 +268,7 @@ puts 'Each showcase...'
 #Showcase
 directory "source/_showcase" do
 	showcases.each_with_index do |item, index|
-		puts index
+		puts index.to_s
 		create_post "#{item.slug}.md" do
 			frontmatter :yaml, {
 				layout: 'showcase',
@@ -283,11 +283,11 @@ directory "source/_showcase" do
 				seo: defined?(item.seo) && !item.seo.nil? ? item.seo.to_hash.slice(:title, :description, :image) : '',
 				description: item.description,
 				image: defined?(item.hero_image.url) ? item.hero_image.to_hash.slice(:url, :alt, :title) : '',
-				client: {
+				client: defined?(item.client.name) ? {
 					name: item.client.name,
 					logo: defined?(item.client.logo.url) ? item.client.logo.to_hash.slice(:url, :alt, :title) : '',
 					link: item.client.id
-				},
+				} : { name: '', logo: '', link: ''},
 				logo: defined?(item.client.logo.url) ? item.client.logo.to_hash.slice(:url, :alt, :title) : '',
 				heading: item.heading.to_hash.map{ |h| h.except!(:id, :updated_at) },
 				intro: item.intro.to_hash.map{ |h| h.except!(:id, :updated_at) },
@@ -313,7 +313,7 @@ puts 'Each client...'
 #Clients
 directory "source/_clients" do
 	clients.each_with_index do |item, index|
-		puts index
+		puts index.to_s
 		create_post "#{item.slug}.md" do
 			frontmatter :yaml, {
 				layout: 'clients',
@@ -322,8 +322,8 @@ directory "source/_clients" do
 				published: defined?(item.live) ? (item.live == true ? true : false) : true,
 				link: item.id,
 				order: index + 1,
-				name: item.name,
-				title: item.name,
+				name: defined?(item.name) ? item.name : '',
+				title: defined?(item.name) ? item.name : '',
 				slug: item.slug,
 				seo: defined?(item.seo) && !item.seo.nil? ? item.seo.to_hash.slice(:title, :description, :image) : '',
 				logo: defined?(item.logo.url) ? item.logo.to_hash.slice(:url, :alt, :title) : '',
