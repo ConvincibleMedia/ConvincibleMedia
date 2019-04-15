@@ -278,7 +278,7 @@ directory "source/_showcase" do
 				link: item.id,
 				order: index + 1,
 				name: item.name,
-				title: item.heading.to_hash.map{ |h| h[:text] }.join(" ").sub(/\.$/,''),
+				title: item.name + (defined?(item.client.name) ? ' ' + sep + ' ' + item.client.name : ''),
 				slug: item.slug,
 				seo: defined?(item.seo) && !item.seo.nil? ? item.seo.to_hash.slice(:title, :description, :image) : '',
 				description: item.description,

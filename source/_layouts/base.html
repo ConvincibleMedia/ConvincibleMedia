@@ -24,15 +24,20 @@
 		{% endif %}
 		{% assign sep = site.data.settings.seo.separator %}
 		{%- capture page_title -%}
-			{{ site.data.settings.name | default: site.title }}
-			{%- if section and section.title != 'Services' %} {{ sep }} {{ section.title }}{%- endif -%}
-			{%- if page.seo.title or site.data.settings.seo.title or page.title %} {{ sep }} {% if page.seo.title -%}
-					{{ page.seo.title }}
-				{%- elsif page.title -%}
-					{{ page.title }}
-				{%- elsif site.data.settings.seo.title -%}
-					{{ site.data.settings.seo.title }}
+			{%- if home -%}
+				{{ site.data.settings.name | default: site.title }} {{ sep }} {{ site.data.settings.seo.title }}
+			{%- else -%}
+				{%- if page.seo.title or site.data.settings.seo.title or page.title %}
+					{% if page.seo.title -%}
+						{{ page.seo.title }}
+					{%- elsif page.title -%}
+						{{ page.title }}
+					{%- elsif site.data.settings.seo.title -%}
+						{{ site.data.settings.seo.title }}
+					{%- endif -%}
 				{%- endif -%}
+				{%- if section and section.title != 'Services' and section.title != page.title %} {{ sep }} {{ section.title }}{%- endif -%}
+				{%- if site.data.settings.name or site.title %} {{ sep }} {{ site.data.settings.name | default: site.title }}{%- endif -%}
 			{%- endif -%}
 			{%- if site.data.settings.seo.suffix.size > 0 %} {{ sep }} {{ site.data.settings.seo.suffix }}{%- endif -%}
 		{%- endcapture -%}
