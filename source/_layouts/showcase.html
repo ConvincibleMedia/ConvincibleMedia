@@ -1,5 +1,6 @@
 ---
 layout: base
+
 ---
 {% include hero.html
 	type='full'
@@ -39,7 +40,7 @@ layout: base
 	</div>
 </section>
 
-{% if page.quote %}
+{% if page.quote and page.quote.paragraphs.size > 0 %}
 <section id="quote">
 	<div class="container">
 		{% include blocks/body/block_body_pullquote.html paragraphs=page.quote.paragraphs cite=page.quote.cite class='feature' %}
