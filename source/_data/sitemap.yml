@@ -114,29 +114,13 @@ pages:
     type: service
     order: 9
     live: true
-  '754342':
-    title: Instagram Photography
-    slug: cambridge-instagram-photography
-    path: "/showcase/"
-    fullpath: "/showcase/cambridge-instagram-photography.html"
-    type: showcase
-    order: 1
-    live: true
   '756703':
     title: Restaurant Social Media
     slug: oak-bistro-social-media
     path: "/showcase/"
     fullpath: "/showcase/oak-bistro-social-media.html"
     type: showcase
-    order: 2
-    live: true
-  '894301':
-    title: Online Dictionary Advertising
-    slug: cambridge-dictionary-advertising
-    path: "/showcase/"
-    fullpath: "/showcase/cambridge-dictionary-advertising.html"
-    type: showcase
-    order: 3
+    order: 1
     live: true
   '87043':
     title: General Election 2017
@@ -144,7 +128,7 @@ pages:
     path: "/showcase/"
     fullpath: "/showcase/greens-general-election-2017.html"
     type: showcase
-    order: 4
+    order: 2
     live: true
   '98622':
     title: Portrait Exhibition
@@ -152,64 +136,8 @@ pages:
     path: "/showcase/"
     fullpath: "/showcase/wisbech-portrait-exhibition.html"
     type: showcase
-    order: 5
+    order: 3
     live: true
-  '894302':
-    title: Email for User Engagement
-    slug: write-and-improve-email-engagement
-    path: "/showcase/"
-    fullpath: "/showcase/write-and-improve-email-engagement.html"
-    type: showcase
-    order: 6
-    live: false
-  '894586':
-    title: Conference Programme Design
-    slug: isc2-programme-design
-    path: "/showcase/"
-    fullpath: "/showcase/isc2-programme-design.html"
-    type: showcase
-    order: 7
-    live: false
-  '894303':
-    title: Biotech Logo Design
-    slug: agecurve-logo-design
-    path: "/showcase/"
-    fullpath: "/showcase/agecurve-logo-design.html"
-    type: showcase
-    order: 8
-    live: false
-  '894308':
-    title: Startup Support
-    slug: memossist-startup-support
-    path: "/showcase/"
-    fullpath: "/showcase/memossist-startup-support.html"
-    type: showcase
-    order: 9
-    live: false
-  '894311':
-    title: Branding Workshop
-    slug: epito-branding-workshop
-    path: "/showcase/"
-    fullpath: "/showcase/epito-branding-workshop.html"
-    type: showcase
-    order: 10
-    live: false
-  '894585':
-    title: Report Typesetting
-    slug: open-ownership-report-typesetting
-    path: "/showcase/"
-    fullpath: "/showcase/open-ownership-report-typesetting.html"
-    type: showcase
-    order: 11
-    live: false
-  '86953':
-    title: Cambridge English Teacher
-    slug: cambridge-english-teacher
-    path: "/showcase/"
-    fullpath: "/showcase/cambridge-english-teacher.html"
-    type: showcase
-    order: 12
-    live: false
   '92962':
     title: New Project
     slug: new
@@ -298,30 +226,6 @@ pages:
     type: client
     order: 9
     live: true
-  '749722':
-    title: Cambridge Assessment
-    slug: cambridge-assessment
-    path: "/client/"
-    fullpath: "/client/cambridge-assessment.html"
-    type: client
-    order: 10
-    live: false
-  '894307':
-    title: Memossist
-    slug: memossist
-    path: "/client/"
-    fullpath: "/client/memossist.html"
-    type: client
-    order: 11
-    live: false
-  '894310':
-    title: Epito
-    slug: epito
-    path: "/client/"
-    fullpath: "/client/epito.html"
-    type: client
-    order: 12
-    live: false
 tree:
   root:
     index: '86954'
