@@ -1,11 +1,11 @@
 <div class="row">
 	{% for item in include.showcase %}
 		{% assign mod = forloop.index | modulo: 2 %}
-		<div class="col-sm-6">
+		<div class="col-sm-6{% if forloop.last and mod != 0 %} col-sm-offset-3{% endif %}">
 			<div class="card link grid">
 				<div class="card-image">{% include helpers/img.html image=item.image format=site.data.images.thumb-medium %}</div>
 				<div class="logo logo-small">{% include helpers/img.html image=item.logo format=site.data.images.logo %}</div>
-				<h3>{% include helpers/link.html href=item.link text=item.title %}</h3>
+				<h3>{% include helpers/link.html href=item.link text=item.tagline %}</h3>
 				{{ item.description | markdownify }}
 			</div>
 		</div>

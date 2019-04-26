@@ -215,7 +215,7 @@ create_post "source/index.md" do
 		quotes: home.quote.to_hash.map{ |h| h.except!(:id, :updated_at) },
 		showcase: home.showcase.to_hash.map { |item|
 			{
-				title: item[:heading].map{ |h| h[:text] }.join(" ").sub(/\.$/,''),
+				tagline: item[:heading].map{ |h| h[:text] }.join(" ").sub(/\.$/,''),
 				image: defined?(item[:hero_image][:url]) ? item[:hero_image].to_hash.slice(:url, :alt, :title) : '',
 				logo: defined?(item[:client][:logo][:url]) ? item[:client][:logo].to_hash.slice(:url, :alt, :title) : '',
 				description: item[:description],
@@ -279,6 +279,7 @@ directory "source/_showcase" do
 				order: index + 1,
 				name: item.name,
 				title: item.name + (defined?(item.client.name) ? ' ' + sep + ' ' + item.client.name : ''),
+				tagline: item.heading.to_hash.map{ |h| h[:text] }.join(" ").sub(/\.$/,''),
 				slug: item.slug,
 				seo: defined?(item.seo) && !item.seo.nil? ? item.seo.to_hash.slice(:title, :description, :image) : '',
 				description: item.description,
