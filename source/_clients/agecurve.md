@@ -4,7 +4,7 @@ collection: clients
 live: true
 published: true
 link: '754341'
-order: 6
+order: 8
 name: AgeCurve
 title: AgeCurve
 slug: agecurve

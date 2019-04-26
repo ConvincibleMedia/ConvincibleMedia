@@ -85,7 +85,19 @@ services:
     title: 
 quotes: []
 showcase:
-- title: Changing minds at a time of change
+- tagline: Tantalising taste-buds through targeted social media
+  image:
+    url: https://www.datocms-assets.com/3013/1555074151-oak002-social-service-cover.jpg
+    alt: 
+    title: 
+  logo:
+    url: https://www.datocms-assets.com/3013/1552430108-oak-logo-brown-compact.png
+    alt: 
+    title: 
+  description: We manage all aspects of The Oak Bistro's social media, from content
+    to ads to customer interaction.
+  link: '756703'
+- tagline: Changing minds at a time of change
   image:
     url: https://www.datocms-assets.com/3013/1504013471-timeforchangeweb.jpg
     alt: 
@@ -97,7 +109,7 @@ showcase:
   description: Managing the General Election 2017 campaign in Cambridge for the Green
     Party of England and Wales.
   link: '87043'
-- title: Creating an experience with a lasting impression
+- tagline: Creating an experience with a lasting impression
   image:
     url: https://www.datocms-assets.com/3013/1505566466-img_1045.JPG
     alt: 
@@ -109,7 +121,31 @@ showcase:
   description: We provided design services to bring the Wisbech & Fenland Museum's
     new exhibition to life.
   link: '98622'
-clients: []
+clients:
+- name: Cambridge University Press
+  logo:
+    url: https://www.datocms-assets.com/3013/1552430310-cup-logo-positive.png
+    alt: 
+    title: 
+  link: '754337'
+- name: "(ISC)²"
+  logo:
+    url: https://www.datocms-assets.com/3013/1556302753-isc-logo.png
+    alt: 
+    title: 
+  link: '896795'
+- name: OpenOwnership
+  logo:
+    url: https://www.datocms-assets.com/3013/1556302683-wordmark-purple.png
+    alt: 
+    title: 
+  link: '896797'
+- name: English Language iTutoring
+  logo:
+    url: https://www.datocms-assets.com/3013/1552430580-elit-02.png
+    alt: 
+    title: 
+  link: '754339'
 approach: |-
   In today’s busy and noisy world, **we get your message through**, by making it –
 

@@ -1,8 +1,8 @@
 name: Convincible
 seo:
   title: Marketing and Communications
-  description: Convincible is a marketing agency focused on clear, creative, compelling
-    communications.
+  description: Convincible is a creative agency based in Cambridge, UK. We concoct
+    words and images that communicate and compel.
   image: 
   separator: "/"
   suffix: Cambridge, UK
@@ -12,4 +12,5 @@ social_profiles:
   link: http://twitter.com/BeConvincible
 - type: facebook
   link: http://fb.me/Convincible
-footer: Convincible is a Sole Tradership owned and managed by Virgil Ierubino.
+footer: Convincible is a Sole Tradership owned and managed by Virgil Ierubino in the
+  UK.

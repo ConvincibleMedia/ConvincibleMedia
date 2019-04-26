@@ -16,11 +16,11 @@ logo:
 client_url: http://www.theoakbistro.co.uk
 projects:
 - title: Tantalising taste-buds through targeted social media
-  subtitle: Social Media Management
+  subtitle: Restaurant Social Media
   description: We manage all aspects of The Oak Bistro's social media, from content
     to ads to customer interaction.
   image:
-    url: https://www.datocms-assets.com/3013/1552492883-cover.jpg
+    url: https://www.datocms-assets.com/3013/1555074151-oak002-social-service-cover.jpg
     alt: 
     title: 
   link: '756703'

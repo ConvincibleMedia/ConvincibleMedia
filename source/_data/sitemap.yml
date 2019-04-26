@@ -114,46 +114,30 @@ pages:
     type: service
     order: 9
     live: true
-  '754342':
-    title: Instagram Photography
-    slug: instagram-photography
+  '756703':
+    title: Restaurant Social Media
+    slug: oak-bistro-social-media
     path: "/showcase/"
-    fullpath: "/showcase/instagram-photography.html"
+    fullpath: "/showcase/oak-bistro-social-media.html"
     type: showcase
     order: 1
     live: true
-  '756703':
-    title: Social Media Management
-    slug: social-media-management
+  '87043':
+    title: General Election 2017
+    slug: greens-general-election-2017
     path: "/showcase/"
-    fullpath: "/showcase/social-media-management.html"
+    fullpath: "/showcase/greens-general-election-2017.html"
     type: showcase
     order: 2
     live: true
-  '87043':
-    title: General Election 2017
-    slug: general-election-2017
+  '98622':
+    title: Portrait Exhibition
+    slug: wisbech-portrait-exhibition
     path: "/showcase/"
-    fullpath: "/showcase/general-election-2017.html"
+    fullpath: "/showcase/wisbech-portrait-exhibition.html"
     type: showcase
     order: 3
     live: true
-  '98622':
-    title: Portrait Exhibition
-    slug: portrait-exhibition
-    path: "/showcase/"
-    fullpath: "/showcase/portrait-exhibition.html"
-    type: showcase
-    order: 4
-    live: true
-  '86953':
-    title: Cambridge English Teacher
-    slug: cambridge-english-teacher
-    path: "/showcase/"
-    fullpath: "/showcase/cambridge-english-teacher.html"
-    type: showcase
-    order: 5
-    live: false
   '92962':
     title: New Project
     slug: new
@@ -202,13 +186,29 @@ pages:
     type: client
     order: 4
     live: true
+  '896795':
+    title: "(ISC)²"
+    slug: isc2
+    path: "/client/"
+    fullpath: "/client/isc2.html"
+    type: client
+    order: 5
+    live: true
+  '896797':
+    title: OpenOwnership
+    slug: open-ownership
+    path: "/client/"
+    fullpath: "/client/open-ownership.html"
+    type: client
+    order: 6
+    live: true
   '98716':
     title: Wisbech & Fenland Museum
     slug: wisbech-fenland-museum
     path: "/client/"
     fullpath: "/client/wisbech-fenland-museum.html"
     type: client
-    order: 5
+    order: 7
     live: true
   '754341':
     title: AgeCurve
@@ -216,7 +216,7 @@ pages:
     path: "/client/"
     fullpath: "/client/agecurve.html"
     type: client
-    order: 6
+    order: 8
     live: true
   '98719':
     title: Scene Systems
@@ -224,16 +224,8 @@ pages:
     path: "/client/"
     fullpath: "/client/scene-systems.html"
     type: client
-    order: 7
+    order: 9
     live: true
-  '749722':
-    title: Cambridge Assessment
-    slug: cambridge-assessment
-    path: "/client/"
-    fullpath: "/client/cambridge-assessment.html"
-    type: client
-    order: 8
-    live: false
 tree:
   root:
     index: '86954'

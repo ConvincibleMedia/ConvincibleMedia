@@ -27,13 +27,13 @@ intro:
 - item_type: block_body_lead
   created_at: 2017-09-08 19:42:32.462000000 Z
   paragraphs: When text will be used more than once – maybe being reproduced thousands
-    of times – it's crucial to write it to a higher standard. That's why it's called
-    'copy'-writing.
+    of times – it's crucial to write it to a higher standard.
 - item_type: block_body_text
   created_at: 2017-09-24 17:48:00.588000000 Z
-  text: Writing great copy (i.e. the text that will be copied) requires hours of agonising
-    over the words to use and the phrases that sound best. The outcome may be three
-    short sentences, but they'll be the three sentences that work.
+  text: That's why it's called 'copy'-writing. Writing great copy (i.e. the text that
+    will be 'copied') requires hours of agonising over the words to use and the phrases
+    that sound best. The outcome may be four short sentences, but they'll be the four
+    sentences that work.
 elements_heading: What makes great copy?
 elements:
 - item_type: block_card_text
@@ -91,9 +91,9 @@ subservices:
   subtitle: ''
   title: Brand Messaging
   link: 
-  description: 'We can boil hundreds of ideas down to just one phrase that hits home.
-    Whether it''s an advert or a pitch, the right taglines are magic spells: you utter
-    a few words, and the audience gets it.'
+  description: We'll help you clarify the most important points to make about your
+    brand. Then we'll hand you an arsenal of pithy phrases to get those points across
+    in your marketing.
   size: ''
 - item_type: block_card_image
   created_at: 2017-09-22 17:28:20.625000000 Z
@@ -109,11 +109,11 @@ subservices:
   created_at: 2017-09-22 17:28:20.808000000 Z
   image: 
   subtitle: ''
-  title: Training
+  title: Taglines
   link: 
-  description: We'll pass on all the best tips, tricks and techniques we've learnt
-    over the years, so everyone who writes for you can write more clearly, succinctly
-    and impactfully.
+  description: 'We can boil hundreds of ideas down to just one phrase that hits home.
+    Whether it''s an advert or a pitch, the right taglines are magic spells: you utter
+    a few words, and the audience gets it.'
   size: ''
 ---
 

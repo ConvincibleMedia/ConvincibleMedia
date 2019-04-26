@@ -63,16 +63,6 @@ elements_note: ''
 subservices_heading: A new standard for your presentations.
 subservices:
 - item_type: block_card_image
-  created_at: 2017-08-31 22:05:40.444000000 Z
-  image: 
-  subtitle: ''
-  title: Speaker Coaching
-  link: 
-  description: Whether you're a little nervous or rusty, or just need a sounding board
-    to check how you're coming across, we'll apply our extensive experience to make
-    your delivery land right on target.
-  size: Medium
-- item_type: block_card_image
   created_at: 2017-08-31 22:05:40.477000000 Z
   image: 
   subtitle: ''
@@ -90,6 +80,16 @@ subservices:
   link: 
   description: We'll set you up with a series of easy-to-use, flexible templates so
     you can make great decks every time.
+  size: Medium
+- item_type: block_card_image
+  created_at: 2017-08-31 22:05:40.444000000 Z
+  image: 
+  subtitle: ''
+  title: Speaker Coaching
+  link: 
+  description: Whether you're a little nervous or rusty, or just need a sounding board
+    to check how you're coming across, we'll apply our extensive experience to make
+    your delivery land right on target.
   size: Medium
 - item_type: block_card_image
   created_at: 2017-09-03 00:37:30.619000000 Z
