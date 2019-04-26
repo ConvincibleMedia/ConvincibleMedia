@@ -30,10 +30,10 @@
 /public/
 
 # Internal output
-/source/_clients
-/source/_contact
-/source/_services
-/source/_showcase
+/source/_clients/
+/source/_contact/
+/source/_services/
+/source/_showcase/
 
 /source/_data/approach.yml
 /source/_data/favicon.yml

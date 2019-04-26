@@ -14,7 +14,12 @@ logo:
   alt: 
   title: 
 client_url: http://www.agecurve.co.uk
-projects: []
+projects:
+- title: ''
+  subtitle: Biotech Logo Design
+  description: ''
+  image: ''
+  link: '894303'
 ---
 
 AgeCurve is an innovative biotech startup, whose simple home testing kit helps customers understand their ageing. They analyse the known markers of ageing and present a clear report that helps you understand how old you are – on the inside.
