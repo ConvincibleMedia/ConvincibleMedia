@@ -293,7 +293,7 @@ nav li a {
 	@include md() {
 		background-attachment: fixed;
 	}
-	
+
 	#hero-box {
 		padding-top: 20em;
 		padding-top: 60vh;
@@ -687,11 +687,11 @@ blockquote, .block_body_lead {
 	img {
 		height: auto; width: auto;
 		max-width: 100%;
+		margin-bottom: 0.5em;
 	}
 }
 .logo-small img { max-height: 2em !important; width: auto !important; }
 .logo-medium img { max-height: 3.5em !important; width: auto !important; }
-.card .logo { margin-bottom: 0.5em; }
 #client {
 	margin-bottom: 1em;
 
@@ -758,6 +758,7 @@ blockquote, .block_body_lead {
 
 		@include sm() {
 			width: auto;
+			max-width: 100%;
 			max-height: 20em;
 		}
 	}
