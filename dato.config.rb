@@ -329,7 +329,7 @@ directory "source/_clients" do
 				seo: defined?(item.seo) && !item.seo.nil? ? item.seo.to_hash.slice(:title, :description, :image) : '',
 				logo: defined?(item.logo.url) ? item.logo.to_hash.slice(:url, :alt, :title) : '',
 				client_url: item.url,
-				projects: showcases.select{ |showcase| showcase.client.name == item.name }.map { |project|
+				projects: showcases.select{ |showcase| showcase.client.name == item.name && showcase.live == true }.map { |project|
 					{
 						title: project.heading.to_hash.map{ |h| h[:text] }.join(" ").sub(/\.$/,''),
 						subtitle: project.name,
