@@ -26,6 +26,7 @@ intro:
   paragraphs: |-
     Your website is often the first place customers will go to learn about
     you. We'll ensure it creates the right impression, and encourages visitors to engage with your business.
+examples: []
 elements_heading: What makes a great website?
 elements:
 - item_type: block_card_text

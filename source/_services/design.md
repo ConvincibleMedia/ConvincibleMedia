@@ -29,6 +29,37 @@ intro:
   created_at: 2017-09-08 18:19:32.837000000 Z
   text: Once you print it, you can't change it. So we won't waste your paper. We create
     designs that look great, enhance your brand and communicate effectively.
+examples:
+- image:
+    url: https://www.datocms-assets.com/3013/1556901202-wandi-vouchers.jpg
+    alt: 
+    title: 
+  link: '962882'
+- image:
+    url: https://www.datocms-assets.com/3013/1556727727-grn001-leaflet-1.jpg
+    alt: 
+    title: 
+  link: '962884'
+- image:
+    url: https://www.datocms-assets.com/3013/1556725525-wbm001-brochure.jpg
+    alt: 
+    title: 
+  link: '962886'
+- image:
+    url: https://www.datocms-assets.com/3013/1556901199-elt-engagement-sandi-roller-banner.jpg
+    alt: 
+    title: 
+  link: '962883'
+- image:
+    url: https://www.datocms-assets.com/3013/1555078218-wbm001-advert-1.jpg
+    alt: 
+    title: 
+  link: '962887'
+- image:
+    url: https://www.datocms-assets.com/3013/1505566466-img_1045.JPG
+    alt: 
+    title: 
+  link: '98622'
 elements_heading: Printed materials, a cut above the rest.
 elements:
 - item_type: block_card_text

@@ -30,6 +30,7 @@ intro:
   text: If you need to persuade an audience, have an important presentation to give,
     or you're just tired of battling with PowerPoint, we've got a passion for helping
     you.
+examples: []
 elements_heading: What makes a great presentation?
 elements:
 - item_type: block_card_text

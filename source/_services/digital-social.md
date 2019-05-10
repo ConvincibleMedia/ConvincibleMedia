@@ -27,6 +27,7 @@ intro:
   created_at: 2017-09-24 18:22:05.725000000 Z
   paragraphs: Digital marketing lets you pinpoint your perfect audience, then reach
     them instantly. Are you taking full advantage of this superweapon?
+examples: []
 elements_heading: We know Digital Marketing.
 elements:
 - item_type: block_card_text

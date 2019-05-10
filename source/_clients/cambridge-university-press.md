@@ -24,7 +24,7 @@ projects:
     alt: 
     title: 
   link: '754342'
-- title: Catching attention with relevant advertising
+- title: Catching attention with more relevant ads
   subtitle: Online Dictionary Advertising
   description: Targeting users of the online Cambridge Dictionary with engaging ads
     for the publisher's other learning materials.

@@ -31,6 +31,7 @@ intro:
   text: 'Strategy is a big word that can mean many things. We define it as the *decisions
     that shape your decisions*: what you determine in advance to guide your approach
     later on. That''s why it''s so important.'
+examples: []
 elements_heading: What's in a Marketing Strategy?
 elements:
 - item_type: block_card_text

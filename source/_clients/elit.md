@@ -15,10 +15,14 @@ logo:
   title: 
 client_url: http://www.englishlanguageitutoring.com
 projects:
-- title: ''
-  subtitle: Email for User Engagement
-  description: ''
-  image: ''
+- title: Engaging users, from first visit to renewed subscription
+  subtitle: User Engagement
+  description: We help to engage and retain the growing userbase for ELiT's family
+    of revolutionary learning tools.
+  image:
+    url: https://www.datocms-assets.com/3013/1556807542-elt-engagement-hero.jpg
+    alt: 
+    title: 
   link: '894302'
 ---
 

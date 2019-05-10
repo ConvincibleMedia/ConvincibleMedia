@@ -25,6 +25,7 @@ intro:
   created_at: 2017-08-31 21:31:58.445000000 Z
   paragraphs: Your brand is the grand unifying theory behind everything you do. We'll
     help you make it your most powerful asset.
+examples: []
 elements_heading: What makes a great brand?
 elements:
 - item_type: block_card_text

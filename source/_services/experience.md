@@ -26,6 +26,7 @@ intro:
   paragraphs: You want your audience to *feel* something. Delighted, relaxed, inspired,
     entertained, satisfied. When it comes to creating these experiences, it's the
     little details that matter.
+examples: []
 elements_heading: How do you create a feeling?
 elements:
 - item_type: block_card_text

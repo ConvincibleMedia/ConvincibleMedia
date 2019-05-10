@@ -30,6 +30,7 @@ intro:
   text: Whether it's a report, a guide or an article, professional typesetting and
     document design is the difference between the ideas staying on the page – or being
     understood.
+examples: []
 elements_heading: Applying design to words and numbers.
 elements:
 - item_type: block_card_text

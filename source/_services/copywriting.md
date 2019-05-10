@@ -34,6 +34,7 @@ intro:
     will be 'copied') requires hours of agonising over the words to use and the phrases
     that sound best. The outcome may be four short sentences, but they'll be the four
     sentences that work.
+examples: []
 elements_heading: What makes great copy?
 elements:
 - item_type: block_card_text
