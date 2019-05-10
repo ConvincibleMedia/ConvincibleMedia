@@ -751,9 +751,10 @@ blockquote, .block_body_lead {
 	display: inline-block;
 	padding: 0 1em;
 	margin-bottom: 2em;
-
+	
 	img {
 		width: 100%;
+		height: auto;
 		vertical-align: middle;
 
 		@include sm() {
@@ -761,6 +762,31 @@ blockquote, .block_body_lead {
 			max-width: 100%;
 			max-height: 20em;
 		}
+	}
+}
+.gallery-item-small {
+	display: inline-block;
+	padding: 0 1em;
+	margin-bottom: 2em;
+
+	img {
+		width: auto;
+		height: auto;
+		max-height: 10em;
+		vertical-align: middle;
+	}
+}
+.gallery-item-full {
+	display: inline-block;
+	padding: 1em 2em;
+	margin-bottom: 2em;
+
+	img {
+		width: auto;
+		height: auto;
+		max-width: 100%;
+		max-height: 50vh;
+		vertical-align: middle;
 	}
 }
 

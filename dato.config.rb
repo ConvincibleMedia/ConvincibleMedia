@@ -59,7 +59,8 @@ services = dato.services #Multiple
 showcases = dato.showcases #Multiple
 contact = dato.contact_pages #Multiple
 clients = dato.clients #Multiple
-models = [ services, showcases, contact, clients ]
+examples = dato.examples #Multiple
+models = [ services, showcases, contact, clients, examples ]
 
 #Root pages
 rootpages = { #List root pages
@@ -75,7 +76,8 @@ sitemap[:models] = {
 	service: { path: ''},
 	showcase: { path: 'showcase/'},
 	contact_page: { path: 'contact/'},
-	client: { path: 'client/' }
+	client: { path: 'client/' },
+	example: { path: 'example/' }
 }
 
 #IDs
@@ -108,7 +110,7 @@ models.each { |model|
 	model.each_with_index {|item, index|
 		path = sitemap[:models][item.item_type.api_key.to_sym][:path]
 		sitemap[:pages][item.id] = {
-			title: item.name,
+			title: defined?(item.name) ? item.name : item.title.to_s,
 			slug: item.slug,
 			path: '/' + path,
 			fullpath: '/' + path + item.slug + '.html',
@@ -253,12 +255,59 @@ directory "source/_services" do
 				image: defined?(item.hero_image.url) ? item.hero_image.to_hash.slice(:url, :alt, :title) : '',
 				heading: item.heading.to_hash.map{ |h| h.except!(:id, :updated_at) },
 				intro: item.intro.to_hash.map{ |h| h.except!(:id, :updated_at) },
+				examples: item.examples.to_hash.map { |h|
+					if h[:item_type] == "example" && h[:gallery].size > 0 && h[:gallery][0][:url].length > 0
+						{
+							image: h[:gallery][0].slice(:url, :alt, :title),
+							link: h[:id]
+						}
+					elsif h[:item_type] == "showcase" && h[:hero_image][:url].length > 0
+						{
+							image: h[:hero_image].slice(:url, :alt, :title),
+							link: h[:id]
+						}
+					end
+				},
 				elements_heading: item.elements_heading,
 				elements: item.elements.to_hash.map{ |h| h.except!(:id, :updated_at) },
 				elements_note: item.elements_note,
 				subservices_heading: item.sub_services_heading,
 				subservices: item.sub_services.to_hash.map{ |h| h.except!(:id, :updated_at) }
 			}
+		end
+	end
+end
+
+
+puts 'Each example...'
+
+#Services
+directory "source/_examples" do
+	examples.each_with_index do |item, index|
+		create_post "#{item.slug}.md" do
+			frontmatter :yaml, {
+				layout: 'example',
+				collection: 'examples',
+				link: item.id,
+				order: index + 1,
+				name: item.title,
+				title: item.title,
+				slug: item.slug,
+				gallery: item.gallery.to_hash.map { |h| h.slice(:url, :alt, :title) },
+				client: {
+					name: item.client.name,
+					logo: defined?(item.client.logo.url) ? item.client.logo.to_hash.slice(:url, :alt, :title) : '',
+					link: item.client.id
+				},
+				of: item.of.to_hash.map { |item|
+					{
+						title: item[:name],
+						description: item[:description],
+						link: item[:id]
+					}
+				}
+			}
+			content(item.information)
 		end
 	end
 end

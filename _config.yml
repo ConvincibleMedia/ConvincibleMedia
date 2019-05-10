@@ -44,6 +44,10 @@ collections:
     order: 2
     output: true
     permalink: "showcase/:slug.html"
+  examples:
+    title: "Examples"
+    output: true
+    permalink: "example/:slug.html"
   clients:
     title: "Clients"
     order: 3

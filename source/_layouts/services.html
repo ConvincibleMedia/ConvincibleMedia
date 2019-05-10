@@ -14,6 +14,24 @@ layout: base
 	</div>
 </section>
 
+{% if page.examples.size > 0 %}
+<section id="examples">
+	<div class="container">
+		<div class="gallery">
+			<div class="card">
+					{% for example in page.examples %}
+						<div class="gallery-item-small">
+								<a href="{% include helpers/link.html href=example.link href_only=true %}">
+									{% include helpers/img.html image=example.image format=site.data.images.thumb-square %}
+								</a>
+						</div>
+					{% endfor %}
+			</div>
+		</div>
+	</div>
+</section>
+{% endif %}
+
 <section id="elements">
 	<div class="wowlight">
 		<div class="container">
