@@ -386,6 +386,13 @@ directory "source/_clients" do
 						image: defined?(project.hero_image.url) ? project.hero_image.to_hash.slice(:url, :alt, :title) : '',
 						link: project.id
 					}
+				} + examples.select { |example| example.client.name == item.name }.map { |project|
+					{
+						title: project.title,
+						subtitle: project.of.to_hash[0][:name],
+						image: project.gallery.to_hash[0].slice(:url, :alt, :title),
+						link: project.id
+					}
 				}
 			}
 			content(item.description)
