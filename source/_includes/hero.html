@@ -58,17 +58,41 @@
 					<div id="hero-action">
 						<div class="row">
 							<div class="col-md-4 col-md-push-8 col-sm-6 col-sm-push-6">
-								{% if include.action_blurb %}
+								{% if include.blurb %}
 									<div class="action-item card">
-										<p>{{ include.action_blurb }}</p>
+										<p>{{ include.blurb }}</p>
 									</div>
 								{% endif %}
 							</div>
-							<div class="col-lg-4 col-lg-pull-4 col-md-pull-4 col-sm-6 col-sm-pull-6">
-								<div class="action-item tilt">
-									<a href="{% include helpers/link.html href=include.action_link href_only=true %}" class="button tilt-z">{{ include.action_text }}</a>
+							{% if include.buttons and include.buttons.size > 0 %}
+								<div class="col-lg-4 col-lg-pull-4 col-md-pull-4 col-sm-6 col-sm-pull-6">
+									<div class="tilt">
+										<div class="carousel">
+											{% for button in include.buttons %}
+												<div id="button-{{ forloop.index }}" class="action-item carousel-item {% unless forloop.first %}js-show{% endunless %}">
+													{% if button.image %}
+														<div class="card invert latest link" style="background: #fff url('{% include helpers/img.html image=button.image format=site.data.images.thumb-tiny src_only=true %}') left/auto 100% no-repeat">
+															<div class="card-content">
+																<h2 class="hide">Latest</h2>
+																<h3 class="hgroup">
+																	{% if button.subtitle %}
+																		<span class="h4 subtitle">{{button.subtitle}}<span class="hide">: </span></span>
+																	{% endif %}
+																	<span class="h3"><a href="{% include helpers/link.html href=button.link href_only=true %}">{{ button.text }}</a></span>
+																</h3>
+															</div>
+														</div>
+													{% elsif button.link %}
+														<div class="action-item tilt">
+															<a href="{% include helpers/link.html href=button.link href_only=true %}" class="button tilt-z">{{ button.text }}</a>
+														</div>
+													{% endif %}
+												</div>
+											{% endfor %}
+										</div>
+									</div>
 								</div>
-							</div>
+							{% endif %}
 						</div>
 					</div>
 				{% endif %}

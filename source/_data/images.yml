@@ -6,6 +6,14 @@ thumb:
     auto: "compress"
     fm: "pjpg"
     q: 50
+thumb-tiny:
+    w: 180
+    h: 180
+    fit: "crop"
+    crop: "edges"
+    auto: "compress"
+    fm: "pjpg"
+    q: 50
 thumb-medium:
     w: 800
     h: 450

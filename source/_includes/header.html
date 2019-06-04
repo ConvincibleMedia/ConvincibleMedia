@@ -13,7 +13,7 @@
 					{% assign pagedata = site.data.sitemap.pages[id] %}
 
 					{% if pagedata.title == 'Contact' %}
-						{% if include.type == 'inside' and page.collection != 'contact' %}
+						{% if page.collection != 'contact' %}
 							<li class="button">{% include helpers/link.html href=pagedata.fullpath text=pagedata.title class='button' %}</li>
 						{% endif %}
 					{% else %}

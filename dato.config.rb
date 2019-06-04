@@ -205,6 +205,24 @@ create_post "source/index.md" do
 		tagline: home.tagline,
 		image: home.hero_image.to_hash.slice(:url, :alt, :title),
 		blurb: home.blurb,
+		featured: home.featured.to_hash.map { |item|
+			{
+				subtitle:
+					if item[:item_type] == "service"
+						'New Service: ' + item[:name]
+					elsif item[:item_type] == "showcase"
+						'New Case Study'
+					end,
+				text:
+					if item[:item_type] == "service"
+						item[:description]
+					elsif item[:item_type] == "showcase"
+						item[:heading].map{ |h| h[:text] }.join(" ").sub(/\.$/,'')
+					end,
+				link: item[:id],
+				image: defined?(item[:hero_image][:url]) ? item[:hero_image].to_hash.slice(:url, :alt, :title) : ''
+			}
+		},
 		services: home.services.to_hash.map { |item|
 			{
 				name: item[:name],

@@ -77,6 +77,7 @@ h6, .h6 { font-size: 100%; }
 	font-family: $font-heading; font-weight: 200;
 }
 .hgroup {
+	display: block;
 	font-size: inherit;
 	border: none;
 	padding: 0; margin: 0;
@@ -253,6 +254,38 @@ nav li a {
 		background-color: rgba(0,0,0,0.4);
 		color: #fff;
 		font-size: 90%;
+
+		.subtitle {
+			font-weight: bold;
+			text-transform: uppercase;
+		}
+	}
+	.card.invert {
+		background-color: #fff;
+
+		color: #000;
+	}
+
+	.latest {
+		overflow: hidden;
+		font-size: 70%;
+
+		.card-image {
+			width: 5em;
+			height: 100%;
+			float: left;
+		}
+		.card-content {
+			margin: -1em 0 -1em 5em;
+			padding: 1em 2.25em 1em 1em;
+			background: #fff url('/assets/images/arrow.svg') right/1.5em no-repeat;
+			min-height: 6em;
+
+			h3, .h3 { margin: 0 }
+			a:before, a:after { content: none }
+		}
+
+		.carousel-item .card { margin: 0 }
 	}
 }
 
@@ -708,7 +741,7 @@ blockquote, .block_body_lead {
 
 /* Tilt */
 
-.tilt { transform-style: preserve-3d; }
+.tilt, .tilt-z { transform-style: preserve-3d; }
 .tilt .tilt-z { transition: 0.5s; }
 .tilt:hover {
 	box-shadow: 0 0 2em rgba(0, 0, 0, 0.05);
@@ -751,7 +784,7 @@ blockquote, .block_body_lead {
 	display: inline-block;
 	padding: 0 1em;
 	margin-bottom: 2em;
-	
+
 	img {
 		width: 100%;
 		height: auto;
@@ -792,4 +825,4 @@ blockquote, .block_body_lead {
 
 .log { position: absolute; font-size: 60%; opacity: 0.3; &:hover { opacity: 1; z-index: 999; background: #fff } }
 .debug:hover, .debug *:hover { outline: 1px solid rgba(0, 0, 0, 0.1); outline-offset: -2px; }
-.no-js .no-js-hide { display: none; }
+.no-js .no-js-hide, .js-show { display: none; }
