@@ -249,43 +249,31 @@ nav li a {
 	margin-top: 2em;
 
 	.button { font-size: 120%; }
+}
 
+#blurb {
 	.card {
 		background-color: rgba(0,0,0,0.4);
 		color: #fff;
 		font-size: 90%;
-
-		.subtitle {
-			font-weight: bold;
-			text-transform: uppercase;
-		}
 	}
-	.card.invert {
-		background-color: #fff;
+}
 
-		color: #000;
+.card-button {
+	font-size: 70%;
+	
+	.card-content {
+		margin: -1em 0 -1em 5em;
+		padding: 1em 2.25em 1em 1em;
+		background: #fff url('/assets/images/arrow.svg') right/1.5em no-repeat;
+		min-height: 6em;
+
+		h3, .h3 { margin: 0 }
+		a:before, a:after { content: none }
 	}
-
-	.latest {
-		overflow: hidden;
-		font-size: 70%;
-
-		.card-image {
-			width: 5em;
-			height: 100%;
-			float: left;
-		}
-		.card-content {
-			margin: -1em 0 -1em 5em;
-			padding: 1em 2.25em 1em 1em;
-			background: #fff url('/assets/images/arrow.svg') right/1.5em no-repeat;
-			min-height: 6em;
-
-			h3, .h3 { margin: 0 }
-			a:before, a:after { content: none }
-		}
-
-		.carousel-item .card { margin: 0 }
+	.subtitle {
+		font-weight: bold;
+		text-transform: uppercase;
 	}
 }
 
