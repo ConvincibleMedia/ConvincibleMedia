@@ -19,13 +19,13 @@ layout: base
 	<div class="container">
 		<div class="gallery">
 			<div class="card">
-					{% for example in page.examples %}
-						<div class="gallery-item-small">
-								<a href="{% include helpers/link.html href=example.link href_only=true %}">
-									{% include helpers/img.html image=example.image format=site.data.images.thumb-square %}
-								</a>
-						</div>
-					{% endfor %}
+				{% for example in page.examples %}
+					<div class="gallery-item-small">
+						<a href="{% include helpers/link.html href=example.link href_only=true %}">
+							{% include helpers/img.html image=example.image format=site.data.images.thumb-square %}
+						</a>
+					</div>
+				{% endfor %}
 			</div>
 		</div>
 	</div>
