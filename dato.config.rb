@@ -4,7 +4,10 @@ puts 'Social profiles...'
 social_profiles = dato.social_profiles.map do |profile|
 {
 	type: profile.name.downcase.gsub(/ +/, '-'),
-	link: profile.link
+	name: profile.name,
+	link: profile.link,
+	icon: defined?(profile.icon.url) ? profile.icon.to_hash.slice(:url) : '',
+	cta: profile.call_to_action
 }
 end
 
@@ -63,7 +66,7 @@ examples = dato.examples #Multiple
 models = [ services, showcases, contact, clients, examples ]
 
 #Root pages
-rootpages = { #List root pages
+rootpages = { #List hard-coded root pages
 	services: 'Services',
 	showcase: 'Showcase',
 	contact: 'Contact'
@@ -137,7 +140,7 @@ sitemap[:tree] = {
 	root: {
 		index: home.id,
 		pages: [],
-		below: [ 'services', 'showcase', 'contact' ],
+		below: [ 'services', 'showcase' ],
 		above: 'root'
 	},
 	services: {
