@@ -17,7 +17,7 @@
 {%- capture src -%}
    https://maps.googleapis.com/maps/api/staticmap?key=AIzaSyBm4_N7avZaEkTLUqvP0l41nC7c3qUr48Q {{ params_all }}
 {%- endcapture -%}
-<a target="_new" href="https://www.google.com/maps/{% if include.place %}place/{{ include.place | url_encode }}/{% endif %}@{{ include.y }},{{ include.x }},14z">
+<a target="_new" href="https://www.google.com/maps/{% if include.place %}place/{{ include.place | url_encode }}/{% endif %}@{{ include.y }},{{ include.x }},14z{% if include.data %}/data={{ include.data}}{% endif %}">
    {% include helpers/img.html
       src=src
       alt='Map'
