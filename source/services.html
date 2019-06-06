@@ -3,5 +3,5 @@ layout: simple-work
 collection: services
 title: Services
 ---
-{% assign services = site.services | sort: 'order' %}
+{% assign services = site.services | where: 'live', true | sort: 'order' %}
 {% include services.html services=services %}
