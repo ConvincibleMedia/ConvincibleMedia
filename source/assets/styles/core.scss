@@ -1,25 +1,9 @@
 ---
 ---
+
 {% include helpers/breakpoints.scss %}
 {% include helpers/helpers.scss %}
-
-
-/* Definitions */
-
-$font-body: 'Source Sans Pro', 'Segoe UI', 'Arial', 'Tahoma', Sans-Serif;
-$font-heading: 'Montserrat', 'Arial Black', 'Tahoma', Sans-Serif;
-
-$color-1: #f63;
-$color-2: #ff9c26;
-$color-3: #ee314a;
-$color-4: #e83723;
-$color-5: #e87123;
-
-$color-canvas: #666;
-$color-body: #efefef;
-
-$heading-border: 0.1em solid $color-1;
-
+{% include helpers/styles.scss %}
 
 /* Primary Setup */
 
@@ -412,6 +396,7 @@ h2.pointdown {
 
 
 /* BUTTONS */
+
 a.button {
 	display: block;
 	padding: 0.5em 1em;
@@ -421,6 +406,7 @@ a.button {
 	background-color: $color-1;
 	box-shadow: 0.1em 0.1em 0.2em rgba(0, 0, 0, 0.5);
 	white-space: nowrap;
+	cursor: pointer;
 
 	&:active {
 		position: relative;
