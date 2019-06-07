@@ -38,6 +38,7 @@ layout: base
 				</div>
 			{% endfor %}
 		</div>
+		{% if page.form_id.size > 0 %}
 		<div class="row js-show">
 			<div class="col-md-8 col-md-offset-2">
 				<div class="card">
@@ -64,6 +65,7 @@ layout: base
 				</div>
 			</div>
 		</div>
+		{% endif %}
 		<div class="row">
 			<div class="col-xs-12">
 				<div class="card">
