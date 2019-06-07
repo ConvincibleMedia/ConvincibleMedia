@@ -481,7 +481,7 @@ directory "source/_contact" do
 				end,
 				form_id: item.form_id
 			}
-			fm[:styles] = ['form'] if fm[:form_id].strip.length > 0
+			fm[:features] = ['form'] if fm[:form_id].strip.length > 0
 			frontmatter :yaml, fm
 			content(item.intro)
 		end

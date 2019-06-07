@@ -167,6 +167,10 @@ select::-ms-expand {
     text-align: center;
     padding: 0.5em
 }
+.form-info-fyi {
+    border: 1px dotted goldenrod;
+    color: darkgoldenrod;
+}
 .form-info-success {
     border: 1px dotted green;
     color: darkgreen;
