@@ -464,7 +464,7 @@ puts 'Each contact page...'
 directory "source/_contact" do
 	contact.each_with_index do |item, index|
 		create_post "#{item.slug}.md" do
-			frontmatter :yaml, {
+			fm = {
 				layout: 'contact',
 				collection: 'contact',
 				live: defined?(item.live) ? (item.live == true ? true : false) : true,
@@ -472,14 +472,17 @@ directory "source/_contact" do
 				order: index + 1,
 				seo: defined?(item.seo) && !item.seo.nil? ? item.seo.to_hash.slice(:title, :description, :image) : '',
 				options: item.options.map do |item|
-				{
-					icon: item.icon,
-					name: item.name,
-					details: item.details,
-					explanation: item.explanation
-				}
-			end
+					{
+						icon: item.icon,
+						name: item.name,
+						details: item.details,
+						explanation: item.explanation
+					}
+				end,
+				form_id: item.form_id
 			}
+			fm[:styles] = ['form'] if fm[:form_id].strip.length > 0
+			frontmatter :yaml, fm
 			content(item.intro)
 		end
 	end

@@ -38,6 +38,32 @@ layout: base
 				</div>
 			{% endfor %}
 		</div>
+		<div class="row js-show">
+			<div class="col-md-8 col-md-offset-2">
+				<div class="card">
+					<noscript>
+						<p>To prevent spam, JavaScript is required to submit this form.</p>
+					</noscript>
+					<form id="form-1" action="https://submit-form.com/{{ page.form_id }}" method="POST" target="_self" class="form form-ajax">
+						<!--<input type="hidden" name="_redirect" value="{{ site.url }}{{ page.url }}" />-->
+						<input type="checkbox" name="_honeypot" style="display: none" tabindex="-1" autocomplete="off" />
+						<label for="form-1-field-name">Name</label>
+						<input type="text" name="form-1-field-name" id="form-1-field-name" placeholder="e.g. Jane Smith" required="required" minlength="3" />
+						<label for="form-1-field-email">Email</label>
+						<input type="email" name="form-1-field-email" id="form-1-field-email" placeholder="e.g. jane@organisation.com" required="required" minlength="5" />
+						<label for="form-1-field-message">Message</label>
+						<textarea name="form-1-field-message" id="form-1-field-message" placeholder="How can we help?" required="required" autocomplete="off" minlength="20" rows="5"></textarea>
+						<button type="submit" id="form-1-submit" class="form-submit">Send</button>
+						<p class="form-info">Fill out the form to send us an email.</p>
+						<div class="captcha">
+							<div class="g-recaptcha">
+								Loading reCAPTCHA...
+							</div>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
 		<div class="row">
 			<div class="col-xs-12">
 				<div class="card">

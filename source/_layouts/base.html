@@ -93,22 +93,9 @@
 		{% if page.features %}
 			{% for f in page.features %}
 				{% assign feature = site.data['features'][f] %}
-				{% if feature['scripts'] %}
-					{% for script in feature['scripts'] %}
-						<script src="{{ script['src'] }}" {{ script['options'] | join: ' ' }}></script>
-					{% endfor %}
-				{% endif %}
-			{% endfor %}
-		{% endif %}
-
-		{% if page.features %}
-			{% for f in page.features %}
-				{% assign feature = site.data['features'][f] %}
-				{% if feature['headjs'] %}
-					{% for script in feature['headjs'] %}
-						<script>
-							{{ script }}
-						</script>
+				{% if feature['scripts']['head'] %}
+					{% for script in feature['scripts']['head'] %}
+						<script{% if script['src'] %} src="{{ script['src'] }}" {{ script['options'] | join: ' ' }}{% endif %}>{{ script['code'] }}</script>
 					{% endfor %}
 				{% endif %}
 			{% endfor %}
@@ -145,6 +132,16 @@
 
 		<!-- Finally, run JS -->
 		<script type="text/javascript" src="/assets/scripts/main.js"></script>
+		{% if page.features %}
+			{% for f in page.features %}
+				{% assign feature = site.data['features'][f] %}
+				{% if feature['scripts']['body-end'] %}
+					{% for script in feature['scripts']['body-end'] %}
+						<script{% if script['src'] %} src="{{ script['src'] }}" {{ script['options'] | join: ' ' }}{% endif %}>{{ script['code'] }}</script>
+					{% endfor %}
+				{% endif %}
+			{% endfor %}
+		{% endif %}
 		{% if site.data.videos.method == 'reactive' %}
 			{% include snippets/video-reactive.html %}
 		{% endif %}
