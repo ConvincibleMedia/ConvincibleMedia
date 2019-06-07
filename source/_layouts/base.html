@@ -55,6 +55,17 @@
 		<link rel="stylesheet" href="/assets/styles/bootstrap.css" />
 		<link rel="stylesheet" href="/assets/styles/boilerplate.css" />
 		<link rel="stylesheet" href="/assets/styles/core.css" />
+		{% if page.features %}
+			{% for f in page.features %}
+				{% assign feature = site.data['features'][f] %}
+				{% if feature['styles'] %}
+					{% for style in feature['styles'] %}
+						<link rel="stylesheet" href="{{ style['src'] }}" />
+					{% endfor %}
+				{% endif %}
+			{% endfor %}
+		{% endif %}
+
 		{% if home %}
 			<link rel="stylesheet" href="/assets/styles/particles.css" />
 			<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
@@ -77,6 +88,30 @@
 		{% if home and jekyll.environment == 'production' %}
 			<meta name="p:domain_verify" content="d0219ccc18274430b1974dfc6b1b710e" />
 			<meta name="wot-verification" content="3381c60046d9b3f0de4b" />
+		{% endif %}
+
+		{% if page.features %}
+			{% for f in page.features %}
+				{% assign feature = site.data['features'][f] %}
+				{% if feature['scripts'] %}
+					{% for script in feature['scripts'] %}
+						<script src="{{ script['src'] }}" {{ script['options'] | join: ' ' }}></script>
+					{% endfor %}
+				{% endif %}
+			{% endfor %}
+		{% endif %}
+
+		{% if page.features %}
+			{% for f in page.features %}
+				{% assign feature = site.data['features'][f] %}
+				{% if feature['headjs'] %}
+					{% for script in feature['headjs'] %}
+						<script>
+							{{ script }}
+						</script>
+					{% endfor %}
+				{% endif %}
+			{% endfor %}
 		{% endif %}
 	</head>
 	<body>

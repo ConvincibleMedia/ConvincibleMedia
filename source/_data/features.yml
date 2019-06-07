@@ -1,0 +1,12 @@
+form:
+    styles:
+        - src: '/assets/styles/form.css'
+recaptcha:
+    scripts:
+        - src: 'https://www.google.com/recaptcha/api.js'
+          options: [async, defer]
+    headjs: |
+        function onSubmit(token) {
+            document.getElementById('form').submit();
+            console.log('success!');
+        }
