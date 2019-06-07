@@ -1,0 +1,9 @@
+form:
+    styles:
+        - src: '/assets/styles/form.css'
+    scripts:
+        head:
+            - src: 'https://www.google.com/recaptcha/api.js?onload=recaptchaLoad&render=explicit'
+              options: [async, defer]
+        body-end:
+            - src: '/assets/scripts/form.js'

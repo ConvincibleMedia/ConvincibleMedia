@@ -1,25 +1,23 @@
 <section class="header-{{ include.type }}">
 	<div class="container">
-		<div id="logo">
+		<div class="sitelogo">
 			<span><a href="/">{% include helpers/img.html src='/assets/images/logo-black.png' alt='Convincible.' title='Home' w='100%' %}</a></span>
 		</div>
 
 		<nav>
-			<ul>
+			<ul class="nav">
 
 				{% assign tree = site.data.sitemap.tree.root.below %}
 				{% for item in tree %}
 					{% assign id = site.data.sitemap.tree[item].index %}
 					{% assign pagedata = site.data.sitemap.pages[id] %}
-
-					{% if pagedata.title == 'Contact' %}
-						{% if include.type == 'inside' and page.collection != 'contact' %}
-							<li class="button">{% include helpers/link.html href=pagedata.fullpath text=pagedata.title class='button' %}</li>
-						{% endif %}
-					{% else %}
-						<li>{% include helpers/link.html href=pagedata.fullpath text=pagedata.title %}</li>
-					{% endif %}
+					<li>
+						{% include helpers/link.html href=pagedata.fullpath text=pagedata.title class='menu' %}
+					</li>
 				{% endfor %}
+				{% if page.collection != 'contact' %}
+					<li class="button">{% include helpers/link.html href='@contact' text='Contact' class='button' %}</li>
+				{% endif %}
 
 			</ul>
 		</nav>

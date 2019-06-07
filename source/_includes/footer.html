@@ -43,27 +43,69 @@
 </section>
 //-->
 
-<section id="bottom">
+<section id="bottom" class="spaced invert">
 	<div class="container">
-		<div id="logo">
-			<span><a href="/">{% include helpers/img.html src='/assets/images/logo-white.png' alt='Convincible.' title='Home' w='100%' %}</a></span>
-		</div>
+		<div class="row">
+			<div class="col-md-6">
 
-		<nav>
-			<ul>
-			{% assign tree = site.data.sitemap.tree.root.below %}
-			{% for item in tree %}
-				{% assign id = site.data.sitemap.tree[item].index %}
-				{% assign page = site.data.sitemap.pages[id] %}
-				<li>{% include helpers/link.html href=page.fullpath text=page.title %}</li>
-			{% endfor %}
-			</ul>
-		</nav>
+				<div class="sitelogo">
+					<span><a href="/">{% include helpers/img.html src='/assets/images/logo-white.png' alt='Convincible.' title='Home' w='100%' %}</a></span>
+				</div>
+				<div class="clearfix"></div>
 
-		<div class="clearfix"></div>
-		<div class="small">
-			{{ site.data.settings.footer | markdownify }}
-			<address>{{ site.data.contact.address.details }}</address>
+				<div id="social">
+					<p>We're a creative agency based in Cambridge, UK. We concoct words and images that communicate and compel.</p>
+					<ul class="nav">
+						{% for profile in site.data['settings']['social_profiles'] %}
+							<li class="subpage">
+								<a href="{{ profile.link }}" target="_blank" class="menu">
+									{% include helpers/img.html src=profile.icon.url format=site.data.images.icon alt=profile.name title=profile.cta %}
+								</a>
+							</li>
+						{% endfor %}
+					</ul>
+				</div>
+
+			</div>
+
+			<div class="col-md-6">
+				<ul class="nav">
+					<li>
+						{% include helpers/link.html href='@services' text='Services' class='menu' %}
+						<ul>
+							{% assign nav_services = site['services'] | sort: 'order' %}
+							{% for item in nav_services %}
+								{% if item.live %}
+									<li class="subpage">{% include helpers/link.html href=item.link text=item.name class='menu' %}</li>
+								{% endif %}
+							{% endfor %}
+						</ul>
+					</li>
+					<li>
+						<ul>
+							<li>
+								{% include helpers/link.html href='@showcase' text='Showcase' class='menu' %}
+							</li>
+							<li>
+								{% include helpers/link.html href='@contact' text='Contact' class='menu' %}
+							</li>
+						</ul>
+					</li>
+				</ul>
+
+
+				<div id="legal" class="small">
+					{{ site.data.settings.footer | markdownify }}
+					<p>
+						<address>
+							<strong>Convincible</strong> Media, 68 Sleaford Street, Cambridge, CB1 2PU, United Kingdom
+						</address>
+					</p>
+					<p>This site uses cookies to analyse traffic anonymously. By using the site you consent to the use of these cookies.</p>
+				</div>
+
+			</div>
+
 		</div>
 	</div>
 </section>

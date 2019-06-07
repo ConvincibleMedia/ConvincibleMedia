@@ -48,7 +48,28 @@ layout: base
 </section>
 {% endif %}
 
+<section class="spaced">
+	<h2 class="hide">More</h2>
+	{% include helpers/prevnext.liquid type=showcase %}
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-6 col-sm-offset-3">
+				<div class="card card-button link tilt" style="background: #fff url('{% include helpers/img.html image=next.image format=site.data.images.thumb-tiny src_only=true %}') left/auto 100% no-repeat">
+					<div class="card-content">
+						<h3 class="hgroup">
+							<span class="h4 subtitle">Next Case Study<span class="hide">: </span></span>
+							<span class="h3"><a href="{% include helpers/link.html href=next.url href_only=true %}">{{ next.tagline }}</a></span>
+						</h3>
+					</div>
+				</div>
+				<p><a href="/services.html" class="button">All Case Studies</a></p>
+			</div>
+		</div>
+	</div>
+</section>
+
 <section id="contact" class="spaced">
+	<h2 class="hide">Contact</h2>
 	<div class="container">
 		{% include contact.html blocks=site.data.contact.pages.showcase %}
 	</div>

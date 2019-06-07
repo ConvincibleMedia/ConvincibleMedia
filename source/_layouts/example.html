@@ -1,0 +1,54 @@
+---
+layout: base
+---
+
+<section>
+	<div class="container">
+
+		<div class="row">
+			<div class="col-xs-12 gallery">
+				<div class="card">
+					{% for image in page.gallery %}
+						<div class="gallery-item-full">
+							{% include helpers/img.html image=image format=site.data.images.gallery %}
+						</div>
+					{% endfor %}
+				</div>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-md-3 col-md-push-9">
+				<div class="logo logo-small">
+					<a href="{% include helpers/link.html href=page.client.link href_only=true %}">
+						{% include helpers/img.html image=page.client.logo format=site.data.images.logo %}
+					</a>
+				</div>
+			</div>
+			<div class="col-md-8 col-md-pull-3">
+				<h1 class="h2">
+					{{ page.title }}
+				</h1>
+				{{ content | markdownify }}
+			</div>
+		</div>
+
+	</div>
+</section>
+
+<section id="services">
+	<h2 class="hide">Key Services</h2>
+	<div class="container grid-cards">
+		{% include blocks/block_card.html blocks=page.of %}
+	</div>
+</section>
+
+<section>
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-4 col-sm-offset-4">
+				<p><a href="/showcase.html" class="button">View Showcase</a></p>
+			</div>
+		</div>
+	</div>
+</section>

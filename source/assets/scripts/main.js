@@ -1,4 +1,6 @@
-/* Tilt Effects */
+$(document).ready(function(){
+
+    /* Tilt Effects */
 $('.tilt').tilt({
    perspective: 1200,
    speed: 500,
@@ -11,7 +13,7 @@ $('.link').each(function() {
    if (go == undefined) {
       $(this).toggleClass("link");
    } else {
-      $(this).click(function() {
+      $(this).click(function(e) {
          window.location = go;
          return false;
       });
@@ -31,3 +33,8 @@ $(function() {
     });
 });
 $.fn.matchHeight._throttle = 500;
+
+// Show these items only if JS runs
+$('.js-show').removeClass('js-show');
+
+});
