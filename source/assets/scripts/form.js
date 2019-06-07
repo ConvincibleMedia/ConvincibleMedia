@@ -15,7 +15,7 @@ function recaptchaLoad() {
 		var id = form.data('id');
 
 		widget = grecaptcha.render(captcha, {
-			'sitekey': '6Le4racUAAAAAE9dE5yXrtwX0CYuQCqEeN8_joSt',
+			'sitekey': '6LeziacUAAAAALaVn4lHG7EcQMB_zBwd4Sz-akDO',
 			'callback': function(token) {
 				recaptchaResponse(form[0], token);
 			},
