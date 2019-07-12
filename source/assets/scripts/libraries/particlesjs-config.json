@@ -8,7 +8,7 @@
       }
     },
     "color": {
-      "value": "#ff6633"
+      "value": "#ff9966"
     },
     "shape": {
       "type": "circle"
@@ -23,14 +23,14 @@
     },
     "line_linked": {
       "enable": true,
-      "color": "#ff6633",
+      "color": "#ff9966",
       "opacity": 0.5,
       "width": 1,
       "distance": 80
     },
     "move": {
       "enable": true,
-      "speed": 1,
+      "speed": 2,
       "direction": "none",
       "random": false,
       "straight": false,
@@ -46,7 +46,7 @@
         "mode": "repulse"
       },
       "onhover": {
-        "enable": false
+        "enable": true
       },
       "resize": true
     },

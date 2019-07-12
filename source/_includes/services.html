@@ -1,10 +1,15 @@
 <div class="row">
+	{% if include.large %}
+		{% assign img_format = site.data.images.thumb-medium %}
+	{% else %}
+		{% assign img_format = site.data.images.thumb %}
+	{% endif %}
 	{% for item in include.services %}
 		{% assign mod2 = forloop.index | modulo: 2 %}
 		{% assign mod3 = forloop.index | modulo: 3 %}
-		<div class="col-md-4 col-sm-6">
-			<div class="card link tilt grid">
-				<div class="card-image">{% include helpers/img.html image=item.image format=site.data.images.thumb %}</div>
+		<div class="{% unless include.large == 'true' %}col-md-4 {% endunless %}col-sm-6">
+			<div class="card link {% unless include.large %}tilt {% endunless %}grid">
+				<div class="card-image">{% include helpers/img.html image=item.image format=img_format %}</div>
 				<h3>
 					{% if item.live %}
 						{% include helpers/link.html href=item.link text=item.name %}
@@ -13,13 +18,20 @@
 					{% endif %}
 				</h3>
 				<p>{{ item.description }}</p>
+				{% if include.large and item.subservices.size > 0 %}
+					<ul>
+						{% for subservice in item.subservices %}
+							<li>{{ subservice.title }}</li>
+						{% endfor %}
+					</ul>
+				{% endif %}
 			</div>
 		</div>
-		{% if mod3 == 0 %}
+		{% if mod3 == 0 and include.large != 'true' %}
 			<div class="clearfix visible-md-block visible-lg-block"></div>
 		{% endif %}
 		{% if mod2 == 0 %}
-			<div class="clearfix visible-sm-block"></div>
+			<div class="clearfix visible-sm-block{% if include.large %} visible-md-block visible-lg-block{% endif %}"></div>
 		{% endif %}
 	{% endfor %}
 </div>
