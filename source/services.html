@@ -4,4 +4,4 @@ collection: services
 title: Services
 ---
 {% assign services = site.services | where: 'live', true | sort: 'order' %}
-{% include services.html services=services %}
+{% include services.html services=services large='true' %}
