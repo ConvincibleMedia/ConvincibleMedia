@@ -355,6 +355,8 @@ main section { padding-top: 1em; }
 		h3 { margin-bottom: 0 }
 		p { display: none }
 	}
+
+	@include lg() { margin-top: -4em }
 }
 
 .spaced {

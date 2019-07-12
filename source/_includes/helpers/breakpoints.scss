@@ -21,7 +21,7 @@
 
 /* Large LG */
 @mixin lg() {
-	@media (min-width: 80em) {
+	@media (min-width: 100em) {
 		@content;
 	}
 }
