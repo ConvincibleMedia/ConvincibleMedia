@@ -1,4 +1,16 @@
-{% assign prevnext_collection = site[page.collection] | where:"layout", page.collection | sort: 'order' %}
+{% if include.sortby %}
+	{% if include.sortby == 'oldest' or include.sortby == 'newest' %}
+		{% assign sortby = 'date' %}
+	{% else %}
+		{% assign sortby = include.sortby %}
+	{% endif %}
+{% else %}
+	{% assign sortby = 'order' %}
+{% endif %}
+{% assign prevnext_collection = site[page.collection] | sort: sortby %}
+{% if include.sortby == 'newest' %}
+	{% assign prevnext_collection = prevnext_collection | reverse %}
+{% endif %}
 
 {% if prevnext_collection.size >= 1 %}
 	{% assign next_index = 0 %}

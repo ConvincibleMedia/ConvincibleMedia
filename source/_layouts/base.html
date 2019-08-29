@@ -23,19 +23,26 @@
 			{% assign section = site.collections | where:'label',page.collection | first %}
 		{% endif %}
 		{% assign sep = site.data.settings.seo.separator %}
-		{%- capture page_title -%}
+		{%- capture this_page_title -%}
 			{%- if home -%}
 				{{ site.data.settings.name | default: site.title }} {{ sep }} {{ site.data.settings.seo.title }}
 			{%- else -%}
-				{%- if page.seo.title or site.data.settings.seo.title or page.title %}
-					{% if page.seo.title -%}
-						{{ page.seo.title }}
-					{%- elsif page.title -%}
-						{{ page.title }}
-					{%- elsif site.data.settings.seo.title -%}
-						{{ site.data.settings.seo.title }}
-					{%- endif -%}
+				{% if page.seo.title -%}
+					{{ page.seo.title }}
+				{%- elsif page.title -%}
+					{{ page.title }}
+				{%- elsif site.data.settings.seo.title -%}
+					{{ site.data.settings.seo.title }}
+				{%- else -%}
+					{{ site.title }}
 				{%- endif -%}
+			{%- endif -%}
+		{%- endcapture -%}
+		{%- capture page_title -%}
+			{%- if home -%}
+				{{ this_page_title }}
+			{%- else -%}
+				{{ this_page_title }}
 				{%- if section and section.title != 'Services' and section.title != page.title %} {{ sep }} {{ section.title }}{%- endif -%}
 				{%- if site.data.settings.name or site.title %} {{ sep }} {{ site.data.settings.name | default: site.title }}{%- endif -%}
 			{%- endif -%}
@@ -48,8 +55,39 @@
 				{{ page.excerpt | markdownify | strip_html | truncatewords: 50 }}
 			{%- endif %} {{ site.data.settings.seo.description }}
 		{%- endcapture -%}
+		{% assign page_description = page_description | strip_newlines %}
 		<title>{{ page_title | escape | replace: '·','&middot;' }}</title>
 		<meta name="description" content="{{ page_description | escape }}" />
+
+		<!-- Open Graph/SEO/Canonical -->
+		{% case page.collection %}
+			{% when 'articles' %}
+				<meta property="og:type" content="article" />
+				<meta property="og:published_time" content="{{ page.date }}" />
+				{% for tag in page.services %}
+					<meta property="og:tag" content="{{ tag.title }}" />
+				{% endfor %}
+			{% else %}
+				<meta property="og:type" content="website" />
+		{% endcase %}
+		<link rel="canonical" href="{{ site.url }}{{ page.url }}" />
+		<meta property="og:url" content="{{ site.url }}{{ page.url }}" />
+		<meta property="og:title" content="{{ this_page_title | escape }}" />
+		<meta property="og:site_name" content="{{ site.data.settings.name | default: site.title }}">
+		<meta property="og:description" content="{{ page_description | escape }}" />
+		{% if page.image.url or page.seo.image.url %}
+			{% if page.seo.image.url %}
+				{% assign og_img = page.seo.image %}
+			{% elsif page.image.url %}
+				{% assign og_img = page.image %}
+			{% endif %}
+			<meta property="og:image" content="{{og_img.url}}" />
+			{% if og_img.alt and og.alt.size > 0 %}
+				<meta property="og:image:alt" content="{{og_img.alt}}" />
+			{% endif %}
+		{% endif %}
+		<meta property="twitter:card" content="summary_large_image" />
+		<meta name="twitter:site" content="@BeConvincible">
 
 		<!-- STYLES -->
 		<link rel="stylesheet" href="/assets/styles/bootstrap.css" />
@@ -75,7 +113,10 @@
 		{% endif %}
 
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		<link href="https://fonts.googleapis.com/css?family=Montserrat:200,600|Source+Sans+Pro:300,300i" rel="stylesheet" />
+		<link href="https://fonts.googleapis.com/css?family=Montserrat:300,600|Source+Sans+Pro:300,300i" rel="stylesheet" />
+		{% if page.collection == 'articles' %}
+			<link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400i,600,600i" rel="stylesheet" />
+		{% endif %}
 
 		<!-- SCRIPTS -->
 		<!-- Remove No-JS class if JavaScript enabled (instead of Modernizr) -->

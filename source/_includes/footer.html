@@ -1,47 +1,37 @@
-<!--
-<section>
+{% unless page.collection == 'articles' %}
+<section class="spaced invert">
 	<div class="container">
 		<div class="row">
 			<div class="col-sm-4">
-				<h2 class="subtitle">Articles</h2>
+				<h2 class="subtitle"><a href="/articles.html">Free Thinking</a></h2>
 			</div>
 		</div>
-	</div>
-	<div class="container">
+		{% assign articles = site.articles | sort: 'date' | reverse | slice: 0, 2%}
 		<div class="row">
-			<div class="col-md-4 col-sm-6">
-				<div class="card link">
-					<div class="card-image"><img src="/assets/images/home-hero.jpg" /></div>
-					<h3><a href="/">Changing minds at a time of change</a></h3>
-					<p>Some text uh isiof iseifseiofj sef jseijfs o ij ije ijoseif jsifioe .</p>
+			{% assign img_format = site.data.images.thumb %}
+			{% for item in articles %}
+				{% assign mod2 = forloop.index | modulo: 2 %}
+				{% assign mod3 = forloop.index | modulo: 3 %}
+				<div class="col-md-4 col-sm-6">
+					<div class="card link tilt grid ">
+						<div class="card-image">{% include helpers/img.html image=item.image format=img_format %}</div>
+						<h3>
+							{% include helpers/link.html href=item.link text=item.title %}
+						</h3>
+						<p>{{ item.excerpt }}</p>
+					</div>
 				</div>
-			</div>
-			<div class="col-md-4 col-sm-6">
-				<div class="card link">
-					<div class="card-image"><img src="/assets/images/home-hero.jpg" /></div>
-					<h3><a href="/">Changing minds at a time of change</a></h3>
-					<p>Some text.</p>
-				</div>
-			</div>
-			<div class="clearfix visible-sm-block"></div>
-			<div class="col-md-4 col-sm-6 col-sm-offset-3 col-md-offset-0">
-				<div class="card link">
-					<div class="card-image"><img src="/assets/images/home-hero.jpg" /></div>
-					<h3><a href="/">Changing minds at a time of change</a></h3>
-					<p>Some textsefo isoef oise fios fois eifoseoif isfoiss iejisejfjisios iose iosj iosj sjfsefj sojfoisjsieoj soief jios oiijse joise oisf .</p>
-				</div>
-			</div>
-		</div>
-	</div>
-	<div class="container">
-		<div class="row">
-			<div class="col-sm-4 col-sm-offset-4">
-				<p><a href="/showcase.html" class="button">All Articles</a></p>
-			</div>
+				{% if mod3 == 0 and include.large != 'true' %}
+					<div class="clearfix visible-md-block visible-lg-block"></div>
+				{% endif %}
+				{% if mod2 == 0 %}
+					<div class="clearfix visible-sm-block{% if include.large %} visible-md-block visible-lg-block{% endif %}"></div>
+				{% endif %}
+			{% endfor %}
 		</div>
 	</div>
 </section>
-//-->
+{% endunless %}
 
 <section id="bottom" class="spaced invert">
 	<div class="container">
@@ -53,10 +43,11 @@
 				</div>
 				<div class="clearfix"></div>
 
-				<div id="social">
+				<div class="social">
 					<p>We're a creative agency based in Cambridge, UK. We concoct words and images that communicate and compel.</p>
 					<ul class="nav">
-						{% for profile in site.data['settings']['social_profiles'] %}
+						{% for p in site.data['settings']['social_profiles'] %}
+							{% assign profile = p[1] %}
 							<li class="subpage">
 								<a href="{{ profile.link }}" target="_blank" class="menu">
 									{% include helpers/img.html src=profile.icon.url format=site.data.images.icon alt=profile.name title=profile.cta %}
@@ -85,6 +76,9 @@
 						<ul>
 							<li>
 								{% include helpers/link.html href='@showcase' text='Showcase' class='menu' %}
+							</li>
+							<li>
+								{% include helpers/link.html href='@articles' text='Free Thinking' class='menu' %}
 							</li>
 							<li>
 								{% include helpers/link.html href='@contact' text='Contact' class='menu' %}
