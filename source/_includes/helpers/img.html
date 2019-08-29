@@ -53,5 +53,5 @@
 {%- if include.src_only -%}
 	{{ src }}
 {%- elsif src.size > 0 -%}
-	<img src="{{ src }}" alt="{{ alt | xml_escape }}" {% if include.title != nil %}title="{{ include.title | xml_escape }}"{% endif %} width="{{ w }}" height="{{ h }}" border="0" vspace="0" hspace="0" />
+	<img src="{{ src }}" alt="{{ alt | xml_escape }}" {% if include.title != nil %}title="{{ include.title | xml_escape }}"{% endif %} width="{{ w }}" height="{{ h }}" {% if include.inline %}style="height: 2.5ex" {% endif %}border="0" vspace="0" hspace="0" />
 {%- endif -%}
