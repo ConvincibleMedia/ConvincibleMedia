@@ -33,7 +33,7 @@ layout: base
     <section id="article">
         <div class="container">
             <div class="article" itemprop="articleBody">
-                <meta itemprop="image" content="{{ page.image.url | escape }}" />
+                <meta itemprop="image" content="{%- include helpers/img.html image=page.image format=site.data.images.hero src_only=true -%}" />
                 {{ content }}
 
                 {% if page.shares.size > 0 %}
