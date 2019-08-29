@@ -30,7 +30,7 @@
 												{% if include.breadcrumb >= 2 %}
 													{{ page.name }}
 												{% else %}
-													{{ section.title }}
+													{{ include.section | default: section.title }}
 												{% endif %}
 											</span>
 										</li>
@@ -39,7 +39,7 @@
 								<ul>
 									{% if include.breadcrumb >= 2 %}
 										<li>
-											<a href="/{{ section.label }}.html">{{ section.title }}</a>
+											<a href="/{{ section.label }}.html">{{ include.section | default: section.title }}</a>
 											{{ breadcrumb-inner }}
 										</li>
 									{% else %}
@@ -54,7 +54,7 @@
 					{% endif %}
 					<h1>{% include blocks/block_heading.html blocks=include.heading %}</h1>
 				</div>
-				{% if include.type == 'home' %}
+				{% if include.blurb or include.buttons or include.text %}
 					<div id="hero-action">
 						<div class="row">
 							<div class="col-md-4 col-md-push-8 col-sm-6 col-sm-push-6">
@@ -66,6 +66,13 @@
 									</div>
 								{% endif %}
 							</div>
+							{% if include.text %}
+								<div class="col-lg-4 col-lg-pull-4 col-md-pull-4 col-sm-6 col-sm-pull-6">
+									<div class="negative">
+										{{ include.text | markdownify }}
+									</div>
+								</div>
+							{% endif %}
 							{% if include.buttons and include.buttons.size > 0 %}
 								<div class="col-lg-4 col-lg-pull-4 col-md-pull-4 col-sm-6 col-sm-pull-6">
 									<h2 class="hide">Latest</h2>
