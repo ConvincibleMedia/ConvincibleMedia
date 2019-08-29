@@ -34,9 +34,11 @@ layout: base
             <div class="article" itemprop="articleBody">
                 {{ content }}
 
-                {{ page.question | markdownify }}
-
                 {% if page.shares.size > 0 %}
+                    <div class="block_body_text">
+                        {{ page.question | markdownify }}
+                    </div>
+
                     <ul class="nav">
                     {%- for post in page.shares -%}
                         {%- assign profile = site.data['settings']['social_profiles'][post.profile] -%}  
@@ -50,17 +52,11 @@ layout: base
                         </li>
                     {%- endfor -%}
                     </ul>
-                    <p class="small">While you're there, drop a Like or Share so we know this was useful and can write more like it in future.</p>
+                    <p class="small">While you're there, drop a Like or Share if this was useful so we know to write more like it in future.</p>
                 {% endif %}
 
             </div>
-
-
-
         </div>
-
-
-
     </section>
 
     <section id="share">

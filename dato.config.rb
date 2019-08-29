@@ -540,6 +540,7 @@ directory "source/_articles" do
 						link: item[:id]
 					}
 				},
+				question: item.question,
 				shares: item.shares.to_hash.map { |item|
 					{
 						profile: item[:profile][:id],
