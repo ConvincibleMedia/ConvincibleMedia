@@ -70,8 +70,8 @@
 			{% else %}
 				<meta property="og:type" content="website" />
 		{% endcase %}
-		<link rel="canonical" href="{{ site.url }}{{ page.url }}" />
-		<meta property="og:url" content="{{ site.url }}{{ page.url }}" />
+		<link rel="canonical" href="{{ site.url }}{{ page.url | remove: '.html' }}" />
+		<meta property="og:url" content="{{ site.url }}{{ page.url | remove: '.html' }}" />
 		<meta property="og:title" content="{{ this_page_title | escape }}" />
 		<meta property="og:site_name" content="{{ site.data.settings.name | default: site.title }}">
 		<meta property="og:description" content="{{ page_description | escape }}" />
