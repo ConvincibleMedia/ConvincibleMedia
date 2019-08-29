@@ -81,7 +81,11 @@
 			{% elsif page.image.url %}
 				{% assign og_img = page.image %}
 			{% endif %}
-			<meta property="og:image" content="{{og_img.url}}" />
+			<meta property="og:image" content="{%- include helpers/img.html
+				image=og_img
+				format=site.data.images.og
+				src_only=true
+			-%}" />
 			{% if og_img.alt and og.alt.size > 0 %}
 				<meta property="og:image:alt" content="{{og_img.alt}}" />
 			{% endif %}
