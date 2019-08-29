@@ -16,15 +16,16 @@ layout: base
     {% endif %}
     {% assign article_author = article_author | append: author.name %}
 {% endfor %}
+{% capture article_title %}<span itemprop="headline">{{page.title}}</span>{% endcapture %}
 
-<article itemscope="itemscope" itemtype="http://schema.org/Article">
+<article itemscope="itemscope" itemtype="https://schema.org/Article">
 
     {% include hero.html
         type='inside'
         image=page.image
         breadcrumb=1
         section='Article'
-        heading=page.title
+        heading=article_title
         blurb=blurb
         text=page.excerpt
     %}
@@ -32,6 +33,7 @@ layout: base
     <section id="article">
         <div class="container">
             <div class="article" itemprop="articleBody">
+                <meta itemprop="image" content="{{ page.image.url | escape }}" />
                 {{ content }}
 
                 {% if page.shares.size > 0 %}
@@ -62,7 +64,7 @@ layout: base
     <section id="share">
         <div class="container center">
             <h2 class="hide">Cite</h2>
-            <p class="small"><a href="{{site.url}}{{ page.url }}"><cite>{{ page.title }}</cite></a>, {{ article_author }}, Convincible Media, {{ page.date | date: '%d %b %Y' }}</p>
+            <p class="small"><a itemprop="mainEntityOfPage" href="{{site.url}}{{ page.url }}"><cite>{{ page.title }}</cite></a>, <span itemprop="author">{{ article_author }}</span>, <span itemprop="publisher">Convincible Media</span>, <time datetime="{{page.date}}" itemprop="dateModified">{{ page.date | date: '%d %b %Y' }}</p>time></p>
         </div>
     </section>
 
