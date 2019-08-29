@@ -65,7 +65,7 @@
 				<meta property="og:type" content="article" />
 				<meta property="og:published_time" content="{{ page.date }}" />
 				{% for tag in page.services %}
-					<meta property="og:tag" content="{{ tag.title }}" />
+					<meta property="og:tag" content="{{ tag.title | escape }}" />
 				{% endfor %}
 			{% else %}
 				<meta property="og:type" content="website" />
@@ -73,8 +73,9 @@
 		<link rel="canonical" href="{{ site.url }}{{ page.url | remove: '.html' }}" />
 		<meta property="og:url" content="{{ site.url }}{{ page.url | remove: '.html' }}" />
 		<meta property="og:title" content="{{ this_page_title | escape }}" />
-		<meta property="og:site_name" content="{{ site.data.settings.name | default: site.title }}">
+		<meta property="og:site_name" content="{{ site.data.settings.name | default: site.title | escape }}" />
 		<meta property="og:description" content="{{ page_description | escape }}" />
+
 		{% if page.image.url or page.seo.image.url %}
 			{% if page.seo.image.url %}
 				{% assign og_img = page.seo.image %}
@@ -87,11 +88,11 @@
 				src_only=true
 			-%}" />
 			{% if og_img.alt and og.alt.size > 0 %}
-				<meta property="og:image:alt" content="{{og_img.alt}}" />
+				<meta property="og:image:alt" content="{{og_img.alt | escape }}" />
 			{% endif %}
 		{% endif %}
 		<meta property="twitter:card" content="summary_large_image" />
-		<meta name="twitter:site" content="@BeConvincible">
+		<meta name="twitter:site" content="@BeConvincible" />
 		<meta name="fb:app_id" content="1661075747291881" />
 
 		<!-- STYLES -->
