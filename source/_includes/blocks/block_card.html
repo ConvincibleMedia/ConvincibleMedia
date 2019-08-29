@@ -68,6 +68,22 @@
 	{% assign row_md = row_md | plus: card_md %}
 	{% assign row_lg = row_lg | plus: card_lg %}
 
+	{% if include.blocks.size <= 2 and forloop.first %}
+		{% if include.blocks.size == 1 %}
+			{% assign sm_offset = max | minus: card_sm | divided_by: 2 | floor %}
+			{% assign md_offset = max | minus: card_md | divided_by: 2 | floor %}
+			{% assign lg_offset = max | minus: card_lg | divided_by: 2 | floor %}
+		{% endif %}
+		{% if include.blocks.size == 2 %}
+			{% assign sm_offset = max | minus: card_sm | minus: card_sm | divided_by: 2 | floor %}
+			{% assign md_offset = max | minus: card_md | minus: card_md | divided_by: 2 | floor %}
+			{% assign lg_offset = max | minus: card_lg | minus: card_lg | divided_by: 2 | floor %}
+		{% endif %}
+		{% capture short_offset %} col-sm-offset-{{sm_offset}} col-md-offset-{{md_offset}} col-lg-offset-{{lg_offset}}{% endcapture %}
+	{% else %}
+		{% assign short_offset = '' %}
+	{% endif %}
+
 	{% capture clearfix -%}
 		{%- if row_sm > max %} visible-sm-block{%- endif -%}
 		{%- if row_md > max %} visible-md-block{%- endif -%}
@@ -100,7 +116,7 @@
 
 	{% else %}
 
-	<div class="col-sm-{{card_sm}} col-md-{{card_md}} col-lg-{{card_lg}}{{ solo_offset }}">
+	<div class="col-sm-{{card_sm}} col-md-{{card_md}} col-lg-{{card_lg}}{{ solo_offset }}{{ short_offset }}">
 		<div class="card{% if live %} link{% endif %}{% if include.style == 'icons' and block.image.url %} card-icon{% endif %} grid">
 
 			{% if block.image.url %}
