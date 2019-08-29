@@ -86,12 +86,13 @@ gallery:
    q: 60
 og:
     w: 1200
-    h: 1200
+    h: 675
     fit: "max"
     auto: "compress"
     fm: "pjpg"
     q: 95
-    mark: https://www.datocms-assets.com/3013/1513783114-convincible-reverse-logo-web-large-200.png
-    mark-scale: 20
-    mark-alpha: 50
-    mark-pad: 50
+    mark: "https://www.datocms-assets.com/3013/1513783114-convincible-reverse-logo-web-large-200.png"
+    markalign: "bottom,left"
+    markscale: 20
+    markalpha: 50
+    markpad: 50
