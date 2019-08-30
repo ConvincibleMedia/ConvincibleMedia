@@ -83,7 +83,7 @@ gallery:
    fit: "max"
    auto: "compress"
    fm: "pjpg"
-   q: 60
+   q: 75
 og:
     w: 1200
     h: 675

@@ -770,6 +770,23 @@ blockquote, .block_body_lead {
 		line-height: 1.4
 	}
 
+	figure {
+		margin: 2em -1em;
+		position: relative;
+
+		img {
+			width: 100%;
+		}
+
+		figcaption {
+			text-align: right;
+			font-size: 70%;
+			position: absolute;
+			right: 0; left: 0;
+			color: #999
+		}
+	}
+
 	h2, h3, h4, h5, h6 {
 		margin-top: 6rem;
 		margin-bottom: 2rem;

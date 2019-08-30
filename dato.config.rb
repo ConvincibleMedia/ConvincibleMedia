@@ -509,6 +509,9 @@ block_types = {
 	],
 	'block_body_section' => [
 		:header
+	],
+	'block_body_image' => [
+		:image, :caption
 	]
 }
 
@@ -532,7 +535,6 @@ directory "source/_articles" do
 						image: defined?(item[:photo][:url]) ? item[:photo].to_hash.slice(:url, :alt, :title) : '',
 					}
 				},
-				tags: item.tags,
 				services: item.services.to_hash.map { |item|
 					{
 						title: item[:name],
@@ -548,21 +550,31 @@ directory "source/_articles" do
 					}
 				}
 			}
-			frontmatter :yaml, fm
-			if item.body2.size > 0
-				body = ''
-				item.body2.to_hash.map{ |h| h.except!(:id, :updated_at, :created_at) }.each { |block|
-					if block_types.key?(block[:item_type])
-						body += '<div class="' + block[:item_type] + '" markdown="1">' + "\n\n"
+			body = ''
+			length = 0
+			item.body.to_hash.map{ |h| h.except!(:id, :updated_at, :created_at) }.each { |block|
+				if block_types.key?(block[:item_type])
+					body += '<div class="' + block[:item_type] + '" markdown="1">' + "\n\n"
+					if block[:item_type] == 'block_body_image'
+						body += "<figure>\n"
+						body += "{% include helpers/img.html src='#{block[:image][:url]}' format=site.data.images.gallery %}"
+						if defined?(block[:caption]) && block[:caption].size > 0
+							body += "\n\n"
+							body += "<figcaption>\n#{block[:caption]}\n</figcaption>"
+						end
+						body += "\n</figure>"
+					else
 						block_types[block[:item_type]].each { |field|
-							body += block[field].to_s.strip
+							this = block[field].to_s.strip
+							length += this.split(/\s+/).length
+							body += this
 						}
-						body += "\n\n" + '</div>' + "\n\n"
 					end
-				}
-			else
-				body = item.body
-			end
+						body += "\n\n" + '</div>' + "\n\n"
+				end
+			}
+			fm[:words] = length
+			frontmatter :yaml, fm
 			content(body)
 		end
 	end

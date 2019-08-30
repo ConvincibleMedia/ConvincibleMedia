@@ -2,10 +2,10 @@
 layout: base
 ---
 
-{% assign time = page.content.size | divided_by: 1125 | floor | at_least: 1 | append: ' minute read' %}
+{% assign time = page.words | divided_by: 250 | floor | at_least: 1 | append: ' minute read' %}
 {% assign date = page.date | date: '%d %b, %Y' %}
 {% capture blurb -%}
-    {{ time }} &middot; <time datetime="{{ page.date }}" itemprop="datePublished">{{ date }}</time>
+    <strong>{{ time }}</strong> ({{ page.words}} words) &middot; <time datetime="{{ page.date }}" itemprop="datePublished">{{ date }}</time>
 {%- endcapture %}
 {% assign article_author = '' %}
 {% for author in page.authors %}
@@ -64,7 +64,19 @@ layout: base
     <section id="share">
         <div class="container center">
             <h2 class="hide">Cite</h2>
-            <p class="small"><a itemprop="mainEntityOfPage" href="{{site.url}}{{ page.url }}"><cite>{{ page.title }}</cite></a>, <span itemprop="author">{{ article_author }}</span>, <span itemprop="publisher">Convincible Media</span>, <time datetime="{{page.date}}" itemprop="dateModified">{{ page.date | date: '%d %b %Y' }}</p>time></p>
+            <p class="small">
+                <a itemprop="mainEntityOfPage" href="{{site.url}}{{ page.url }}">
+                    <cite>{{ page.title }}</cite></a>,
+                <span itemprop="author" itemscope="itemscope" itemtype="https://schema.org/Person">
+                    <span itemprop="name">{{ article_author }}</span>
+                </span>,
+                <span itemprop="publisher" itemscope="itemscope" itemtype="https://schema.org/Organization">
+                    <span itemprop="name">Convincible Media</span>
+                </span>,
+                <time datetime="{{page.date}}" itemprop="dateModified">
+                    {{ page.date | date: '%d %b %Y' }}
+                </time>
+            </p>
         </div>
     </section>
 
