@@ -1,37 +1,91 @@
-{% unless page.collection == 'articles' %}
 <section class="spaced invert">
 	<div class="container">
 		<div class="row">
 			<div class="col-sm-4">
-				<h2 class="subtitle"><a href="/articles.html">Free Thinking</a></h2>
+				<h2 class="subtitle">
+					{% if page.title == 'Free Thinking' %}
+						Subscribe
+					{% else %}
+						<a href="/articles.html">Free Thinking</a>
+					{% endif %}
+				</h2>
 			</div>
 		</div>
-		{% assign articles = site.articles | sort: 'date' | reverse | slice: 0, 2%}
-		<div class="row">
-			{% assign img_format = site.data.images.thumb %}
-			{% for item in articles %}
-				{% assign mod2 = forloop.index | modulo: 2 %}
-				{% assign mod3 = forloop.index | modulo: 3 %}
-				<div class="col-md-4 col-sm-6">
-					<div class="card link tilt grid ">
-						<div class="card-image">{% include helpers/img.html image=item.image format=img_format %}</div>
-						<h3>
-							{% include helpers/link.html href=item.link text=item.title %}
-						</h3>
-						<p>{{ item.excerpt }}</p>
+		{% unless page.collection == 'articles' %}
+			{% assign articles = site.articles | sort: 'date' | reverse %}
+			<div class="row">
+				{% assign img_format = site.data.images.thumb %}
+				{% for item in articles limit:3 %}
+					{% assign mod2 = forloop.index | modulo: 2 %}
+					{% assign mod3 = forloop.index | modulo: 3 %}
+					<div class="col-md-4 col-sm-6">
+						<div class="card link tilt grid ">
+							<div class="card-image">{% include helpers/img.html image=item.image format=img_format %}</div>
+							<h3>
+								{% include helpers/link.html href=item.link text=item.title %}
+							</h3>
+							<p>{{ item.excerpt }}</p>
+						</div>
+					</div>
+					{% if mod3 == 0 and include.large != 'true' %}
+						<div class="clearfix visible-md-block visible-lg-block"></div>
+					{% endif %}
+					{% if mod2 == 0 %}
+						<div class="clearfix visible-sm-block{% if include.large %} visible-md-block visible-lg-block{% endif %}"></div>
+					{% endif %}
+				{% endfor %}
+			</div>
+		{% endunless %}
+		<div class="row" id="subscribe">
+			<h3 class="hide">Subscribe</h3>
+			<div class="col-lg-4">
+				<div class="row">
+					<div class="col-xs-12">
+						<label for="mce-EMAIL" class="subtitle">Marketing knowhow delivered to your inbox</label>
 					</div>
 				</div>
-				{% if mod3 == 0 and include.large != 'true' %}
-					<div class="clearfix visible-md-block visible-lg-block"></div>
-				{% endif %}
-				{% if mod2 == 0 %}
-					<div class="clearfix visible-sm-block{% if include.large %} visible-md-block visible-lg-block{% endif %}"></div>
-				{% endif %}
-			{% endfor %}
+			</div>
+			<div class="col-lg-8">
+				<div class="row">
+					<div class="col-md-6">
+						<form action="https://media.us16.list-manage.com/subscribe/post?u=e178fcfb5ce7340d6f76a7d9c&amp;id=3be02ffe91" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" target="_blank">
+							<div id="mc_embed_signup_scroll">
+								<div class="mc-field-group">
+									<div id="signup">
+										<div id="signup-email">
+											<input type="email" value="" placeholder="Email" required="required" name="EMAIL" id="mce-EMAIL" />
+										</div>
+										<div id="signup-button">
+											<input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button" />
+										</div>
+									</div>
+								</div>
+								<div id="mce-responses">
+									<div class="response" id="mce-error-response" style="display:none"></div>
+									<div class="response" id="mce-success-response" style="display:none"></div>
+								</div>
+								<div class="hide" aria-hidden="true">
+									<input type="text" name="b_e178fcfb5ce7340d6f76a7d9c_3be02ffe91" tabindex="-1" value="" aria-hidden="true" />
+									<input type="hidden" value="1" checked="checked" name="group[5755][1]" id="mce-group[5755]-5755-0" aria-hidden="true" />
+								</div>
+							</div>
+						</form>
+					</div>
+					<div class="col-md-6">
+						<div id="subscribe-info">
+							<ul>
+								<li>Very Occasional</li>
+								<li>Quality Content</li>
+								<li>Never Spam (<a target="_blank" href="https://us16.campaign-archive.com/home/?u=e178fcfb5ce7340d6f76a7d9c&id=3be02ffe91">See Past Emails</a>)</li>
+								<li>1-Click Unsubscribe</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
 		</div>
 	</div>
 </section>
-{% endunless %}
 
 <section id="bottom" class="spaced invert">
 	<div class="container">
