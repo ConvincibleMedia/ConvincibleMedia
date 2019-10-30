@@ -221,19 +221,32 @@ create_post "source/index.md" do
 		featured: home.featured.to_hash.map { |item|
 			{
 				subtitle:
-					if item[:item_type] == "service"
+					case item[:item_type]
+					when "service"
 						'New Service: ' + item[:name]
-					elsif item[:item_type] == "showcase"
+					when "showcase"
 						'New Case Study'
+					else
+						'New ' + item[:item_type].capitalize
 					end,
 				text:
-					if item[:item_type] == "service"
+					case item[:item_type]
+					when "service"
 						item[:description]
-					elsif item[:item_type] == "showcase"
+					when "showcase"
 						item[:heading].map{ |h| h[:text] }.join(" ").sub(/\.$/,'')
+					else
+						item[:title] || item[:name]
 					end,
 				link: item[:id],
-				image: defined?(item[:hero_image][:url]) ? item[:hero_image].to_hash.slice(:url, :alt, :title) : ''
+				image:
+					if defined?(item[:hero_image][:url])
+						item[:hero_image].to_hash.slice(:url, :alt, :title)
+					elsif defined?(item[:image][:url])
+						item[:image].to_hash.slice(:url, :alt, :title)
+					else
+						''
+					end
 			}
 		},
 		services: home.services.to_hash.map { |item|
@@ -508,7 +521,9 @@ block_types = {
 		:text
 	],
 	'block_body_section' => [
-		:header
+		:header,
+		:image,
+		:lead
 	],
 	'block_body_image' => [
 		:image, :caption
@@ -562,15 +577,21 @@ directory "source/_articles" do
 							body += "\n\n"
 							body += "<figcaption>\n#{block[:caption]}\n</figcaption>"
 						end
-						body += "\n</figure>"
+						body += "\n</figure>\n\n"
 					else
 						block_types[block[:item_type]].each { |field|
-							this = block[field].to_s.strip
-							length += this.split(/\s+/).length
-							body += this
+							case field
+							when :image
+								this = ''
+								this = "<figure>{% include helpers/img.html src='#{block[:image][:url]}' format=site.data.images.gallery %}</figure>" if defined?(block[:image][:url])
+							else
+								this = block[field].to_s.strip
+								length += this.split(/\s+/).length
+							end
+							body += this + "\n\n"
 						}
 					end
-						body += "\n\n" + '</div>' + "\n\n"
+					body += '</div>' + "\n\n"
 				end
 			}
 			fm[:words] = length
