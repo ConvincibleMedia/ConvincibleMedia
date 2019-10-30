@@ -3,7 +3,7 @@ title: "Convincible"
 email: "contact@convincible.media"
 #description: "Marketing and Communications &middot; Cambridge, UK"
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "http://www.convincible.media"
+url: "https://www.convincible.media"
 #twitter_username: "BeConvincible"
 #github_username:  "Convincible"
 
@@ -11,7 +11,6 @@ url: "http://www.convincible.media"
 source: "source"
 destination: "public"
 sass_dir: "source/assets/styles"
-markdown: "kramdown"
 
 # show_drafts: null
 # future: false
@@ -58,3 +57,22 @@ collections:
     title: "Contact"
     output: true
     permalink: "contact/:slug.html"
+  articles:
+    title: "Articles"
+    output: true
+    permalink: "article/:slug.html"
+
+
+# Markdown
+markdown:                      "kramdown"
+kramdown:
+   auto_id_prefix:             "section-"
+   auto_ids:                   true
+   auto_id_stripping:          true
+   entity_output:              "symbolic"
+   hard_wrap:                  false
+   header_offset:              1
+   smart_quotes:               "lsquo,rsquo,ldquo,rdquo"
+   toc_levels:                 "1..2"
+   transliterated_header_ids:  true
+   html_to_native:             true

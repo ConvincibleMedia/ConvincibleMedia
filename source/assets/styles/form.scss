@@ -7,14 +7,14 @@ $form_controls: "input, select, textarea, button, fieldset";
 $form_text: "label, legend, output";
 
 #{$form_controls}, #{$form_text} {
-   display: block;
+    display: block;
     vertical-align: middle;
-   font-size: 1rem;
-   color: $color-text;
-   line-height: normal;
-   background-image: none;
-   border: 0;
-   outline: 0;
+    font-size: 1rem;
+    color: $color-text;
+    line-height: normal;
+    background-image: none;
+    border: 0;
+    outline: 0;
 }
 
 label, input[type="checkbox"], input[type="radio"] { display: inline-block }

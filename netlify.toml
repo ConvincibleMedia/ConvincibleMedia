@@ -26,6 +26,6 @@
   JEKYLL_ENV = "development"
 
 [context.staging]
-  command = "bundle exec dato dump --preview && bundle exec jekyll build"
+  command = "bundle exec dato dump --preview && bundle exec jekyll build --config _config.yml,_config-staging.yml"
   [context.staging.environment]
     JEKYLL_ENV = "development"

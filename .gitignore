@@ -13,32 +13,35 @@
 .jekyll-metadata
 .sass-cache/
 .jekyll-cache/
-/tmp/
+tmp/
 .rspec_status
-*/cache/
+**/cache/
 
 # Working files/dirs
-/.bundle/
-/.yardoc
-/_yardoc/
-/coverage/
-/doc/
-/pkg/
-/spec/reports/
+.bundle/
+vendor/
+.yardoc/
+_yardoc/
+coverage/
+doc/
+pkg/
+spec/reports/
+.vscode/
 
 # Public output
-/public/
+public/
 
 # Internal output
-/source/_clients/
-/source/_contact/
-/source/_services/
-/source/_showcase/
-/source/_examples/
+source/_clients/
+source/_contact/
+source/_services/
+source/_showcase/
+source/_examples/
+source/_articles/
 
-/source/_data/approach.yml
-/source/_data/favicon.yml
-/source/_data/contact.yml
-/source/_data/settings.yml
-/source/_data/sitemap.yml
-/source/index.md
+source/_data/approach.yml
+source/_data/favicon.yml
+source/_data/contact.yml
+source/_data/settings.yml
+source/_data/sitemap.yml
+source/index.md

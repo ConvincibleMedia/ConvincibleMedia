@@ -1,15 +1,16 @@
 #Site Settings
 puts 'Social profiles...'
 
-social_profiles = dato.social_profiles.map do |profile|
-{
-	type: profile.name.downcase.gsub(/ +/, '-'),
-	name: profile.name,
-	link: profile.link,
-	icon: defined?(profile.icon.url) ? profile.icon.to_hash.slice(:url) : '',
-	cta: profile.call_to_action
+social_profiles = {}
+dato.social_profiles.each { |profile|
+	social_profiles[profile.id] = {
+		type: profile.name.downcase.gsub(/ +/, '-'),
+		name: profile.name,
+		link: profile.link,
+		icon: defined?(profile.icon.url) ? profile.icon.to_hash.slice(:url) : '',
+		cta: profile.call_to_action
+	}
 }
-end
 
 puts 'Site settings...'
 
@@ -63,13 +64,15 @@ showcases = dato.showcases #Multiple
 contact = dato.contact_pages #Multiple
 clients = dato.clients #Multiple
 examples = dato.examples #Multiple
-models = [ services, showcases, contact, clients, examples ]
+articles = dato.articles #Multiple
+models = [ services, showcases, contact, clients, examples, articles ]
 
 #Root pages
 rootpages = { #List hard-coded root pages
 	services: 'Services',
 	showcase: 'Showcase',
-	contact: 'Contact'
+	contact: 'Contact',
+	articles: 'Free Thinking'
 }
 
 #MODELS = API Keys
@@ -80,7 +83,8 @@ sitemap[:models] = {
 	showcase: { path: 'showcase/'},
 	contact_page: { path: 'contact/'},
 	client: { path: 'client/' },
-	example: { path: 'example/' }
+	example: { path: 'example/' },
+	article: { path: 'article/' }
 }
 
 #IDs
@@ -155,6 +159,12 @@ sitemap[:tree] = {
 		below: [],
 		above: 'root'
 	},
+	articles: {
+		index: '@articles',
+		pages: [ 'id', 'id' ],
+		below: [],
+		above: 'root'
+	},
 	contact: {
 		index: '@contact',
 		pages: [ 'id', 'id' ],
@@ -211,19 +221,32 @@ create_post "source/index.md" do
 		featured: home.featured.to_hash.map { |item|
 			{
 				subtitle:
-					if item[:item_type] == "service"
+					case item[:item_type]
+					when "service"
 						'New Service: ' + item[:name]
-					elsif item[:item_type] == "showcase"
+					when "showcase"
 						'New Case Study'
+					else
+						'New ' + item[:item_type].capitalize
 					end,
 				text:
-					if item[:item_type] == "service"
+					case item[:item_type]
+					when "service"
 						item[:description]
-					elsif item[:item_type] == "showcase"
+					when "showcase"
 						item[:heading].map{ |h| h[:text] }.join(" ").sub(/\.$/,'')
+					else
+						item[:title] || item[:name]
 					end,
 				link: item[:id],
-				image: defined?(item[:hero_image][:url]) ? item[:hero_image].to_hash.slice(:url, :alt, :title) : ''
+				image:
+					if defined?(item[:hero_image][:url])
+						item[:hero_image].to_hash.slice(:url, :alt, :title)
+					elsif defined?(item[:image][:url])
+						item[:image].to_hash.slice(:url, :alt, :title)
+					else
+						''
+					end
 			}
 		},
 		services: home.services.to_hash.map { |item|
@@ -484,6 +507,96 @@ directory "source/_contact" do
 			fm[:features] = ['form'] if fm[:form_id].strip.length > 0
 			frontmatter :yaml, fm
 			content(item.intro)
+		end
+	end
+end
+
+puts 'Each article...'
+
+block_types = {
+	'block_body_lead' => [
+		:paragraphs
+	],
+	'block_body_text' => [
+		:text
+	],
+	'block_body_section' => [
+		:header,
+		:image,
+		:lead
+	],
+	'block_body_image' => [
+		:image, :caption
+	]
+}
+
+directory "source/_articles" do
+	articles.each_with_index do |item, index|
+		date = item.date.strftime('%F')
+		create_post "#{date}-#{item.slug}.md" do
+			fm = {
+				layout: 'article',
+				collection: 'articles',
+				title: item.title,
+				slug: item.slug,
+				link: item.id,
+				seo: defined?(item.seo) && !item.seo.nil? ? item.seo.to_hash.slice(:title, :description, :image) : '',
+				excerpt: item.abstract,
+				image: defined?(item.image.url) ? item.image.to_hash.slice(:url, :alt, :title) : '',
+				authors: item.authors.to_hash.map { |item|
+					{
+						name: item[:display_name],
+						role: item[:job_title],
+						image: defined?(item[:photo][:url]) ? item[:photo].to_hash.slice(:url, :alt, :title) : '',
+					}
+				},
+				services: item.services.to_hash.map { |item|
+					{
+						title: item[:name],
+						description: item[:description],
+						link: item[:id]
+					}
+				},
+				question: item.question,
+				shares: item.shares.to_hash.map { |item|
+					{
+						profile: item[:profile][:id],
+						link: item[:link]
+					}
+				}
+			}
+			body = ''
+			length = 0
+			item.body.to_hash.map{ |h| h.except!(:id, :updated_at, :created_at) }.each { |block|
+				if block_types.key?(block[:item_type])
+					body += '<div class="' + block[:item_type] + '" markdown="1">' + "\n\n"
+					if block[:item_type] == 'block_body_image'
+						body += "<figure>\n"
+						body += "{% include helpers/img.html src='#{block[:image][:url]}' format=site.data.images.gallery %}"
+						if defined?(block[:caption]) && block[:caption].size > 0
+							body += "\n\n"
+							body += "<figcaption>\n#{block[:caption]}\n</figcaption>"
+						end
+						body += "\n</figure>\n\n"
+					else
+						block_types[block[:item_type]].each { |field|
+							case field
+							when :image
+								this = ''
+								this = "<figure>{% include helpers/img.html src='#{block[:image][:url]}' format=site.data.images.gallery %}</figure>" if defined?(block[:image][:url])
+							else
+								this = block[field].to_s.strip
+								length += this.split(/\s+/).length
+							end
+							body += this + "\n\n"
+						}
+					end
+					body += '</div>' + "\n\n"
+				end
+			}
+			fm[:words] = length
+			frontmatter :yaml, fm
+			content(body)
 		end
 	end
 end

@@ -1,0 +1,115 @@
+---
+layout: base
+---
+
+{% assign time = page.words | divided_by: 250 | floor | at_least: 1 | append: ' minute read' %}
+{% assign date = page.date | date: '%d %b, %Y' %}
+{% capture blurb -%}
+    <strong>{{ time }}</strong> ({{ page.words}} words) &middot; <time datetime="{{ page.date }}" itemprop="datePublished">{{ date }}</time>
+{%- endcapture %}
+{% assign article_author = '' %}
+{% for author in page.authors %}
+    {% if forloop.last and forloop.size > 1 %}
+        {% assign article_author = article_author | append: ' and ' %}
+    {% elsif forloop.size > 1 %}
+        {% assign article_author = article_author | append: ', ' %}
+    {% endif %}
+    {% assign article_author = article_author | append: author.name %}
+{% endfor %}
+{% capture article_title %}<span itemprop="headline">{{page.title}}</span>{% endcapture %}
+
+<article itemscope="itemscope" itemtype="https://schema.org/Article">
+
+    {% include hero.html
+        type='inside'
+        image=page.image
+        breadcrumb=1
+        section='Article'
+        heading=article_title
+        blurb=blurb
+        text=page.excerpt
+    %}
+
+    <section id="article">
+        <div class="container">
+            <div class="article" itemprop="articleBody">
+                <meta itemprop="image" content="{%- include helpers/img.html image=page.image format=site.data.images.hero src_only=true -%}" />
+                {{ content }}
+
+                {% if page.shares.size > 0 %}
+                    <div class="block_body_text">
+                        {{ page.question | markdownify }}
+                    </div>
+
+                    <ul class="nav">
+                    {%- for post in page.shares -%}
+                        {%- assign profile = site.data['settings']['social_profiles'][post.profile] -%}  
+                        <li>
+                            <a href="{{ post.link }}" target="_blank" class="nowrap menu" title="Share on {{profile.name}}">
+                                {% if profile.icon.url %}
+                                    {% include helpers/img.html src=profile.icon.url format=site.data.images.icon alt=profile.name inline=true %}
+                                {% endif %}
+                                {{ profile.name }}
+                            </a>
+                        </li>
+                    {%- endfor -%}
+                    </ul>
+                    <p class="small">While you're there, drop a Like or Share if this was useful so we know to write more like it in future.</p>
+                {% endif %}
+
+            </div>
+        </div>
+    </section>
+
+    <section id="share">
+        <div class="container center">
+            <h2 class="hide">Cite</h2>
+            <p class="small">
+                <a itemprop="mainEntityOfPage" href="{{site.url}}{{ page.url }}">
+                    <cite>{{ page.title }}</cite></a>,
+                <span itemprop="author" itemscope="itemscope" itemtype="https://schema.org/Person">
+                    <span itemprop="name">{{ article_author }}</span>
+                </span>,
+                <span itemprop="publisher" itemscope="itemscope" itemtype="https://schema.org/Organization">
+                    <span itemprop="name">Convincible Media</span>
+                </span>,
+                <time datetime="{{page.date}}" itemprop="dateModified">
+                    {{ page.date | date: '%d %b %Y' }}
+                </time>
+            </p>
+        </div>
+    </section>
+
+    <section class="spaced">
+        <h2 class="hide">More</h2>
+        {% include helpers/prevnext.liquid sortby='newest' %}
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-6 col-sm-offset-3">
+                    <div class="card card-button link tilt" style="background: #fff url('{% include helpers/img.html image=next.image format=site.data.images.thumb-tiny src_only=true %}') left/auto 100% no-repeat">
+                        <div class="card-content">
+                            <h3 class="hgroup">
+                                <span class="h4 subtitle">Next Article<span class="hide">: </span></span>
+                                <span class="h3"><a href="{% include helpers/link.html href=next.url href_only=true %}">{{ next.title }}</a></span>
+                            </h3>
+                        </div>
+                    </div>
+                    <p><a href="/articles.html" class="button">All Articles</a></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</article>
+
+<section id="services" class="spaced">
+    <h2 class="hide">Key Services</h2>
+    <div class="container grid-cards">
+        {% include blocks/block_card.html blocks=page.services %}
+        <div class="row">
+			<div class="col-sm-4 col-sm-offset-4">
+				<p><a href="/services.html" class="button">All Services</a></p>
+			</div>
+		</div>
+    </div>
+</section>
