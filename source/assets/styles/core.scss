@@ -863,6 +863,74 @@ blockquote, .block_body_lead {
 	}
 }
 
+
+/* Subscribe */
+
+#subscribe {
+	input {
+		display: block;
+		font-size: 1rem;
+		color: #fff;
+		line-height: normal;
+		background-image: none;
+		outline: 0;
+		padding: 0.25rem 0.5rem;
+		margin: 0;
+		min-height: 2.5rem;
+		background: transparent;
+		border: none;
+		&::placeholder {
+			color: #aaa;
+		}
+	}
+	label {
+		display: block;
+		margin-bottom: 0.5em;
+		padding-top: 0.65em;
+		@include lg() {
+			text-align: right;
+		}
+	}
+}
+
+#signup {
+	background-color: darken($color-canvas, 5%);
+	border: 0.05rem solid darken($color-canvas, 7%);
+	box-shadow: inset 0 0.15rem 0.15rem rgba(0,0,0,0.05);
+	display: table; width: 100%; margin-bottom: 0.7em;
+	input { width: 100%; }
+}
+
+#signup-email {
+	display: table-cell;
+	width: 100%;
+}
+
+#signup-button {
+	display: table-cell;
+	min-width: 25%;
+	font-family: $font-heading;
+	font-weight: bold;
+	border-left: 0.05rem solid darken($color-canvas, 10%);
+	background-color: darken($color-canvas, 8%);
+}
+
+#subscribe-info {
+	margin-top: -0.15em;
+
+	ul, li {
+		margin: 0; padding: 0; list-style: none; display: inline-block
+	}
+	ul { font-size: 0.8rem }
+	ul li {
+		padding-left: 0.8rem; padding-right: 0.3em;
+		background: transparent url('data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20720%20720%22%3E%3Cg%20fill%3D%22%23f62%22%3E%3Cpath%20d%3D%22M720%20181L301%20600l-85-85L635%2096z%22%20%2F%3E%3Cpath%20d%3D%22M300%20599L61%20360l84-85%20240%20240z%22%20%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E') left 0.4em no-repeat scroll;
+		background-size: 0.65em;
+	}
+
+}
+
+
 /* Logos */
 .logo {
 	img {
