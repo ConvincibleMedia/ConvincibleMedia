@@ -141,7 +141,9 @@
 							{% if block.title %}
 								<span class="h3">
 									{% if live %}
-										{% include helpers/link.html href=block.link text=block.title %}
+										<a href="{% include helpers/link.html href=block.link href_only=true %}" class="arrow">
+											<span class="text">{{ block.title }}</span>
+										</a>
 									{% else %}
 										{{ block.title }}
 									{% endif %}

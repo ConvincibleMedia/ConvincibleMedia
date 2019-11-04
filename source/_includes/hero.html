@@ -77,7 +77,7 @@
 								<div class="col-lg-4 col-lg-pull-4 col-md-pull-4 col-sm-6 col-sm-pull-6">
 									<h2 class="hide">Latest</h2>
 									<div id="latest" class="tilt">
-										<div class="carousel">
+										<div class="carousel" id="carousel-cta">
 											{% for button in include.buttons %}
 												<div class="carousel-item{% unless forloop.first %} js-show{% endunless %}">
 													{% if button.image %}

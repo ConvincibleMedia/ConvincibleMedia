@@ -5,7 +5,7 @@
 			<div class="card link grid">
 				<div class="card-image">{% include helpers/img.html image=item.image format=site.data.images.thumb-medium %}</div>
 				<div class="logo logo-small">{% include helpers/img.html image=item.logo format=site.data.images.logo %}</div>
-				<h3>{% include helpers/link.html href=item.link text=item.tagline %}</h3>
+				<h3><a href="{% include helpers/link.html href=item.link href_only=true %}" class="arrow"><span class="text">{{ item.tagline }}</span></a></h3>
 				{{ item.description | markdownify }}
 			</div>
 		</div>

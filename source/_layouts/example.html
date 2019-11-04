@@ -20,9 +20,8 @@ layout: base
 		<div class="row">
 			<div class="col-md-3 col-md-push-9">
 				<div class="logo logo-small">
-					<a href="{% include helpers/link.html href=page.client.link href_only=true %}">
-						{% include helpers/img.html image=page.client.logo format=site.data.images.logo %}
-					</a>
+					{% capture logo %}{% include helpers/img.html image=page.client.logo format=site.data.images.logo %}{% endcapture %}
+					{% include helpers/link.html href=page.client.link text=logo %}
 				</div>
 			</div>
 			<div class="col-md-8 col-md-pull-3">
@@ -38,7 +37,7 @@ layout: base
 
 <section>
 	<h2 class="hide">Key Services</h2>
-	<div class="container grid-cards">
+	<div class="container">
 		{% include blocks/block_card.html blocks=page.of %}
 	</div>
 </section>
@@ -46,7 +45,7 @@ layout: base
 <section>
 	<div class="container">
 		<div class="row">
-			<div class="col-sm-4 col-sm-offset-4">
+			<div class="col-sm-6 col-sm-offset-3 col-md-4 col-md-offset-4">
 				<p><a href="/showcase.html" class="button">View Showcase</a></p>
 			</div>
 		</div>
