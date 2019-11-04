@@ -325,9 +325,16 @@ end
 
 puts 'Each example...'
 
-#Services
+#Examples
 directory "source/_examples" do
 	examples.each_with_index do |item, index|
+		of = item.of.to_hash.map { |item|
+			{
+				title: item[:name],
+				description: item[:description],
+				link: item[:id]
+			}
+		}
 		create_post "#{item.slug}.md" do
 			frontmatter :yaml, {
 				layout: 'example',
@@ -343,13 +350,8 @@ directory "source/_examples" do
 					logo: defined?(item.client.logo.url) ? item.client.logo.to_hash.slice(:url, :alt, :title) : '',
 					link: item.client.id
 				},
-				of: item.of.to_hash.map { |item|
-					{
-						title: item[:name],
-						description: item[:description],
-						link: item[:id]
-					}
-				}
+				of: of,
+				service: of[0][:title]
 			}
 			content(item.information)
 		end
@@ -510,6 +512,8 @@ directory "source/_contact" do
 		end
 	end
 end
+
+# Articles
 
 puts 'Each article...'
 

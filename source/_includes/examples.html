@@ -1,0 +1,44 @@
+{% assign services = include.services %}
+{% assign img_format = site.data.images.thumb-square %}
+{% assign index = 0 %}
+<div class="row">
+	{% for service in services %}
+		{% assign examples = site.examples | sort: 'order' | where: 'service',service.name %}
+		{% if examples.size > 0 %}
+			{% assign index = index | plus: 1 %}
+			{% assign mod2a = index | modulo: 2 %}
+			<div class="col-md-6">
+				<h2>{% include helpers/link.html href=service.link text=service.name %}</h2>
+				<div class="row">
+
+					{% for example in examples limit:6 %}
+						{% assign mod2 = forloop.index | modulo: 2 %}
+						{% assign mod3 = forloop.index | modulo: 3 %}
+						{% assign mod4 = forloop.index | modulo: 4 %}
+						<div class="col-lg-4 col-md-6 col-sm-3 col-xs-6">
+							<div class="cell-image">
+								{% assign img = example.gallery[0] %}
+								<a href="{% include helpers/link.html href=example.link href_only=true %}" class="tilt">
+									{% include helpers/img.html image=img alt=example.title title=example.title format=img_format %}
+								</a>
+							</div>
+						</div>
+						{% if mod4 == 0 %}
+							<div class="clearfix visible-sm-block"></div>
+						{% endif %}
+						{% if mod3 == 0 %}
+							<div class="clearfix visible-lg-block"></div>
+						{% endif %}
+						{% if mod2 == 0 %}
+							<div class="clearfix visible-xs-block visible-md-block"></div>
+						{% endif %}
+					{% endfor %}
+				
+				</div>
+			</div>
+			{% if mod2a == 0 %}
+				<div class="clearfix visible-md-block visible-lg-block"></div>
+			{% endif %}
+		{% endif %}
+	{% endfor %}
+</div>
