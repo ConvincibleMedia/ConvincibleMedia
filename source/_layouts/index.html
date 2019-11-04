@@ -65,8 +65,9 @@ layout: base
 		{% endif %}
 		
 		{% assign examples = site.examples | sort: 'order' %}
+
 		<div class="row">
-			{% for example in site.examples limit:6 %}
+			{% for example in examples limit:6 %}
 				{% assign mod2 = forloop.index | modulo: 2 %}
 				{% assign mod4 = forloop.index | modulo: 4 %}
 				<div class="col-md-2 col-sm-3 col-xs-6">
