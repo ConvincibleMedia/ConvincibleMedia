@@ -351,7 +351,8 @@ directory "source/_examples" do
 					link: item.client.id
 				},
 				of: of,
-				service: of[0][:title]
+				service: of[0][:title],
+				medium: item.medium
 			}
 			content(item.information)
 		end

@@ -10,5 +10,5 @@ title: Showcase
 {% assign clients = site.clients | sort: 'order' | where: 'live','true' %}
 {% include clients.html clients=clients %}
 
-{% assign services = site.services | sort: 'order' | where: 'live','true' %}
-{% include examples.html services=services %}
+{% assign examples = site.examples | sort: 'order' %}
+{% include examples.html examples=examples %}
