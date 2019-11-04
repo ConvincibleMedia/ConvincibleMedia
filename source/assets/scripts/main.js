@@ -1,6 +1,6 @@
 $(document).ready(function(){
 
-    /* Tilt Effects */
+/* Tilt Effects */
 $('.tilt').tilt({
    perspective: 1200,
    speed: 500,
@@ -26,9 +26,6 @@ $(".link").hover(function() {
 /* Match Height */
 $(function() {
 	$('.grid').matchHeight({
-        property: 'min-height'
-    });
-    $('.grid-cards .card').matchHeight({
         property: 'min-height'
     });
 });
