@@ -81,36 +81,29 @@ h6, .h6 { font-size: 100%; }
 a, a:link, a:hover, a:visited, a:active {
 	text-decoration: none;
 	color: darken($color-1,20%);
-	transition: 0.25s;
 }
 a:hover, a.hover {
 	color: $color-1;
-
-	&:after {
-		margin: 0 0.1em 0 0.3em;
-		transition: 0.25s;
+}
+a.arrow {
+	padding-right: 0.2em;
+	transition: padding-right 0.25s;
+	span.text {
+		padding-right: 0.8em;
+		background-repeat: no-repeat;
+		background-position: right center;
+		background-attachment: scroll;
+		background-size: 0.6em;
+		background-image: url('/assets/images/arrow.svg');
+		transition: padding-right 0.25s;
 	}
-}
-h3 a:after {
-	content: '';
-	display: inline-block;
-	background-repeat: no-repeat;
-	background-position: center top;
-	background-attachment: scroll;
-	background-size: 0.6em;
-	width: 0.6em; height: 0.6em;
-	background-image: url('/assets/images/arrow.svg');
-	margin: 0 0.2em 0 0.2em;
-	transition: 0.25s;
-}
-#top, #bottom {
-	a:after, a:before {
-		content: none;
-	}
-}
-.block-link {
-	a:after, a:before {
-		content: none;
+	&:hover, &.hover {
+		padding-right: 0;
+		transition: padding-right .25s;
+		span.text {
+			padding-right: 1em;
+			transition: padding-right 0.25s;
+		}
 	}
 }
 
@@ -440,7 +433,7 @@ a.button {
 	}
 	&:hover {
 		&:before, &:after {
-			transition: 0.3s;
+			transition: opacity 0.25s;
 		}
 		&:before { opacity: 0; }
 		&:after { opacity: 1; visibility: visible; }
@@ -455,7 +448,7 @@ a.button {
 		background-size: 0.6em;
 		width: 0.6em; height: 0.6em;
 		background-image: url('/assets/images/arrow-white.svg');
-		transition: 0.3s;
+		transition: opacity 0.25s;
 	}
 
 	&:before {
@@ -570,20 +563,20 @@ a.button {
 
 .card.tilt {
 	h3 {
-		transition: 0.5s;
+		transition: transform 0.25s;
 	}
 	p {
-		transition: 0.5s;
+		transition: transform 0.25s;
 	}
 }
 .card.tilt:hover {
 	h3 {
 		transform: translateZ(0.8em);
-		transition: 0.5s;
+		transition: transform 0.25s;
 	}
 	p {
 		transform: translateZ(0.5em);
-		transition: 0.5s;
+		transition: transform 0.25s;
 	}
 }
 
@@ -970,14 +963,14 @@ blockquote, .block_body_lead {
 /* Tilt */
 
 .tilt, .tilt-z { transform-style: preserve-3d; }
-.tilt .tilt-z { transition: 0.5s; }
+.tilt .tilt-z { transition: transform 0.25s, box-shadow 0.25s; }
 .tilt:hover {
 	box-shadow: 0 0 2em rgba(0, 0, 0, 0.05);
 }
 .tilt:hover .tilt-z {
 	transform: translateZ(1.5em);
 	box-shadow: 0 0 1em rgba(0, 0, 0, 0.2);
-	transition: 0.5s;
+	transition: transform 0.25s, box-shadow 0.25s;
 }
 .js .link { cursor: pointer; }
 

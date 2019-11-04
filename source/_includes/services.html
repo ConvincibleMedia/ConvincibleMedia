@@ -12,7 +12,9 @@
 				<div class="card-image">{% include helpers/img.html image=item.image format=img_format %}</div>
 				<h3>
 					{% if item.live %}
-						{% include helpers/link.html href=item.link text=item.name %}
+						<a href="{% include helpers/link.html href=item.link href_only=true %}" class="arrow">
+							<span class="text">{{ item.name }}</span>
+						</a>
 					{% else %}
 						{{ item.name }}
 					{% endif %}
