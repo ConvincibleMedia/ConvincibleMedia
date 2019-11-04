@@ -67,12 +67,8 @@ layout: base
             <p class="small">
                 <a itemprop="mainEntityOfPage" href="{{site.url}}{{ page.url }}">
                     <cite>{{ page.title }}</cite></a>,
-                <span itemprop="author" itemscope="itemscope" itemtype="https://schema.org/Person">
-                    <span itemprop="name">{{ article_author }}</span>
-                </span>,
-                <span itemprop="publisher" itemscope="itemscope" itemtype="https://schema.org/Organization">
-                    <span itemprop="name">Convincible Media</span>
-                </span>,
+                <span itemprop="author" itemscope="itemscope" itemtype="https://schema.org/Person"><span itemprop="name">{{ article_author }}</span></span>,
+                <span itemprop="publisher" itemscope="itemscope" itemtype="https://schema.org/Organization"><span itemprop="name">Convincible Media</span></span>,
                 <time datetime="{{page.date}}" itemprop="dateModified">
                     {{ page.date | date: '%d %b %Y' }}
                 </time>
