@@ -65,27 +65,25 @@ layout: base
 		{% endif %}
 		
 		{% assign examples = site.examples | sort: 'order' %}
-
-		<div class="row">
-			{% for example in examples limit:6 %}
-				{% assign mod2 = forloop.index | modulo: 2 %}
-				{% assign mod4 = forloop.index | modulo: 4 %}
-				<div class="col-md-2 col-sm-3 col-xs-6">
-					<div class="cell-image">
-						{% assign img = example.gallery[0] %}
-						<a href="{% include helpers/link.html href=example.link href_only=true %}" class="tilt">
-							{% include helpers/img.html image=img alt=example.title title=example.title format=site.data.images.thumb-square %}
-						</a>
+		<div class="carousel js-show" id="carousel-examples">
+			{% for item in examples limit:6 %}
+				<div class="carousel-item">
+					<div class="card link grid">
+						{% assign img = item.gallery[0] %}
+						<div class="card-image">{% include helpers/img.html image=img format=site.data.images.thumb-square %}</div>
+						<h3 class="hgroup">
+							<span class="small subtitle">{{ item.service }}</span>
+							<span class="hidden">:</span>
+							<span class="h4">
+								<a href="{% include helpers/link.html href=item.link href_only=true %}">
+									{{ item.medium }}
+								</a>
+							</span>
+						</h3>
 					</div>
 				</div>
-				{% if mod4 == 0 %}
-					<div class="clearfix visible-sm-block"></div>
-				{% endif %}
-				{% if mod2 == 0 %}
-					<div class="clearfix visible-xs-block"></div>
-				{% endif %}
 			{% endfor %}
-		</div>
+		</div>		
 					
 	</div>
 	{% if site.showcase.size > 2 %}

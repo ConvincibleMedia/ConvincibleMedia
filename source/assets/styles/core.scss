@@ -1057,6 +1057,15 @@ blockquote, .block_body_lead {
 	img { width: 100%; height: auto }
 }
 
+
+/* Carousel */
+
+.carousel { margin: 0 -1em }
+.carousel-item {
+	margin: 0 1em
+}
+
+
 .log { position: absolute; font-size: 60%; opacity: 0.3; &:hover { opacity: 1; z-index: 999; background: #fff } }
 .debug:hover, .debug *:hover { outline: 1px solid rgba(0, 0, 0, 0.1); outline-offset: -2px; }
 .no-js .no-js-hide, .js-show { display: none!important; }

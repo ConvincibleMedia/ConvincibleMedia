@@ -11,4 +11,4 @@ title: Showcase
 {% include clients.html clients=clients %}
 
 {% assign examples = site.examples | sort: 'order' %}
-{% include examples.html examples=examples %}
+{% include examples.html examples=examples limit=12 %}
