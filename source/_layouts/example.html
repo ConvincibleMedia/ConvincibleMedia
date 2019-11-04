@@ -20,9 +20,8 @@ layout: base
 		<div class="row">
 			<div class="col-md-3 col-md-push-9">
 				<div class="logo logo-small">
-					<a href="{% include helpers/link.html href=page.client.link href_only=true %}">
-						{% include helpers/img.html image=page.client.logo format=site.data.images.logo %}
-					</a>
+					{% capture logo %}{% include helpers/img.html image=page.client.logo format=site.data.images.logo %}{% endcapture %}
+					{% include helpers/link.html href=page.client.link text=logo %}
 				</div>
 			</div>
 			<div class="col-md-8 col-md-pull-3">
