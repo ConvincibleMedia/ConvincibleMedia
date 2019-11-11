@@ -745,6 +745,8 @@ blockquote, .block_body_lead {
 	font-weight: 400;
 	line-height: 1.6;
 
+	p.small { margin-bottom: 1.333em }
+
 	.block_body_text > p strong {
 		background: url('/assets/images/highlight.png') 0 0 repeat-x;
 		white-space: pre-wrap;

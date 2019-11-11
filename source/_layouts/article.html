@@ -57,6 +57,10 @@ layout: base
                     <p class="small">While you're there, drop a Like or Share if this was useful so we know to write more like it in future.</p>
                 {% endif %}
 
+                {% if page.conclusion.size > 0 %}
+                    {{ page.conclusion | markdownify }}
+                {% endif %}
+
             </div>
         </div>
     </section>

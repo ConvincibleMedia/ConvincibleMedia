@@ -568,7 +568,8 @@ directory "source/_articles" do
 						profile: item[:profile][:id],
 						link: item[:link]
 					}
-				}
+				},
+				conclusion: item.conclusion
 			}
 			body = ''
 			length = 0
