@@ -745,6 +745,8 @@ blockquote, .block_body_lead {
 	font-weight: 400;
 	line-height: 1.6;
 
+	p.small { margin-bottom: 1.333em }
+
 	.block_body_text > p strong {
 		background: url('/assets/images/highlight.png') 0 0 repeat-x;
 		white-space: pre-wrap;
@@ -868,6 +870,19 @@ blockquote, .block_body_lead {
 		display: block;
 		font-family: $font-heading;
 		font-size: 1rem;
+	}
+}
+
+a.footnote, .block_body_text a.footnote {
+	border: none;
+	color: #aaa;
+	padding: 0.1em 0.3em;
+	margin: -0.1em -0.3em;
+	border-radius: 0.4em;
+	
+	&:hover {
+		color: #fff;
+		background-color: $color-1
 	}
 }
 
