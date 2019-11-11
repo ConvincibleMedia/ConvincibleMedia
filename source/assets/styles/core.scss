@@ -873,6 +873,19 @@ blockquote, .block_body_lead {
 	}
 }
 
+a.footnote, .block_body_text a.footnote {
+	border: none;
+	color: #aaa;
+	padding: 0.1em 0.3em;
+	margin: -0.1em -0.3em;
+	border-radius: 0.4em;
+	
+	&:hover {
+		color: #fff;
+		background-color: $color-1
+	}
+}
+
 
 /* Subscribe */
 
