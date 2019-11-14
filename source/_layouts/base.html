@@ -83,6 +83,8 @@
 				{% assign og_img = page.image %}
 			{% endif %}
 			<meta property="og:image" content="{%- include helpers/img.html image=og_img format=site.data.images.og src_only=true -%}" />
+			<meta property="og:image:width" content="1200" />
+			<meta property="og:image:height" content="675" />
 			{% if og_img.alt and og.alt.size > 0 %}
 				<meta property="og:image:alt" content="{{og_img.alt | escape }}" />
 			{% endif %}
