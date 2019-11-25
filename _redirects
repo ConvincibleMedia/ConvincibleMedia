@@ -1,2 +1,6 @@
 #From, To
 https://convincible.netlify.com/* https://www.convincible.media/:splat 301!
+
+# Old URLs
+/digital-social /digital
+/social /social-media
