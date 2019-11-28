@@ -1,0 +1,44 @@
+{
+	"dependencies": {
+		"run-for-every-file": "~> 1.1",
+		"npm-run-all": "~> 4.1",
+		"postcss-cli": "~> 6.1",
+		"autoprefixer": "~> 9.6",
+		"html-minifier": "~> 4.0",
+		"cssnano": "~> 4.1",
+		"terser": "~> 4.4"
+	},
+	"scripts": {
+		"prod": "npm-run-all build:* && npm-run-all transform:* && npm-run-all -p minify:*",
+		"preview": "npm-run-all preview:* && npm-run-all transform:* && npm-run-all -p minify:*",
+		"dev": "npm-run-all dev:* && npm-run-all transform:* && npm-run-all -p minify:*",
+		"test": "npm run dev:jekyll && npm run serve",
+		"serve": "bundle exec jekyll serve --no-watch --skip-initial-build --config _config.yml,_config-staging.yml",
+		"build:dato": "bundle exec dato dump",
+		"build:jekyll": "bundle exec jekyll build",
+		"preview:dato": "bundle exec dato dump --preview",
+		"preview:jekyll": "bundle exec jekyll build --config _config.yml,source/_config/jekyll/test_keys.yml,source/_config/jekyll/preview.yml",
+		"dev:dato": "bundle exec dato dump",
+		"dev:jekyll": "bundle exec jekyll build --trace --config _config.yml,_config-staging.yml",
+		"finalise": "npm-run-all transform:* && npm-run-all minify:*",
+		"transform:css": "postcss 'public/assets/styles/**/*.css' --replace --no-map --use autoprefixer",
+		"minify:html": "html-minifier --file-ext html --input-dir public --output-dir public --collapse-whitespace --conservative-collapse --remove-comments --keep-closing-slash --preserve-line-breaks --minify-css true --sort-attributes --sort-class-name --minify-js true",
+		"minify:css": "postcss 'public/assets/styles/**/*.css' --replace --no-map --use cssnano",
+		"minify:js": "run-for-every-file --src public/assets/scripts/ --file '**/*.js' --run 'terser {{src-file}} -o {{src-file}} --compress'"
+	},
+	"browserslist": [
+		"> 0.2% in GB",
+		"> 1%",
+		"last 2 versions"
+	],
+	"postcss": {
+		"plugins": {
+			"autoprefixer": {},
+			"cssnano": {
+				"autoprefixer": true,
+				"discardComments": true,
+				"reduceIndents": true
+			}
+		}
+	}
+}
