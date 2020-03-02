@@ -66,13 +66,13 @@ layout: base
 		
 		{% assign examples = site.examples | sort: 'order' %}
 		<div class="carousel js-show" id="carousel-examples">
-			{% for item in examples limit:6 %}
+			{% for item in examples limit:12 %}
 				<div class="carousel-item">
 					<div class="card link grid">
 						{% assign img = item.gallery[0] %}
 						<div class="card-image">{% include helpers/img.html image=img format=site.data.images.thumb-square %}</div>
 						<h3 class="hgroup">
-							<span class="small subtitle">{{ item.service }}</span>
+							<span class="small subtitle">{{ item.client.name }}</span>
 							<span class="hidden">:</span>
 							<span class="h4">
 								<a href="{% include helpers/link.html href=item.link href_only=true %}">
