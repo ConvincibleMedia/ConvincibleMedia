@@ -353,7 +353,6 @@ ul.nav li a.menu {
 
 
 main { padding-bottom: 2em; }
-main section { padding-top: 1em; }
 #services {
 	margin-top: -3em;
 	margin-bottom: 3em;
@@ -582,6 +581,8 @@ a.button {
 
 #elements {
 	padding: 0;
+	background: transparent url('https://www.datocms-assets.com/3013/1574956131-wood-light.jpg') center center no-repeat scroll;
+	background-size: cover;
 
 	.card {
 		background-color: #444;
@@ -592,6 +593,12 @@ a.button {
 		background-size: cover;
 		box-shadow: 0 0.4em 0.7em rgba(0, 0, 0, 0.15);
 
+		h3 span.h3 {
+			display: inline;
+			padding-right: 1.1em;
+			background: transparent url('/assets/images/tick.svg') right 0.2em no-repeat scroll;
+			background-size: 0.85em;
+		}
 	}
 
 	.row div:nth-of-type(4n+1) .card { transform: rotateZ(-0.75deg); }
@@ -604,8 +611,8 @@ a.button {
 
 
 /* Outsets */
+blockquote { background-color: #ddd; }
 blockquote, .block_body_lead {
-	background-color: #ddd;
 	margin: 0 -1.5em 1em -1.5em;
 	padding: 1.5em;
 
@@ -649,6 +656,10 @@ blockquote, .block_body_lead {
 		text-align: center;
 	}
 }
+.block_body_lead {
+	font-family: $font-heading;
+	font-weight: 200
+}
 .block_body_lead p { font-size: 150%; }
 .who-part { display: inline-block }
 
@@ -675,13 +686,7 @@ blockquote, .block_body_lead {
 
 .wowlight {
 	background: #fff;
-	background: -webkit-linear-gradient(top, rgba(255, 255, 255, 0), rgba(255, 255, 255, 1), rgba(255, 255, 255, 1), rgba(255, 255, 255, 0));
-	padding: 2em 0 1em 0;
-
-	p {
-		color: $color-1;
-		text-align: center;
-	}
+	padding: 5em 0 4em 0;
 }
 
 /* Contact */
@@ -947,7 +952,7 @@ a.footnote, .block_body_text a.footnote {
 	ul { font-size: 0.8rem }
 	ul li {
 		padding-left: 0.8rem; padding-right: 0.3em;
-		background: transparent url('data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20720%20720%22%3E%3Cg%20fill%3D%22%23f62%22%3E%3Cpath%20d%3D%22M720%20181L301%20600l-85-85L635%2096z%22%20%2F%3E%3Cpath%20d%3D%22M300%20599L61%20360l84-85%20240%20240z%22%20%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E') left 0.4em no-repeat scroll;
+		background: transparent url('/assets/images/tick.svg') left 0.4em no-repeat scroll;
 		background-size: 0.65em;
 	}
 

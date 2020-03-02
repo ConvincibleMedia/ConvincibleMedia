@@ -6,17 +6,44 @@ layout: base
 	image=page.image
 	breadcrumb=2
 	heading=page.heading
+	buttons=page.buttons
 %}
 
 <section>
-	<div class="container">
-		{% include blocks/block_body.html blocks=page.intro %}
+	<div class="wowlight">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-8">
+					{% include blocks/block_body.html blocks=page.intro %}
+				</div>
+				<div class="col-md-4">
+					icon
+				</div>
+			</div>
+		</div>
 	</div>
 </section>
 
 {% if page.examples.size > 0 %}
 <section id="examples">
 	<div class="container">
+
+
+		<div class="carousel js-show" id="carousel-examples">
+			{% for example in page.examples %}
+				<div class="carousel-item">
+					<div class="card link grid">
+						<div class="card-image">
+							<a href="{% include helpers/link.html href=example.link href_only=true %}">
+								{% include helpers/img.html image=example.image format=site.data.images.thumb-square %}
+							</a>
+						</div>
+					</div>
+				</div>
+			{% endfor %}
+		</div>
+
+
 		<div class="gallery">
 			<div class="card">
 				{% for example in page.examples %}
@@ -32,16 +59,16 @@ layout: base
 </section>
 {% endif %}
 
-<section id="elements">
-	<div class="wowlight">
-		<div class="container">
-			<div class="row">
-				<div class="col-sm-8 col-sm-offset-2">
-					<h2 class="subtitle pointdown">{{ page.elements_heading }}</h2>
-				</div>
+<div class="wowlight">
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-8">
+				<h2 class="subtitle">{{ page.elements_heading }}</h2>
 			</div>
 		</div>
 	</div>
+</div>
+<section id="elements">
 	<div class="container">
 		{% include blocks/block_card.html blocks=page.elements %}
 		{% if page.elements_note %}
@@ -54,16 +81,16 @@ layout: base
 	</div>
 </section>
 
-<section id="subservices">
-	<div class="wowlight">
-		<div class="container">
-			<div class="row">
-				<div class="col-sm-8 col-sm-offset-2">
-					<h2 class="subtitle pointdown">{{ page.subservices_heading }}</h2>
-				</div>
+<div class="wowlight">
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-8">
+				<h2 class="subtitle">{{ page.subservices_heading }}</h2>
 			</div>
 		</div>
 	</div>
+</div>
+<section id="subservices">
 	<div class="container">
 		{% include blocks/block_card.html blocks=page.subservices style='icons' %}
 	</div>
