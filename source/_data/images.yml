@@ -78,8 +78,8 @@ icon:
    auto: "compress"
    fm: "png"
 gallery:
-   w: 1280
-   h: 640
+   w: 1080
+   h: 1080
    fit: "max"
    auto: "compress"
    fm: "pjpg"

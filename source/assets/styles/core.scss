@@ -472,7 +472,7 @@ a.button {
 
 	p:last-child { margin-bottom: 0 }
 
-	#{enumerate('h',1,6)}, #{enumerate('.h',1,6)}, {
+	#{enumerate('h',1,6)}, #{enumerate('.h',1,6)} {
 		padding: 0; border: 0; margin-bottom: 0.25em;
 		word-wrap: break-word;
 	}
